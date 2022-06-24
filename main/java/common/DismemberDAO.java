@@ -152,14 +152,8 @@ public class DismemberDAO {
 				
 				flag = 2;
 				return flag;
-			} else if(rs.getInt("lgnFailCnt") < 5){
-				// 아무것도 걸리지 않으면 3을 반환하면서 로그인 실패 카운트를 0으로 초기화
-				pstmt.close();
-				sql = "update users set lgnFailCnt = 0 where id = ?";
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, id);
-				pstmt.executeUpdate();
-				} else {
+			} else {
+				// 아무것도 걸리지 않으면 3을 반환
 					flag = 3;
 				}
 					
@@ -171,5 +165,35 @@ public class DismemberDAO {
 		return flag;
 	}
 	
+	
+	// 매개변수로 받은 주민번호 뒷자리의 모든 정보를 반환(VO)
+		public DismemberVO getUser(String personid2) {
+			DismemberVO vo = new DismemberVO();
+			Connection con = null;
+			PreparedStatement pstmt = null;	
+			String sql = null;
+			ResultSet rs = null;
+			try {
+				con = pool.getConnection();
+				sql = "select * from users where personid2 = ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, personid2);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					vo.setMemberseq(rs.getInt("Memberseq"));
+					vo.setName(rs.getString("Name"));
+					vo.setPersonid1(rs.getString("Personid1"));
+					vo.setArea(rs.getString("Area"));
+					vo.setMobile(rs.getString("Mobile"));
+					vo.setDiscase(rs.getString("Discase"));
+					vo.setDisgrade(rs.getString("Disgrade"));
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				pool.freeConnection(con, pstmt, rs);
+			}
+			return vo;
+		}
 	
 }

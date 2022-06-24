@@ -22,7 +22,7 @@
                     <li><a href="">내 정보 관리</a></li>
                 </ul>
             </div>
-            <buttton class="modeBtn">고대비</buttton>
+            <button class="modeBtn">고대비</button>
             <div class="signin-signup">
                 <button class="signin">로그인</button>
                 <button class="signup">회원가입</button>
@@ -30,5 +30,12 @@
         </div>
 
     </header>
+
+
+    <footer>
+        <div class="footerWrap">
+            <div>copyright 2022 글로브임펙트. All RIGHT RESERVED.</div>
+        </div>
+    </footer>
 </body>
 </html>

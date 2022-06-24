@@ -10,9 +10,6 @@ public class DismemberVO {
 	private String Mobile;
 	private String Discase;
 	private String Disgrade;
-	
-	
-	
 
 
 	public String getDisgrade() {

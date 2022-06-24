@@ -6,11 +6,11 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO {
+public class DismemberDAO {
 
 	private DBConMgr pool;
 
-	public UserDAO() {
+	public DismemberDAO() {
 		try {
 			pool = DBConMgr.getInstance();
 		} catch (Exception e) {
@@ -30,7 +30,7 @@ public class UserDAO {
 		try {
 			con = pool.getConnection();
 			sql = "insert into dismember(memberseq, name, personid1, personid2, area, mobile, discase, disgrade)"
-					+ "values((SELECT IFNULL(MAX(mNum), 0)+1 FROM users U), ?, ?, ?, ?, ?, ?, ?, ?)";
+					+ "values((SELECT IFNULL(MAX(mNum), 0)+1 FROM dismember D), ?, ?, ?, ?, ?, ?, ?, ?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, vo.getMemberseq());
 			pstmt.setString(2, vo.getName());
@@ -58,7 +58,7 @@ public class UserDAO {
 	
 
 	// 회원가입시 주민번호 뒷자리 중복체크
-	public boolean isid2Exist(String id) {
+	public boolean isid2Exist(String personid2) {
 		boolean flag = false;
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -68,7 +68,7 @@ public class UserDAO {
 			con = pool.getConnection();
 			sql = "select name from dismember where personid2 = ?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, id);
+			pstmt.setString(1, personid2);
 			rs = pstmt.executeQuery();
 			// 결과물이 있다는 것은 입력받은 주민번호 뒷자리가 이미 존재한다는 뜻
 			if(rs.next()) {
@@ -84,9 +84,9 @@ public class UserDAO {
 	
 	
 
-	// 회원정보 수정전 비밀번호 확인
-	// 세션에 저장된 주민번호 뒷자리와 입력받은 비밀번호를 매개변수로 DB데이터와 대조
-	public boolean ChkPW(String lgnId, String pw) {
+	// 회원정보 수정전 주민번호 뒷자리 확인
+	// 세션에 저장된 주민번호 뒷자리와 입력받은 전화번호를 매개변수로 DB데이터와 대조
+	public boolean ChkPW(String personid2, String Mobile) {
 		boolean flag = false;
 		Connection con = null;
 		PreparedStatement pstmt = null;	
@@ -95,15 +95,15 @@ public class UserDAO {
 		
 		try {
 			con = pool.getConnection();
-			sql = "select pw from users where personid2 = ?";
+			sql = "select Mobile from dismember where personid2 = ?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, lgnId);
+			pstmt.setString(1, personid2);
 			rs = pstmt.executeQuery();
 			
 			// 나온 결과가 있는가?
 			if(rs.next()) {
-				// 결과가 입력받은 비밀번호와 같은가?
-				if(rs.getString("pw").equals(pw)) {
+				// 결과가 입력받은 전화번호와 같은가?
+				if(rs.getString("Mobile").equals(Mobile)) {
 					flag = true;
 				}
 			}
@@ -119,8 +119,8 @@ public class UserDAO {
 	
 
 	// 로그인
-	// 다른 방법으로는 비밀번호를 입력하고 로그인에 시도할 때 입력받은 비밀번호를 암호화시키고 
-	// 암호화된 비밀번호와 DB에 있는 암호화된 비밀번호를 대조하는 방식
+	// 다른 방법으로는 전화번호를 입력하고 로그인에 시도할 때 입력받은 전화번호를 암호화시키고 
+	// 암호화된 비밀번호와 DB에 있는 암호화된 전화번호를 대조하는 방식
 	public int login(String id, String pw) {
 		Connection con = null;				// 데이터베이스와의 연결
 		PreparedStatement pstmt = null;		// 사전에 컴파일 된 SQL문을 실행
@@ -136,8 +136,8 @@ public class UserDAO {
 		
 		try {
 			con = pool.getConnection();
-			// 입력받은 id가 데이터베이스에 존재하는지 확인
-			sql = "select id, pw, lgnFailCnt from users where id = ?";
+			// 입력받은 이름이 데이터베이스에 존재하는지 확인
+			sql = "select Mobile from dismember where name = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
@@ -146,7 +146,7 @@ public class UserDAO {
 				flag = 1;
 				return flag;
 			}
-			// sql문을 돌려 나온 비밀번호가 입력받은 비밀번호와 일치하는지 확인
+			// sql문을 돌려 나온 전화번호가 입력받은 전화번호와 일치하는지 확인
 			// 일치하지 않으면 2를 반환
 			else if(!(rs.getString("pw").equals(pw))) {
 				

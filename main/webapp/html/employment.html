@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>채용관</title>
+    <link rel="stylesheet" href="../css/employment.css">
+</head>
+<body>
+
+<header>
+    <div class="headerWrap">
+        <div class="logo">
+            <a href="../jsp/main.jsp">
+                <img src="../img/logo.png" alt="">
+                <div>예일장애인박람회</div>
+            </a>
+        </div>
+        <div class="navMenu">
+            <ul>
+                <li>온라인 채용관</a></li>
+            </ul>
+        </div>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <script>
+            var check = $("input[type='checkbox']");
+            check.click(function(){
+                $("p").toggle();
+            });
+        </script>
+        <div class="signin-signup">
+            <button class="signin">로그인</button>
+            <button class="signup">회원가입</button>
+        </div>
+    </div>
+
+<!--  메인배너  -->
+
+    <div class="bannerWrap">
+        <div class="banner">
+            <img src="../img/main.png" alt="배너">
+        </div>
+        <div class="bannerTitle">
+            <h1>온라인 채용관</h1>
+        </div>
+    </div>
+
+
+<!--  검색필터  -->
+    <div class="container">
+        <form>
+            <div class="filterWrap">
+                <div class="filterList">
+                    <ul>
+                        <li>
+                            <select>
+                                <option selected>모집직종</option>
+                                <option>경영·행정·사무직</option>
+                                <option>교육·법률</option>
+                                <option>보건·의료직</option>
+                                <option>예술·디자인·방송직</option>
+                                <option>여행·숙박·음식서비스직</option>
+                                <option>경호·경비·청소직</option>
+                                <option>영업·판매직</option>
+                                <option>운전·운송직</option>
+                                <option>생산·단순제조직</option>
+                                <option>문화·예술</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select>
+                                <option selected>모집지역</option>
+                                <option>부산전체</option>
+                                <option>강서구·사하구</option>
+                                <option>북구·사상구</option>
+                                <option>동래구·해운대구·기장군</option>
+                                <option>부산진구·연제구·수영구</option>
+                                <option>동구·남구</option>
+                                <option>영도구·중구·서구</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select>
+                                <option selected>근무시간</option>
+                                <option>전일</option>
+                                <option>반일</option>
+                                <option>교대근무</option>
+                                <option>시간협의</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select>
+                                <option selected>우대사항</option>
+                                <option>운전가능자</option>
+                                <option>차량소지자</option>
+                                <option>인근거주자</option>
+                                <option>청년층우대</option>
+                                <option>장년(고량자)</option>
+                                <option>여성우대</option>
+                                <option>고용촉진지원금대상자</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <button class="search">검색</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <section class="section1">
+        <div class="section1-title">
+            <div class="title1">2022 예일 On-Line</div>
+            <div class="title2">장애인 일자리 박람회</div>
+            <div class="title3">2022-06-22(수) ~ 2022-06-22(수)</div>
+        </div>
+        <div>
+            <img class="sectionImg" src="../img/mainImg.png" alt="메인화면">
+        </div>
+    </section>
+    <section class="section2">
+        <div>
+            <h2 class="listTitle">팀원소개</h2>
+        </div>
+        <div>
+            <img class="sectionImg" src="" alt="팀원소개">
+        </div>
+    </section>
+    <section class="section3">
+        <div>
+            <h2 class="listTitle">참여 기업 리스트</h2>
+        </div>
+        <div class="enterpriseList">
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="" alt="카드1">
+                    <div class="cardInfo">
+                        <div>
+                            <p>기업이름</p>
+                            <p>입사현황</p>
+                        </div>
+                        <div>
+                            <p>기업위치</p>
+                            <p>직무</p>
+                        </div>
+                        <div>
+                            <p>지원기간</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="" alt="카드2">
+                    <div class="cardInfo">
+                        <div>
+                            <span>기업이름</span>
+                            <span>입사현황</span>
+                        </div>
+                        <div>
+                            <span>기업위치</span>
+                            <span>직무</span>
+                        </div>
+                        <div>
+                            <span>지원기간</span>
+                        </div>
+                    </div>
+            </div>
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="" alt="카드3">
+                    <div class="cardInfo">
+                        <div>
+                            <span>기업이름</span>
+                            <span>입사현황</span>
+                        </div>
+                        <div>
+                            <span>기업위치</span>
+                            <span>직무</span>
+                        </div>
+                        <div>
+                            <span>지원기간</span>
+                        </div>
+                    </div>
+            </div>
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="" alt="카드4">
+                    <div class="cardInfo">
+                        <div>
+                            <span>기업이름</span>
+                            <span>입사현황</span>
+                        </div>
+                        <div>
+                            <span>기업위치</span>
+                            <span>직무</span>
+                        </div>
+                        <div>
+                            <span>지원기간</span>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div>
+            <h2 class="addBtn"><a href="">더보기</a></h2>
+        </div>
+    </section>
+
+
+<!--    <footer>-->
+<!--        <div class="footerWrap">-->
+<!--            <div>copyright 2022. All RIGHT RESERVED.</div>-->
+<!--        </div>-->
+<!--    </footer>-->
+</header>
+</body>
+</html>

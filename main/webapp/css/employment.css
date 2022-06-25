@@ -2,6 +2,7 @@
 @import url('https://webfontworld.github.io/yangheeryu/Dongle.css');
 @import url('https://webfontworld.github.io/kotra/KotraBold.css');
 @import url('https://webfontworld.github.io/Cafe24Ssurround/Cafe24Ssurround.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap');
 
 
 :root{
@@ -56,11 +57,16 @@ header{
 .headerWrap .logo a{
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 .headerWrap .navMenu{
     width: 700px;
     height: 100%;
     justify-content: space-around;
+}
+
+.headerWrap .navMenu li{
+    margin: 0 auto;
 }
 
 .headerWrap .navMenu ul{
@@ -168,6 +174,108 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+/* banner */
+
+.container{
+    max-width:900px;
+    margin: 0 auto;
+}
+
+
+.bannerWrap{
+    text-align: center;
+    width: 900px;
+    height: 250px;
+    margin: 50px auto 0 auto;
+
+}
+
+.bannerWrap .banner{
+    height: 200px;
+    width: 900px;
+}
+
+.bannerWrap .banner img{
+    border-radius: 10px 10px 0 0;
+    width: 900px;
+    height: 200px;
+}
+.bannerWrap .bannerTitle{
+    width: 900px;
+    height: 50px;
+    margin: 0 auto ;
+    background: #fff3e0;
+    border-radius: 0 0 10px 10px;
+}
+.bannerWrap .banner h1{
+    width: 900px;
+    height: 50px;
+}
+
+.filterWrap {
+    padding: 20px 0;
+    margin-top: 25px;
+}
+
+.filterWrap .filterList {
+    position: relative;
+    margin-left: -15px;
+    display: flex;
+}
+
+.filterWrap .filterList ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.filterWrap .filterList ul li{
+    width: 20%;
+    padding: 0 15px;
+}
+
+.filterWrap .filterList ul li select{
+    width: 100%;
+    height: 40px;
+    font-size: 1.5em;
+    border: 1px solid var(--color-lightgray);
+    border-radius: 1rem;
+    padding: 0 14px;
+    font-family: 'Noto Serif KR', serif;
+    letter-spacing: 2px;
+}
+.filterWrap .filterList ul li select option{
+    letter-spacing: 2px;
+}
+
+.filterWrap .filterList ul li select:focus{
+    box-shadow: 0 0 5px #ffccbc;
+    border: 1px solid #ffccbc;
+    border-radius: 1rem;
+}
+
+.filterWrap .filterList ul li select:focus-visible{
+    outline: 1px solid #ffccbc;
+    border-radius: 1rem;
+}
+
+.filterWrap .filterList .search{
+    cursor: pointer;
+    padding: 10px;
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: var(--font-sizeM);
+    text-align: center;
+    line-height: 20px;
+    background: #000000;
+    border: 1px solid #000000;
+    color: var(--color-white);
+    font-family: 'Noto Serif KR', serif;
+}
+
+
+
 /* footer */
 
 footer{
@@ -186,159 +294,3 @@ footer .footerWrap{
     height: 70px;
     line-height: 70px;
 }
-
-/* section1 */
-
-.section1{
-    width: 100%;
-    height: 835px;
-    margin-top: 100px;
-    background: beige;
-    z-index: -5;
-}
-
-.section1 div{
-    text-align: center;
-}
-
-.section1-title{
-    font-family: 'Cafe24Ssurround';
-}
-
-.title1{
-    font-size: var(--font-sizeL);
-    padding-top: 100px;
-    margin-bottom: 30px;
-}
-
-.title2{
-    font-size: 5em;
-    margin-bottom: 30px;
-}
-
-.title3{
-    font-size: var(--font-sizeXXL);
-    width: 1000px;
-    margin: 0 auto 30px auto;
-    padding: 20px 20px;
-    background: coral;
-    border-radius: 50px;
-    color: var(--color-white);
-}
-
-
-/* section2 */
-
-.section2{
-    width: 100%;
-    height: 835px;
-    background: burlywood;
-}
-
-/* section3*/
-
-.section3{
-    width: 100%;
-    height: 835px;
-    background: beige;
-}
-
-.listTitle{
-    font-size: var(--font-sizeL);
-    padding-top: 50px;
-    text-align: center;
-    font-family: 'KotraBold';
-}
-
-.enterpriseList{
-    display: flex;
-    margin-top: 30px;
-    justify-content: space-evenly;
-}
-.enterpriseCard{
-    width: 300px;
-    height: 500px;
-}
-
-.cardImg{
-    width: 250px;
-    height: 300px;
-    border: 1px solid black;
-    text-align: center;
-}
-.cardInfo div{
-    justify-content: space-between;
-    display: flex;
-}
-
-.addBtn{
-    text-align: center;
-}
-
-/* section4 */
-
-.section4{
-    width: 100%;
-    height: 835px;
-}
-
-.videoTitle{
-    text-align: center;
-    font-size: var(--font-sizeL);
-    padding-top: 30px;
-    font-family: 'KotraBold';
-}
-
-.section4 .video {
-    margin-top: 100px;
-    text-align: center;
-}
-
-
-/* section5 */
-
-.section5{
-    width: 100%;
-    height: 835px;
-    background: #fafafa;
-}
-.cardList{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 100px;
-}
-.myInfoCard{
-    width: 250px;
-    height: 350px;
-    margin: auto 0;
-    -webkit-transition: all ease .1s;
-    -ms-transition: all ease 1s;
-    -o-transition: all ease 1s;
-    box-shadow: 10px 10px 20px #e1e1e1;
-    border-radius: 30px;
-}
-.myInfoCard:hover{
-    background: #FFF6E8;
-    transition: all 0.5s ease-in-out; ;
-}
-
-.myInfoCard a{
-    width: 300px;
-    display: inline;
-}
-
-.section5 .myInfoCard img{
-    width: 200px;
-    height: 200px;
-    margin: 30px auto 0px auto;
-    display: block;
-}
-
-.section5 .myInfoCard a h3{
-    text-align: center;
-    margin-top: 50px;
-    text-decoration: none;
-    color: black;
-}
-
-

@@ -18,8 +18,8 @@ public class CompanyDAO {
 		}
 	}
 	
-	// 매개변수로 받은 기업의 모든 정보를 반환(VO)
-	public DismemberVO getUser(int seq) {
+	// 매개변수로 받은 companyseq에 해당하는 기업의 모든 정보를 반환(VO)
+	public CompanyVO getCompany(int seq) {
 		CompanyVO vo = new CompanyVO();
 		Connection con = null;
 		PreparedStatement pstmt = null;	

@@ -13,6 +13,7 @@
 
     --color-white: #fff;
     --color-black: #313131;
+    --color-lightgray: #dcdcdc90;
 }
 
 *{
@@ -132,11 +133,6 @@ footer .footerWrap{
     border-radius: 50px;
     color: var(--color-white);
 }
-.section1 div img{
-}
-
-
-
 
 
 /* section2 */
@@ -157,7 +153,7 @@ footer .footerWrap{
 
 .listTitle{
     font-size: var(--font-sizeL);
-    padding-top: 30px;
+    padding-top: 50px;
     text-align: center;
 }
 
@@ -210,17 +206,43 @@ footer .footerWrap{
 .section5{
     width: 100%;
     height: 835px;
-    justify-content: space-evenly;
-    background: coral;
+    background: var(--color-white);
+}
+.cardList{
     display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
+.myInfoCard{
+    width: 250px;
+    height: 350px;
+    margin: auto 0;
+    -webkit-transition: all ease .1s;
+    -ms-transition: all ease 1s;
+    -o-transition: all ease 1s;
+    box-shadow: 10px 10px 20px #e1e1e1;
+    border-radius: 30px;
+}
+.myInfoCard:hover{
+    background: #FFF6E8;
+    transition: all 0.5s ease-in-out; ;
 }
 
 .myInfoCard a{
     width: 300px;
-    height: 500px;
-    display: grid;
+    display: inline;
+}
+
+.section5 .myInfoCard img{
+    width: 200px;
+    height: 200px;
+    margin: 30px auto 0px auto;
+    display: block;
 }
 
 .section5 .myInfoCard a h3{
     text-align: center;
+    margin-top: 50px;
+    text-decoration: none;
 }
+

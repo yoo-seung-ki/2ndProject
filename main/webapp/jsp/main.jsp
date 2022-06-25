@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -14,147 +14,150 @@
             <div class="logo">
                 <a href="../html/main.html">
                     <img src="../img/logo.png" alt="">
-                    <div>¿¹ÀÏÀå¾ÖÀÎ¹Ú¶÷È¸</div>
+                    <div>ì˜ˆì¼ìž¥ì• ì¸ë°•ëžŒíšŒ</div>
                 </a>
             </div>
             <div class="navMenu">
                 <ul>
-                    <li><a href="">¹Ú¶÷È¸ ¾È³»</a></li>
-                    <li><a href="">¿Â¶óÀÎ Ã¤¿ë°ü</a></li>
-                    <li><a href="">Ãë¾÷ ÄÁÅÙÃ÷</a></li>
-                    <li><a href="">³» Á¤º¸ °ü¸®</a></li>
+                    <li><a href="">íŒ€ì›ì†Œê°œ</a></li>A
+                    <li><a href="">ì˜¨ë¼ì¸ ì±„ìš©ê´€</a></li>
+                    <li><a href="">ì·¨ì—… ì»¨í…ì¸ </a></li>
+                    <li><a href="">ë‚´ ì •ë³´ ê´€ë¦¬</a></li>
                 </ul>
             </div>
-            <button class="modeBtn">°í´ëºñ</button>
+            <button class="modeBtn">ê³ ëŒ€ë¹„</button>
             <div class="signin-signup">
-                <button class="signin">·Î±×ÀÎ</button>
-                <button class="signup">È¸¿ø°¡ÀÔ</button>
+                <button class="signin">ë¡œê·¸ì¸</button>
+                <button class="signup">íšŒì›ê°€ìž…</button>
             </div>
         </div>
     </header>
     <main>
         <section class="section1">
             <div class="section1-title">
-                <div class="title1">2022 ¿¹ÀÏ On-Line</div>
-                <div class="title2">Àå¾ÖÀÎ ÀÏÀÚ¸® ¹Ú¶÷È¸</div>
-                <div class="title3">2022-06-22(¼ö) ~ 2022-06-22(¼ö)</div>
+                <div class="title1">2022 ì˜ˆì¼ On-Line</div>
+                <div class="title2">ìž¥ì• ì¸ ì¼ìžë¦¬ ë°•ëžŒíšŒ</div>
+                <div class="title3">2022-06-22(ìˆ˜) ~ 2022-06-22(ìˆ˜)</div>
             </div>
             <div>
-                <img class="sectionImg" src="../img/mainImg.png" alt="¸ÞÀÎÈ­¸é">
+                <img class="sectionImg" src="../img/mainImg.png" alt="ë©”ì¸í™”ë©´">
             </div>
         </section>
         <section class="section2">
-            <img class="sectionImg" src="" alt="¹Ú¶÷È¸¾È³»">
+            <img class="sectionImg" src="" alt="ë°•ëžŒíšŒì•ˆë‚´">
         </section>
         <section class="section3">
             <div>
-                <h2 class="listTitle">Âü¿© ±â¾÷ ¸®½ºÆ®</h2>
+                <h2 class="listTitle">ì°¸ì—¬ ê¸°ì—… ë¦¬ìŠ¤íŠ¸</h2>
             </div>
             <div class="enterpriseList">
                 <div class="enterpriseCard">
                     <a href="">
-                    <img class="cardImg" src="" alt="Ä«µå1">
+                    <img class="cardImg" src="" alt="ì¹´ë“œ1">
                     <div class="cardInfo">
                         <div>
-                            <p>±â¾÷ÀÌ¸§</p>
-                            <p>ÀÔ»çÇöÈ²</p>
+                            <p>ê¸°ì—…ì´ë¦„</p>
+                            <p>ìž…ì‚¬í˜„í™©</p>
                         </div>
                         <div>
-                            <p>±â¾÷À§Ä¡</p>
-                            <p>Á÷¹«</p>
+                            <p>ê¸°ì—…ìœ„ì¹˜</p>
+                            <p>ì§ë¬´</p>
                         </div>
                         <div>
-                            <p>Áö¿ø±â°£</p>
+                            <p>ì§€ì›ê¸°ê°„</p>
                         </div>
                     </div>
                     </a>
                 </div>
                 <div class="enterpriseCard">
                     <a href="">
-                    <img class="cardImg" src="" alt="Ä«µå2">
+                    <img class="cardImg" src="" alt="ì¹´ë“œ2">
                     <div class="cardInfo">
                         <div>
-                            <span>±â¾÷ÀÌ¸§</span>
-                            <span>ÀÔ»çÇöÈ²</span>
+                            <span>ê¸°ì—…ì´ë¦„</span>
+                            <span>ìž…ì‚¬í˜„í™©</span>
                         </div>
                         <div>
-                            <span>±â¾÷À§Ä¡</span>
-                            <span>Á÷¹«</span>
+                            <span>ê¸°ì—…ìœ„ì¹˜</span>
+                            <span>ì§ë¬´</span>
                         </div>
                         <div>
-                            <span>Áö¿ø±â°£</span>
+                            <span>ì§€ì›ê¸°ê°„</span>
                         </div>
                     </div>
                 </div>
                 <div class="enterpriseCard">
                     <a href="">
-                    <img class="cardImg" src="" alt="Ä«µå3">
+                    <img class="cardImg" src="" alt="ì¹´ë“œ3">
                     <div class="cardInfo">
                         <div>
-                            <span>±â¾÷ÀÌ¸§</span>
-                            <span>ÀÔ»çÇöÈ²</span>
+                            <span>ê¸°ì—…ì´ë¦„</span>
+                            <span>ìž…ì‚¬í˜„í™©</span>
                         </div>
                         <div>
-                            <span>±â¾÷À§Ä¡</span>
-                            <span>Á÷¹«</span>
+                            <span>ê¸°ì—…ìœ„ì¹˜</span>
+                            <span>ì§ë¬´</span>
                         </div>
                         <div>
-                            <span>Áö¿ø±â°£</span>
+                            <span>ì§€ì›ê¸°ê°„</span>
                         </div>
                     </div>
                 </div>
                 <div class="enterpriseCard">
                     <a href="">
-                    <img class="cardImg" src="" alt="Ä«µå4">
+                    <img class="cardImg" src="" alt="ì¹´ë“œ4">
                     <div class="cardInfo">
                         <div>
-                            <span>±â¾÷ÀÌ¸§</span>
-                            <span>ÀÔ»çÇöÈ²</span>
+                            <span>ê¸°ì—…ì´ë¦„</span>
+                            <span>ìž…ì‚¬í˜„í™©</span>
                         </div>
                         <div>
-                            <span>±â¾÷À§Ä¡</span>
-                            <span>Á÷¹«</span>
+                            <span>ê¸°ì—…ìœ„ì¹˜</span>
+                            <span>ì§ë¬´</span>
                         </div>
                         <div>
-                            <span>Áö¿ø±â°£</span>
+                            <span>ì§€ì›ê¸°ê°„</span>
                         </div>
                     </div>
                 </div>
             </div>
             <div>
-                <h2 class="addBtn"><a href="">´õº¸±â</a></h2>
+                <h2 class="addBtn"><a href="">ë”ë³´ê¸°</a></h2>
             </div>
         </section>
         <section class="section4">
-            <h2 class="videoTitle">Ãë¾÷ ÄÁÅÙÃ÷</h2>
+            <h2 class="videoTitle">ì·¨ì—… ì»¨í…ì¸ </h2>
             <div class="video">
                 <iframe width="800" height="500" src="https://www.youtube.com/embed/HdzoRAsgqsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
         <section class="section5">
-            <div class="myInfoCard">
-                <a href="">
-                    <img src="" alt="³» Á¤º¸ °ü¸®">
-                    <h3>³» Á¤º¸ °ü¸®</h3>
-                </a>
-            </div>
-            <div class="myInfoCard">
-                <a href="">
-                    <img src="" alt="ÀÔ»çÁö¿ø¼­ °ü¸®">
-                    <h3>ÀÔ»çÁö¿ø¼­ °ü¸®</h3>
-                </a>
-            </div>
-            <div class="myInfoCard">
-                <a href="">
-                    <img src="" alt="°ü½É ±â¾÷ °ü¸®">
-                    <h3>°ü½É ±â¾÷ °ü¸®</h3>
-                </a>
-            </div>
-            <div class="myInfoCard">
-                <a href="">
-                    <img src="" alt="±â¾÷Áö¿ø ÇöÈ²">
-                    <h3>±â¾÷Áö¿ø ÇöÈ²</h3>
-                </a>
+            <h2 class="listTitle">ì°¸ì—¬ ê¸°ì—… ë¦¬ìŠ¤íŠ¸</h2>
+            <div class="cardList">
+                <div class="myInfoCard">
+                    <a href="">
+                        <img src="../img/user.png" alt="ë‚´ ì •ë³´ ê´€ë¦¬">
+                        <h3>ë‚´ ì •ë³´ ê´€ë¦¬</h3>
+                    </a>
+                </div>
+                <div class="myInfoCard">
+                    <a href="">
+                        <img src="../img/info.png" alt="ìž…ì‚¬ì§€ì›ì„œ ê´€ë¦¬">
+                        <h3>ìž…ì‚¬ì§€ì›ì„œ ê´€ë¦¬</h3>
+                    </a>
+                </div>
+                <div class="myInfoCard">
+                    <a href="">
+                        <img src="../img/attention.png" alt="ê´€ì‹¬ ê¸°ì—… ê´€ë¦¬">
+                        <h3>ê´€ì‹¬ ê¸°ì—… ê´€ë¦¬</h3>
+                    </a>
+                </div>
+                <div class="myInfoCard">
+                    <a href="">
+                        <img src="../img/enterprise.png" alt="ê¸°ì—…ì§€ì› í˜„í™©">
+                        <h3>ê¸°ì—…ì§€ì› í˜„í™©</h3>
+                    </a>
+                </div>
             </div>
         </section>
     </main>

@@ -18,7 +18,7 @@ public class CompanyDAO {
 		}
 	}
 	
-	// ¸Å°³º¯¼ö·Î ¹ŞÀº companyseq¿¡ ÇØ´çÇÏ´Â ±â¾÷ÀÇ ¸ğµç Á¤º¸¸¦ ¹İÈ¯(VO)
+	// ë§¤ê°œë³€ìˆ˜ë¡œ companyseqë¥¼ ë°›ì•„ì„œ í•´ë‹¹ seqì— í•´ë‹¹í•˜ëŠ” ê¸°ì—…ì˜ ëª¨ë“  ì •ë³´ë¥¼ ë°˜í™˜(VO)
 	public CompanyVO getCompany(int seq) {
 		CompanyVO vo = new CompanyVO();
 		Connection con = null;

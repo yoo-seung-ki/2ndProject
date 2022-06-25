@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>채용관</title>
     <link rel="stylesheet" href="../css/employment.css">
 </head>
 <body>
-
+<!-- 헤더  -->
 <header>
     <div class="headerWrap">
         <div class="logo">
@@ -35,6 +35,7 @@
             <button class="signup">회원가입</button>
         </div>
     </div>
+</header>
 
 <!--  메인배너  -->
 
@@ -103,32 +104,15 @@
                             </select>
                         </li>
                     </ul>
-                    <button class="search">검색</button>
+                    <button type="submit" class="search1">검색</button>
                 </div>
             </div>
         </form>
     </div>
 
-    <section class="section1">
-        <div class="section1-title">
-            <div class="title1">2022 예일 On-Line</div>
-            <div class="title2">장애인 일자리 박람회</div>
-            <div class="title3">2022-06-22(수) ~ 2022-06-22(수)</div>
-        </div>
-        <div>
-            <img class="sectionImg" src="../img/mainImg.png" alt="메인화면">
-        </div>
-    </section>
-    <section class="section2">
-        <div>
-            <h2 class="listTitle">팀원소개</h2>
-        </div>
-        <div>
-            <img class="sectionImg" src="" alt="팀원소개">
-        </div>
-    </section>
+<!--  채용관 리스트  -->
     <section class="section3">
-        <div>
+        <div class="text">
             <h2 class="listTitle">참여 기업 리스트</h2>
         </div>
         <div class="enterpriseList">
@@ -166,6 +150,7 @@
                             <span>지원기간</span>
                         </div>
                     </div>
+                </a>
             </div>
             <div class="enterpriseCard">
                 <a href="">
@@ -183,6 +168,7 @@
                             <span>지원기간</span>
                         </div>
                     </div>
+                </a>
             </div>
             <div class="enterpriseCard">
                 <a href="">
@@ -200,19 +186,105 @@
                             <span>지원기간</span>
                         </div>
                     </div>
+                </a>
+            </div>
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="" alt="카드4">
+                    <div class="cardInfo">
+                        <div>
+                            <span>기업이름</span>
+                            <span>입사현황</span>
+                        </div>
+                        <div>
+                            <span>기업위치</span>
+                            <span>직무</span>
+                        </div>
+                        <div>
+                            <span>지원기간</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="" alt="카드4">
+                    <div class="cardInfo">
+                        <div>
+                            <span>기업이름</span>
+                            <span>입사현황</span>
+                        </div>
+                        <div>
+                            <span>기업위치</span>
+                            <span>직무</span>
+                        </div>
+                        <div>
+                            <span>지원기간</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="" alt="카드4">
+                    <div class="cardInfo">
+                        <div>
+                            <span>기업이름</span>
+                            <span>입사현황</span>
+                        </div>
+                        <div>
+                            <span>기업위치</span>
+                            <span>직무</span>
+                        </div>
+                        <div>
+                            <span>지원기간</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="" alt="카드4">
+                    <div class="cardInfo">
+                        <div>
+                            <span>기업이름</span>
+                            <span>입사현황</span>
+                        </div>
+                        <div>
+                            <span>기업위치</span>
+                            <span>직무</span>
+                        </div>
+                        <div>
+                            <span>지원기간</span>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
-        <div>
-            <h2 class="addBtn"><a href="">더보기</a></h2>
-        </div>
     </section>
+    <div class="searchWrap">
+        <div>
+            <input type="text" placeholder="기업명 입력">
+            <button type="submit" class="search2">검색</button>
+        </div>
+    </div>
+
+    <div class="list_number">
+        <div class="list_n_menu">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+        </div>
+    </div>
 
 
-<!--    <footer>-->
-<!--        <div class="footerWrap">-->
-<!--            <div>copyright 2022. All RIGHT RESERVED.</div>-->
-<!--        </div>-->
-<!--    </footer>-->
-</header>
+    <footer>
+        <div class="footerWrap">
+            <div>copyright 2022. All RIGHT RESERVED.</div>
+        </div>
+    </footer>
+
 </body>
 </html>

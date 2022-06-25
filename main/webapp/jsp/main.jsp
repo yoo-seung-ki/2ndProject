@@ -68,72 +68,75 @@
             <div class="enterpriseList">
                 <div class="enterpriseCard">
                     <a href="">
-                    <img class="cardImg" src="" alt="카드1">
-                    <div class="cardInfo">
-                        <div>
-                            <p>기업이름</p>
-                            <p>입사현황</p>
+                        <img class="cardImg" src="" alt="카드1">
+                        <div class="cardInfo">
+                            <div>
+                                <p>기업이름</p>
+                                <p>입사현황</p>
+                            </div>
+                            <div>
+                                <p>기업위치</p>
+                                <p>직무</p>
+                            </div>
+                            <div>
+                                <p>지원기간</p>
+                            </div>
                         </div>
-                        <div>
-                            <p>기업위치</p>
-                            <p>직무</p>
-                        </div>
-                        <div>
-                            <p>지원기간</p>
-                        </div>
-                    </div>
                     </a>
                 </div>
                 <div class="enterpriseCard">
                     <a href="">
-                    <img class="cardImg" src="" alt="카드2">
-                    <div class="cardInfo">
-                        <div>
-                            <span>기업이름</span>
-                            <span>입사현황</span>
+                        <img class="cardImg" src="" alt="카드2">
+                        <div class="cardInfo">
+                            <div>
+                                <span>기업이름</span>
+                                <span>입사현황</span>
+                            </div>
+                            <div>
+                                <span>기업위치</span>
+                                <span>직무</span>
+                            </div>
+                            <div>
+                                <span>지원기간</span>
+                            </div>
                         </div>
-                        <div>
-                            <span>기업위치</span>
-                            <span>직무</span>
-                        </div>
-                        <div>
-                            <span>지원기간</span>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="enterpriseCard">
                     <a href="">
-                    <img class="cardImg" src="" alt="카드3">
-                    <div class="cardInfo">
-                        <div>
-                            <span>기업이름</span>
-                            <span>입사현황</span>
+                        <img class="cardImg" src="" alt="카드3">
+                        <div class="cardInfo">
+                            <div>
+                                <span>기업이름</span>
+                                <span>입사현황</span>
+                            </div>
+                            <div>
+                                <span>기업위치</span>
+                                <span>직무</span>
+                            </div>
+                            <div>
+                                <span>지원기간</span>
+                            </div>
                         </div>
-                        <div>
-                            <span>기업위치</span>
-                            <span>직무</span>
-                        </div>
-                        <div>
-                            <span>지원기간</span>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="enterpriseCard">
                     <a href="">
-                    <img class="cardImg" src="" alt="카드4">
-                    <div class="cardInfo">
-                        <div>
-                            <span>기업이름</span>
-                            <span>입사현황</span>
+                        <img class="cardImg" src="" alt="카드4">
+                        <div class="cardInfo">
+                            <div>
+                                <span>기업이름</span>
+                                <span>입사현황</span>
+                            </div>
+                            <div>
+                                <span>기업위치</span>
+                                <span>직무</span>
+                            </div>
+                            <div>
+                                <span>지원기간</span>
+                            </div>
                         </div>
-                        <div>
-                            <span>기업위치</span>
-                            <span>직무</span>
-                        </div>
-                        <div>
-                            <span>지원기간</span>
-                        </div>
-                    </div>
+                    </a>
                 </div>
             </div>
             <div>

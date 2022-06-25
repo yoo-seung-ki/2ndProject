@@ -32,14 +32,14 @@ public class CompanyDAO {
 			pstmt.setInt(1, seq);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-	            vo.setCompanyname(rs.getString("Name"));
+	            vo.setCompanyname(rs.getString("Companyname"));
 	            vo.setCeo(rs.getString("Ceo"));
 	            vo.setAddress(rs.getString("Address"));
 	            vo.setHomepage(rs.getString("Homepage"));
 	            vo.setCompanytype(rs.getString("CompanyType"));
 	            vo.setCompanycontent(rs.getString("CompanyContent"));
 	            vo.setCompanysize(rs.getString("Companysize"));
-	            vo.setRecrutype(rs.getString("recrutype"));
+	            vo.setRecrutype(rs.getString("Recrutype"));
 	            vo.setWorkcontent(rs.getString("Workcontent"));
 	            vo.setGraduate(rs.getString("Graduate"));
 	            vo.setEmploycase(rs.getString("Employcase"));
@@ -66,6 +66,5 @@ public class CompanyDAO {
 		}
 		return vo;
 	}
-	
 	
 }

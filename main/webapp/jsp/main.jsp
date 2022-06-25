@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -7,6 +7,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/main.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -19,13 +20,22 @@
             </div>
             <div class="navMenu">
                 <ul>
-                    <li><a href="">팀원소개</a></li>A
+                    <li><a href="">팀원소개</a></li>
                     <li><a href="">온라인 채용관</a></li>
                     <li><a href="">취업 컨텐츠</a></li>
                     <li><a href="">내 정보 관리</a></li>
                 </ul>
             </div>
-            <button class="modeBtn">고대비</button>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <script>
+                var check = $("input[type='checkbox']");
+                check.click(function(){
+                    $("p").toggle();
+                });
+            </script>
             <div class="signin-signup">
                 <button class="signin">로그인</button>
                 <button class="signup">회원가입</button>
@@ -44,7 +54,12 @@
             </div>
         </section>
         <section class="section2">
-            <img class="sectionImg" src="" alt="박람회안내">
+            <div>
+                <h2 class="listTitle">팀원소개</h2>
+            </div>
+            <div>
+                <img class="sectionImg" src="" alt="팀원소개">
+            </div>
         </section>
         <section class="section3">
             <div>
@@ -132,7 +147,7 @@
             </div>
         </section>
         <section class="section5">
-            <h2 class="listTitle">참여 기업 리스트</h2>
+            <h2 class="listTitle">내 정보 관리</h2>
             <div class="cardList">
                 <div class="myInfoCard">
                     <a href="">

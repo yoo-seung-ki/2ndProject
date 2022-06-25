@@ -32,13 +32,32 @@ public class CompanyDAO {
 			pstmt.setInt(1, seq);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				vo.setMemberseq(rs.getInt("Companyseq"));
-				vo.setName(rs.getString("Name"));
-				vo.setPersonid1(rs.getString("Personid1"));
-				vo.setArea(rs.getString("Area"));
-				vo.setMobile(rs.getString("Mobile"));
-				vo.setDiscase(rs.getString("Discase"));
-				vo.setDisgrade(rs.getString("Disgrade"));
+	            vo.setCompanyname(rs.getString("Name"));
+	            vo.setCeo(rs.getString("Ceo"));
+	            vo.setAddress(rs.getString("Address"));
+	            vo.setHomepage(rs.getString("Homepage"));
+	            vo.setCompanytype(rs.getString("CompanyType"));
+	            vo.setCompanycontent(rs.getString("CompanyContent"));
+	            vo.setCompanysize(rs.getString("Companysize"));
+	            vo.setRecrutype(rs.getString("recrutype"));
+	            vo.setWorkcontent(rs.getString("Workcontent"));
+	            vo.setGraduate(rs.getString("Graduate"));
+	            vo.setEmploycase(rs.getString("Employcase"));
+	            vo.setPaytype(rs.getString("Paytype"));
+	            vo.setSeverance(rs.getString("Severance"));
+	            vo.setWorktime(rs.getString("Worktime"));
+				vo.setRecrusize(rs.getInt("Recrusize"));
+				vo.setWorkarea(rs.getString("Workarea"));
+				vo.setCareer(rs.getString("Career"));
+				vo.setInsurance(rs.getString("Insurance"));
+				vo.setBonus(rs.getString("Bonus"));
+				vo.setAddwork(rs.getString("Addwork"));
+				vo.setMajor(rs.getString("Major"));
+				vo.setComputer(rs.getString("Computer"));
+				vo.setWelfare(rs.getString("Welfare"));
+				vo.setLicense(rs.getString("License"));
+				vo.setFacil(rs.getString("Facil"));
+				vo.setTreatment(rs.getString("Treatment"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

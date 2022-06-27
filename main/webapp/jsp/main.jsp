@@ -128,13 +128,6 @@
                 <h2 class="listTitle">참여 기업 리스트</h2>
             </div>
             <div class="enterpriseList">
-       
-             
-                <div class="enterpriseCard">
-                    <a href="">
-                        <img class="cardImg" src="" alt="카드3">
-                        <span>입사현황</span>
-                        <div class="cardInfo">
                 <% for(int i = 0; i < 4; i++ ) { %>
             <div class="enterpriseCard">
                 <a href="">
@@ -145,7 +138,7 @@
                             
                         </div>
                         <div>
-                            <p><%=tenlist.get(i).getAddress() %></p><br>
+                            <p><%=tenlist.get(i).getAddress().substring(0,7) %></p><br>
                             <p><%=tenlist.get(i).getRecrutype() %></p><br>
                         </div>
                         <div>

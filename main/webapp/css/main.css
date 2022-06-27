@@ -251,9 +251,9 @@ footer .footerWrap{
 }
 
 .enterpriseList{
-    display: flex;
     margin-top: 30px;
     justify-content: space-evenly;
+    display: flex;
 }
 .enterpriseCard{
     width: 300px;
@@ -265,10 +265,6 @@ footer .footerWrap{
     height: 300px;
     border: 1px solid black;
     text-align: center;
-}
-.cardInfo div{
-    justify-content: space-between;
-    display: flex;
 }
 
 .addBtn{

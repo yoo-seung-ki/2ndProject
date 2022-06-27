@@ -4,6 +4,36 @@
 <%@ page import="java.util.*" %>
 <% List<CompanyVO> Cdaolist = Cdao.getCompanyList(); %>
 
+<% 
+
+	// 페이징 넘버 작업
+	
+	// 한 페이지에 보여줄 게시글 개수
+	int pageSize = 8;
+	// 현재 페이지
+	String pageNum = request.getParameter("pageNum");
+	// pageNum이 null이라는 뜻은 처음 이 사이트에 들어왔다는 뜻이며, 그러한 경우 1번 페이지를 보여준다.
+	if(pageNum == null) {
+		pageNum = "1";
+	}
+	
+	// 현재 페이지가 몇번째 페이지인지 계산
+	int currentPage = Integer.parseInt(pageNum);
+	
+	// 첫번째 글이 전체 게시글중 몇번째인지 계산
+	int startRow = (currentPage - 1) * pageSize + 1;
+	
+	// 모든 기업의 리스트를 가져옴 
+	List<CompanyVO> list = Cdao.getCompanyList();
+	
+	// 모든 기업의 리스트를 10개 단위로 잘라서 들고옴
+	List<CompanyVO> tenlist = Cdao.getCompanyListTen(startRow, pageSize);
+
+	// 기업이 총 몇개인지
+	int Companycnt = list.size();
+
+%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -98,78 +128,37 @@
                 <h2 class="listTitle">참여 기업 리스트</h2>
             </div>
             <div class="enterpriseList">
-                <div class="enterpriseCard">
-                    <a href="">
-                        <img class="cardImg" src="" alt="카드1">
-                        <p>입사현황</p>
-                        <div class="cardInfo">
-                            <div>
-                                <p><%=Cdaolist.get(0).getCompanyname() %></p>
-                            </div>
-                            <div>
-                                <p><%=Cdaolist.get(0).getAddress() %></p><br>
-                                <p><%=Cdaolist.get(0).getWorktype() %></p>
-                            </div>
-                            <div>
-                                <p>2022.06.25 ~ 2022.07.25</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="enterpriseCard">
-                    <a href="">
-                        <img class="cardImg" src="" alt="카드2">
-                        <span>입사현황</span>
-                        <div class="cardInfo">
-                            <div>
-                                <span><%=Cdaolist.get(1).getCompanyname() %></span>
-                            </div>
-                            <div>
-                                <span><%=Cdaolist.get(1).getAddress() %></span><br>
-                                <span><%=Cdaolist.get(1).getWorktype() %></span>
-                            </div>
-                            <div>
-                                <span>2022.06.30 ~ 2022.08.01</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+       
+             
                 <div class="enterpriseCard">
                     <a href="">
                         <img class="cardImg" src="" alt="카드3">
                         <span>입사현황</span>
                         <div class="cardInfo">
-                            <div>
-                                <span><%=Cdaolist.get(0).getCompanyname() %></span>
-                            </div>
-                            <div>
-                                <span><%=Cdaolist.get(0).getAddress() %></span><br>
-                                <span><%=Cdaolist.get(0).getWorktype() %></span>
-                            </div>
-                            <div>
-                                <span>2022.05.30 ~ 2022.07.16</span>
-                            </div>
+                <% for(int i = 0; i < 4; i++ ) { %>
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
+                    <div class="cardInfo">
+                        <div>
+                            <p><%=tenlist.get(i).getCompanyname() %></p><br>
+                            
+                        </div>
+                        <div>
+                            <p><%=tenlist.get(i).getAddress() %></p><br>
+                            <p><%=tenlist.get(i).getRecrutype() %></p><br>
+                        </div>
+                        <div>
+                            <p>지원기간</p>
+                        </div>
+                    </div> <!-- cardInfo -->
+                </a>
+            </div> <!-- enterpriseCard -->
+            <% } %>
                         </div>
                     </a>
                 </div>
-                <div class="enterpriseCard">
-                    <a href="">
-                        <img class="cardImg" src="" alt="카드4">
-                        <span>입사현황</span>
-                        <div class="cardInfo">
-                            <div>
-                                <span><%=Cdaolist.get(0).getCompanyname() %></span>
-                            </div>
-                            <div>
-                                <span><%=Cdaolist.get(0).getAddress() %></span><br>
-                                <span><%=Cdaolist.get(0).getWorktype() %></span>
-                            </div>
-                            <div>
-                                <span>2022.05.15 ~ 2022.06.31</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+         
             </div>
             <div>
                 <h2 class="addBtn"><a href="">더보기</a></h2>

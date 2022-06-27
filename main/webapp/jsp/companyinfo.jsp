@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="Cdao" class="common.CompanyDAO" />
+<%@ page import="common.CompanyVO" %>
+<% int companyseq= Integer.parseInt(request.getParameter("name"));%>
+<% CompanyVO companyinfo = Cdao.getCompany(companyseq); %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -18,7 +22,7 @@
                 <img src="../img/logo.png" alt="">
                 <div class="title-text">예일장애인박람회</div>
             </a>
-        </div>
+        </div> <!-- logo -->
         <div class="navMenu">
             <ul>
                 <li>온라인 채용관</a></li>
@@ -85,10 +89,10 @@
   <!--회사 정보? -->
   <div class="company-info">
     <img src="../img/good1.png" class="good"  width="45" height="45">기업정보
-<table  width="1200" height="120">
+<table style="width:1200px; height:120px;">
     <tr>
         <th>기&nbsp;&nbsp;&nbsp;업&nbsp;&nbsp;&nbsp;명</th>
-        <td colspan="3">ㅇㅇ</td>
+        <td colspan="3"><%=companyinfo.getCompanyname() %></td>
         <th>홈 페 이 지</th>
         <td colspan="3">www.naver.com</td>
     </tr>

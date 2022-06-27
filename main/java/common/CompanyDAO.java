@@ -33,6 +33,7 @@ public class CompanyDAO {
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				vo.setCompanyname(rs.getString("Companyname"));
+				vo.setLogo(rs.getString("Logo"));
 				vo.setCeo(rs.getString("Ceo"));
 				vo.setAddress(rs.getString("Address"));
 				vo.setHomepage(rs.getString("Homepage"));
@@ -83,6 +84,7 @@ public class CompanyDAO {
 			while(rs.next()) {
 				CompanyVO vo = new CompanyVO();
 				vo.setCompanyseq(rs.getInt("Companyseq"));
+				vo.setLogo(rs.getString("Logo"));
 				vo.setCompanyname(rs.getString("Companyname"));
 				vo.setCeo(rs.getString("Ceo"));
 				vo.setCreateyear(rs.getString("Createyear"));
@@ -158,7 +160,7 @@ public class CompanyDAO {
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "select companyname,address,recrutype,emplodate from mjt order By companyseq desc limit ?, ?";
+			sql = "select companyname,logo,address,recrutype,emplodate from mjt order By companyseq desc limit ?, ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, startRow - 1);
 			pstmt.setInt(2, pageSize);
@@ -167,6 +169,7 @@ public class CompanyDAO {
 			while(rs.next()) {
 				CompanyVO vo = new CompanyVO();
 				vo.setCompanyname(rs.getString("Companyname"));
+				vo.setLogo(rs.getString("Logo"));
 				vo.setAddress(rs.getString("Address"));
 				vo.setRecrutype(rs.getString("Recrutype"));
 				vo.setEmplodate(rs.getString("Emplodate"));

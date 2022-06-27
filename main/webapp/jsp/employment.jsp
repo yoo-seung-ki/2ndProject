@@ -178,7 +178,7 @@
         <div class="enterpriseList">
         <% for(int i = 0; i < tenlist.size(); i++ ) { %>
             <div class="enterpriseCard">
-                <a href="">`
+                <a href="companyinfo.jsp?name=<%=tenlist.get(i).getCompanyseq()%>">
                     <img class="cardImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
                     <div class="cardInfo">
                         <div>
@@ -193,7 +193,7 @@
                             
                         </div>
                         <div>
-                            <p>지원기간</p>
+                            <p><%=tenlist.get(i).getEmplodate() %></p>
                         </div>
                     </div> <!-- cardInfo -->
                 </a>

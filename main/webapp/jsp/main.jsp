@@ -1,216 +1,377 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<jsp:useBean id="Cdao" class="common.CompanyDAO" />
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="common.CompanyDAO" %>
 <%@ page import="common.CompanyVO" %>
 <%@ page import="java.util.*" %>
+<% CompanyDAO Cdao = new CompanyDAO(); %>
 <% List<CompanyVO> Cdaolist = Cdao.getCompanyList(); %>
+    
+<% 
 
+   // 페이징 넘버 작업
+   
+   // 한 페이지에 보여줄 게시글 개수
+   int pageSize = 8;
+   // 현재 페이지
+   String pageNum = request.getParameter("pageNum");
+   // pageNum이 null이라는 뜻은 처음 이 사이트에 들어왔다는 뜻이며, 그러한 경우 1번 페이지를 보여준다.
+   if(pageNum == null) {
+      pageNum = "1";
+   }
+   
+   // 현재 페이지가 몇번째 페이지인지 계산
+   int currentPage = Integer.parseInt(pageNum);
+   
+   // 첫번째 글이 전체 게시글중 몇번째인지 계산
+   int startRow = (currentPage - 1) * pageSize + 1;
+   
+   // 모든 기업의 리스트를 가져옴 
+   List<CompanyVO> list = Cdao.getCompanyList();
+   
+   // 모든 기업의 리스트를 10개 단위로 잘라서 들고옴
+   List<CompanyVO> tenlist = Cdao.getCompanyListTen(startRow, pageSize);
+
+   // 기업이 총 몇개인지
+   int Companycnt = list.size();
+   
+   
+
+
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-    <link rel="stylesheet" href="../css/main.css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <title>채용관</title>
+    <link rel="stylesheet" href="../css/employment.css">
 </head>
 <body>
-    <header>
-        <div class="headerWrap">
-            <div class="logo">
-                <a href="../html/main.html">
-                    <img src="../img/logo.png" alt="">
-                    <div class="title-text">예일장애인박람회</div>
+<!-- 헤더  -->
+<header>
+    <div class="headerWrap">
+        <div class="logo">
+            <a href="../jsp/main.jsp">
+                <img src="../img/logo.png" alt="">
+                <div>예일장애인박람회</div>
+            </a>
+        </div>
+        <div class="navMenu">
+            <ul>
+                <li>온라인 채용관</a></li>
+            </ul>
+        </div>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <script>
+            var check = $("input[type='checkbox']");
+            check.click(function(){
+                $("p").toggle();
+            });
+        </script>
+        <div class="signin-signup">
+            <button class="signin">로그인</button>
+            <button class="signup">회원가입</button>
+        </div>
+    </div>
+</header>
+
+<!--  메인배너  -->
+    <div class="bannerWrap">
+        <div class="banner">
+            <img src="../img/main.png" alt="배너">
+        </div>
+        <div class="bannerTitle">
+            <h1>온라인 채용관</h1>
+        </div>
+    </div>
+
+
+<!--  검색필터  -->
+    <div class="container">
+        <form>
+            <div class="filterWrap">
+                <div class="filterList">
+                    <ul>
+                        <li>
+                            <select>
+                                <option selected>모집직종</option>
+                                <option>경영·행정·사무직</option>
+                                <option>교육·법률</option>
+                                <option>보건·의료직</option>
+                                <option>예술·디자인·방송직</option>
+                                <option>여행·숙박·음식서비스직</option>
+                                <option>경호·경비·청소직</option>
+                                <option>영업·판매직</option>
+                                <option>운전·운송직</option>
+                                <option>생산·단순제조직</option>
+                                <option>문화·예술</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select>
+                                <option selected>모집지역</option>
+                                <option>부산전체</option>
+                                <option>강서구·사하구</option>
+                                <option>북구·사상구</option>
+                                <option>동래구·해운대구·기장군</option>
+                                <option>부산진구·연제구·수영구</option>
+                                <option>동구·남구</option>
+                                <option>영도구·중구·서구</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select>
+                                <option selected>근무시간</option>
+                                <option>전일</option>
+                                <option>반일</option>
+                                <option>교대근무</option>
+                                <option>시간협의</option>
+                            </select>
+                        </li>
+                        <li>
+                            <select>
+                                <option selected>우대사항</option>
+                                <option>운전가능자</option>
+                                <option>차량소지자</option>
+                                <option>인근거주자</option>
+                                <option>청년층우대</option>
+                                <option>장년(고량자)</option>
+                                <option>여성우대</option>
+                                <option>고용촉진지원금대상자</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <button type="submit" class="search1">검색</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+<!--  채용관 리스트  -->
+   
+    <section class="section3">
+        <div class="text">
+            <h2 class="listTitle">참여 기업 리스트</h2>
+        </div>
+        <div class="enterpriseList">
+        <% for(int i = 0; i < tenlist.size(); i++ ) { %>
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
+                    <div class="cardInfo">
+                        <div>
+                            <p><%=tenlist.get(i).getCompanyname() %></p><br>
+                            
+                        </div>
+                        <div>
+                            <p><%=tenlist.get(i).getAddress() %></p><br>
+                            <p><%=tenlist.get(i).getRecrutype() %></p><br>
+                        </div>
+                        <div>
+                            <p><%=tenlist.get(i).getEmplodate() %></p>
+                        </div>
+                    </div> <!-- cardInfo -->
+                </a>
+            </div> <!-- enterpriseCard -->
+            <% } %>
+            
+            <%-- <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="" alt="카드2">
+                    <div class="cardInfo">
+                        <div>
+                            <span><%=Cdaolist.get(1).getCompanyname() %></span>
+                            <span>입사현황</span>
+                        </div>
+                        <div>
+                            <span><%=Cdaolist.get(1).getAddress() %></span>
+                            <span><%=Cdaolist.get(1).getWorktype() %></span>
+                        </div>
+                        <div>
+                            <span>지원기간</span>
+                        </div>
+                    </div>
                 </a>
             </div>
-            <div class="navMenu">
-                <ul>
-                    <li><a href="">팀원소개</a></li>
-                    <li><a href="">온라인 채용관</a></li>
-                    <li><a href="">취업 컨텐츠</a></li>
-                    <li><a href="">내 정보 관리</a></li>
-                </ul>
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="" alt="카드3">
+                    <div class="cardInfo">
+                        <div>
+                            <span><%=Cdaolist.get(2).getCompanyname() %></span>
+                            <span>입사현황</span>
+                        </div>
+                        <div>
+                            <span><%=Cdaolist.get(2).getAddress() %></span>
+                            <span><%=Cdaolist.get(2).getWorktype() %></span>
+                        </div>
+                        <div>
+                            <span>지원기간</span>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div>고대비
-            <label class="switch">
-                <input type="checkbox" id="colormode">
-                <span class="slider round"></span>
-            </label>
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="" alt="카드4">
+                    <div class="cardInfo">
+                        <div>
+                            <span><%=Cdaolist.get(3).getCompanyname() %></span>
+                            <span>입사현황</span>
+                        </div>
+                        <div>
+                            <span><%=Cdaolist.get(3).getAddress() %></span>
+                            <span><%=Cdaolist.get(3).getWorktype() %></span>
+                        </div>
+                        <div>
+                            <span>지원기간</span>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <script>
-            $(document).ready(function() {
-                $("#colormode").change(function(){
-                if($("#colormode").is(":checked")){
-                    $("body").css("background-color","#000");
-                    $("body").css("color","#fff");
-                    $(".section1").css("background-color","#7d7a7a");
-                    $(".section2").css("background-color","#5a5959");
-                    $(".section3").css("background-color","#7d7a7a");
-                    $(".section4").css("background-color","#5a5959");
-                    $(".section5").css("background-color","#000");
-                    $(".myInfoCard").css("background-color","#fff");
-                    $(".myInfoCard").css("box-shadow","none");
-                    $(".title-text").css("color","#fff");
-                }else{
-                    $("body").css("background-color","#fff");
-                    $("body").css("color","#000");
-                    $(".section1").css("background-color","beige");
-                    $(".section2").css("background-color","burlywood");
-                    $(".section3").css("background-color","beige");
-                    $(".section4").css("background-color","#fff");
-                    $(".section5").css("background-color","#fff");
-                    $(".myInfoCard").css("background-color","#fff");
-                    $(".myInfoCard").css("box-shadow","10px 10px 20px #e1e1e1");
-                    $(".title-text").css("color","#000");
-                    
-                    
-                }
-            
-                });
-            });
-            </script>
-            <div class="signin-signup">
-                <button class="signin">로그인</button>
-                <button class="signup">회원가입</button>
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="" alt="카드5">
+                    <div class="cardInfo">
+                        <div>
+                            <span><%=Cdaolist.get(4).getCompanyname() %></span>
+                            <span>입사현황</span>
+                        </div>
+                        <div>
+                            <span><%=Cdaolist.get(4).getAddress() %></span>
+                            <span><%=Cdaolist.get(4).getWorktype() %></span>
+                        </div>
+                        <div>
+                            <span>지원기간</span>
+                        </div>
+                    </div>
+                </a>
             </div>
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="" alt="카드6">
+                    <div class="cardInfo">
+                        <div>
+                            <span><%=Cdaolist.get(5).getCompanyname() %></span>
+                            <span>입사현황</span>
+                        </div>
+                        <div>
+                            <span><%=Cdaolist.get(5).getAddress() %></span>
+                            <span><%=Cdaolist.get(5).getWorktype() %></span>
+                        </div>
+                        <div>
+                            <span>지원기간</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="" alt="카드7">
+                    <div class="cardInfo">
+                        <div>
+                            <span><%=Cdaolist.get(6).getCompanyname() %></span>
+                            <span>입사현황</span>
+                        </div>
+                        <div>
+                            <span><%=Cdaolist.get(6).getAddress() %></span>
+                            <span><%=Cdaolist.get(6).getWorktype() %></span>
+                        </div>
+                        <div>
+                            <span>지원기간</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="enterpriseCard">
+                <a href="">
+                    <img class="cardImg" src="" alt="카드8">
+                    <div class="cardInfo">
+                        <div>
+                            <span><%=Cdaolist.get(7).getCompanyname() %></span>
+                            <span>입사현황</span>
+                        </div>
+                        <div>
+                            <span><%=Cdaolist.get(7).getAddress() %></span>
+                            <span><%=Cdaolist.get(7).getWorktype() %></span>
+                        </div>
+                        <div>
+                            <span>지원기간</span>
+                        </div>
+                    </div>
+                </a>
+            </div> --%>
+        </div> <!-- enterpriseCard -->
+    </section> <!-- section3 -->
+    
+    <div class="searchWrap">
+        <div>
+            <input type="text" placeholder="기업명 입력">
+            <button type="submit" class="search2">검색</button>
         </div>
-    </header>
-    <main>
-        <section class="section1">
-            <div class="section1-title">
-                <div class="title1">2022 예일 On-Line</div>
-                <div class="title2">장애인 일자리 박람회</div>
-                <div class="title3">2022-06-22(수) ~ 2022-06-22(수)</div>
-            </div>
-            <div>
-                <img class="sectionImg" src="../img/mainImg.png" alt="메인화면">
-            </div>
-        </section>
-        <section class="section2">
-            <div>
-                <h2 class="listTitle">팀원소개</h2>
-            </div>
-            <div>
-                <img class="sectionImg" src="" alt="팀원소개">
-            </div>
-        </section>
-        <section class="section3">
-            <div>
-                <h2 class="listTitle">참여 기업 리스트</h2>
-            </div>
-            <div class="enterpriseList">
-                <div class="enterpriseCard">
-                    <a href="">
-                        <img class="cardImg" src="" alt="카드1">
-                        <p>입사현황</p>
-                        <div class="cardInfo">
-                            <div>
-                                <p><%=Cdaolist.get(0).getCompanyname() %></p>
-                            </div>
-                            <div>
-                                <p><%=Cdaolist.get(0).getAddress() %></p><br>
-                                <p><%=Cdaolist.get(0).getWorktype() %></p>
-                            </div>
-                            <div>
-                                <p>2022.06.25 ~ 2022.07.25</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="enterpriseCard">
-                    <a href="">
-                        <img class="cardImg" src="" alt="카드2">
-                        <span>입사현황</span>
-                        <div class="cardInfo">
-                            <div>
-                                <span><%=Cdaolist.get(1).getCompanyname() %></span>
-                            </div>
-                            <div>
-                                <span><%=Cdaolist.get(1).getAddress() %></span><br>
-                                <span><%=Cdaolist.get(1).getWorktype() %></span>
-                            </div>
-                            <div>
-                                <span>2022.06.30 ~ 2022.08.01</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="enterpriseCard">
-                    <a href="">
-                        <img class="cardImg" src="" alt="카드3">
-                        <span>입사현황</span>
-                        <div class="cardInfo">
-                            <div>
-                                <span><%=Cdaolist.get(0).getCompanyname() %></span>
-                            </div>
-                            <div>
-                                <span><%=Cdaolist.get(0).getAddress() %></span><br>
-                                <span><%=Cdaolist.get(0).getWorktype() %></span>
-                            </div>
-                            <div>
-                                <span>2022.05.30 ~ 2022.07.16</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="enterpriseCard">
-                    <a href="">
-                        <img class="cardImg" src="" alt="카드4">
-                        <span>입사현황</span>
-                        <div class="cardInfo">
-                            <div>
-                                <span><%=Cdaolist.get(0).getCompanyname() %></span>
-                            </div>
-                            <div>
-                                <span><%=Cdaolist.get(0).getAddress() %></span><br>
-                                <span><%=Cdaolist.get(0).getWorktype() %></span>
-                            </div>
-                            <div>
-                                <span>2022.05.15 ~ 2022.06.31</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <h2 class="addBtn"><a href="">더보기</a></h2>
-            </div>
-        </section>
-        <section class="section4">
-            <h2 class="videoTitle">취업 컨텐츠</h2>
-            <div class="video">
-                <iframe width="800" height="500" src="https://www.youtube.com/embed/HdzoRAsgqsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </section>
-        <section class="section5">
-            <h2 class="listTitle">내 정보 관리</h2>
-            <div class="cardList">
-                <div class="myInfoCard">
-                    <a href="">
-                        <img src="../img/user.png" alt="내 정보 관리">
-                        <h3>내 정보 관리</h3>
-                    </a>
-                </div>
-                <div class="myInfoCard">
-                    <a href="">
-                        <img src="../img/info.png" alt="입사지원서 관리">
-                        <h3>입사지원서 관리</h3>
-                    </a>
-                </div>
-                <div class="myInfoCard">
-                    <a href="">
-                        <img src="../img/attention.png" alt="관심 기업 관리">
-                        <h3>관심 기업 관리</h3>
-                    </a>
-                </div>
-                <div class="myInfoCard">
-                    <a href="">
-                        <img src="../img/enterprise.png" alt="기업지원 현황">
-                        <h3>기업지원 현황</h3>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
+    </div> <!-- searchWrap -->  
+    
+    <!-- 게시글 페이징 -->
+       <div id="page_control" style="text-align: center;">
+
+         <%
+             // 전체 페이지 수 계산
+             int pageCnt = Companycnt/pageSize + (Companycnt%pageSize == 0 ? 0 : 1);
+            // 한 페이지에 보여줄 게시글 개수
+            
+            // int Companycnt = list.size(); => 전체 기업의 수 => 20개
+            // int pageSize = 8;
+            // compantcnt 를 pageSize로 나눈 값이 0 이면 0이 반환되고
+            // 0이 아니면 1이 반환된다.
+      
+            // 삼항 연산자, (A ? B : C)의 형태로 표시된다.
+            // 첫번째 인덱스는 조건을 의미하고, 두번째 인덱스는 조건이 참일 경우 리턴되는 값이며
+            // 세번째 인덱스는 조건이 거짓일때 리턴되는 값이다. 
+      
+             // 한 페이지에 보여줄 페이지 번호 개수
+             int pageBlock = 10;
+            
+             // 시작하는 페이지 번호  ex) 1, 11, 21...
+             int startPage = ((currentPage-1) / pageBlock) * pageBlock + 1;
+             
+             // 끝나는 페이지 번호
+             int endPage = startPage + pageBlock-1;
+             
+             if(endPage > pageCnt) {
+                endPage = pageCnt;
+             
+             
+             // 10페이지 이전으로 가는 버튼
+             // 시작페이지가 11이상이 아니면 이전 버튼을 만들 필요가 없다. 
+             if(startPage > pageBlock) { %>
+                <a href="employment.jsp?pageNum=<%=startPage - pageBlock%>">이전</a>
+             <%}
+             // 몇번 페이지로 갈 것인지 번호를 a태그로 생성
+             for(int i = startPage; i <= endPage; i++) { %>
+                <a href="employment.jsp?pageNum=<%=i%>"><%=i %></a>
+             <%}
+             
+             // 10페이지 건너뛰는 버튼
+             // 남은 페이지가 10 이하라면 다음으로 가는 버튼을 만들 필요가 없다.
+             if(endPage < pageCnt) { %>
+                <a href="employment.jsp?pageNum=<%=startPage + pageBlock%>">다음</a>
+             <%}
+          }
+          %>
+       </div>    
+
+    <!-- <div class="list_number">
+        <div class="list_n_menu">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+        </div>
+    </div> -->
+
 
     <footer>
         <div class="footerWrap">
@@ -218,6 +379,5 @@
         </div>
     </footer>
 
-    <script src="../js/mainScroll.js"></script>
 </body>
 </html>

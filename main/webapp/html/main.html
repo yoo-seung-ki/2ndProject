@@ -1,9 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<jsp:useBean id="Cdao" class="common.CompanyDAO" />
-<%@ page import="common.CompanyVO" %>
-<%@ page import="java.util.*" %>
-<% List<CompanyVO> Cdaolist = Cdao.getCompanyList(); %>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -19,7 +13,7 @@
             <div class="logo">
                 <a href="../html/main.html">
                     <img src="../img/logo.png" alt="">
-                    <div class="title-text">예일장애인박람회</div>
+                    <div>예일장애인박람회</div>
                 </a>
             </div>
             <div class="navMenu">
@@ -30,43 +24,15 @@
                     <li><a href="">내 정보 관리</a></li>
                 </ul>
             </div>
-            <div>고대비
             <label class="switch">
-                <input type="checkbox" id="colormode">
+                <input type="checkbox">
                 <span class="slider round"></span>
             </label>
-            </div>
             <script>
-            $(document).ready(function() {
-                $("#colormode").change(function(){
-                if($("#colormode").is(":checked")){
-                    $("body").css("background-color","#000");
-                    $("body").css("color","#fff");
-                    $(".section1").css("background-color","#7d7a7a");
-                    $(".section2").css("background-color","#5a5959");
-                    $(".section3").css("background-color","#7d7a7a");
-                    $(".section4").css("background-color","#5a5959");
-                    $(".section5").css("background-color","#000");
-                    $(".myInfoCard").css("background-color","#fff");
-                    $(".myInfoCard").css("box-shadow","none");
-                    $(".title-text").css("color","#fff");
-                }else{
-                    $("body").css("background-color","#fff");
-                    $("body").css("color","#000");
-                    $(".section1").css("background-color","beige");
-                    $(".section2").css("background-color","burlywood");
-                    $(".section3").css("background-color","beige");
-                    $(".section4").css("background-color","#fff");
-                    $(".section5").css("background-color","#fff");
-                    $(".myInfoCard").css("background-color","#fff");
-                    $(".myInfoCard").css("box-shadow","10px 10px 20px #e1e1e1");
-                    $(".title-text").css("color","#000");
-                    
-                    
-                }
-            
+                var check = $("input[type='checkbox']");
+                check.click(function(){
+                    $("p").toggle();
                 });
-            });
             </script>
             <div class="signin-signup">
                 <button class="signin">로그인</button>
@@ -101,17 +67,17 @@
                 <div class="enterpriseCard">
                     <a href="">
                         <img class="cardImg" src="" alt="카드1">
-                        <p>입사현황</p>
                         <div class="cardInfo">
                             <div>
-                                <p><%=Cdaolist.get(0).getCompanyname() %></p>
+                                <p>기업이름</p>
+                                <p>입사현황</p>
                             </div>
                             <div>
-                                <p><%=Cdaolist.get(0).getAddress() %></p><br>
-                                <p><%=Cdaolist.get(0).getWorktype() %></p>
+                                <p>기업위치</p>
+                                <p>직무</p>
                             </div>
                             <div>
-                                <p>2022.06.25 ~ 2022.07.25</p>
+                                <p>지원기간</p>
                             </div>
                         </div>
                     </a>
@@ -119,17 +85,17 @@
                 <div class="enterpriseCard">
                     <a href="">
                         <img class="cardImg" src="" alt="카드2">
-                        <span>입사현황</span>
                         <div class="cardInfo">
                             <div>
-                                <span><%=Cdaolist.get(1).getCompanyname() %></span>
+                                <span>기업이름</span>
+                                <span>입사현황</span>
                             </div>
                             <div>
-                                <span><%=Cdaolist.get(1).getAddress() %></span><br>
-                                <span><%=Cdaolist.get(1).getWorktype() %></span>
+                                <span>기업위치</span>
+                                <span>직무</span>
                             </div>
                             <div>
-                                <span>2022.06.30 ~ 2022.08.01</span>
+                                <span>지원기간</span>
                             </div>
                         </div>
                     </a>
@@ -137,17 +103,17 @@
                 <div class="enterpriseCard">
                     <a href="">
                         <img class="cardImg" src="" alt="카드3">
-                        <span>입사현황</span>
                         <div class="cardInfo">
                             <div>
-                                <span><%=Cdaolist.get(0).getCompanyname() %></span>
+                                <span>기업이름</span>
+                                <span>입사현황</span>
                             </div>
                             <div>
-                                <span><%=Cdaolist.get(0).getAddress() %></span><br>
-                                <span><%=Cdaolist.get(0).getWorktype() %></span>
+                                <span>기업위치</span>
+                                <span>직무</span>
                             </div>
                             <div>
-                                <span>2022.05.30 ~ 2022.07.16</span>
+                                <span>지원기간</span>
                             </div>
                         </div>
                     </a>
@@ -155,17 +121,17 @@
                 <div class="enterpriseCard">
                     <a href="">
                         <img class="cardImg" src="" alt="카드4">
-                        <span>입사현황</span>
                         <div class="cardInfo">
                             <div>
-                                <span><%=Cdaolist.get(0).getCompanyname() %></span>
+                                <span>기업이름</span>
+                                <span>입사현황</span>
                             </div>
                             <div>
-                                <span><%=Cdaolist.get(0).getAddress() %></span><br>
-                                <span><%=Cdaolist.get(0).getWorktype() %></span>
+                                <span>기업위치</span>
+                                <span>직무</span>
                             </div>
                             <div>
-                                <span>2022.05.15 ~ 2022.06.31</span>
+                                <span>지원기간</span>
                             </div>
                         </div>
                     </a>

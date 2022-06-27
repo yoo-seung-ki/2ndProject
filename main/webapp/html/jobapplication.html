@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>채용관</title>
+    <link rel="stylesheet" href="../css/jobapplication.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- SheetJS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.3/xlsx.full.min.js"></script>
+    <!-- FileSaver saveAs CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+    <script src="../js/sheetjs.js"></script>
+</head>
+<body>
+<!-- 헤더  -->
+<header>
+    <div class="headerWrap">
+        <div class="logo">
+            <a href="../jsp/main.jsp">
+                <img src="../img/logo.png" alt="">
+                <div>예일장애인박람회</div>
+            </a>
+        </div>
+        <div class="navMenu">
+            <ul>
+                <li>입사지원서</a></li>
+            </ul>
+        </div>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <script>
+            var check = $("input[type='checkbox']");
+            check.click(function(){
+                $("p").toggle();
+            });
+        </script>
+        <div class="signin-signup">
+            <button class="signin">로그인</button>
+            <button class="signup">회원가입</button>
+        </div>
+    </div>
+</header>
+
+<!--  메인배너  -->
+    <div class="bannerWrap">
+        <div class="banner">
+            <img src="../img/main.png" alt="배너">
+        </div>
+        <div class="bannerTitle">
+            <h1>입사지원서 작성</h1>
+        </div>
+    </div>
+
+
+<!-- 메인 내용 -->
+<table id="tableData" class="excelTable" style="border:1px solid #dddddd">
+    <thead>
+        <th>입사지원서</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+        </tr>
+    <tr>    
+        <td>          
+            <input type='radio' name='gender' value='female' onclick='getGender(event)'/>            
+            <input type='radio' name='gender' value='male' onclick='getGender(event)'/>
+            <div style="display: none;" id='radioresult'></div>        
+        </td>
+        <td>
+            <input id='name1' onkeyup='printName()'/>
+            <div style="display: none;" id='result1'></div>
+        </td>
+        <td>
+            <input id='name2' onkeyup='printName()'/>
+            <div style="display: none;" id='result2'></div>
+        </td>
+        <td>
+            <input id='name3' onkeyup='printName()'/>
+            <div style="display: none;" id='result3'></div>
+        </td>
+        <td>
+            <input id='name4' onkeyup='printName()'/>
+            <div style="display: none;" id='result4'></div>
+        </td>
+        <td>망나뇽</td>
+        <td>4000</td>
+    </tr>
+    </tbody>
+    </table>
+     파일 내보내기(HTML TABLE) : <input type="button" id="excelFileExport" value="엑셀 파일 다운로드(TABLE)" />
+ 
+
+
+    <footer>
+        <div class="footerWrap">
+            <div>copyright 2022. All RIGHT RESERVED.</div>
+        </div>
+    </footer>
+
+</body>
+</html>

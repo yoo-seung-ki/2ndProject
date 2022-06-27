@@ -12,9 +12,9 @@ public class DBConMgr{
     _password = "1234";
     private boolean _traceOn = true;
     private boolean initialized = false;
-    private int _openConnections = 10; // Ŀ�ؼ� ��ü ������ ����
+    private int _openConnections = 10; // 커넥션 객체 개수를 지정
 
-    // �̱��� ����(Singleton Pattern)
+    // 싱글턴 패턴(Singleton Pattern)
     private static DBConMgr instance = null;
     
     public DBConMgr() {
@@ -24,10 +24,10 @@ public class DBConMgr{
      unused connections are closed.
      */
     
-    // �̱��� ����
-    // ��ü�� ������ ����� ���� �ƴ϶� getInstance �޼ҵ� �ȿ� ���� ����� �༭
-    // �ʿ��� ������ �ش� �޼ҵ带 ���� �� ��ü�� ��ȯ�� ��
-    // �̶� static�� �� ������ ���� ��ü�� ������ �ʾƵ� ���� ������
+    // 싱글턴 문법
+    // 객체를 일일이 만드는 것이 아니라 getInstance 메소드 안에 따로 만들어 줘서
+    // 필요할 때마다 해당 메소드를 통해 그 객체를 반환해 줌
+    // 이때 static을 해 줌으로 따로 객체를 만들지 않아도 접근 가능함
     public static DBConMgr getInstance() {
         if (instance == null) {
             synchronized (DBConMgr.class) {
@@ -88,7 +88,7 @@ public class DBConMgr{
             // If connection is not in use, test to ensure it's still valid!
             if (!co.inUse) {
                 try {
-                	// ������ �̹� �� �͵��� �ݾ���
+                	// 접속이 이미 된 것들은 닫아줌	
                     badConnection = co.connection.isClosed();
                     if (!badConnection)
                         badConnection = (co.connection.getWarnings() != null);
@@ -112,7 +112,7 @@ public class DBConMgr{
         if (c == null) {
             c = createConnection();
             co = new ConnectionObject(c, true);
-            // ����� �κ��� ä����
+            // 비워진 부분은 채워줌
             connections.addElement(co);
             trace("ConnectionPoolManager: Creating new DB connection #" + connections.size());
         }
@@ -126,7 +126,7 @@ public class DBConMgr{
 
         ConnectionObject co = null;
         
-        // �ݺ��� ���鼭 ���� ��ü�� ������ �ش� �ε����� �ٽ� �� �� �ְԲ� �� ��
+        // 반복문 돌면서 같은 객체가 있으면 해당 인덱스를 다시 쓸 수 있게끔 해 줌
         for (int i = 0; i < connections.size(); i++) {
             co = (ConnectionObject) connections.get(i);
             if (c == co.connection) {
@@ -137,7 +137,7 @@ public class DBConMgr{
 
         for (int i = 0; i < connections.size(); i++) {
             co = (ConnectionObject) connections.get(i);
-            // ���� ����ϴ� ��(10��)�� �°� ������
+            // 현재 사용하는 수(10개)에 맞게 제한함
             if ((i + 1) > _openConnections && !co.inUse)
                 removeConnection(co.connection);
         }
@@ -182,7 +182,7 @@ public class DBConMgr{
     }
 
     /** Marks a flag in the ConnectionObject to indicate this connection is no longer in use */
-    // synchronized: ���� ���� �����ϴ� ���
+    // synchronized: 동시 접속 제한하는 기능
     public synchronized void removeConnection(Connection c) {
         if (c == null)
             return;
@@ -263,10 +263,10 @@ public class DBConMgr{
     }
 }
 // Wrapper Class
-// �� Ŭ�������� �ϴ� ��ɰ� �߰��� ��� ����� ��������� �����ϱ� ���ϵ��� �ϳ��� ���(����) Ŭ����ȭ ��Ŵ 
+//한 클래스에서 하는 기능과 추가로 어떠한 기능을 쓰고싶을때 관리하기 편하도록 하나로 묶어서(래핑) 클래스화 시킴
 class ConnectionObject {
-    public java.sql.Connection connection = null;	// Ŀ�ؼ� ��ü
-    public boolean inUse = false;					// Ŀ�ؼ��� ���ǰ� �ִ��� �ƴ��� Ȯ��
+    public java.sql.Connection connection = null;	// 커넥션 객체
+    public boolean inUse = false;					// 커넥션이 사용되고 있는지 아닌지 확인
 
     public ConnectionObject(Connection c, boolean useFlag) {
         connection = c;

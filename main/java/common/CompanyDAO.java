@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CompanyDAO {
-	
+
 	private DBConMgr pool;
 
 	public CompanyDAO() {
@@ -17,12 +17,12 @@ public class CompanyDAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// 매개변수로 companyseq를 받아서 해당 seq에 해당하는 기업의 모든 정보를 반환(VO)
 	public CompanyVO getCompany(int seq) {
 		CompanyVO vo = new CompanyVO();
 		Connection con = null;
-		PreparedStatement pstmt = null;	
+		PreparedStatement pstmt = null;
 		String sql = null;
 		ResultSet rs = null;
 		try {
@@ -32,21 +32,20 @@ public class CompanyDAO {
 			pstmt.setInt(1, seq);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-	            vo.setCompanyname(rs.getString("Companyname"));
-	            vo.setLogo(rs.getString("Logo"));
-	            vo.setCeo(rs.getString("Ceo"));
-	            vo.setAddress(rs.getString("Address"));
-	            vo.setHomepage(rs.getString("Homepage"));
-	            vo.setCompanytype(rs.getString("CompanyType"));
-	            vo.setCompanycontent(rs.getString("CompanyContent"));
-	            vo.setCompanysize(rs.getString("Companysize"));
-	            vo.setRecrutype(rs.getString("Recrutype"));
-	            vo.setWorkcontent(rs.getString("Workcontent"));
-	            vo.setGraduate(rs.getString("Graduate"));
-	            vo.setEmploycase(rs.getString("Employcase"));
-	            vo.setPaytype(rs.getString("Paytype"));
-	            vo.setSeverance(rs.getString("Severance"));
-	            vo.setWorktime(rs.getString("Worktime"));
+				vo.setCompanyname(rs.getString("Companyname"));
+				vo.setCeo(rs.getString("Ceo"));
+				vo.setAddress(rs.getString("Address"));
+				vo.setHomepage(rs.getString("Homepage"));
+				vo.setCompanytype(rs.getString("CompanyType"));
+				vo.setCompanycontent(rs.getString("CompanyContent"));
+				vo.setCompanysize(rs.getString("Companysize"));
+				vo.setRecrutype(rs.getString("Recrutype"));
+				vo.setWorkcontent(rs.getString("Workcontent"));
+				vo.setGraduate(rs.getString("Graduate"));
+				vo.setEmploycase(rs.getString("Employcase"));
+				vo.setPaytype(rs.getString("Paytype"));
+				vo.setSeverance(rs.getString("Severance"));
+				vo.setWorktime(rs.getString("Worktime"));
 				vo.setRecrusize(rs.getInt("Recrusize"));
 				vo.setWorkarea(rs.getString("Workarea"));
 				vo.setCareer(rs.getString("Career"));
@@ -67,13 +66,13 @@ public class CompanyDAO {
 		}
 		return vo;
 	}
-	
+
 	// 모든 기업의 모든 정보를 담은 list반환
 	// ArrayList<String> 형태로 반환
 	public List<CompanyVO> getCompanyList() {
 		List<CompanyVO> list = new ArrayList<CompanyVO>();
 		Connection con = null;
-		PreparedStatement pstmt = null;	
+		PreparedStatement pstmt = null;
 		String sql = null;
 		ResultSet rs = null;
 		try {
@@ -84,7 +83,6 @@ public class CompanyDAO {
 			while(rs.next()) {
 				CompanyVO vo = new CompanyVO();
 				vo.setCompanyseq(rs.getInt("Companyseq"));
-				vo.setLogo(rs.getString("Logo"));
 				vo.setCompanyname(rs.getString("Companyname"));
 				vo.setCeo(rs.getString("Ceo"));
 				vo.setCreateyear(rs.getString("Createyear"));
@@ -123,9 +121,9 @@ public class CompanyDAO {
 		}
 		return list;
 	}
-	
-	
-	
+
+
+
 	// 기업이 총 몇개인지 계산하는 메소드
 	public int getPostCount() {
 		int cnt = 0;
@@ -149,41 +147,40 @@ public class CompanyDAO {
 		return cnt;
 	}
 
-	
-		
-		// 전체 기업 리스트를 10개씩 끊어서 ArrayList<CompanyVO> 형으로 반환
-		public List<CompanyVO> getCompanyListTen(int startRow, int pageSize) {
-			List<CompanyVO> list = new ArrayList<CompanyVO>();
-			Connection con = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
-			String sql = null;
-			try {
-				con = pool.getConnection();
-				sql = "select companyname,logo,address,recrutype,emplodate from mjt order By companyseq desc limit ?, ?";
-				pstmt = con.prepareStatement(sql);
-				pstmt.setInt(1, startRow - 1);
-				pstmt.setInt(2, pageSize);
-				rs = pstmt.executeQuery();
-				
-				while(rs.next()) {
-					CompanyVO vo = new CompanyVO();
-					vo.setCompanyname(rs.getString("Companyname"));
-					vo.setLogo(rs.getString("Logo"));
-					vo.setAddress(rs.getString("Address"));
-					vo.setRecrutype(rs.getString("Recrutype"));
-					vo.setEmplodate(rs.getString("Emplodate"));
-					list.add(vo);
-				}
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				pool.freeConnection(con, pstmt, rs);
+
+
+	// 전체 기업 리스트를 10개씩 끊어서 ArrayList<CompanyVO> 형으로 반환
+	public List<CompanyVO> getCompanyListTen(int startRow, int pageSize) {
+		List<CompanyVO> list = new ArrayList<CompanyVO>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		try {
+			con = pool.getConnection();
+			sql = "select companyname,address,recrutype,emplodate from mjt order By companyseq desc limit ?, ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, startRow - 1);
+			pstmt.setInt(2, pageSize);
+			rs = pstmt.executeQuery();
+
+			while(rs.next()) {
+				CompanyVO vo = new CompanyVO();
+				vo.setCompanyname(rs.getString("Companyname"));
+				vo.setAddress(rs.getString("Address"));
+				vo.setRecrutype(rs.getString("Recrutype"));
+				vo.setEmplodate(rs.getString("Emplodate"));
+				list.add(vo);
 			}
-			return list;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
 		}
-	
-	
-	
+		return list;
+	}
+
+
+
 }

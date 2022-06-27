@@ -32,7 +32,6 @@ public class CompanyVO {
 	private String License;
 	private String Facil;
 	private String Treatment;
-	private String Logo;
 	
 
 	public int getCompanyseq() {
@@ -281,14 +280,6 @@ public class CompanyVO {
 
 	public void setTreatment(String treatment) {
 		Treatment = treatment;
-	}
-
-	public String getLogo() {
-		return Logo;
-	}
-
-	public void setLogo(String logo) {
-		Logo = logo;
 	}
 
 }

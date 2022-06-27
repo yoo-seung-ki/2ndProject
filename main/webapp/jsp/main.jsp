@@ -115,13 +115,43 @@
                 <img class="sectionImg" src="../img/mainImg.png" alt="메인화면">
             </div>
         </section>
-        <section class="section2">
+ <section class="section2">
             <div>
                 <h2 class="listTitle">팀원소개</h2>
             </div>
-            <div>
-                <img class="sectionImg" src="" alt="팀원소개">
-            </div>
+            <div class="member">
+	          <div class="teamMembers">
+	             <img class="teamMembersImg" src="../img/Namjeongsoo.png" alt="팀원소개">
+	             <p class="name">남정수</p>
+	             <p class="role">프론트엔드</p>
+	             <p class="comment">우주 최강 개발자</p>
+	          </div>
+	          <div class="teamMembers">
+	             <img class="teamMembersImg" src="../img/kimjaehyeon.png" alt="팀원소개">
+	             <p class="name">김재현</p>
+	             <p class="role">프론트엔드</p>
+	             <p class="comment">집가고 싶어요</p>
+	          </div>
+	          <div class="teamMembers">
+	             <img class="teamMembersImg" src="../img/parkhwiwon.jpg" alt="팀원소개">
+	             <p class="name">박휘원</p>
+	             <p class="role">프론트엔드</p>
+	             <p class="comment">지구촌 최강 개발자</p>
+	          </div>
+	            <div class="teamMembers">
+	              <img class="teamMembersImg" src="../img/yuseunggi.png" alt="팀원소개"  style="background-color:#ffccbc;">
+	              <p class="name">유승기</p>
+	              <p class="role">백엔드</p>
+	              <p class="comment">목표는 1인분</p>
+
+	          </div>
+	            <div class="teamMembers">
+	              <img class="teamMembersImg" src="../img/songminyeong.png" alt="팀원소개"  style="background-color:beige;">
+	              <p class="name">송민영</p>
+	              <p class="role">백엔드</p>
+	              <p class="comment">은하계 최강 개발자</p>
+	          </div>
+         	</div>
         </section>
         <section class="section3">
             <div>

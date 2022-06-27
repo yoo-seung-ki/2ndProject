@@ -15,7 +15,7 @@
             <div class="logo">
                 <a href="../html/main.html">
                     <img src="../img/logo.png" alt="">
-                    <div>예일장애인박람회</div>
+                    <div class="title-text">예일장애인박람회</div>
                 </a>
             </div>
             <div class="navMenu">
@@ -26,15 +26,43 @@
                     <li><a href="">내 정보 관리</a></li>
                 </ul>
             </div>
+            <div>고대비
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" id="colormode">
                 <span class="slider round"></span>
             </label>
+            </div>
             <script>
-                var check = $("input[type='checkbox']");
-                check.click(function(){
-                    $("p").toggle();
+            $(document).ready(function() {
+                $("#colormode").change(function(){
+                if($("#colormode").is(":checked")){
+                    $("body").css("background-color","#000");
+                    $("body").css("color","#fff");
+                    $(".section1").css("background-color","#7d7a7a");
+                    $(".section2").css("background-color","#5a5959");
+                    $(".section3").css("background-color","#7d7a7a");
+                    $(".section4").css("background-color","#5a5959");
+                    $(".section5").css("background-color","#000");
+                    $(".myInfoCard").css("background-color","#fff");
+                    $(".myInfoCard").css("box-shadow","none");
+                    $(".title-text").css("color","#fff");
+                }else{
+                    $("body").css("background-color","#fff");
+                    $("body").css("color","#000");
+                    $(".section1").css("background-color","beige");
+                    $(".section2").css("background-color","burlywood");
+                    $(".section3").css("background-color","beige");
+                    $(".section4").css("background-color","#fff");
+                    $(".section5").css("background-color","#fff");
+                    $(".myInfoCard").css("background-color","#fff");
+                    $(".myInfoCard").css("box-shadow","10px 10px 20px #e1e1e1");
+                    $(".title-text").css("color","#000");
+                    
+                    
+                }
+            
                 });
+            });
             </script>
             <div class="signin-signup">
                 <button class="signin">로그인</button>

@@ -5,7 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <title>채용관</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/employment.css">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </head>
 <body>
 <!-- 헤더  -->
@@ -14,7 +16,7 @@
         <div class="logo">
             <a href="../jsp/main.jsp">
                 <img src="../img/logo.png" alt="">
-                <div>예일장애인박람회</div>
+                <div class="title-text">예일장애인박람회</div>
             </a>
         </div>
         <div class="navMenu">
@@ -22,15 +24,35 @@
                 <li>온라인 채용관</a></li>
             </ul>
         </div>
+        <div>고대비
         <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" id="colormode">
             <span class="slider round"></span>
         </label>
+        </div>
         <script>
-            var check = $("input[type='checkbox']");
+         /*    var check = $("input[type='checkbox']");
             check.click(function(){
                 $("p").toggle();
+            }); */
+            $(document).ready(function() {
+                $("#colormode").change(function(){
+                if($("#colormode").is(":checked")){
+                    $("body").css("background-color","#000");
+                    $("body").css("color","#fff");
+                    $(".title-text").css("color","#fff");
+                    $(".bannerTitle").css("color","#000");
+                }else{
+                    $("body").css("background-color","#fff");
+                    $("body").css("color","#000");
+                    $(".title-text").css("color","#000");
+                    
+                    
+                }
+            
+                });
             });
+            </script>
         </script>
         <div class="signin-signup">
             <button class="signin">로그인</button>

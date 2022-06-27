@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<jsp:useBean id="Cdao" class="common.CompanyDAO" />
+<%@ page import="common.CompanyVO" %>
+<%@ page import="java.util.*" %>
+<% List<CompanyVO> Cdaolist = Cdao.getCompanyList(); %>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -69,17 +73,17 @@
                 <div class="enterpriseCard">
                     <a href="">
                         <img class="cardImg" src="" alt="카드1">
+                        <p>입사현황</p>
                         <div class="cardInfo">
                             <div>
-                                <p>기업이름</p>
-                                <p>입사현황</p>
+                                <p><%=Cdaolist.get(0).getCompanyname() %></p>
                             </div>
                             <div>
-                                <p>기업위치</p>
-                                <p>직무</p>
+                                <p><%=Cdaolist.get(0).getAddress() %></p><br>
+                                <p><%=Cdaolist.get(0).getWorktype() %></p>
                             </div>
                             <div>
-                                <p>지원기간</p>
+                                <p>2022.06.25 ~ 2022.07.25</p>
                             </div>
                         </div>
                     </a>
@@ -87,17 +91,17 @@
                 <div class="enterpriseCard">
                     <a href="">
                         <img class="cardImg" src="" alt="카드2">
+                        <span>입사현황</span>
                         <div class="cardInfo">
                             <div>
-                                <span>기업이름</span>
-                                <span>입사현황</span>
+                                <span><%=Cdaolist.get(1).getCompanyname() %></span>
                             </div>
                             <div>
-                                <span>기업위치</span>
-                                <span>직무</span>
+                                <span><%=Cdaolist.get(1).getAddress() %></span><br>
+                                <span><%=Cdaolist.get(1).getWorktype() %></span>
                             </div>
                             <div>
-                                <span>지원기간</span>
+                                <span>2022.06.30 ~ 2022.08.01</span>
                             </div>
                         </div>
                     </a>
@@ -105,17 +109,17 @@
                 <div class="enterpriseCard">
                     <a href="">
                         <img class="cardImg" src="" alt="카드3">
+                        <span>입사현황</span>
                         <div class="cardInfo">
                             <div>
-                                <span>기업이름</span>
-                                <span>입사현황</span>
+                                <span><%=Cdaolist.get(0).getCompanyname() %></span>
                             </div>
                             <div>
-                                <span>기업위치</span>
-                                <span>직무</span>
+                                <span><%=Cdaolist.get(0).getAddress() %></span><br>
+                                <span><%=Cdaolist.get(0).getWorktype() %></span>
                             </div>
                             <div>
-                                <span>지원기간</span>
+                                <span>2022.05.30 ~ 2022.07.16</span>
                             </div>
                         </div>
                     </a>
@@ -123,17 +127,17 @@
                 <div class="enterpriseCard">
                     <a href="">
                         <img class="cardImg" src="" alt="카드4">
+                        <span>입사현황</span>
                         <div class="cardInfo">
                             <div>
-                                <span>기업이름</span>
-                                <span>입사현황</span>
+                                <span><%=Cdaolist.get(0).getCompanyname() %></span>
                             </div>
                             <div>
-                                <span>기업위치</span>
-                                <span>직무</span>
+                                <span><%=Cdaolist.get(0).getAddress() %></span><br>
+                                <span><%=Cdaolist.get(0).getWorktype() %></span>
                             </div>
                             <div>
-                                <span>지원기간</span>
+                                <span>2022.05.15 ~ 2022.06.31</span>
                             </div>
                         </div>
                     </a>

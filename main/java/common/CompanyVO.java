@@ -3,6 +3,7 @@ package common;
 public class CompanyVO {
 	private int Companyseq;
 	private String Companyname;
+	private String Emplodate;
 	private String Ceo;
 	private String Createyear;
 	private String Address;
@@ -49,6 +50,14 @@ public class CompanyVO {
 		Companyname = companyname;
 	}
 
+	public String getEmplodate() {
+		return Emplodate;
+	}
+
+	public void setEmplodate(String emplodate) {
+		Emplodate = emplodate;
+	}
+	
 	public String getCeo() {
 		return Ceo;
 	}
@@ -272,4 +281,5 @@ public class CompanyVO {
 	public void setTreatment(String treatment) {
 		Treatment = treatment;
 	}
+
 }

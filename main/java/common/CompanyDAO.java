@@ -121,6 +121,66 @@ public class CompanyDAO {
 		}
 		return list;
 	}
+	
+	
+	
+	// 기업이 총 몇개인지 계산하는 메소드
+	public int getPostCount() {
+		int cnt = 0;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+		try {
+			con = pool.getConnection();
+			sql = "select companyseq from mjt ";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				cnt++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
+		}
+		return cnt;
+	}
 
-
+	
+		
+		// 전체 기업 리스트를 10개씩 끊어서 ArrayList<CompanyVO> 형으로 반환
+		public List<CompanyVO> getCompanyListTen(int startRow, int pageSize) {
+			List<CompanyVO> list = new ArrayList<CompanyVO>();
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String sql = null;
+			try {
+				con = pool.getConnection();
+				sql = "select companyname,address,recrutype,emplodate from mjt order By companyseq desc limit ?, ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, startRow - 1);
+				pstmt.setInt(2, pageSize);
+				rs = pstmt.executeQuery();
+				
+				while(rs.next()) {
+					CompanyVO vo = new CompanyVO();
+					vo.setCompanyname(rs.getString("Companyname"));
+					vo.setAddress(rs.getString("Address"));
+					vo.setRecrutype(rs.getString("Recrutype"));
+					vo.setEmplodate(rs.getString("Emplodate"));
+					list.add(vo);
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				pool.freeConnection(con, pstmt, rs);
+			}
+			return list;
+		}
+	
+	
+	
 }

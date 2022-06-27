@@ -12,9 +12,9 @@ public class DBConMgr{
     _password = "1234";
     private boolean _traceOn = true;
     private boolean initialized = false;
-    private int _openConnections = 10; // Ä¿³Ø¼Ç °´Ã¼ °³¼ö¸¦ ÁöÁ¤
+    private int _openConnections = 10; // Ä¿ï¿½Ø¼ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    // ½Ì±ÛÅÏ ÆÐÅÏ(Singleton Pattern)
+    // ï¿½Ì±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(Singleton Pattern)
     private static DBConMgr instance = null;
     
     public DBConMgr() {
@@ -24,10 +24,10 @@ public class DBConMgr{
      unused connections are closed.
      */
     
-    // ½Ì±ÛÅÏ ¹®¹ý
-    // °´Ã¼¸¦ ÀÏÀÏÀÌ ¸¸µå´Â °ÍÀÌ ¾Æ´Ï¶ó getInstance ¸Þ¼Òµå ¾È¿¡ µû·Î ¸¸µé¾î Áà¼­
-    // ÇÊ¿äÇÒ ¶§¸¶´Ù ÇØ´ç ¸Þ¼Òµå¸¦ ÅëÇØ ±× °´Ã¼¸¦ ¹ÝÈ¯ÇØ ÁÜ
-    // ÀÌ¶§ staticÀ» ÇØ ÁÜÀ¸·Î µû·Î °´Ã¼¸¦ ¸¸µéÁö ¾Ê¾Æµµ Á¢±Ù °¡´ÉÇÔ
+    // ï¿½Ì±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    // ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¶ï¿½ getInstance ï¿½Þ¼Òµï¿½ ï¿½È¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½à¼­
+    // ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½Þ¼Òµå¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½
+    // ï¿½Ì¶ï¿½ staticï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾Æµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public static DBConMgr getInstance() {
         if (instance == null) {
             synchronized (DBConMgr.class) {
@@ -88,7 +88,7 @@ public class DBConMgr{
             // If connection is not in use, test to ensure it's still valid!
             if (!co.inUse) {
                 try {
-                	// Á¢¼ÓÀÌ ÀÌ¹Ì µÈ °ÍµéÀº ´Ý¾ÆÁÜ
+                	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ ï¿½Íµï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½ï¿½ï¿½
                     badConnection = co.connection.isClosed();
                     if (!badConnection)
                         badConnection = (co.connection.getWarnings() != null);
@@ -112,7 +112,7 @@ public class DBConMgr{
         if (c == null) {
             c = createConnection();
             co = new ConnectionObject(c, true);
-            // ºñ¿öÁø ºÎºÐÀº Ã¤¿öÁÜ
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½
             connections.addElement(co);
             trace("ConnectionPoolManager: Creating new DB connection #" + connections.size());
         }
@@ -126,7 +126,7 @@ public class DBConMgr{
 
         ConnectionObject co = null;
         
-        // ¹Ýº¹¹® µ¹¸é¼­ °°Àº °´Ã¼°¡ ÀÖÀ¸¸é ÇØ´ç ÀÎµ¦½º¸¦ ´Ù½Ã ¾µ ¼ö ÀÖ°Ô²û ÇØ ÁÜ
+        // ï¿½Ýºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½é¼­ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°Ô²ï¿½ ï¿½ï¿½ ï¿½ï¿½
         for (int i = 0; i < connections.size(); i++) {
             co = (ConnectionObject) connections.get(i);
             if (c == co.connection) {
@@ -137,7 +137,7 @@ public class DBConMgr{
 
         for (int i = 0; i < connections.size(); i++) {
             co = (ConnectionObject) connections.get(i);
-            // ÇöÀç »ç¿ëÇÏ´Â ¼ö(10°³)¿¡ ¸Â°Ô Á¦ÇÑÇÔ
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½(10ï¿½ï¿½)ï¿½ï¿½ ï¿½Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             if ((i + 1) > _openConnections && !co.inUse)
                 removeConnection(co.connection);
         }
@@ -182,7 +182,7 @@ public class DBConMgr{
     }
 
     /** Marks a flag in the ConnectionObject to indicate this connection is no longer in use */
-    // synchronized: µ¿½Ã Á¢¼Ó Á¦ÇÑÇÏ´Â ±â´É
+    // synchronized: ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
     public synchronized void removeConnection(Connection c) {
         if (c == null)
             return;
@@ -263,10 +263,10 @@ public class DBConMgr{
     }
 }
 // Wrapper Class
-// ÇÑ Å¬·¡½º¿¡¼­ ÇÏ´Â ±â´É°ú Ãß°¡·Î ¾î¶°ÇÑ ±â´ÉÀ» ¾²°í½ÍÀ»¶§ °ü¸®ÇÏ±â ÆíÇÏµµ·Ï ÇÏ³ª·Î ¹­¾î¼­(·¡ÇÎ) Å¬·¡½ºÈ­ ½ÃÅ´ 
+// ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½É°ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½î¶°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î¼­(ï¿½ï¿½ï¿½ï¿½) Å¬ï¿½ï¿½ï¿½ï¿½È­ ï¿½ï¿½Å´ 
 class ConnectionObject {
-    public java.sql.Connection connection = null;	// Ä¿³Ø¼Ç °´Ã¼
-    public boolean inUse = false;					// Ä¿³Ø¼ÇÀÌ »ç¿ëµÇ°í ÀÖ´ÂÁö ¾Æ´ÑÁö È®ÀÎ
+    public java.sql.Connection connection = null;	// Ä¿ï¿½Ø¼ï¿½ ï¿½ï¿½Ã¼
+    public boolean inUse = false;					// Ä¿ï¿½Ø¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç°ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 
     public ConnectionObject(Connection c, boolean useFlag) {
         connection = c;

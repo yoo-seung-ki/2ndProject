@@ -43,7 +43,9 @@
 <head>
     <meta charset="UTF-8">
     <title>채용관</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/employment.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </head>
 <body>
 <!-- 헤더  -->
@@ -52,7 +54,7 @@
         <div class="logo">
             <a href="../jsp/main.jsp">
                 <img src="../img/logo.png" alt="">
-                <div>예일장애인박람회</div>
+                <div class="title-text">예일장애인박람회</div>
             </a>
         </div>
         <div class="navMenu">
@@ -60,15 +62,33 @@
                 <li>온라인 채용관</a></li>
             </ul>
         </div>
+        <div>
+        고대비
         <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" id="colormode">
             <span class="slider round"></span>
         </label>
+        </div>
         <script>
-            var check = $("input[type='checkbox']");
-            check.click(function(){
-                $("p").toggle();
+        $(document).ready(function() {
+        	$("p").css("color","#000");
+            $("#colormode").change(function(){
+            if($("#colormode").is(":checked")){
+                $("body").css("background-color","#000");
+                $("body").css("color","#fff");
+                $(".title-text").css("color","#fff");
+                $(".bannerTitle").css("color","#000");
+                $("p").css("color","#fff");
+            }else{
+                $("body").css("background-color","#fff");
+                $("body").css("color","#000");
+                $(".title-text").css("color","#000");
+                $(".bannerTitle").css("color","#000");
+                $("p").css("color","#000");
+            }
+        
             });
+        });
         </script>
         <div class="signin-signup">
             <button class="signin">로그인</button>
@@ -158,16 +178,19 @@
         <div class="enterpriseList">
         <% for(int i = 0; i < tenlist.size(); i++ ) { %>
             <div class="enterpriseCard">
-                <a href="">
+                <a href="">`
                     <img class="cardImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
                     <div class="cardInfo">
                         <div>
-                            <p><%=tenlist.get(i).getCompanyname() %></p><br>
+                            <p ><%=tenlist.get(i).getCompanyname() %></p><br>
                             
                         </div>
                         <div>
-                            <p><%=tenlist.get(i).getAddress() %></p><br>
+                            <p><%=tenlist.get(i).getAddress().substring(0,7) %></p><br>
+                        </div>
+                        <div>
                             <p><%=tenlist.get(i).getRecrutype() %></p><br>
+                            
                         </div>
                         <div>
                             <p><%=tenlist.get(i).getEmplodate() %></p>

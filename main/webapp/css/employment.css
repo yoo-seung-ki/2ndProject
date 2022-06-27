@@ -392,8 +392,15 @@ input:checked + .slider:before {
     background: #ffccbc;
     color: var(--color-white);
 }
-
-
+#page_control{
+	font-size: var(--font-sizeM);
+	margin-bottom: 25px;
+}
+#page_control: visited{
+	font-size: var(--font-sizeM);
+	color: var(--color-black);
+	margin-bottom: 25px;
+}
 
 
 /* footer */

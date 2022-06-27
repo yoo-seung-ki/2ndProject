@@ -8,33 +8,33 @@
     
 <% 
 
-   // 페이징 넘버 작업
-   
-   // 한 페이지에 보여줄 게시글 개수
-   int pageSize = 8;
-   // 현재 페이지
-   String pageNum = request.getParameter("pageNum");
-   // pageNum이 null이라는 뜻은 처음 이 사이트에 들어왔다는 뜻이며, 그러한 경우 1번 페이지를 보여준다.
-   if(pageNum == null) {
-      pageNum = "1";
-   }
-   
-   // 현재 페이지가 몇번째 페이지인지 계산
-   int currentPage = Integer.parseInt(pageNum);
-   
-   // 첫번째 글이 전체 게시글중 몇번째인지 계산
-   int startRow = (currentPage - 1) * pageSize + 1;
-   
-   // 모든 기업의 리스트를 가져옴 
-   List<CompanyVO> list = Cdao.getCompanyList();
-   
-   // 모든 기업의 리스트를 10개 단위로 잘라서 들고옴
-   List<CompanyVO> tenlist = Cdao.getCompanyListTen(startRow, pageSize);
+	// 페이징 넘버 작업
+	
+	// 한 페이지에 보여줄 게시글 개수
+	int pageSize = 8;
+	// 현재 페이지
+	String pageNum = request.getParameter("pageNum");
+	// pageNum이 null이라는 뜻은 처음 이 사이트에 들어왔다는 뜻이며, 그러한 경우 1번 페이지를 보여준다.
+	if(pageNum == null) {
+		pageNum = "1";
+	}
+	
+	// 현재 페이지가 몇번째 페이지인지 계산
+	int currentPage = Integer.parseInt(pageNum);
+	
+	// 첫번째 글이 전체 게시글중 몇번째인지 계산
+	int startRow = (currentPage - 1) * pageSize + 1;
+	
+	// 모든 기업의 리스트를 가져옴 
+	List<CompanyVO> list = Cdao.getCompanyList();
+	
+	// 모든 기업의 리스트를 10개 단위로 잘라서 들고옴
+	List<CompanyVO> tenlist = Cdao.getCompanyListTen(startRow, pageSize);
 
-   // 기업이 총 몇개인지
-   int Companycnt = list.size();
-   
-   
+	// 기업이 총 몇개인지
+	int Companycnt = list.size();
+	
+	
 
 
 %>
@@ -170,7 +170,7 @@
     </div>
 
 <!--  채용관 리스트  -->
-   
+	
     <section class="section3">
         <div class="text">
             <h2 class="listTitle">참여 기업 리스트</h2>
@@ -193,139 +193,14 @@
                             
                         </div>
                         <div>
-                            <p><%=tenlist.get(i).getEmplodate() %></p>
+                            <p>지원기간</p>
                         </div>
                     </div> <!-- cardInfo -->
                 </a>
             </div> <!-- enterpriseCard -->
             <% } %>
             
-            <%-- <div class="enterpriseCard">
-                <a href="">
-                    <img class="cardImg" src="" alt="카드2">
-                    <div class="cardInfo">
-                        <div>
-                            <span><%=Cdaolist.get(1).getCompanyname() %></span>
-                            <span>입사현황</span>
-                        </div>
-                        <div>
-                            <span><%=Cdaolist.get(1).getAddress() %></span>
-                            <span><%=Cdaolist.get(1).getWorktype() %></span>
-                        </div>
-                        <div>
-                            <span>지원기간</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="enterpriseCard">
-                <a href="">
-                    <img class="cardImg" src="" alt="카드3">
-                    <div class="cardInfo">
-                        <div>
-                            <span><%=Cdaolist.get(2).getCompanyname() %></span>
-                            <span>입사현황</span>
-                        </div>
-                        <div>
-                            <span><%=Cdaolist.get(2).getAddress() %></span>
-                            <span><%=Cdaolist.get(2).getWorktype() %></span>
-                        </div>
-                        <div>
-                            <span>지원기간</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="enterpriseCard">
-                <a href="">
-                    <img class="cardImg" src="" alt="카드4">
-                    <div class="cardInfo">
-                        <div>
-                            <span><%=Cdaolist.get(3).getCompanyname() %></span>
-                            <span>입사현황</span>
-                        </div>
-                        <div>
-                            <span><%=Cdaolist.get(3).getAddress() %></span>
-                            <span><%=Cdaolist.get(3).getWorktype() %></span>
-                        </div>
-                        <div>
-                            <span>지원기간</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="enterpriseCard">
-                <a href="">
-                    <img class="cardImg" src="" alt="카드5">
-                    <div class="cardInfo">
-                        <div>
-                            <span><%=Cdaolist.get(4).getCompanyname() %></span>
-                            <span>입사현황</span>
-                        </div>
-                        <div>
-                            <span><%=Cdaolist.get(4).getAddress() %></span>
-                            <span><%=Cdaolist.get(4).getWorktype() %></span>
-                        </div>
-                        <div>
-                            <span>지원기간</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="enterpriseCard">
-                <a href="">
-                    <img class="cardImg" src="" alt="카드6">
-                    <div class="cardInfo">
-                        <div>
-                            <span><%=Cdaolist.get(5).getCompanyname() %></span>
-                            <span>입사현황</span>
-                        </div>
-                        <div>
-                            <span><%=Cdaolist.get(5).getAddress() %></span>
-                            <span><%=Cdaolist.get(5).getWorktype() %></span>
-                        </div>
-                        <div>
-                            <span>지원기간</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="enterpriseCard">
-                <a href="">
-                    <img class="cardImg" src="" alt="카드7">
-                    <div class="cardInfo">
-                        <div>
-                            <span><%=Cdaolist.get(6).getCompanyname() %></span>
-                            <span>입사현황</span>
-                        </div>
-                        <div>
-                            <span><%=Cdaolist.get(6).getAddress() %></span>
-                            <span><%=Cdaolist.get(6).getWorktype() %></span>
-                        </div>
-                        <div>
-                            <span>지원기간</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="enterpriseCard">
-                <a href="">
-                    <img class="cardImg" src="" alt="카드8">
-                    <div class="cardInfo">
-                        <div>
-                            <span><%=Cdaolist.get(7).getCompanyname() %></span>
-                            <span>입사현황</span>
-                        </div>
-                        <div>
-                            <span><%=Cdaolist.get(7).getAddress() %></span>
-                            <span><%=Cdaolist.get(7).getWorktype() %></span>
-                        </div>
-                        <div>
-                            <span>지원기간</span>
-                        </div>
-                    </div>
-                </a>
-            </div> --%>
+            
         </div> <!-- enterpriseCard -->
     </section> <!-- section3 -->
     
@@ -343,71 +218,53 @@
     
     
     <!-- 게시글 페이징 -->
-       <div id="page_control" style="text-align: center;">
-         <%
-             // 전체 페이지 수 계산
-             int pageCnt = Companycnt/pageSize + (Companycnt%pageSize == 0 ? 0 : 1);
-            // 한 페이지에 보여줄 게시글 개수
-            
-            // int Companycnt = list.size(); => 전체 기업의 수 => 20개
-            // int pageSize = 8;
-            // compantcnt 를 pageSize로 나눈 값이 0 이면 0이 반환되고
-            // 0이 아니면 1이 반환된다.
-      
-            // 삼항 연산자, (A ? B : C)의 형태로 표시된다.
-            // 첫번째 인덱스는 조건을 의미하고, 두번째 인덱스는 조건이 참일 경우 리턴되는 값이며
-            // 세번째 인덱스는 조건이 거짓일때 리턴되는 값이다. 
-      
-             // 한 페이지에 보여줄 페이지 번호 개수
-             int pageBlock = 10;
-            
-             // 시작하는 페이지 번호  ex) 1, 11, 21...
-             int startPage = ((currentPage-1) / pageBlock) * pageBlock + 1;
-             
-             // 끝나는 페이지 번호
-             int endPage = startPage + pageBlock-1;
-             
-             if(endPage > pageCnt) {
-                endPage = pageCnt;
-             
-             
-             // 10페이지 이전으로 가는 버튼
-             // 시작페이지가 11이상이 아니면 이전 버튼을 만들 필요가 없다. 
-             if(startPage > pageBlock) { %>
-                <a href="employment.jsp?pageNum=<%=startPage - pageBlock%>">이전</a>
-             <%}
-             // 몇번 페이지로 갈 것인지 번호를 a태그로 생성
-             for(int i = startPage; i <= endPage; i++) { %>
-                <a href="employment.jsp?pageNum=<%=i%>"><%=i %></a>
-             <%}
-             
-             // 10페이지 건너뛰는 버튼
-             // 남은 페이지가 10 이하라면 다음으로 가는 버튼을 만들 필요가 없다.
-             if(endPage < pageCnt) { %>
-                <a href="employment.jsp?pageNum=<%=startPage + pageBlock%>">다음</a>
-             <%}
-          }
-          %>
-       </div>
+	    <div id="page_control" style="text-align: center;">
+			<%
+    			// 전체 페이지 수 계산
+    			int pageCnt = Companycnt/pageSize + (Companycnt%pageSize == 0 ? 0 : 1);
+				// 한 페이지에 보여줄 게시글 개수
+				
+				// int Companycnt = list.size(); => 전체 기업의 수 => 20개
+				// int pageSize = 8;
+				// compantcnt 를 pageSize로 나눈 값이 0 이면 0이 반환되고
+				// 0이 아니면 1이 반환된다.
+		
+				// 삼항 연산자, (A ? B : C)의 형태로 표시된다.
+				// 첫번째 인덱스는 조건을 의미하고, 두번째 인덱스는 조건이 참일 경우 리턴되는 값이며
+				// 세번째 인덱스는 조건이 거짓일때 리턴되는 값이다. 
+		
+    			// 한 페이지에 보여줄 페이지 번호 개수
+    			int pageBlock = 10;
+				
+    			// 시작하는 페이지 번호  ex) 1, 11, 21...
+    			int startPage = ((currentPage-1) / pageBlock) * pageBlock + 1;
+    			
+    			// 끝나는 페이지 번호
+    			int endPage = startPage + pageBlock-1;
+    			
+    			if(endPage > pageCnt) {
+    				endPage = pageCnt;
+    			
+    			
+    			// 10페이지 이전으로 가는 버튼
+    			// 시작페이지가 11이상이 아니면 이전 버튼을 만들 필요가 없다. 
+	    		if(startPage > pageBlock) { %>
+	    			<a href="employment.jsp?pageNum=<%=startPage - pageBlock%>">이전</a>
+	    		<%}
+    			// 몇번 페이지로 갈 것인지 번호를 a태그로 생성
+    			for(int i = startPage; i <= endPage; i++) { %>
+    				<a href="employment.jsp?pageNum=<%=i%>"><%=i %></a>
+    			<%}
+    			
+    			// 10페이지 건너뛰는 버튼
+    			// 남은 페이지가 10 이하라면 다음으로 가는 버튼을 만들 필요가 없다.
+    			if(endPage < pageCnt) { %>
+    				<a href="employment.jsp?pageNum=<%=startPage + pageBlock%>">다음</a>
+    			<%}
+    		}
+ 			%>
+	    </div>
     
-    
-    
-    
-    
-    
-    
-    
-
-    <!-- <div class="list_number">
-        <div class="list_n_menu">
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-        </div>
-    </div> -->
-
 
     <footer>
         <div class="footerWrap">

@@ -1,491 +1,125 @@
-<table border="0" cellpadding="0" cellspacing="0" class="main" width="1280" align="center">
-	<tbody><tr>
-		<td>
-			
-	</td></tr><tr>
-		<td>
-			<table border="0" cellpadding="0" cellspacing="0" width="1280" align="center">
-				<tbody><tr height="12"><td></td></tr>
-				<tr>
-					<td>
-						<table border="0" cellpadding="0" cellspacing="0" width="1280" align="center">
-							<tbody><tr valign="middle">
-								<td width="70"></td>
-								<td><a href="./index.asp"><img src="./img/head_00.png" style="vertical-align:top;"></a></td>
-								<td width="600"></td>
-								<td>
-									<table border="0" cellpadding="0" cellspacing="0">
-										<tbody><tr>
-											<td><a href="./reset.asp"><img src="./img/head_0001.png" style="vertical-align:top;"></a></td>
-											<td><a href="./b_check.asp"><img src="./img/head_0002.png" style="vertical-align:top;"></a></td>
-											<td width="20"></td>
-											<!-- 로그아웃 -->
-											
-											<td><strong><font color="#333333">유승기</font></strong></td>
-											<td><a href="./logout_p.asp"><img src="./img/head_0004.png" style="vertical-align:top;"></a></td>
-											
-										</tr>
-									</tbody></table>
-								</td>
-								<td width="70"></td>
-							</tr>
-						</tbody></table>
-					</td>
-				</tr>
-<!--
-									<td width="150"></td>
-									
-									<td><a href="./logout_p.asp"><img src="./img/tm_0701.png" style="vertical-align:top;" /></a></td>
-									
-									<td><a href="./index.asp?menu=6&menu2=1"><img src="./img/tm_08.png" style="vertical-align:top;" /></a></td>
--->
-				<tr>
-					<td>
-						<table border="0" cellpadding="0" cellspacing="0" width="1280">
-							<tbody><tr>
-									<td width="69"></td>
-									<td><a href="./index.asp?menu=1&amp;mid_menu=1"><img src="./img/tm_01.png" style="vertical-align:top;"></a></td>
-									<td><a href="./index.asp?menu=2"><img src="./img/tm_02.png" style="vertical-align:top;"></a></td>
-									<td><a href="./index.asp?menu=3"><img src="./img/tm_03.png" style="vertical-align:top;"></a></td>
-									<td><a href="./index.asp?menu=4"><img src="./img/tm_04.png" style="vertical-align:top;"></a></td>
-									<td><a href="./index.asp?menu=5"><img src="./img/tm_05.png" style="vertical-align:top;"></a></td>
-									<td><a href="./index.asp?menu=6"><img src="./img/tm_06.png" style="vertical-align:top;"></a></td>
-									<td width="290" rowspan="2"></td>
-									<td><img src="./img/head_009.png" style="vertical-align:top;"></td>
-									<td width="70" rowspan="2"></td>
-							</tr>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>돋보기</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main2.css" />
+	<style>
+		* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	}
+
+	h1{
+		text-align: center;
+	}
+
+	/* 돋보기 영역 */
+	.wrap {
+		position: relative;
+		width: 200px;
+		margin: 0 auto;
+	}
+
+	/* 돋보기 */
+	.magnifier {
+		width: 300px;
+		height: 300px;
+		position: absolute;
+		border-radius: 100%;
+		box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.85), 0 0 3px 3px rgba(0, 0, 0, 0.25);
+		display: none;
+	}
+
+	.target {
+		display: block;
+		width: 100%;		
+	}
+	</style>
+</head>
 
 
-							<tr>
-								<td background="./img/head_006.png" style="vertical-align:top;" colspan="10" height="5"></td>
-							</tr>
-						</tbody></table>
-					</td>
-				</tr>
-			</tbody></table>
-		</td>
-	</tr>
 
-		
+
+
+<body>
+    <h1>돋보기 2</h1>
+    <div class="wrap">
+        <img class="target" src="../img/Namjeongsoo.png" />
+		<br><br>
+		<div class="target" >안녕하세요</div>
+    </div>
+	<div>
+		<button onclick="" id="switch" class="on" >돋보기</button>
+	</div>
+
 	
-	<tr>
-		<td>
-			
 
-<!--
-	<tr>
-		<td>
-		<table border="0" bgcolor="#ffffff" cellpadding="0" cellspacing="0" width="1280" align="center">
-
-			<tr>
-				<td width="190"></td>
-				<td align="left">
-					<a href="./index.asp?menu=1&mid_menu=1"><img src="./img/top_menu_01.png" style="vertical-align:top;" /></a><img src="./img/top_menu_gap.png" style="vertical-align:top;" /><a href="./index.asp?menu=2"><img src="./img/top_menu_02.png" style="vertical-align:top;" /></a><img src="./img/top_menu_gap.png" style="vertical-align:top;" /><a href="./index.asp?menu=3"><img src="./img/top_menu_03.png" style="vertical-align:top;" /></a><img src="./img/top_menu_gap.png" style="vertical-align:top;" /><a href="./index.asp?menu=4"><img src="./img/top_menu_04.png" style="vertical-align:top;" /></a><img src="./img/top_menu_gap.png" style="vertical-align:top;" /><a href="./index.asp?menu=5"><img src="./img/top_menu_05.png" style="vertical-align:top;" /></a><a href="./index.asp?menu=6"><img src="./img/top_menu_0601.png" style="vertical-align:top;" /></a>
-				</td>
-			</tr>
-
-		</table>
-		</td>
-	</tr>
--->
-		</td>
-	</tr>
-
-	<tr>
-		<td height="30">
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<img src="./img/sm_06.png" style="vertical-align:top;">
-		</td>
-	</tr>
-	<tr>
-		<td>
-				</td></tr><tr>
-		<td background="./img/menu6_bg.png">
-			<table border="0" align="center" width="1280">
-				<tbody><tr><td height="20"></td></tr>
-				<tr valign="top">
-					<td width="80"></td>
-					<!--- 촤측 메뉴 -->
-					<td>
-						<table border="0" cellpadding="0" cellspacing="0" width="207" height="403">
-							<tbody><tr>
-								<td>
-									<img src="./img/menu6_02_01.png" style="vertical-align:top;">
-								</td>
-								<td background="./img/menu6_02_02.png" width="124" height="106">
-									
-									<strong>유승기</strong><font size="2">님 <br>반갑습니다.<br><a href="./logout_p.asp"><strong>[로그아웃]</strong></a><br><br></font>
-									
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<a href="./index.asp?menu=6&amp;menu2=2"><img src="./img/menu6_02_03.png" style="vertical-align:top;"></a>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<a href="./index.asp?menu=6&amp;menu2=3"><img src="./img/menu6_02_04.png" style="vertical-align:top;"></a>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<a href="./index.asp?menu=6&amp;menu2=4"><img src="./img/menu6_02_05.png" style="vertical-align:top;"></a>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<a href="./index.asp?menu=6&amp;menu2=5"><img src="./img/menu6_02_06.png" style="vertical-align:top;"></a>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<a href="./index.asp?menu=6&amp;menu2=6"><img src="./img/menu6_02_07.png" style="vertical-align:top;"></a>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<a href="./index.asp?menu=6&amp;menu2=7"><img src="./img/menu6_02_08.png" style="vertical-align:top;"></a>
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2">
-									<img src="./img/menu6_02_09.png" style="vertical-align:top;">
-								</td>
-							</tr>
-						</tbody></table>
-					</td>
-					<!--- 촤측 메뉴 끝-->
-					<td>
-					<!--- 우측 메뉴 -->
-					
-<meta charset="euc-kr">
-<br>
-
-<form name="mod_resume" method="post" action="./resume_p.asp">
-			<table border="0" cellpadding="0" cellspacing="0" width="760">
-				<tbody><tr>
-					<td align="center" height="90"><img src="./img/resume_01.png" style="vertical-align:top;"></td>
-				</tr>
-			</tbody></table>
-<table border="0" cellpadding="0" cellspacing="0" style="border:solid 1px; border-color:#282828;">
-	<tbody><tr>
-		<td>
-			<table border="0" cellpadding="0" cellspacing="0" width="760">
-				<tbody><tr height="40">
-					<td align="center" width="150" class="info3" style="border:solid 1px; border-color:#282828;">성명</td>
-					<td align="center" width="230" class="info3" style="border:solid 1px; border-color:#282828;">유승기</td>
-					<td align="center" width="150" class="info3" style="border:solid 1px; border-color:#282828;">성별</td>
-					<td align="center" width="230" class="info3" style="border:solid 1px; border-color:#282828;">
-						<table border="0" cellpadding="0" cellspacing="0">
-							<tbody><tr>
-								<td><input type="radio" name="user_sex" value="남자">남자</td>
-								<td width="20"></td>
-								<td><input type="radio" name="user_sex" value="여자">여자</td>
-							</tr>
-						</tbody></table>
-					</td>
-				</tr>
-				<tr height="40">
-					<td align="center" width="150" class="info3" style="border:solid 1px; border-color:#282828;">연락처</td>
-					<td align="center" width="230" class="info3" style="border:solid 1px; border-color:#282828;">01034898872</td>
-					<td align="center" width="150" class="info3" style="border:solid 1px; border-color:#282828;">생년월일</td>
-					<td align="center" width="230" class="info3" style="border:solid 1px; border-color:#282828;">920520-*******</td>
-				</tr>
-				<tr height="40">
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">주소</td>
-					<td align="left" width="610" class="info3" style="border:solid 1px; border-color:#282828;" colspan="3">&nbsp;
-					경남 김해시 <input type="text" name="user_add" class="input_add2" title="나머지 주소를 입력해 주세요." placeholder="나머지 주소를 입력해 주세요." value="">
-					
-					</td>
-				</tr>
-				<tr height="40">
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">병역</td>
-					<td align="left" class="info3" style="border:solid 1px; border-color:#282828;" colspan="3">&nbsp;
-						<input type="radio" name="user_g4" value="필"> 필
-						<input type="radio" name="user_g4" value="미필"> 미필 
-						<input type="radio" name="user_g4" value="면제"> 면제
-						<input type="radio" name="user_g4" value="해당사항없음"> 해당사항없음
-					</td>
-				</tr>
-				<tr height="40">
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">장애유형<br>(중복장애)</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">기타&nbsp;(<input type="text" name="add_type" class="input_add3" title="중복장애" placeholder="주중복장애" value="">)<br>(* 중복장애입력)</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">보장구 유/무</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-					<input type="radio" name="user_div" value="yes"> 유 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="user_div" value="no" checked=""> 무</td>
-				</tr>
-				<tr height="40">
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">장애정도</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">심하지 않은</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">보장구 종류</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;"><input type="text" name="user_divinfo" class="input_divinfo" title="보장구 종류" placeholder="보장구 종류" value=""></td>
-				</tr>
-				<tr height="40">
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;" rowspan="2">최종학력</td>
-					<td align="left" class="info3" style="border:solid 1px; border-color:#282828;" colspan="2">&nbsp;
-						<input type="text" name="user_g1" class="input_g1" title="학교명을 입력하세요." placeholder="학교명을 입력하세요" value=""> 학교
-					</td>
-					<td align="left" class="info3" style="border:solid 1px; border-color:#282828;" rowspan="2">
-						<input type="radio" name="user_g3" value="무학"> 무학 
-						<input type="radio" name="user_g3" value="재학"> 재학 
-						<input type="radio" name="user_g3" value="졸업"> 졸업<br>
-						<input type="radio" name="user_g3" value="휴학"> 휴학 
-						<input type="radio" name="user_g3" value="중퇴"> 중퇴 
-					</td>
-				</tr>
-				<tr height="40">
-					<td align="left" class="info3" style="border:solid 1px; border-color:#282828;" colspan="2">&nbsp;
-						<input type="text" name="user_g2" class="input_g1" title="학과명을 입력하세요." placeholder="학과명을 입력하세요" value=""> 학과
-					</td>
-				</tr>
-			</tbody></table>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<table border="0" cellpadding="0" cellspacing="0" width="760">
-				<tbody><tr height="40">
-					<td align="center" width="150" class="info3" style="border:solid 1px; border-color:#282828;" rowspan="4">경 력 <br>사 항 </td>
-					<td align="center" width="170" class="info3" style="border:solid 1px; border-color:#282828;">사업체명</td>
-					<td align="center" width="170" class="info3" style="border:solid 1px; border-color:#282828;">근무기간</td>
-					<td align="center" width="170" class="info3" style="border:solid 1px; border-color:#282828;">담당업무</td>
-					<td align="center" width="170" class="info3" style="border:solid 1px; border-color:#282828;"> 비 고 </td>
-				</tr>
-				<tr height="40">
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g311" class="input_g3" title="사업체명" placeholder="사업체명" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g312" class="input_g3" title="근무기간" placeholder="근무기간" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g313" class="input_g3" title="담당업무" placeholder="담당업무" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g314" class="input_g3" title="비 고" placeholder="비 고" value="">
-					</td>
-				</tr>
-				<tr height="40">
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g321" class="input_g3" title="사업체명" placeholder="사업체명" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g322" class="input_g3" title="근무기간" placeholder="근무기간" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g323" class="input_g3" title="담당업무" placeholder="담당업무" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g324" class="input_g3" title="비 고" placeholder="비 고" value="">
-					</td>
-				</tr>
-				<tr height="40">
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g331" class="input_g3" title="사업체명" placeholder="사업체명" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g332" class="input_g3" title="근무기간" placeholder="근무기간" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g333" class="input_g3" title="담당업무" placeholder="담당업무" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g334" class="input_g3" title="비 고" placeholder="비 고" value="">
-					</td>
-				</tr>
-			</tbody></table>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<table border="0" cellpadding="0" cellspacing="0" width="760">
-				<tbody>
-                <tr height="40">
-					<td align="center" width="140" class="info3" style="border:solid 1px; border-color:#282828;" rowspan="4">자 격 <br>면 허 </td>
-					<td align="center" width="200" class="info3" style="border:solid 1px; border-color:#282828;">자격종목</td>
-					<td align="center" width="120" class="info3" style="border:solid 1px; border-color:#282828;">급수</td>
-					<td align="center" width="120" class="info3" style="border:solid 1px; border-color:#282828;">등록번호</td>
-					<td align="center" width="120" class="info3" style="border:solid 1px; border-color:#282828;">발행처</td>
-					<td align="center" width="120" class="info3" style="border:solid 1px; border-color:#282828;">발급일자</td>
-				</tr>
-				<tr height="40">
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g411" class="input_g5" title="자격종목" placeholder="자격종목" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g412" class="input_g4" title="급수" placeholder="급수" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g413" class="input_g4" title="등록번호" placeholder="등록번호" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g414" class="input_g4" title="발행처" placeholder="발행처" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g415" class="input_g4" title="발급일자" placeholder="발급일자" value="">
-					</td>
-				</tr>
-				<tr height="40">
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g421" class="input_g5" title="자격종목" placeholder="자격종목" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g422" class="input_g4" title="급수" placeholder="급수" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g423" class="input_g4" title="등록번호" placeholder="등록번호" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g424" class="input_g4" title="발행처" placeholder="발행처" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g425" class="input_g4" title="발급일자" placeholder="발급일자" value="">
-					</td>
-				</tr>
-				<tr height="40">
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g431" class="input_g5" title="자격종목" placeholder="자격종목" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g432" class="input_g4" title="급수" placeholder="급수" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g433" class="input_g4" title="등록번호" placeholder="등록번호" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g434" class="input_g4" title="발행처" placeholder="발행처" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g435" class="input_g4" title="발급일자" placeholder="발급일자" value="">
-					</td>
-				</tr>
-			</tbody>
-        </table>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<table border="0" cellpadding="0" cellspacing="0" width="760">
-				<tbody>
-                <tr height="40">
-					<td align="center" width="140" class="info3" style="border:solid 1px; border-color:#282828;" rowspan="4">교 육 <br>및 <br>훈 련</td>
-					<td align="center" width="230" class="info3" style="border:solid 1px; border-color:#282828;">교육ㆍ훈련기관</td>
-					<td align="center" width="230" class="info3" style="border:solid 1px; border-color:#282828;">교육ㆍ훈련일자</td>
-					<td align="center" width="230" class="info3" style="border:solid 1px; border-color:#282828;">교육ㆍ훈련내용</td>
-				</tr>
-				<tr height="40">
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g511" class="input_g5" title="교육ㆍ훈련기관" placeholder="교육ㆍ훈련기관" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g512" class="input_g5" title="교육ㆍ훈련일자" placeholder="교육ㆍ훈련일자" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g513" class="input_g5" title="교육ㆍ훈련내용" placeholder="교육ㆍ훈련내용" value="">
-					</td>
-				</tr>
-				<tr height="40">
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g521" class="input_g5" title="교육ㆍ훈련기관" placeholder="교육ㆍ훈련기관" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g522" class="input_g5" title="교육ㆍ훈련일자" placeholder="교육ㆍ훈련일자" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g523" class="input_g5" title="교육ㆍ훈련내용" placeholder="교육ㆍ훈련내용" value="">
-					</td>
-				</tr>
-				<tr height="40">
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g531" class="input_g5" title="교육ㆍ훈련기관" placeholder="교육ㆍ훈련기관" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g532" class="input_g5" title="교육ㆍ훈련일자" placeholder="교육ㆍ훈련일자" value="">
-					</td>
-					<td align="center" class="info3" style="border:solid 1px; border-color:#282828;">
-						<input type="text" name="user_g533" class="input_g5" title="교육ㆍ훈련내용" placeholder="교육ㆍ훈련내용" value="">
-					</td>
-				</tr>
-			</tbody></table>
-		</td>
-	</tr>
-</tbody>
-</table>
-			<table border="0" cellpadding="0" cellspacing="0" width="760">
-				<tbody><tr height="10">
-					<td colspan="2"></td>
-				</tr>
-				<tr>
-					<td align="left" width="140" class="info3">
-						<a href="./admin_resume_excel.asp?user_idx=1845&amp;user_name=유승기"><img src="./img/down.png" style="vertical-align:top;"></a>
-					</td>
-					<td align="right" width="140" class="info3">
-						<input type="image" src="./img/save_btn.png" name="submit">
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2"><font size="" color="red"><strong>&nbsp;&nbsp;※ 수정사항을 저장하고 다운로드 하세요.</strong></font></td>
-				</tr>
-			</tbody></table>
-</form>
-
-					<!--- 우측 메뉴 끝 -->
-					</td>
-				</tr>
-				<tr>
-					<td height="40" colspan="3"></td>
-				</tr>
-			</tbody></table>
-		</td>
-	</tr>
-
-
-		
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+//주의 : hTML에서 보여지는 이미지 크기가 본래 이미지 크기보다 작아야 함. ( width , height )
+window.onload = function () {
+	$(".wrap")
+		.on('mousemove', magnify)
+		.prepend("<div class='magnifier'></div>")
+		.children('.magnifier').css({
+			"background": "url('" + $(".target").attr("src") + "') no-repeat",		
+		});
 	
-	<tr>
-		<td height="30">
-		</td>
-	</tr>
-
-	<tr>
-		<td>
-				</td></tr><tr>
-		<td align="center">
-			<table border="0" cellpadding="0" cellspacing="0" width="1280" height="140" background="./img/footer2.png">
-				<tbody><tr>
-					<td height="1" bgcolor="#DCDCDC" colspan="2">
-					</td>
-				</tr>
-				<tr>
-					<td width="400"></td>
-					<td class="info6">
-						<table border="0" cellpadding="0" cellspacing="0" height="120">
-							<tbody><tr>
-								<td height="40" class="info5"><strong>| 개인정보처리방침 | 이메일무단수집거부 |</strong></td>
-							</tr>
-							<tr>
-								<td class="info7">부산장애인 온라인 채용 박람회 공식 홈페이지는 [(주)워크잡]이 제작 및 유지보수를 담당하고 있습니다.</td>
-							</tr>
-							<tr>
-								<td class="info7">TEL. 051-780-9100 | FAX. 051-780-9300 | E-mail. job@wjob.kr</td>
-							</tr>
-							<tr>
-								<td class="info7">상호명. (주)워크잡 | 대표자명. 전정규 | 상업자등록번호. 617-81-77285</td>
-							</tr>
-							<tr>
-								<td class="info7">Copyright.ⓒ (주)워크잡. all rights reserved.</td>
-							</tr>
-						</tbody></table>
-					</td>
-				</tr>
-			</tbody></table>
-		</td>
-	</tr>
-
-		
+	var target = $('.target');
+	var magnifier = $('.magnifier');
 	
-</tbody></table>
+	function magnify(e) {
+	
+		// 마우스 위치에서 .magnify의 위치를 차감해 컨테이너에 대한 마우스 좌표를 얻는다.
+		var mouseX = e.pageX - $(this).offset().left;
+		var mouseY = e.pageY - $(this).offset().top;
+	
+		// 컨테이너 밖으로 마우스가 벗어나면 돋보기를 없앤다.
+		if (mouseX < $(this).width() && mouseY < $(this).height() && mouseX > 0 && mouseY > 0) {
+			magnifier.fadeIn(100);
+		} else {
+			magnifier.fadeOut(100);
+		}
+	
+		//돋보기가 존재할 때
+		if (magnifier.is(":visible")) {
+	
+			/* 이미지에 대한 마우스 포인터 아래의 픽셀 비율(본래 이미지 크기에 대한)을 얻고 
+			이를 사용하여 돋보기 내부에 큰 이미지를 배치한다. */
+			var rx = -(mouseX / target.width() * target[0].naturalWidth - magnifier.width() / 2);
+			var ry = -(mouseY / target.height() * target[0].naturalHeight - magnifier.height() / 2);
+	
+			//돋보기를 마우스 위치에 따라 움직인다.
+			//돋보기의 width, height 절반을 마우스 좌표에서 차감해 마우스와 돋보기 위치를 일치시킨다.
+			var px = mouseX - magnifier.width() / 2;
+			var py = mouseY - magnifier.height() / 2;
+	
+			//적용
+			magnifier.css({
+				left: px,
+				top: py,
+				backgroundPosition: rx + "px " + ry + "px"
+			});
+		}
+	}
+
+	$("#switch").click(function(){
+    if($(this).hasClass("on")) {
+        $(this).addClass("off").removeClass("on");
+		$('.magnifier').css('visibility','hidden');
+		
+    } else {
+        $(this).addClass("on").removeClass("off");
+		$('.magnifier').css('visibility','visible');		
+    }
+});
+};
+	</script>
+</body>
+
+</html>

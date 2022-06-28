@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>로그인</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/login.css">
@@ -75,12 +76,12 @@
         <div class="slider-tab"></div>
       </div>
       <div class="form-inner">
-        <form action="#" class="login">
+        <form action="loginok.jsp" class="login" method="post" name="dislogin">
           <div class="field">
-            <input type="text" placeholder="이름을 입력해주세요." required>
+            <input type="text" placeholder="이름을 입력해주세요." name="loginname" required >
           </div>
           <div class="field">
-            <input type="text" placeholder="연락처를 입력해주세요." required>
+            <input type="text" placeholder="연락처를 입력해주세요." name="loginmobile" required >
           </div>
           <div class="field btn">
             <div class="btn-layer"></div>

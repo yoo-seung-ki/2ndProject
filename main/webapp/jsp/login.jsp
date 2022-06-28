@@ -11,23 +11,22 @@
 </head>
 <body>
  <header>
-         <header>
         <div class="headerWrap">
             <div class="logo">
                 <a href="./main.jsp">
                     <img src="../img/logo.png" alt="">
-                    <div class="main-title-text">예일장애인박람회</div>
+                    <div class="title-text">예일장애인박람회</div>
                 </a>
             </div>
             <div class="navMenu">
                 <ul>
-                  <li><a class="menu" href="">팀원소개</a></li>
-                  <li><a class="menu" href="">온라인 채용관</a></li>
-                  <li><a class="menu" href="">취업 컨텐츠</a></li>
-                  <li><a class="menu" href="">내 정보 관리</a></li>
+                    <li><a href="">팀원소개</a></li>
+                    <li><a href="">온라인 채용관</a></li>
+                    <li><a href="">취업 컨텐츠</a></li>
+                    <li><a href="">내 정보 관리</a></li>
                 </ul>
             </div>
-            <div class="changeBtn">고대비
+            <div>고대비
             <label class="switch">
                 <input type="checkbox" id="colormode">
                 <span class="slider round"></span>
@@ -39,15 +38,13 @@
                 if($("#colormode").is(":checked")){
                     $("body").css("background-color","#000");
                     $("body").css("color","#fff");
-                    $(".main-title-text").css("color","#fff");
-                    $(".title").css("color","#000");
-                    $(".signup-link").css("color","#000");
-                    $(".menu").css("color","#fff");
+                    $(".title-text").css("color","#fff");
+
+
                 }else{
                     $("body").css("background-color","#fff");
                     $("body").css("color","#000");                    
-                    $(".main-title-text").css("color","#000");
-                    $(".menu").css("color","#000");
+                    $(".title-text").css("color","#000");
 
               
                     
@@ -58,55 +55,46 @@
             });
             </script>
             <div class="signin-signup">
-                <button class="signin1">로그인</button>
-                <button class="signup1">회원가입</button>
+                <button class="signin">로그인</button>
+                <button class="signup">회원가입</button>
             </div>
         </div>
     </header>
 
 <main>
-  <div class="wrapper">
-    <div class="title-text">
-      <div class="title login">유저 로그인</div>
-      <div class="title signup">관리자 로그인</div>
-    </div>
-    <div class="form-container">
-      <div class="slide-controls">
-        <input type="radio" name="slide" id="login" checked>
-        <input type="radio" name="slide" id="signup">
-        <label for="login" class="slide login">유저 로그인</label>
-        <label for="signup" class="slide signup">관리자 로그인</label>
-        <div class="slider-tab"></div>
-      </div>
-      <div class="form-inner">
-        <form action="#" class="login">
-          <div class="field">
-            <input type="text" placeholder="이름을 입력해주세요." required>
-          </div>
-          <div class="field">
-            <input type="text" placeholder="연락처를 입력해주세요." required>
-          </div>
-          <div class="field btn">
-            <div class="btn-layer"></div>
-            <input type="submit" value="로그인">
-          </div>
-          <div class="signup-link">회원이 아니신가요? <a href="./register.jsp">회원가입</a></div>
-        </form>
-        <form action="#" class="로그인">
-          <div class="field">
-            <input type="text" placeholder="아이디를 입력해주세요." required>
-          </div>
-          <div class="field">
-            <input type="password" placeholder="패스워드를 입력해주세요." required>
-          </div>
-          <div class="field btn">
-            <div class="btn-layer"></div>
-            <input type="submit" value="로그인">
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+        <div class="mode-btn">
+        <button type="button" id="user-login" >참여자 로그인</button>
+        <button type="button" id="mg-login">관리자 로그인</button>
+        <div id="user-login-page">
+            <p class="user-login">참여자 로그인</p>
+             <form class="logform1">
+                <div class="info-insert">
+                성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명&nbsp;  <input class="info-name" type="text" placeholder="성명을 입력해주세요."><br>
+                 연&nbsp;락&nbsp;처&nbsp;  <input class="info-num" type="text" placeholder="연락처를 입력해주세요."><br>
+                </div>
+                <div style="display:flex;">
+                <div class="login-btn1">
+                 <a class="submit">로그인</a>
+                </div>
+                <div class="login-btn2">
+                    <a class="submit" href="./register.jsp">회원가입</a>
+                </div>
+            </div>
+             </form>
+         </div> <!-- class= user-login-page-->
+         <div id="mg-login-page">
+            <p class="mg-login">관리자 로그인</p>
+             <form class="logform1">
+                <div class="info-insert">
+                아&nbsp;이&nbsp;디&nbsp;  <input class="info-name" type="text" placeholder="아이디를 입력해주세요."><br>
+                 패스워드  <input class="info-num" type="text" placeholder="패스워드를 입력해주세요."><br>
+                </div>
+                <div class="login-btn">
+                 <a class="submit">로그인</a>
+                </div>
+             </form>
+         </div> <!-- id= mg-login-page-->
+        </div> <!--mode-btn-->
 </main>
 <footer>
     <div class="footerWrap">
@@ -115,22 +103,5 @@
 </footer>
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script>
-   const loginText = document.querySelector(".login-title-text .login");
-      const loginForm = document.querySelector("form.login");
-      const loginBtn = document.querySelector("label.login");
-      const signupBtn = document.querySelector("label.signup");
-      signupBtn.onclick = (()=>{
-        loginForm.style.marginLeft = "-50%";
-        loginText.style.marginLeft = "-50%";
-      });
-      loginBtn.onclick = (()=>{
-        loginForm.style.marginLeft = "0%";
-        loginText.style.marginLeft = "0%";
-      });
-      signupLink.onclick = (()=>{
-        signupBtn.click();
-        return false;
-      });
- </script>
+<script src="../js/loginmode.js"></script>
 </html>

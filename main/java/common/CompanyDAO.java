@@ -8,11 +8,11 @@ import java.util.List;
 
 public class CompanyDAO {
 
-	private DBConMgr pool;
+	private DBConnMgr pool;
 
 	public CompanyDAO() {
 		try {
-			pool = DBConMgr.getInstance();
+			pool = DBConnMgr.getInstance();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

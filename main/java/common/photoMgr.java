@@ -7,7 +7,7 @@ import java.util.Vector;
 
 public class photoMgr {
 
-	private DBConMgr pool;
+	private DBConnMgr pool;
 	
 public Vector<PhotoVO> getPhotoImgUrl(String keyWord, int start, int end) {
 		

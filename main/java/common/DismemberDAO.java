@@ -8,20 +8,20 @@ import java.util.List;
 
 public class DismemberDAO {
 
-	private DBConMgr pool;
+	private DBConnMgr pool;
 
 	public DismemberDAO() {
 		try {
-			pool = DBConMgr.getInstance();
+			pool = DBConnMgr.getInstance();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	// 회원가입
-	// 가입 성공여부에 따라 flag를 반환 (성공시 true 실패시 false  / default는 false)
-	// 멤버번호를 max를 사용해서 추가한다?
-	// 비밀번호 암호화?
+	// �쉶�썝媛��엯
+	// 媛��엯 �꽦怨듭뿬遺��뿉 �뵲�씪 flag瑜� 諛섑솚 (�꽦怨듭떆 true �떎�뙣�떆 false  / default�뒗 false)
+	// 硫ㅻ쾭踰덊샇瑜� max瑜� �궗�슜�빐�꽌 異붽��븳�떎?
+	// 鍮꾨�踰덊샇 �븫�샇�솕?
 	public boolean insertUser(DismemberVO vo) {
 		boolean flag = false;
 		Connection con = null;
@@ -41,9 +41,9 @@ public class DismemberDAO {
 			pstmt.setString(7, vo.getDiscase());
 			pstmt.setString(8, vo.getDisgrade());
 	
-			// executeUpdate 의 반환값은 insert,update,delete인 경우, 관련된 레코드의 수를 반환
-			// create, drop, alter인 경우에는 0을 반환
-			// 회원가입에는 1명의 정보를 저장하기 때문에 성공적으로 가입이 되었다면 1을 반환할 것이다.
+			// executeUpdate �쓽 諛섑솚媛믪� insert,update,delete�씤 寃쎌슦, 愿��젴�맂 �젅肄붾뱶�쓽 �닔瑜� 諛섑솚
+			// create, drop, alter�씤 寃쎌슦�뿉�뒗 0�쓣 諛섑솚
+			// �쉶�썝媛��엯�뿉�뒗 1紐낆쓽 �젙蹂대�� ���옣�븯湲� �븣臾몄뿉 �꽦怨듭쟻�쑝濡� 媛��엯�씠 �릺�뿀�떎硫� 1�쓣 諛섑솚�븷 寃껋씠�떎.
 			if (pstmt.executeUpdate() == 1) {
 				flag = true;				
 			}
@@ -57,7 +57,7 @@ public class DismemberDAO {
 	
 	
 
-	// 회원가입시 주민번호 뒷자리 중복체크
+	// �쉶�썝媛��엯�떆 二쇰�쇰쾲�샇 �뮮�옄由� 以묐났泥댄겕
 	public boolean isid2Exist(String personid2) {
 		boolean flag = false;
 		Connection con = null;
@@ -70,7 +70,7 @@ public class DismemberDAO {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, personid2);
 			rs = pstmt.executeQuery();
-			// 결과물이 있다는 것은 입력받은 주민번호 뒷자리가 이미 존재한다는 뜻
+			// 寃곌낵臾쇱씠 �엳�떎�뒗 寃껋� �엯�젰諛쏆� 二쇰�쇰쾲�샇 �뮮�옄由ш� �씠誘� 議댁옱�븳�떎�뒗 �쑜
 			if(rs.next()) {
 				flag = true;
 			}
@@ -84,8 +84,8 @@ public class DismemberDAO {
 	
 	
 
-	// 회원정보 수정전 주민번호 뒷자리 확인
-	// 세션에 저장된 전화번호와 입력받은 주민번호 뒷자리를 매개변수로 DB데이터와 대조
+	// �쉶�썝�젙蹂� �닔�젙�쟾 二쇰�쇰쾲�샇 �뮮�옄由� �솗�씤
+	// �꽭�뀡�뿉 ���옣�맂 �쟾�솕踰덊샇�� �엯�젰諛쏆� 二쇰�쇰쾲�샇 �뮮�옄由щ�� 留ㅺ컻蹂��닔濡� DB�뜲�씠�꽣�� ��議�
 	public boolean ChkPW(String personid2, String Mobile) {
 		boolean flag = false;
 		Connection con = null;
@@ -100,9 +100,9 @@ public class DismemberDAO {
 			pstmt.setString(1, personid2);
 			rs = pstmt.executeQuery();
 			
-			// 나온 결과가 있는가?
+			// �굹�삩 寃곌낵媛� �엳�뒗媛�?
 			if(rs.next()) {
-				// 결과가 입력받은 전화번호와 같은가?
+				// 寃곌낵媛� �엯�젰諛쏆� �쟾�솕踰덊샇�� 媛숈�媛�?
 				if(rs.getString("Mobile").equals(Mobile)) {
 					flag = true;
 				}
@@ -118,42 +118,42 @@ public class DismemberDAO {
 	
 	
 
-	// 로그인
-	// 다른 방법으로는 비밀번호를 입력하고 로그인에 시도할 때 입력받은 비밀번호를 암호화시키고 
-	// 암호화된 비밀번호와 DB에 있는 암호화된 비밀번호를 대조하는 방식
+	// 濡쒓렇�씤
+	// �떎瑜� 諛⑸쾿�쑝濡쒕뒗 鍮꾨�踰덊샇瑜� �엯�젰�븯怨� 濡쒓렇�씤�뿉 �떆�룄�븷 �븣 �엯�젰諛쏆� 鍮꾨�踰덊샇瑜� �븫�샇�솕�떆�궎怨� 
+	// �븫�샇�솕�맂 鍮꾨�踰덊샇�� DB�뿉 �엳�뒗 �븫�샇�솕�맂 鍮꾨�踰덊샇瑜� ��議고븯�뒗 諛⑹떇
 	public int login(String id, String pw) {
-		Connection con = null;				// 데이터베이스와의 연결
-		PreparedStatement pstmt = null;		// 사전에 컴파일 된 SQL문을 실행
+		Connection con = null;				// �뜲�씠�꽣踰좎씠�뒪���쓽 �뿰寃�
+		PreparedStatement pstmt = null;		// �궗�쟾�뿉 而댄뙆�씪 �맂 SQL臾몄쓣 �떎�뻾
 		String sql = null;
 		ResultSet rs = null;
 		
-		// 1 : 이름이 존재하지 않음
-		// 2 : 비밀번호가 일치하지 않음
-		// 3 : 로그인 성공
-		// 4 : 로그인은 성공했지만 로그인실패 카운트 초과로 추가인증
-		// 5 : 로그인은 성공했지만 블랙리스트에 지정되어 일정 기간동안 로그인 불가
+		// 1 : �씠由꾩씠 議댁옱�븯吏� �븡�쓬
+		// 2 : 鍮꾨�踰덊샇媛� �씪移섑븯吏� �븡�쓬
+		// 3 : 濡쒓렇�씤 �꽦怨�
+		// 4 : 濡쒓렇�씤�� �꽦怨듯뻽吏�留� 濡쒓렇�씤�떎�뙣 移댁슫�듃 珥덇낵濡� 異붽��씤利�
+		// 5 : 濡쒓렇�씤�� �꽦怨듯뻽吏�留� 釉붾옓由ъ뒪�듃�뿉 吏��젙�릺�뼱 �씪�젙 湲곌컙�룞�븞 濡쒓렇�씤 遺덇�
 		int flag = 0;
 		
 		try {
 			con = pool.getConnection();
-			// 입력받은 이름이 데이터베이스에 존재하는지 확인
+			// �엯�젰諛쏆� �씠由꾩씠 �뜲�씠�꽣踰좎씠�뒪�뿉 議댁옱�븯�뒗吏� �솗�씤
 			sql = "select Mobile from dismember where name = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			// 이름이 없으니 1을 반환
+			// �씠由꾩씠 �뾾�쑝�땲 1�쓣 諛섑솚
 			if(!rs.next()) {
 				flag = 1;
 				return flag;
 			}
-			// sql문을 돌려 나온 전화번호가 입력받은 전화번호와 일치하는지 확인
-			// 일치하지 않으면 2를 반환
+			// sql臾몄쓣 �룎�젮 �굹�삩 �쟾�솕踰덊샇媛� �엯�젰諛쏆� �쟾�솕踰덊샇�� �씪移섑븯�뒗吏� �솗�씤
+			// �씪移섑븯吏� �븡�쑝硫� 2瑜� 諛섑솚
 			else if(!(rs.getString("pw").equals(pw))) {
 				
 				flag = 2;
 				return flag;
 			} else {
-				// 아무것도 걸리지 않으면 3을 반환하면서 로그인 실패 카운트를 0으로 초기화
+				// �븘臾닿쾬�룄 嫄몃━吏� �븡�쑝硫� 3�쓣 諛섑솚�븯硫댁꽌 濡쒓렇�씤 �떎�뙣 移댁슫�듃瑜� 0�쑝濡� 珥덇린�솕
 					flag = 3;
 				}
 					
@@ -166,7 +166,7 @@ public class DismemberDAO {
 	}
 	
 	
-	// 매개변수로 받은 주민번호 뒷자리의 모든 정보를 반환(VO)
+	// 留ㅺ컻蹂��닔濡� 諛쏆� 二쇰�쇰쾲�샇 �뮮�옄由ъ쓽 紐⑤뱺 �젙蹂대�� 諛섑솚(VO)
 		public DismemberVO getUser(String personid2) {
 			DismemberVO vo = new DismemberVO();
 			Connection con = null;

@@ -201,13 +201,16 @@
             <% } %>
             
             
+            
         </div> <!-- enterpriseCard -->
     </section> <!-- section3 -->
     
     <div class="searchWrap">
         <div>
-            <input type="text" placeholder="기업명 입력">
-            <button type="submit" class="search2">검색</button>
+        	<form method="get" action="companysearchproc.jsp">
+            	<input type="text" placeholder="기업명 입력" name="searchtext">
+            	<button type="submit" class="search2">검색</button>
+            </form>
         </div>
     </div> <!-- searchWrap -->
     

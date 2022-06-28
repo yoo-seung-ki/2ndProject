@@ -14,7 +14,7 @@
          <header>
         <div class="headerWrap">
             <div class="logo">
-                <a href="../html/main.html">
+                <a href="./main.jsp">
                     <img src="../img/logo.png" alt="">
                     <div class="main-title-text">예일장애인박람회</div>
                 </a>
@@ -90,7 +90,7 @@
             <div class="btn-layer"></div>
             <input type="submit" value="로그인">
           </div>
-          <div class="signup-link">회원이 아니신가요? <a href="">회원가입</a></div>
+          <div class="signup-link">회원이 아니신가요? <a href="./register.jsp">회원가입</a></div>
         </form>
         <form action="#" class="로그인">
           <div class="field">
@@ -120,7 +120,6 @@
       const loginForm = document.querySelector("form.login");
       const loginBtn = document.querySelector("label.login");
       const signupBtn = document.querySelector("label.signup");
-      const signupLink = document.querySelector("form .signup-link a");
       signupBtn.onclick = (()=>{
         loginForm.style.marginLeft = "-50%";
         loginText.style.marginLeft = "-50%";

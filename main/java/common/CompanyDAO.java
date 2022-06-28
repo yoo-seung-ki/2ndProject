@@ -188,6 +188,39 @@ public class CompanyDAO {
 		return list;
 	}
 
+	
+	
+	
+	public List<CompanyVO> getSearch(String searchText){//특정한 리스트를 받아서 반환
+        List<CompanyVO> list = new ArrayList<CompanyVO>();
+        Connection con = null;
+        PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+	      try {
+	    	  // sql = "select * from foodnametbl where Recipe like? "
+	    	  // pstmt = con.prepareStatement(sql)
+	    	  // pstmt.seString(1,"%" + ingre1 + "%");
+	    	  	con = pool.getConnection();
+	            if(searchText != null && !searchText.equals("") ){//이거 빼면 안 나온다ㅜ 왜지?
+		            sql =" select companyname from mjt where companyname LIKE ? order by companyseq desc limit 10";
+		            pstmt = con.prepareStatement(sql);
+		            pstmt.setString(1,"%" + searchText + "%");
+					rs = pstmt.executeQuery();
+	            
+				//select
+	         while(rs.next()) {
+	            CompanyVO vo = new CompanyVO();
+	            vo.setCompanyname(rs.getString("Companyname"));
+	            list.add(vo);//list에 해당 인스턴스를 담는다.
+	         }         
+	            }
+	      } catch(Exception e) {
+	         e.printStackTrace();
+	      }
+	      return list;//게시글 리스트 반환
+	   }
+	
 
 
 }

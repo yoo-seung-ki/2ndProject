@@ -7,7 +7,7 @@ import java.util.*;
 public class DBConMgr{
     private Vector connections = new Vector(10);
     private String _driver = "com.mysql.cj.jdbc.Driver",
-    _url = "jdbc:mysql://localhost:3307/workjob",
+    _url = "jdbc:mysql://localhost:3306/workjob",
     _user = "root",
     _password = "1234";
     private boolean _traceOn = true;

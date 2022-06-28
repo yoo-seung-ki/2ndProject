@@ -24,6 +24,16 @@
     text-decoration: none;
 }
 
+/* main */
+main {
+    /* 중앙 정렬 */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+
 /* header */
 
 header{
@@ -416,3 +426,85 @@ footer .footerWrap{
 }
 
 /* excel form */
+.excelTable {
+    border: 1px solid #dddddd;
+}
+
+table, th, td {
+    border:1px solid #cccccc;
+    border-collapse: collapse; /*각테두리 사이에 빈공간을 없애주는 옵션*/
+}
+th {
+    font-size: var(--font-sizeXXL);
+}
+th, td { 
+    padding: 10px 20px;
+}    
+
+input {
+    height: 25px;
+}
+
+
+#name1, #name3, #name4{
+    width: 383px;
+}
+
+#name5 {
+    width: 1025px;
+}
+
+#name7 {
+    width: 384px;
+}
+#name8, #name9 {
+    width: 560px;
+}
+
+#name13, #name17, #name21 {
+    width: 384px;
+}
+
+#name39, #name42, #name45 {
+    width: 598px;
+}
+
+.space {
+    margin-left: 50px;    
+}
+.space2 {
+    margin-left: 40px;
+}
+.gender {
+    position: relative;
+    top: 203px;
+    left: 252px;
+    z-index: -1;
+}
+.military {
+    position: relative;
+    top: 332px;
+    right: 271px;
+    z-index: -1;
+}
+
+.values1 {
+    position: relative;
+    top: 372px;
+    right: -239px;
+    z-index: -1;
+}
+
+.values2 { 
+    position: relative;
+    top: 411px;
+    right: 360px;
+    z-index: -1;
+}
+
+.values3 {
+    position: relative;
+    top: 465px;
+    right: -360px;
+    z-index: -1;
+}

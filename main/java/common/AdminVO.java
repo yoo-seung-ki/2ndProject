@@ -7,6 +7,7 @@ public class AdminVO {
 	private String name;
 	private String mobile;
 	
+	
 	public int getAdminseq() {
 		return adminseq;
 	}

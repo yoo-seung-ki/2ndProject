@@ -63,8 +63,8 @@
             </script>
         </script>
         <div class="signin-signup">
-            <button class="signin">로그인</button>
-            <button class="signup">회원가입</button>
+                <button class="signin" onclick="location.href='./login.jsp';">로그인</button>
+                <button class="signup" onclick="locaition.href='./register.jsp';">회원가입</button>
         </div>
     </div>
 </header>
@@ -83,12 +83,30 @@
     <!-- 회사배너 -->
     <div class="companyWrap">
         <div class="companybanner">
-            <img src="../img/scrollup.png" width="150" alt="회사배너">
+            <img src="" class="uploadimage" width="150" alt="회사배너">
         </div>
     </div>
   <!--회사 정보? -->
   <div class="company-info">
-    <img src="../img/good1.png" class="good"  width="45" height="45">기업정보
+  <div>
+    <img src="../img/good1.png" class="good"  width="45" height="45">기업정보 
+   		<input type="file" id="file" name="file"  accept="image/*" onchange="changeValue(this)"/>
+   		<button type="button" id="btn-upload" style="float:right;">이미지업로드</button>
+
+    <script>
+    $(function () {
+    	$('#btn-upload').click(function (e) {
+    		e.preventDefault();$('#file').click();
+    		});
+    	}); 
+     function changeValue(obj){
+		alert(obj.value);
+	}
+   
+
+
+  </script>
+  </div>
 <table style="width:1200px; height:120px;">
 
     <tr>

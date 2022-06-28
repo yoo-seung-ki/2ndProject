@@ -209,7 +209,7 @@ footer .footerWrap{
 }
 
 main{
-margin:200px 0px 200px 0px;
+margin:200px 0px 248px 0px;
 font-family: 'Poppins', sans-serif;
 }
 body{
@@ -224,7 +224,6 @@ text-align: center;
   box-sizing: border-box;
 }
 html,body{
-  display: grid;
   height: 100%;
   width: 100%;
   place-items: center;

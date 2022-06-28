@@ -91,8 +91,8 @@
         });
         </script>
         <div class="signin-signup">
-            <button class="signin">로그인</button>
-            <button class="signup">회원가입</button>
+                <button class="signin" onclick="location.href='./login.jsp';">로그인</button>
+                <button class="signup" onclick="locaition.href='./register.jsp';">회원가입</button>
         </div>
     </div>
 </header>

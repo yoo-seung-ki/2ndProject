@@ -106,11 +106,13 @@ header{
     background: var(--color-black);
     border: none;
     color: var(--color-white);
+    cursor:pointer;
 }
 
 .signup{
     background: var(--color-white);
     border: 1px solid var(--color-lightgray);
+    cursor:pointer;
 }
 
 
@@ -396,10 +398,11 @@ input:checked + .slider:before {
 	font-size: var(--font-sizeM);
 	margin-bottom: 25px;
 }
-#page_control: visited{
+#page_control:visited{
 	font-size: var(--font-sizeM);
 	color: var(--color-black);
 	margin-bottom: 25px;
+
 }
 
 

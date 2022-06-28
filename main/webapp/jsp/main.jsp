@@ -54,10 +54,10 @@
             </div>
             <div class="navMenu">
                 <ul>
-                    <li><a href="">팀원소개</a></li>
-                    <li><a href="">온라인 채용관</a></li>
-                    <li><a href="">취업 컨텐츠</a></li>
-                    <li><a href="">내 정보 관리</a></li>
+                    <li><a class="menu" href="">팀원소개</a></li>
+                    <li><a class="menu" href="">온라인 채용관</a></li>
+                    <li><a class="menu" href="">취업 컨텐츠</a></li>
+                    <li><a class="menu" href="">내 정보 관리</a></li>
                 </ul>
             </div>
             <div>고대비
@@ -80,6 +80,7 @@
                     $(".myInfoCard").css("background-color","#fff");
                     $(".myInfoCard").css("box-shadow","none");
                     $(".title-text").css("color","#fff");
+                    $(".menu").css("color","#fff");
                 }else{
                     $("body").css("background-color","#fff");
                     $("body").css("color","#000");
@@ -91,7 +92,7 @@
                     $(".myInfoCard").css("background-color","#fff");
                     $(".myInfoCard").css("box-shadow","10px 10px 20px #e1e1e1");
                     $(".title-text").css("color","#000");
-                    
+                    $(".menu").css("color","#000");
                     
                 }
             

@@ -48,10 +48,6 @@
                     $("body").css("color","#000");                    
                     $(".main-title-text").css("color","#000");
                     $(".menu").css("color","#000");
-
-              
-                    
-                    
                 }
             
                 });
@@ -116,7 +112,7 @@
 </body>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
-   const loginText = document.querySelector(".login-title-text .login");
+      const loginText = document.querySelector(".login-title-text .login");
       const loginForm = document.querySelector("form.login");
       const loginBtn = document.querySelector("label.login");
       const signupBtn = document.querySelector("label.signup");

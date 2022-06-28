@@ -107,11 +107,13 @@ header{
     background: var(--color-black);
     border: none;
     color: var(--color-white);
+    cursor:pointer;
 }
 
 .signup{
     background: var(--color-white);
     border: 1px solid var(--color-lightgray);
+    cursor:pointer;
 }
 
 

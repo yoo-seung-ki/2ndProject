@@ -13,7 +13,7 @@
     <header>
         <div class="headerWrap">
             <div class="logo">
-                <a href="main.jsp">
+                <a href="./main.jsp">
                     <img src="../img/logo.png" alt="">
                     <div class="title-text">예일장애인박람회</div>
                 </a>
@@ -51,8 +51,9 @@
             });
             </script>
             <div class="signin-signup">
-                <button class="signin">로그인</button>
-                <button class="signup">회원가입</button>
+                <button class="signin" onclick="location.href='./login.jsp';">로그인</button>
+                <button class="signup" onclick="locaition.href='./register.jsp';">회원가입</button>
+
             </div>
         </div>
     </header>

@@ -60,7 +60,7 @@
                     <li><a class="menu" href="">내 정보 관리</a></li>
                 </ul>
             </div>
-            <div>고대비
+            <div class="changeBtn">고대비
             <label class="switch">
                 <input type="checkbox" id="colormode">
                 <span class="slider round"></span>
@@ -72,6 +72,7 @@
                 if($("#colormode").is(":checked")){
                     $("body").css("background-color","#000");
                     $("body").css("color","#fff");
+                    $(".menu").css("color","#fff");
                     $(".section1").css("background-color","#7d7a7a");
                     $(".section2").css("background-color","#5a5959");
                     $(".section3").css("background-color","#7d7a7a");
@@ -84,6 +85,7 @@
                 }else{
                     $("body").css("background-color","#fff");
                     $("body").css("color","#000");
+                    $(".menu").css("color","#000");
                     $(".section1").css("background-color","beige");
                     $(".section2").css("background-color","burlywood");
                     $(".section3").css("background-color","beige");
@@ -100,8 +102,8 @@
             });
             </script>
             <div class="signin-signup">
-                <button class="signin">로그인</button>
-                <button class="signup">회원가입</button>
+                <button class="signin" onclick="location.href='../jsp/login.jsp';">로그인</button>
+                <button class="signup" onclick="location.href='../jsp/register.jsp';">회원가입</button>
             </div>
         </div>
     </header>
@@ -110,7 +112,7 @@
             <div class="section1-title">
                 <div class="title1">2022 예일 On-Line</div>
                 <div class="title2">장애인 일자리 박람회</div>
-                <div class="title3">2022-06-22(수) ~ 2022-06-22(수)</div>
+                <div class="title3">2022-06-22(수) ~ 2022-07-05(화)</div>
             </div>
             <div>
                 <img class="sectionImg" src="../img/mainImg.png" alt="메인화면">
@@ -165,12 +167,13 @@
                     <img class="cardImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
                     <div class="cardInfo">
                         <div>
-                            <p><%=tenlist.get(i).getCompanyname() %></p><br>
-                            
+                            <p><%=tenlist.get(i).getCompanyname() %></p>
                         </div>
                         <div>
-                            <p><%=tenlist.get(i).getAddress().substring(0,7) %></p><br>
-                            <p><%=tenlist.get(i).getRecrutype() %></p><br>
+                            <p><%=tenlist.get(i).getAddress().substring(0,7) %></p>
+                        </div>
+                        <div>
+                        	<p><%=tenlist.get(i).getRecrutype() %></p>
                         </div>
                         <div>
                             <p>지원기간</p>
@@ -179,13 +182,10 @@
                 </a>
             </div> <!-- enterpriseCard -->
             <% } %>
-                        </div>
-                    </a>
-                </div>
-         
-            </div>
+               </div>
+  
             <div>
-                <h2 class="addBtn"><a href="">더보기</a></h2>
+                <h2 class="addBtn"><a href="../jsp/employment.jsp">더보기&nbsp;<i class="fas fa-plus-circle"></i></a></h2>
             </div>
         </section>
         <section class="section4">

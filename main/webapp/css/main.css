@@ -47,7 +47,7 @@ header{
     height: 100px;
 }
 
-.headerWrap .logo div {
+.headerWrap .logo div{
     font-size: var(--font-sizeXL);
     font-family: 'Dongle';
     color: var(--color-black);
@@ -63,11 +63,16 @@ header{
     justify-content: space-around;
 }
 
-.headerWrap .navMenu ul{
+.headerWrap .navMenu ul,
+.headerWrap .changeBtn{
     display: flex;
     justify-content: space-between;
     font-family: 'KotraBold';
     font-weight: 800;
+}
+
+.headerWrap .navMenu ul > li > a{
+	color: black;
 }
 
 .headerWrap .signin-signup{
@@ -115,6 +120,7 @@ header{
     width: 60px;
     height: 34px;
     vertical-align:middle;
+    margin-left: 20px;
 }
 
 /* Hide default HTML checkbox */
@@ -294,13 +300,31 @@ footer .footerWrap{
 
 .cardImg{
     width: 250px;
-    height: 300px;
-    border: 1px solid black;
+    height: 250px;
+    border: 1px solid var(--light-gray);
     text-align: center;
+    border-radius: 20px;
+}
+
+.cardInfo{
+	margin-top: 20px;
+    font-family: 'KotraBold';
+    font-size: var(--font-sizes);
+    letter-spacing: 1px;
+    color: var(--color-black);
+}
+.cardInfo > div{
+	margin-bottom: 10px;
 }
 
 .addBtn{
     text-align: center;
+    font-size: var(--font-sizeL);
+    margin-top: 70px;
+}
+
+.addBtn > a{
+	color: var(--color-black);
 }
 
 /* section4 */

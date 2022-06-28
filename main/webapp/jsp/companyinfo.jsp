@@ -90,29 +90,32 @@
   <div class="company-info">
     <img src="../img/good1.png" class="good"  width="45" height="45">기업정보
 <table style="width:1200px; height:120px;">
+
     <tr>
         <th>기&nbsp;&nbsp;&nbsp;업&nbsp;&nbsp;&nbsp;명</th>
         <td colspan="3"><%=companyinfo.getCompanyname() %></td>
         <th>홈 페 이 지</th>
-        <td colspan="3">www.naver.com</td>
+        <% String G = companyinfo.getHomepage(); %>
+        <% if(G == null) {G = "-";} %>
+        <td colspan="3"><%=G %></td>
     </tr>
     <tr>
         <th>대&nbsp;&nbsp;&nbsp;표&nbsp;&nbsp;&nbsp;자</th>
-        <td colspan="3">ㅇㅇ</td>
+        <td colspan="3"><%=companyinfo.getCeo() %></td>
         <th>업&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;종</th>
-        <td colspan="3">제조업</td>
+        <td colspan="3"><%=companyinfo.getCompanycontent() %></td>
     </tr>
     <tr>
         <th>설 립 시 기</th>
-        <td colspan="3">2022년 6월 27일</td>
+        <td colspan="3"><%=companyinfo.getCreateyear() %></td>
         <th>사 업 내 용</th>
-        <td colspan="3">기계부품</td>
+        <td colspan="3"><%=companyinfo.getCompanytype() %></td>
     </tr>
     <tr>
         <th>주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</th>
-        <td colspan="3">우엉</td>
+        <td colspan="3"><%=companyinfo.getAddress() %></td>
         <th>규&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;모</th>
-        <td colspan="3">23423423</td>
+        <td colspan="3"><%=companyinfo.getCompanysize() %></td>
     </tr>
 </table>
 </div>
@@ -121,49 +124,53 @@
 <table  width="1200" height="120">
     <tr>
         <th>모 집 직 종</th>
-        <td colspan="3">ㅇㅇ</td>
+        <td colspan="3"><%=companyinfo.getRecrutype() %></td>
         <th>모 집 인 원</th>
-        <td colspan="3">ㅇㅇ</td>
+        <td colspan="3"><%=companyinfo.getRecrusize() %></td>
     </tr>
     <tr>
         <th>직 무 내 용</th>
-        <td colspan="3">ㅇㅇ</td>
+        <td colspan="3"><%=companyinfo.getWorkcontent() %></td>
         <th>근 무 지 역</th>
-        <td colspan="3">제조업</td>
+        <td colspan="3"><%=companyinfo.getWorkarea() %></td>
     </tr>
     <tr>
         <th>학&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;력</th>
-        <td colspan="3">2022년 6월 27일</td>
+        <td colspan="3"><%=companyinfo.getGraduate() %></td>
         <th>경&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;력</th>
-        <td colspan="3">기계부품</td>
+        <td colspan="3"><%=companyinfo.getCareer() %></td>
     </tr>
     <tr>
         <th>고 용 형 태</th>
-        <td colspan="3">우엉</td>
+        <td colspan="3"><%=companyinfo.getEmploycase() %></td>
         <th>근 무 형 태</th>
-        <td colspan="3">23423423</td>
+        <td colspan="3"><%=companyinfo.getWorktype() %></td>
     </tr>
     <tr>
         <th>급 여 조 건</th>
-        <td colspan="3">ㅇㅇ</td>
+        <td colspan="3"><%=companyinfo.getPaytype() %></td>
         <th>사 회 보 험</th>
-        <td colspan="3">www.naver.com</td>
+        <td colspan="3"><%=companyinfo.getInsurance() %></td>
     </tr>
     <tr>
         <th>퇴&nbsp;&nbsp;&nbsp;직&nbsp;&nbsp;&nbsp;금</th>
-        <td colspan="3">ㅇㅇ</td>
+        <td colspan="3"><%=companyinfo.getSeverance() %></td>
         <th>상&nbsp;&nbsp;&nbsp;여&nbsp;&nbsp;&nbsp;금</th>
-        <td colspan="3">제조업</td>
+        <% String I = companyinfo.getBonus(); %>
+        <% if(I == null) {I = "-";} %>
+        <td colspan="3"><%=I %></td>
     </tr>
     <tr>
         <th>근 무 시 간</th>
-        <td colspan="3">2022년 6월 27일</td>
+        <td colspan="3"><%=companyinfo.getWorktime() %></td>
         <th>잔&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;업</th>
-        <td colspan="3">기계부품</td>
+        <td colspan="3"><%=companyinfo.getAddwork() %></td>
     </tr>
     <tr>
         <th>기 타 조 건</th>
-        <td colspan="7">우엉</td>
+        <% String H = companyinfo.getEtc(); %>
+        <% if(H == null) {H = "-";}	%>
+        <td colspan="7"><%=H %></td>
 
     </tr>
 </table>
@@ -174,21 +181,33 @@
 <table  width="1200" height="120">
     <tr>
         <th>전&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;공</th>
-        <td colspan="3">ㅇㅇ</td>
+        <% String A = companyinfo.getMajor(); %>
+        <% if(A == null) {A = "-";}%>
+        <td colspan="3"><%=A %></td>
         <th>자 격 면 허</th>
-        <td colspan="3">www.naver.com</td>
+        <% String B = companyinfo.getLicense(); %>
+        <% if(B == null) {B = "-";}%>
+        <td colspan="3"><%=B %></td>
     </tr>
     <tr>
         <th>컴퓨터활용</th>
-        <td colspan="3">ㅇㅇ</td>
+        <% String C = companyinfo.getComputer(); %>
+        <% if(C == null) {C = "-";}%>
+        <td colspan="3"><%=C %></td>
         <th>편 의 시 설</th>
-        <td colspan="3">제조업</td>
+        <% String D = companyinfo.getFacil(); %> 
+        <% if(D == null) {D = "-";}	%>
+        <td colspan="3"><%=D %></td>
     </tr>
     <tr>
         <th>복 리 후 생</th>
-        <td colspan="3">2022년 6월 27일</td>
+        <% String E = companyinfo.getWelfare(); %>
+        <% if(E == null) {E = "-";}%>
+        <td colspan="3"><%=E %></td>
         <th>우 대 사 항</th>
-        <td colspan="3">기계부품</td>
+        <% String F = companyinfo.getTreatment(); %>
+        <% if(F == null) {F = "-";}	%>
+        <td colspan="3"><%=F %></td>
     </tr>
 </table>
 <div style="float:right">

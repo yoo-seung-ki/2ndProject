@@ -36,6 +36,9 @@ public class CompanyDAO {
 				vo.setLogo(rs.getString("Logo"));
 				vo.setCeo(rs.getString("Ceo"));
 				vo.setAddress(rs.getString("Address"));
+				vo.setCreateyear(rs.getString("Createyear"));
+				vo.setWorktype(rs.getString("Worktype"));
+				vo.setEtc(rs.getString("Etc"));
 				vo.setHomepage(rs.getString("Homepage"));
 				vo.setCompanytype(rs.getString("CompanyType"));
 				vo.setCompanycontent(rs.getString("CompanyContent"));
@@ -160,7 +163,7 @@ public class CompanyDAO {
 		String sql = null;
 		try {
 			con = pool.getConnection();
-			sql = "select companyname,logo,address,recrutype,emplodate from mjt order By companyseq desc limit ?, ?";
+			sql = "select companyname,companyseq,logo,address,recrutype,emplodate from mjt order By companyseq limit ?, ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, startRow - 1);
 			pstmt.setInt(2, pageSize);
@@ -169,6 +172,7 @@ public class CompanyDAO {
 			while(rs.next()) {
 				CompanyVO vo = new CompanyVO();
 				vo.setCompanyname(rs.getString("Companyname"));
+				vo.setCompanyseq(rs.getInt("Companyseq"));
 				vo.setLogo(rs.getString("Logo"));
 				vo.setAddress(rs.getString("Address"));
 				vo.setRecrutype(rs.getString("Recrutype"));

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/login.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <script defer src="../js/loginchk.js"></script>
 </head>
 <body>
  <header>
@@ -81,24 +82,24 @@
             <input type="text" placeholder="이름을 입력해주세요." name="loginname" required >
           </div>
           <div class="field">
-            <input type="text" placeholder="연락처를 입력해주세요." name="loginmobile" required >
+            <input type="text" placeholder="연락처를 입력해주세요." name="loginmobile" maxlength="11" required >
           </div>
           <div class="field btn">
             <div class="btn-layer"></div>
-            <input type="submit" value="로그인">
+            <input type="submit" value="로그인" onclick="loginChk()">
           </div>
           <div class="signup-link">회원이 아니신가요? <a href="./register.jsp">회원가입</a></div>
         </form>
-        <form action="#" class="로그인">
+        <form action="#" class="login" name="managelogin">
           <div class="field">
-            <input type="text" placeholder="아이디를 입력해주세요." required>
+            <input type="text" placeholder="아이디를 입력해주세요." name="manageid" required>
           </div>
           <div class="field">
-            <input type="password" placeholder="패스워드를 입력해주세요." required>
+            <input type="password" placeholder="패스워드를 입력해주세요." name="managepw" required>
           </div>
           <div class="field btn">
             <div class="btn-layer"></div>
-            <input type="submit" value="로그인">
+            <input type="submit" value="로그인" onclick="manageloginChk()">
           </div>
         </form>
       </div>

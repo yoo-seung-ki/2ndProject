@@ -54,7 +54,15 @@ header{
     font-family: 'Dongle';
     color: var(--color-black);
 }
-
+.headerWrap .navMenu ul > li > a{
+   color: black;
+}
+.headerWrap .changeBtn {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'KotraBold';
+    font-weight: 800;
+}
 .headerWrap .logo a{
     display: flex;
     align-items: center;
@@ -116,9 +124,9 @@ header{
     display: inline-block;
     width: 60px;
     height: 34px;
-    vertical-align:middle;
+    vertical-align: middle;
+    margin-left: 20px;
 }
-
 /* Hide default HTML checkbox */
 .switch input {display:none;}
 
@@ -189,21 +197,23 @@ footer .footerWrap{
     line-height: 70px;
 }
 main{
-margin:200px 0px 200px 0px;
-color:#fff
+margin:100px 0px 200px 0px;
+height:500px;
+color:#000;
 }
 .user-regi{
 padding-top:50px;
 text-align: center;
-color: #fff;
+color: #000;
 font-weight: bold;
 font-size:var(--font-sizeL);
 }
 #user-register-page{
 margin: 0 auto;
-background-color:#F77F00;
+background-color:#fff;
+border: 1px solid orange;
 width: 600px;
-height: 800px;
+height: 700px;
 border-radius: 2em;
  }
 .info-insert{
@@ -214,11 +224,15 @@ text-align: center;
 width: 300px;
 height: 30px;
 margin-top:20px;
+border-radius: 5px;
+border:1px solid #b2b2b2;
 }
 .ssn{
  width: 135px;
  height:30px;
  margin-top:20px;
+ border: 1px solid #b2b2b2;
+ border-radius: 5px;
 }
 .warn{
 font-size: 0.8em;
@@ -229,6 +243,10 @@ margin-left:58px;
 display:flex;
 margin-left: 165px;
 margin-top:20px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
 
 }
 .check-box{
@@ -256,25 +274,46 @@ margin-top:55px;
 font-size: 1.3em;
 }
 
-.regi-btn{
-margin-top: 55px;
-border: none;
-border-radius: 5px;
-background-color: orange;
-width:250px;
-height: 70px;
-line-height: 65px;
-margin: 40px auto ;
-border-radius: 2em;
+.insert-check input[type="checkbox"]{
+	display:none;
+}
+.on{
+	width:20px;
+	height: 20px;
+	background:#fff;
+	border:solid 1px #b2b2b2;
+		
+}
+.insert-check input[type="checkbox"]:checked + .on {
+	background: orange;
+}
+.on:after{
+	content:"";
+	display:none;
+}
+.insert-check input[type="checkbox"]:checked + .on:after{
+	display:none;
+}
+.on:after{
+	width:6px;
+	height:10px;
+	border:solid #fff;
+	border-width: 0 2px2px 0;
 }
 
 
-.submit{
+ #submit{
 font-size: 2em;
-color:#fff;
+color:#000;
 cursor: pointer;
 text-decoration: none;
-}
+width:250px;
+height: 70px;
+border: none;
+border-radius: 5px;
+margin-top:40px;
+background-color:#b2b2b2;
+} 
 
 a:visited{
 text-decoration: none;

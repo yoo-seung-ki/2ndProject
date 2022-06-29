@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,9 @@
     <!-- FileSaver saveAs CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
     <script src="../js/sheetjs.js"></script>
+    <script src="../js/html-magnifier.js"></script>
+    
+  
 </head>
 <body>
 
@@ -32,28 +35,9 @@
             <input type="checkbox" id="colormode">
             <span class="slider round"></span>
         </label>
-        <script>
-            $(document).ready(function() {
-                $("#colormode").change(function(){
-                if($("#colormode").is(":checked")){
-                    $("body").css("background-color","#000");
-                    $("body").css("color","#fff");
-                    $(".title-text").css("color","#fff");
-                    $(".title").css("color","#000");
-                    $(".signup-link").css("color","#000");
-                    $(".menu").css("color","#fff");
-                    $(".bannerTitle").css("color","#000");
-                }else{
-                    $("body").css("background-color","#fff");
-                    $("body").css("color","#000");                    
-                    $(".title-text").css("color","#000");
-                    $(".menu").css("color","#000");
-                    $(".bannerTitle").css("color","#000");
-                }
-            
-                });
-            });
-        </script>
+
+        <button onclick="Buttontoggle()" value="off" id="toggle">돋보기</button>
+        
          
         <div class="signin-signup">
             <button class="signin">로그인</button>
@@ -404,13 +388,37 @@
 <button type="button" class="excelexport" onclick="fnExcelReport('table','title');">Excel로 저장</button>
 
 </main> 
-
-
     <footer>
         <div class="footerWrap">
             <div>copyright 2022. All RIGHT RESERVED.</div>
         </div>
     </footer>
+    <script>
+        $(document).ready(function() {
+            $("#colormode").change(function(){
+            if($("#colormode").is(":checked")){
+                $("body").css("background-color","#000");
+                $("body").css("color","#fff");
+                $(".title-text").css("color","#fff");
+                $(".title").css("color","#000");
+                $(".signup-link").css("color","#000");
+                $(".menu").css("color","#fff");
+                $(".bannerTitle").css("color","#000");
+            }else{
+                $("body").css("background-color","#fff");
+                $("body").css("color","#000");                    
+                $(".title-text").css("color","#000");
+                $(".menu").css("color","#000");
+                $(".bannerTitle").css("color","#000");
+            }        
+        });
+    });
 
+            /* global HTMLMagnifier */
+        const magnifier = new HTMLMagnifier({ width: 500, height: 500 });
+        magnifier.hide();
+            
+    </script>
 </body>
 </html>
+

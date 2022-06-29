@@ -55,6 +55,7 @@
             <a href="../jsp/home.jsp">
                 <img src="../img/logo.png" alt="">
                 <div class="title-text">예일장애인박람회</div>
+                
             </a>
         </div>
         <div class="navMenu">
@@ -72,8 +73,6 @@
         <script>
         $(document).ready(function() {
         	$("p").css("color","#000");
-        	---
-        	ektldjshkl;fjekl;tjerl;ktjl;krjkl;rjelsw;krjl;sjrals;jrasl;
             $("#colormode").change(function(){
             if($("#colormode").is(":checked")){
                 $("body").css("background-color","#000");
@@ -184,15 +183,13 @@
                     <img class="cardImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
                     <div class="cardInfo">
                         <div>
-                            <p ><%=tenlist.get(i).getCompanyname() %></p><br>
-                            
+                            <p ><%=tenlist.get(i).getCompanyname() %></p>
                         </div>
                         <div>
-                            <p><%=tenlist.get(i).getAddress().substring(0,7) %></p><br>
+                            <p><%=tenlist.get(i).getAddress().substring(0,7) %></p>
                         </div>
                         <div>
-                            <p><%=tenlist.get(i).getRecrutype() %></p><br>
-                            
+                            <p><%=tenlist.get(i).getRecrutype() %></p>
                         </div>
                         <div>
                             <p><%=tenlist.get(i).getEmplodate() %></p>
@@ -207,9 +204,29 @@
     </section> <!-- section3 -->
     
     <div class="searchWrap">
-        <div>
-            <input type="text" placeholder="기업명 입력">
-            <button type="submit" class="search2">검색</button>
+        <div class="input-bar">
+        		<form>
+	            <input type="text" autocomplete="off" placeholder="마이크 클릭 후 음성으로 기업명 입력">
+	            <button type="submit" class="search2">검색</button>
+	            </form>
+	            <button class="dictate"><i class="fas fa-microphone"></i>
+					<svg width="1.25rem" height="1.25rem" viewBox="0 0 100 100">
+						<g stroke="#fff" stroke-width="15">
+							<path d="M20,20 20,80">
+								<animate attributeName="d" values="M20,40 20,60;M20,20 20,80;M20,40 20,60" dur="1s"
+									repeatCount="indefinite" />
+							</path>
+							<path d="M50,10 50,90">
+								<animate attributeName="d" values="M50,10 50,90;M50,40 50,60;M50,10 50,90" dur="1s"
+									repeatCount="indefinite" />
+							</path>
+							<path d="M80,20 80,80">
+								<animate attributeName="d" values="M80,40 80,60;M80,20 80,80;M80,40 80,60" dur="1s"
+									repeatCount="indefinite" />
+							</path>
+						</g>
+					</svg>
+	            </button>
         </div>
     </div> <!-- searchWrap -->
     
@@ -220,7 +237,7 @@
     
     
     <!-- 게시글 페이징 -->
-	    <div id="page_control" style="text-align: center;">
+	    <div class="listNum" id="page_control">
 			<%
     			// 전체 페이지 수 계산
     			int pageCnt = Companycnt/pageSize + (Companycnt%pageSize == 0 ? 0 : 1);
@@ -232,7 +249,7 @@
 				// 0이 아니면 1이 반환된다.
 		
 				// 삼항 연산자, (A ? B : C)의 형태로 표시된다.
-				// 첫번째 인덱스는 조건을 의미하고, 두번째 인덱스는 조건이 참일 경우 리턴되는 값이며
+				// 첫번째 인덱스는 조건을 의미하고, 두번째 인덱스는s 조건이 참일 경우 리턴되는 값이며
 				// 세번째 인덱스는 조건이 거짓일때 리턴되는 값이다. 
 		
     			// 한 페이지에 보여줄 페이지 번호 개수
@@ -274,5 +291,6 @@
         </div>
     </footer>
 
+<script src="../js/voice.js"></script>
 </body>
 </html>

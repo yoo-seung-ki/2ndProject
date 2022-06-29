@@ -194,7 +194,7 @@
                         	<p><%=tenlist.get(i).getRecrutype() %></p>
                         </div>
                         <div>
-                            <p>지원기간</p>
+                            <p><%=tenlist.get(i).getEmplodate() %></p>
                         </div>
                     </div> <!-- cardInfo -->
                 </a>

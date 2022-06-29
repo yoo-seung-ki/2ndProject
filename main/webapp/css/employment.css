@@ -295,10 +295,10 @@ input:checked + .slider:before {
 }
 
 .enterpriseList{
-    display: flex;
-    justify-content: space-evenly;
+display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
-    width: 1200px;
+    width: 1400px;
     margin: 50px auto 0 auto;
 }
 .enterpriseCard{
@@ -307,11 +307,20 @@ input:checked + .slider:before {
 }
 
 .cardImg{
-    width: 250px;
-    height: 300px;
-    border: 1px solid black;
+	width: 250px;
+    height: 250px;
+    border: 1px solid var(--light-gray);
     text-align: center;
+    border-radius: 20px;
 }
+.cardInfo{
+	margin-top: 20px;
+    font-family: 'KotraBold';
+    font-size: var(--font-sizes);
+    letter-spacing: 1px;
+    color: var(--color-black);
+}
+
 .cardInfo div{
     justify-content: space-between;
     display: flex;
@@ -325,13 +334,14 @@ input:checked + .slider:before {
 }
 
 .searchWrap > div{
-    width: 600px;
+    width: 800px;
     margin: 0 auto;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
-.searchWrap > div > input {
-    width: 400px;
+.searchWrap > div > form > input {
+    width: 500px;
     font-size: var(--font-sizeM);
     margin-right: 30px;
     border: 1px solid var(--color-lightgray);
@@ -341,18 +351,18 @@ input:checked + .slider:before {
     letter-spacing: 2px;
 }
 
-.searchWrap > div > input:focus{
+.searchWrap > div > form > input:focus{
     box-shadow: 0 0 5px #ffccbc;
     border: 1px solid #ffccbc;
     border-radius: 1rem;
 }
 
-.searchWrap > div > input:focus-visible{
+.searchWrap > div > form > input:focus-visible{
     outline: 1px solid #ffccbc;
     border-radius: 1rem;
 }
 
-.searchWrap > div > button{
+.searchWrap > div > form > button{
     cursor: pointer;
     padding: 10px;
     width: 80px;
@@ -365,30 +375,99 @@ input:checked + .slider:before {
     background: #000000;
     border: 1px solid #000000;
     color: var(--color-white);
+    margin-right:20px
+}
+
+
+/* voice*/
+
+.dictate{
+	border: none;
+    background: none;
+    width: 80px;
+    height: 55px;
+}
+ 
+ .dictate.on {
+    background: #000;
+    cursor: pointer;
+    width: 80px;
+    border-radius: 10px;
+    font-size: var(--font-sizeL);
+    font-family: 'KotraBold';
+    color: var(--color-white);
+}
+
+.dictate.on svg {
+    display: block;
+    margin: auto;
+}
+
+.dictate.on .fa-microphone {
+    display: none;
+}
+
+.dictate svg {
+    display: none; 
+}
+
+.style-scope {
+    display: none;
+    width: 560px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.style-scope.on {
+    display: block;
+}
+
+.fa-microphone {
+	background: #000;
+    cursor: pointer;
+    padding: 10px;
+    width: 60px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 10px;
+    font-size: var(--font-sizeL);
+    color: var(--color-white);
+}
+
+.fa-microphone img {
+    width: 100%;
+}
+
+.fa-microphone.pulseStart {
+    animation: pulse-red 1.8s infinite;
 }
 
 /* page number*/
-.list_number{
+
+.listNum{
     height: 100px;
     text-align: center;
 }
 
 
-.list_n_menu A {
-    font-size: var(--font-sizeM);
-    padding: 10px 18px 12px 18px;
+.listNum A {
+    font-size: var(--font-sizes);
+    padding: 4px 14px 6px 14px;
     margin: 10px;
     border: #999 1px solid;
     color: #999;
     text-decoration: none;
 }
 
-.list_n_menu A:hover {
+.listNum A:hover {
     box-shadow: 0 0 5px #ffccbc;
     border: 1px solid #ffccbc;
 }
 
-.list_n_menu A:active {
+.listNum A:active {
     background: #ffccbc;
     color: var(--color-white);
 }
@@ -396,7 +475,7 @@ input:checked + .slider:before {
 	font-size: var(--font-sizeM);
 	margin-bottom: 25px;
 }
-#page_control: visited{
+#page_control:visited{
 	font-size: var(--font-sizeM);
 	color: var(--color-black);
 	margin-bottom: 25px;

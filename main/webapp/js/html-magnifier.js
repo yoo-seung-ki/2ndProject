@@ -4,10 +4,10 @@ function HTMLMagnifier(options) {
 
     const _this = this;
   
-    _this.options = Object.assign({ zoom: 2, shape: 'square', width: 200, height: 200 }, options);
+    _this.options = Object.assign({ zoom: 2, shape: 'circle', width: 200, height: 200 }, options);
   
-    const magnifierTemplate = `<div class="magnifier" style="display: none;position: fixed;overflow: hidden;background-color: white;border: 1px solid #555;border-radius: 4px;z-index:10000;">
-                                 <div class="magnifier-content" style="top: 0px;left: 0px;margin-left: 0px;margin-top: 0px;overflow: visible;position: absolute;display: block;transform-origin: left top;-moz-transform-origin: left top;-ms-transform-origin: left top;-webkit-transform-origin: left top;-o-transform-origin: left top;user-select: none;-moz-user-select: none;-webkit-user-select: none;padding-top: 0px"></div>
+    const magnifierTemplate = `<div class="magnifier" style=" box-shadow: 5px 5px 5px 5px gray;display: none;position: fixed;overflow: hidden;background-color: white;border: 2px solid #ddd;border-radius: 4px;z-index:10000;">
+                                 <div class="magnifier-content" style="top: 0px;left: 0px;margin-left: 0px;margin-top: -20px; margin-left: -50px;overflow: visible;position: absolute;display: block;transform-origin: left top;-moz-transform-origin: left top;-ms-transform-origin: left top;-webkit-transform-origin: left top;-o-transform-origin: left top;user-select: none;-moz-user-select: none;-webkit-user-select: none;padding-top: 0px"></div>
                                  <div class="magnifier-glass" style="position: absolute;top: 0px;left: 0px;width: 100%;height: 100%;opacity: 0.0;-ms-filter: alpha(opacity=0);background-color: white;cursor: move;"></div>
                                </div>`;
   
@@ -414,16 +414,16 @@ function HTMLMagnifier(options) {
     _this.show = function(event) {
       let left, top;
       if (event) {
-        left = event.pageX - 20;
-        top = event.pageY - 20;
+        left = event.pageX - 50;
+        top = event.pageY - 50;
       } else {
-        left = 200;
-        top = 200;
+        left = 50;
+        top = 50;
       }
       setupMagnifier();
       prepareContent();
       setPosition(magnifier, left, top);
-      magnifier.style.display = '';
+      magnifier.style.display = 'none';
       syncViewport();
       syncScrollBars();
       initScrollBars();
@@ -436,16 +436,19 @@ function HTMLMagnifier(options) {
     return _this;  
   }
 
+//   돋보기 버튼 토글
   function Buttontoggle()
   {
-    var t = document.getElementById("toggle");
-    if(t.value=="off"){
-        t.value="on";
-        document.querySelector('.magnifier').style.display = 'none';
+    var toggle = document.getElementById("toggle");
+    if(toggle.value=="off"){
+        toggle.value="on";
+        document.querySelector('.magnifier').style.display = 'block';        
+        console.log("돋보기 켜기")
     }
 
-    else if(t.value=="on"){
-        t.value="off";
-        document.querySelector('.magnifier').style.display = 'block';
+    else if(toggle.value=="on"){
+        toggle.value="off";
+        document.querySelector('.magnifier').style.display = 'none';
+        console.log("돋보기 끄기")
     }
   }

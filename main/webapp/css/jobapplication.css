@@ -480,34 +480,34 @@ input {
 .gender {
     position: relative;
     top: 203px;
-    left: 252px;
+    left: 369px;
     z-index: -1;
 }
 .military {
     position: relative;
-    top: 332px;
+    top: 322px;
     right: 271px;
     z-index: -1;
 }
 
 .values1 {
     position: relative;
-    top: 372px;
-    right: -239px;
+    top: 362px;
+    right: -373px;
     z-index: -1;
 }
 
 .values2 { 
     position: relative;
-    top: 411px;
-    right: 360px;
+    top: 398px;
+    right: 276px;
     z-index: -1;
 }
 
 .values3 {
     position: relative;
-    top: 465px;
-    right: -360px;
+    top: 449px;
+    right: -365px;
     z-index: -1;
 }
 

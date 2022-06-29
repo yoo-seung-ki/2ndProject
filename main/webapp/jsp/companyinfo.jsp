@@ -8,10 +8,14 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>기업 정보</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/companyinfo.css">
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    
 </head>
 <body>
 <!-- 헤더  -->
@@ -28,7 +32,7 @@
                 <li>온라인 채용관</a></li>
             </ul>
         </div>
-        <div>고대비
+        <div class="changeBtn">고대비
         <label class="switch">
             <input type="checkbox" id="colormode">
             <span class="slider round"></span>
@@ -228,6 +232,15 @@
         <td colspan="3"><%=F %></td>
     </tr>
 </table>
+<div class="chart-container">
+        <div style="width: 500px;">
+                <canvas id="canvas1" ></canvas>
+        </div>
+        <div>
+                <canvas id="canvas2" ></canvas>
+        </div>
+        
+</div>
 <div style="float:right">
     <button type="button" onclick="location.href='#'" class="interest">관심채용공고 담기</button>
     <button tlye="button" onclick="history.back()" class="golist">목록</button>
@@ -239,7 +252,6 @@
             <div>copyright 2022. All RIGHT RESERVED.</div>
         </div>
     </footer>
-
-
+<script src="../js/chart.js"></script>
 </body>
 </html>

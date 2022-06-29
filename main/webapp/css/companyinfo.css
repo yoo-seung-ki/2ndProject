@@ -30,7 +30,7 @@
 header{
     position: fixed;
     top: 0;
-    width: 1920px;
+    width: 100%;
     height: 100px;
 }
 
@@ -490,7 +490,10 @@ th{
 .chart-container {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
+    justify-content: center;
+    margin-top: 30px;     
+}
+
+#canvas2 {
+    margin-left: 300px;
 }

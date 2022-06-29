@@ -52,7 +52,7 @@
 <header>
     <div class="headerWrap">
         <div class="logo">
-            <a href="../jsp/main.jsp">
+            <a href="../jsp/home.jsp">
                 <img src="../img/logo.png" alt="">
                 <div class="title-text">예일장애인박람회</div>
                 
@@ -63,8 +63,7 @@
                 <li>온라인 채용관</a></li>
             </ul>
         </div>
-        <div>
-        고대비
+        <div class="changeBtn">고대비
         <label class="switch">
             <input type="checkbox" id="colormode">
             <span class="slider round"></span>

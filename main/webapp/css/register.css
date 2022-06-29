@@ -29,7 +29,7 @@
 header{
     position: fixed;
     top: 0;
-    width: 1920px;
+    width: 100%;
     height: 100px;
 }
 
@@ -73,7 +73,8 @@ header{
     justify-content: space-around;
 }
 
-.headerWrap .navMenu ul{
+.headerWrap .navMenu ul,
+.headerWrap .changeBtn{
     display: flex;
     justify-content: space-between;
     font-family: 'KotraBold';

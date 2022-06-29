@@ -40,14 +40,14 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/home.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </head>
 <body>
     <header>
         <div class="headerWrap">
             <div class="logo">
-                <a href="../html/main.html">
+                <a href="../jsp/home.jsp">
                     <img src="../img/logo.png" alt="">
                     <div class="title-text">예일장애인박람회</div>
                 </a>
@@ -106,6 +106,25 @@
             </div>
         </div>
     </header>
+    <script>
+
+  	var lastScrollTop = 0, delta = 15;
+
+	$(window).scroll(function(){
+    var scrollTop = $(this).scrollTop() /* 스크롤바 수직 위치를 가져옵니다, 괄호 안에 값(value)이 있을 경우 스크롤바의 수직 위치를 정합니다. */
+    // Math.abs: 주어진 숫자의 절대값을 반환(return)합니다.
+    if(Math.abs(lastScrollTop - scrollTop) <= delta) // 스크롤 값을 받아서 ~
+    return; // ~ 리턴
+
+    if ((scrollTop > lastScrollTop) && (lastScrollTop>0)) {
+    	/* 화면에 나오지 않을 때, top값은 요소가 보이지 않을 정도로 사용해야함 */
+        $("header").css("top","-100px");
+    } else {
+        $("header").css("top","0px");
+    }
+    lastScrollTop = scrollTop;
+});
+    </script>
     <main>
         <section class="section1">
             <div class="section1-title">

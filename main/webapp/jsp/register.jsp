@@ -4,10 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원가입</title>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
  <link rel="stylesheet" href="../css/register.css">
  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+ <script defer src="../js/registerChk.js">
+
+ </script>
 </head>
 <body>
     <header>
@@ -20,10 +23,10 @@
             </div>
             <div class="navMenu">
                 <ul>
-                    <li><a href="">팀원소개</a></li>
-                    <li><a href="">온라인 채용관</a></li>
-                    <li><a href="">취업 컨텐츠</a></li>
-                    <li><a href="">내 정보 관리</a></li>
+                    <li><a class="menu" href="">팀원소개</a></li>
+                    <li><a class="menu" href="">온라인 채용관</a></li>
+                    <li><a class="menu" href="">취업 컨텐츠</a></li>
+                    <li><a class="menu" href="">내 정보 관리</a></li>
                 </ul>
             </div>
             <div>고대비
@@ -39,10 +42,12 @@
                     $("body").css("background-color","#000");
                     $("body").css("color","#fff");
                     $(".title-text").css("color","#fff");
+                    $(".menu").css("color","#fff");
                 }else{
                     $("body").css("background-color","#fff");
                     $("body").css("color","#000");                    
                     $(".title-text").css("color","#000");
+                    $(".menu").css("color","#000");
                     
                     
                 }
@@ -51,8 +56,8 @@
             });
             </script>
             <div class="signin-signup">
-                <button class="signin">로그인</button>
-                <button class="signup">회원가입</button>
+				<button class="signin" onclick="location.href='./login.jsp';">로그인</button>
+                <button class="signup" onclick="location.href='./register.jsp';">회원가입</button>
             </div>
         </div>
     </header>
@@ -60,10 +65,10 @@
     <main>
         <div id="user-register-page">
             <p class="user-regi">참여자 정보 입력</p>
-             <form class="logform2">
+             <form class="logform2" name="regiFrm">
                 <div class="info-insert">
-                성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명 <input type="text" class="insert-info" placeholder="성명을 입력해주세요."><br>
-                주민번호 <input type="number" placeholder="주민번호 앞자리" maxlength="6" class="ssn" oninput="numberMaxLength(this);" > - <input type="number" placeholder="주민번호 뒷자리" maxlength="7" class="ssn" oninput="numberMaxLength(this);"/><br>
+                성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명 <input type="text" class="insert-info" name="reginame" placeholder="성명을 입력해주세요."><br>
+                주민번호 <input type="number" placeholder="주민번호 앞자리" maxlength="6" class="ssn" name="ssnf" oninput="numberMaxLength(this);" > - <input type="number" placeholder="주민번호 뒷자리" maxlength="7" class="ssn" name="ssnb" oninput="numberMaxLength(this);"/><br>
                 <script>
                     function numberMaxLength(e){
                         if(e.value.length > e.maxLength){
@@ -71,7 +76,8 @@
                         }
                     }
                 </script>
-                거주지역 <select class="insert-info">
+                거주지역 <select class="insert-info" name="address">
+                        <option value="구분">구분</option>
                         <option value="강서구">강서구</option>
                         <option value="금정구">금정구</option>
                         <option value="기장군">기장군</option>
@@ -93,9 +99,10 @@
                         <option value="경남 창원시">경남 창원시</option>
                         <option value="other">기타(직접 입력)</option>
                 </select><br>
-                전화번호 <input type="text" class="insert-info" maxlength="11" placeholder="연락처를 입력해주세요.">
+                전화번호 <input type="text" class="insert-info" name="Pnum" maxlength="11" placeholder="연락처를 입력해주세요.">
                 <p class="warn">연락처 숫자만 입력해주세요. '-' 제외</p>
-                장애유형 <select class="insert-info">
+                장애유형 <select class="insert-info" name="type">
+                	<option value="구분">구분</option>
                     <option value="지체장애">지체장애</option>
                     <option value="뇌병변장애">뇌병변장애</option>
                     <option value="시각장애">시각장애</option>
@@ -113,19 +120,21 @@
                     <option value="정신장애">정신장애</option>
                     <option value="기타">기타</option>
                 </select><br>
-                장애정도 <select class="insert-info">
+                장애정도 <select class="insert-info" name="degree">
+                    <option value="구분">구분</option>
                     <option value="심한 정도">심한 정도</option>
                     <option value="심하지 않은 정도">심하지 않은 정도</option>
                 </select>
-            <div class="insert-check">
-                <input type="checkbox" class="check-box"><p class="agree">개인정보 수집 및 활용에 동의</p><br>
-            </div>
+            <label class="insert-check">
+                <input type="checkbox" class="check-box"  id="agree" onclick="btnable(this)"><span class="on"></span><p class="agree">개인정보 수집 및 활용에 동의</p><br>
+            </label>
                     <p class="agree2">(개인정보는 취업지원 및 취업박람회<br>
                     통계자료로 활용됩니다.)</p>
                 
                 </div>
                 <div class="regi-btn">
-                 <a class="submit">회원가입</a>
+                 <button id="submit" name="regibtn" onclick="regiChk()" disabled>회원가입</button>
+                 
                 </div>
              </form>
         </div> <!--user-register-page-->

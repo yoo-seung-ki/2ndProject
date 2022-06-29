@@ -127,7 +127,7 @@
             <div class="section1-title">
                 <div class="title1">2022 예일 On-Line</div>
                 <div class="title2">장애인 일자리 박람회</div>
-                <div class="title3">2022-06-22(수) ~ 2022-06-22(수)</div>
+                <div class="title3">2022-06-22(수) ~ 2022-07-05(화)</div>
             </div>
             <div>
                 <img class="sectionImg" src="../img/mainImg.png" alt="메인화면">

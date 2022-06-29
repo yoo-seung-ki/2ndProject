@@ -72,6 +72,8 @@
         <script>
         $(document).ready(function() {
         	$("p").css("color","#000");
+        	---
+        	ektldjshkl;fjekl;tjerl;ktjl;krjkl;rjelsw;krjl;sjrals;jrasl;
             $("#colormode").change(function(){
             if($("#colormode").is(":checked")){
                 $("body").css("background-color","#000");
@@ -91,8 +93,8 @@
         });
         </script>
         <div class="signin-signup">
-            <button class="signin">로그인</button>
-            <button class="signup">회원가입</button>
+                <button class="signin" onclick="location.href='./login.jsp';">로그인</button>
+                <button class="signup" onclick="locaition.href='./register.jsp';">회원가입</button>
         </div>
     </div>
 </header>
@@ -201,16 +203,13 @@
             <% } %>
             
             
-            
         </div> <!-- enterpriseCard -->
     </section> <!-- section3 -->
     
     <div class="searchWrap">
         <div>
-        	<form method="get" action="companysearchproc.jsp">
-            	<input type="text" placeholder="기업명 입력" name="searchtext">
-            	<button type="submit" class="search2">검색</button>
-            </form>
+            <input type="text" placeholder="기업명 입력">
+            <button type="submit" class="search2">검색</button>
         </div>
     </div> <!-- searchWrap -->
     

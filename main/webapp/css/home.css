@@ -1,0 +1,397 @@
+/* 공통 */
+@import url('https://webfontworld.github.io/yangheeryu/Dongle.css');
+@import url('https://webfontworld.github.io/kotra/KotraBold.css');
+@import url('https://webfontworld.github.io/Cafe24Ssurround/Cafe24Ssurround.css');
+
+
+:root{
+    --font-sizeS: 1em;
+    --font-sizeM : 1.5em;
+    --font-sizeL: 2em;
+    --font-sizeXL: 2.5em;
+    --font-sizeXXL: 3em;
+
+    --color-white: #fff;
+    --color-black: #313131;
+    --color-lightgray: #dcdcdc90;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* header */
+ 
+header{
+    position: fixed;
+    top: 0;
+    width: 1920px;
+    height: 100px;
+}
+
+.headerWrap{
+    display: flex;
+    align-items: center;
+    font-size: var(--font-sizeM);
+    justify-content: space-evenly;
+}
+.headerWrap img{
+    width: 100px;
+    height: 100px;
+}
+.headerWrap .logo{
+    width: 400px;
+    height: 100px;
+}
+
+.headerWrap .logo div{
+    font-size: var(--font-sizeXL);
+    font-family: 'Dongle';
+    color: var(--color-black);
+}
+
+.headerWrap .logo a{
+    display: flex;
+    align-items: center;
+}
+.headerWrap .navMenu{
+    width: 700px;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.headerWrap .navMenu ul,
+.headerWrap .changeBtn{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'KotraBold';
+    font-weight: 800;
+}
+
+.headerWrap .navMenu ul > li > a{
+	color: black;
+}
+
+.headerWrap .signin-signup{
+    display: inherit;
+
+}
+
+.signin-signup button{
+    padding: 10px;
+    margin-right: 20px;
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: 'Dongle';
+    font-weight: 1000;
+    font-size: var(--font-sizeS);
+    text-align: center;
+    line-height: 20px;
+    box-shadow : 3px 3px 3px black;
+    transition-duration: 0.3s;
+}
+.signin-signup button:active{
+    position: relative;
+    top:2px;
+    box-shadow : 1px 1px 0 rgb(0,0,0,0.5);
+}
+
+
+.signin{
+    background: var(--color-black);
+    border: none;
+    color: var(--color-white);
+}
+
+.signup{
+    background: var(--color-white);
+    border: 1px solid var(--color-lightgray);
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    vertical-align:middle;
+    margin-left: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--color-black);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--color-black);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* footer */
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    border-top: 1px solid black;
+    background: #313131;
+    color: #fff;
+}
+
+footer .footerWrap{
+    text-align: center;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+}
+
+/* section1 */
+
+.section1{
+    width: 100%;
+    height: 835px;
+    margin-top: 100px;
+    background: beige;
+    z-index: -5;
+}
+
+.section1 div{
+    text-align: center;
+}
+
+.section1-title{
+    font-family: 'Cafe24Ssurround';
+}
+
+.title1{
+    font-size: var(--font-sizeL);
+    padding-top: 100px;
+    margin-bottom: 30px;
+}
+
+.title2{
+    font-size: 5em;
+    margin-bottom: 30px;
+}
+
+.title3{
+    font-size: var(--font-sizeXXL);
+    width: 1000px;
+    margin: 0 auto 30px auto;
+    padding: 20px 20px;
+    background: coral;
+    border-radius: 50px;
+    color: var(--color-white);
+}
+
+/* section2 */
+
+.section2{
+    width: 100%;
+    height: 835px;
+    background: burlywood;
+}
+
+.member{
+	display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.teamMembersImg{
+	width: 300px;
+	height: 300px;
+	border-radius: 10%;
+}
+
+.name{
+	margin: 20px 0;
+	font-size: var(--font-sizeXL);
+    text-align: center;
+    font-family: 'Cafe24Ssurround';
+}
+
+.role{
+    margin: 20px 0;
+	font-size: var(--font-sizeL);
+    text-align: center;
+    font-family: 'Cafe24Ssurround';
+}
+
+.comment{
+    margin: 20px 0;
+	font-size: var(--font-sizeL);
+    text-align: center;
+    font-family: 'Cafe24Ssurround';
+}
+
+/* section3*/
+
+.section3{
+    width: 100%;
+    height: 835px;
+    background: beige;
+}
+
+.listTitle{
+    font-size: var(--font-sizeL);
+    padding-top: 50px;
+    text-align: center;
+    font-family: 'KotraBold';
+}
+
+.enterpriseList{
+    margin-top: 30px;
+    justify-content: space-evenly;
+    display: flex;
+}
+.enterpriseCard{
+    width: 300px;
+    height: 500px;
+}
+
+.cardImg{
+    width: 250px;
+    height: 250px;
+    border: 1px solid var(--light-gray);
+    text-align: center;
+    border-radius: 20px;
+}
+
+.cardInfo{
+	margin-top: 20px;
+    font-family: 'KotraBold';
+    font-size: var(--font-sizes);
+    letter-spacing: 1px;
+    color: var(--color-black);
+}
+.cardInfo > div{
+	margin-bottom: 10px;
+}
+
+.addBtn{
+    text-align: center;
+    font-size: var(--font-sizeL);
+    margin-top: 70px;
+}
+
+.addBtn > a{
+	color: var(--color-black);
+}
+
+/* section4 */
+
+.section4{
+    width: 100%;
+    height: 835px;
+}
+
+.videoTitle{
+    text-align: center;
+    font-size: var(--font-sizeL);
+    padding-top: 30px;
+    font-family: 'KotraBold';
+}
+
+.section4 .video {
+    margin-top: 100px;
+    text-align: center;
+}
+
+
+/* section5 */
+
+.section5{
+    width: 100%;
+    height: 835px;
+    background: #fafafa;
+}
+.cardList{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
+.myInfoCard{
+    width: 250px;
+    height: 350px;
+    margin: auto 0;
+    -webkit-transition: all ease .1s;
+    -ms-transition: all ease 1s;
+    -o-transition: all ease 1s;
+    box-shadow: 10px 10px 20px #e1e1e1;
+    border-radius: 30px;
+}
+.myInfoCard:hover{
+    background: #FFF6E8;
+    transition: all 0.5s ease-in-out; ;
+}
+
+.myInfoCard a{
+    width: 300px;
+    display: inline;
+}
+
+.section5 .myInfoCard img{
+    width: 200px;
+    height: 200px;
+    margin: 30px auto 0px auto;
+    display: block;
+}
+
+.section5 .myInfoCard a h3{
+    text-align: center;
+    margin-top: 50px;
+    text-decoration: none;
+    color: black;
+}
+
+
+

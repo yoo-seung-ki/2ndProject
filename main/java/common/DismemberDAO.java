@@ -128,18 +128,16 @@ public class DismemberDAO {
       ResultSet rs = null;
       
       // 1 : 이름이 존재하지 않음
-      // 2 : 비밀번호가 일치하지 않음
+      // 2 : 전화번호가 일치하지 않음
       // 3 : 로그인 성공
-      // 4 : 로그인은 성공했지만 로그인실패 카운트 초과로 추가인증
-      // 5 : 로그인은 성공했지만 블랙리스트에 지정되어 일정 기간동안 로그인 불가
       int flag = 0;
       
       try {
          con = pool.getConnection();
          // 입력받은 전화번호가 데이터베이스에 존재하는지 확인
-         sql = "select name from dismember where mobile = ?";
+         sql = "select name,mobile from dismember where mobile = ?";
          pstmt = con.prepareStatement(sql);
-         pstmt.setString(1, name);
+         pstmt.setString(1, mobile);
          rs = pstmt.executeQuery();
          // 이름이 없으니 1을 반환
          if(!rs.next()) {

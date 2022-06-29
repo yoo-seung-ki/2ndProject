@@ -193,7 +193,6 @@
         <% String H = companyinfo.getEtc(); %>
         <% if(H == null) {H = "-";}	%>
         <td colspan="7"><%=H %></td>
-
     </tr>
 </table>
 </div>

@@ -17,3 +17,6 @@ lists[3].onclick = (event) => {
     event.preventDefault()
     window.scroll({top:3340, left:0, behavior: 'smooth'})}
 
+function dd() {
+    window.scrollTo({top:835, left:0, behavior: 'smooth'})
+}

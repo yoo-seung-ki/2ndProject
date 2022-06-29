@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <html lang="ko">
+<<<<<<< HEAD
     <head>
         <meta charset="UTF-8">
         <title>채용관</title>
@@ -57,6 +58,30 @@
                 <button class="signin">로그인</button>
                 <button class="signup">회원가입</button>
             </div>
+=======
+<head>
+    <meta charset="UTF-8">
+    <title>채용관</title>
+    <link rel="stylesheet" href="../css/jobapplication.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- SheetJS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.3/xlsx.full.min.js"></script>
+    <!-- FileSaver saveAs CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+    <script src="../js/sheetjs.js"></script>
+</head>
+<body>
+
+<!-- 헤더  -->
+<header>
+    <div class="headerWrap">
+        <div class="logo">
+            <a href="../jsp/home.jsp">
+                <img src="../img/logo.png" alt="">
+                <div class="title-text">예일장애인박람회</div>
+            </a>
+>>>>>>> bd6b273e596684d4eade2b37010af48c02e64431
         </div>
     </header>
     

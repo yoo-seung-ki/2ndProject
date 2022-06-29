@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 
 <html lang="ko">
-<<<<<<< HEAD
     <head>
         <meta charset="UTF-8">
         <title>채용관</title>
@@ -58,7 +57,6 @@
                 <button class="signin">로그인</button>
                 <button class="signup">회원가입</button>
             </div>
-=======
 <head>
     <meta charset="UTF-8">
     <title>채용관</title>
@@ -81,7 +79,6 @@
                 <img src="../img/logo.png" alt="">
                 <div class="title-text">예일장애인박람회</div>
             </a>
->>>>>>> bd6b273e596684d4eade2b37010af48c02e64431
         </div>
     </header>
     

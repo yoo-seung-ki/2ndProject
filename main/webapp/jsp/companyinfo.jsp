@@ -18,7 +18,7 @@
 <header>
     <div class="headerWrap">
         <div class="logo">
-            <a href="../jsp/home.jsp">
+            <a href="../jsp/main.jsp">
                 <img src="../img/logo.png" alt="">
                 <div class="title-text">예일장애인박람회</div>
             </a>

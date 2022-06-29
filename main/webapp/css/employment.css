@@ -69,12 +69,14 @@ header{
     margin: 0 auto;
 }
 
-.headerWrap .navMenu ul{
+.headerWrap .navMenu ul,
+.headerWrap .changeBtn{
     display: flex;
     justify-content: space-between;
     font-family: 'KotraBold';
     font-weight: 800;
 }
+
 
 .headerWrap .signin-signup{
     display: inherit;
@@ -120,7 +122,8 @@ header{
     display: inline-block;
     width: 60px;
     height: 34px;
-    vertical-align:middle;
+    vertical-align: middle;
+    margin-left: 20px;
 }
 
 /* Hide default HTML checkbox */
@@ -365,7 +368,7 @@ display: flex;
 .searchWrap > div > form > button{
     cursor: pointer;
     padding: 10px;
-    width: 80px;
+    width: 85px;
     height: 55px;
     border-radius: 10px;
     font-size: var(--font-sizeM);
@@ -385,16 +388,13 @@ display: flex;
 	border: none;
     background: none;
     width: 80px;
-    height: 55px;
 }
  
  .dictate.on {
     background: #000;
     cursor: pointer;
-    width: 80px;
     border-radius: 10px;
     font-size: var(--font-sizeL);
-    font-family: 'KotraBold';
     color: var(--color-white);
 }
 

@@ -63,8 +63,7 @@
                 <li>온라인 채용관</a></li>
             </ul>
         </div>
-        <div>
-        고대비
+        <div class="changeBtn">고대비
         <label class="switch">
             <input type="checkbox" id="colormode">
             <span class="slider round"></span>

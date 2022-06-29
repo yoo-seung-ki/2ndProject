@@ -27,7 +27,7 @@
 <header>
     <div class="headerWrap">
         <div class="logo">
-            <a href="../jsp/main.jsp">
+            <a href="../jsp/home.jsp">
                 <img src="../img/logo.png" alt="">
                 <div class="title-text">예일장애인박람회</div>
             </a>
@@ -38,13 +38,13 @@
             </ul>
         </div>
         
-        <div>고대비
+        <div class="changeBtn">고대비
             <label class="switch">
                 <input type="checkbox" id="colormode">
                 <span class="slider round"></span>
             </label>
          </div>
-         <div>돋보기
+         <div class="changeBtn">돋보기
             <label class="switch">
                 <input type="checkbox" id="colormode" value="off" id="toggle" onclick="Buttontoggle()">
                 <span class="slider round"></span>

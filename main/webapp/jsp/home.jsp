@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/home.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <script defer src="../js/link.js"></script>
 </head>
 <body>
     <header>
@@ -136,7 +137,7 @@
                 <img class="sectionImg" src="../img/mainImg.png" alt="메인화면">
             </div>
         </section>
- <section class="section2">
+ <section class="section2" id="section2">
             <div>
                 <h2 class="listTitle">팀원소개</h2>
             </div>

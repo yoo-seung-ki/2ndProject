@@ -1,5 +1,5 @@
-const lists = document.querySelectorAll("li");
-const main = document.querySelector('.logo a');
+const lists = document.querySelectorAll("li");  //nav 메뉴 리스트를 지정
+const main = document.querySelector('.logo a'); //메인 로고를 지정
 
 main.onclick = (event) => {
     event.preventDefault()
@@ -17,6 +17,3 @@ lists[3].onclick = (event) => {
     event.preventDefault()
     window.scroll({top:3340, left:0, behavior: 'smooth'})}
 
-function dd() {
-    window.scrollTo({top:835, left:0, behavior: 'smooth'})
-}

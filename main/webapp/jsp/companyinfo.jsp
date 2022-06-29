@@ -29,7 +29,7 @@
         </div> <!-- logo -->
         <div class="navMenu">
             <ul>
-                <li>온라인 채용관</a></li>
+                <li>온라인 채용관</li>
             </ul>
         </div>
         <div class="changeBtn">고대비

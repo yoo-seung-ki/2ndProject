@@ -285,7 +285,7 @@ font-size: 1.3em;
 		
 }
 .insert-check input[type="checkbox"]:checked + .on {
-	background: orange;
+	background: coral;
 }
 .on:after{
 	content:"";

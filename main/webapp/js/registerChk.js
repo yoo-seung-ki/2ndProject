@@ -57,7 +57,7 @@ function btnable(checkbox){
 	if(btn_elem.disabled){
 		$('#submit').css("background-color","#b2b2b2");		
 	}else{
-		$('#submit').css("background-color","orange");
+		$('#submit').css("background-color","coral");
 		$('#submit').css("color","#fff");
 			
 

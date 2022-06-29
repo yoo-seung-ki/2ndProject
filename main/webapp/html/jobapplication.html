@@ -34,12 +34,21 @@
                 <li>입사지원서</a></li>
             </ul>
         </div>
-        <label class="switch">
-            <input type="checkbox" id="colormode">
-            <span class="slider round"></span>
-        </label>
+        
+        <div>고대비
+            <label class="switch">
+                <input type="checkbox" id="colormode">
+                <span class="slider round"></span>
+            </label>
+         </div>
+         <div>돋보기
+            <label class="switch">
+                <input type="checkbox" id="colormode" value="off" id="toggle" onclick="Buttontoggle()">
+                <span class="slider round"></span>
+            </label>
+         </div>
 
-        <button onclick="Buttontoggle()" value="off" id="toggle">돋보기</button>
+        <button style="display: none;" onclick="Buttontoggle()" value="off" id="toggle">돋보기</button>
                
          
         <div class="signin-signup">
@@ -64,39 +73,29 @@
 <main>
     <div class="option">
          <!-- 남자 여자 -->
-        <div class="gender">
-            <span class="space">남자</span>
-            <span class="space">여자</span>
-        </div>
+            <span class="value1">남자</span>
+            <span class="value2">여자</span>
         <!-- 병역 -->
-        <div class="military">
-            <span class="space">필</span>
-            <span class="space">미필</span>
-            <span class="space">면제</span>
-            <span class="space">해당사항 없음</span>
-        </div>
+            <span class="value3">필</span>
+            <span class="value4">미필</span>
+            <span class="value5">면제</span>
+            <span class="value6">해당사항 없음</span>
         <!-- 보장구 유무 -->
-        <div class="values1">
-            <span class="space">유</span>
-            <span class="space">무</span>
-        </div>
+            <span class="value7">유</span>
+            <span class="value8">무</span>
         <!-- 장애정도 -->
-        <div class="values2">
-            <span class="space">심한</span>
-            <span class="space">심하지 않은</span>
-        </div>
+            <span class="value9">심한</span>
+            <span class="value10">심하지 않은</span>
         <!-- 학력 -->
-        <div class="values3">
-            <span class="space">무학</span>
-            <span class="space space2">재학</span>
-            <span class="space space2">졸업</span>
-            <span class="space space2">휴학</span>
-            <span class="space space2">중퇴</span>
-        </div>
+            <span class="value11">무학</span>
+            <span class="value12">재학</span>
+            <span class="value13">졸업</span>
+            <span class="value14">휴학</span>
+            <span class="value15">중퇴</span>
     </div>
 
     
-    <form action="">
+    <form>
     <table id="table" class="excelTable" style="border:1px solid #dddddd">
         <thead>
             <th colspan="6">입사지원서</th>
@@ -110,7 +109,7 @@
                 </td>
                 <td>성별</td>
                 <td colspan="2">
-                    <input type='radio' name='gender' value='남자' onclick='getGender(event)'/>           
+                    <input class="radio" type='radio' name='gender' value='남자' onclick='getGender(event)'/>           
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type='radio' name='gender' value='여자' onclick='getGender(event)'/>
                     <div style="display: none;" id='radioresult1'></div>

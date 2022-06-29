@@ -198,7 +198,7 @@ input:checked + .slider:before {
     text-align: center;
     width: 900px;
     height: 250px;
-    margin: 150px auto 0 auto;
+    margin: 100px auto 0 auto;
 
 }
 
@@ -435,6 +435,7 @@ footer .footerWrap{
 table, th, td {
     border:1px solid #cccccc;
     border-collapse: collapse; /*각테두리 사이에 빈공간을 없애주는 옵션*/
+
 }
 th {
     font-size: var(--font-sizeXXL);
@@ -471,45 +472,93 @@ input {
     width: 598px;
 }
 
-.space {
-    margin-left: 50px;    
-}
-.space2 {
-    margin-left: 40px;
-}
-.gender {
+.value1 {
     position: relative;
-    top: 203px;
-    left: 369px;
-    z-index: -1;
+    top: 118px;
+    left: 536px;
 }
-.military {
+.value2 {
     position: relative;
-    top: 322px;
-    right: 271px;
-    z-index: -1;
+    top: 118px;
+    left: 574px;
 }
 
-.values1 {
+.value3 {
     position: relative;
-    top: 362px;
-    right: -373px;
-    z-index: -1;
+    top: 259px;
+    right: 177px;
 }
 
-.values2 { 
+.value4 {
     position: relative;
-    top: 398px;
-    right: 276px;
-    z-index: -1;
+    top: 259px;
+    right: 122px;
 }
 
-.values3 {
+.value5 {
     position: relative;
-    top: 449px;
-    right: -365px;
-    z-index: -1;
+    top: 259px;
+    right: 87px;
 }
+
+.value6 {
+    position: relative;
+    top: 259px;
+    right: 51px;
+}
+
+.value7 {
+    position: relative;
+    top: 319px;
+    left: 260px;
+}
+
+.value8 {
+    position: relative;
+    top: 319px;
+    left: 316px;
+}
+
+.value9 {
+    position: relative;
+    top: 377px;
+    right: 424px;
+}
+.value10 {
+    position: relative;
+    top: 377px;
+    right: 383px;
+}
+
+.value11 {
+    position: relative;
+    top: 448px;
+    left: 86px;
+}
+
+.value12 {
+    position: relative;
+    top: 448px;
+    left: 127px;
+}
+
+.value13 {
+    position: relative;
+    top: 448px;
+    left: 160px;
+}
+.value14 {
+    position: relative;
+    top: 448px;
+    left: 198px;
+}
+.value15 {
+    position: relative;
+    top: 448px;
+    left: 237px;
+}
+
+
 
 .excelexport {
     padding: 10px;
@@ -526,4 +575,8 @@ input {
 }
 .excelexport:hover {
     background-color: rgba(255, 166, 0, 0.432);    
+}
+
+tr td {
+    z-index: -10;
 }

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/login.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
     <script defer src="../js/loginchk.js"></script>
+    <script defer src="../js/link.js"></script>
 </head>
 <body>
  <header>
@@ -23,7 +24,7 @@
             </div>
             <div class="navMenu">
                 <ul>
-                  <li><a class="menu" href="">팀원소개</a></li>
+                  <li><a class="menu" href="" onclick="sec2()">팀원소개</a></li>
                   <li><a class="menu" href="">온라인 채용관</a></li>
                   <li><a class="menu" href="">취업 컨텐츠</a></li>
                   <li><a class="menu" href="">내 정보 관리</a></li>

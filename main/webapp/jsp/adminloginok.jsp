@@ -16,7 +16,7 @@
 		case 3: {
 			msg = "로그인에 성공하였습니다. 관리자\\n" + id + "님 환영합니다!";
 			url = "home.jsp";
-			session.setAttribute("adpw", pw);
+			session.setAttribute("adid", id);
 			break; }
 		}%>
 <!DOCTYPE html>

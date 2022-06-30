@@ -49,13 +49,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/home.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-    <script defer src="../js/link.js"></script>
 </head>
 <body>
     <header>
         <div class="headerWrap">
             <div class="logo">
-                <a href="../jsp/home.jsp">
+                <a href="#">
                     <img src="../img/logo.png" alt="">
                     <div class="title-text">예일장애인박람회</div>
                 </a>

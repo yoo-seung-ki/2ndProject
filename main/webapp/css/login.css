@@ -86,7 +86,7 @@ header{
 .headerWrap .navMenu ul,
 .headerWrap .changeBtn{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     font-family: 'KotraBold';
     font-weight: 800;
 }

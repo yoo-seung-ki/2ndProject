@@ -16,7 +16,6 @@
 </head>
 <body>
  <header>
-         <header>
         <div class="headerWrap">
             <div class="logo">
                 <a href="../jsp/home.jsp">
@@ -26,10 +25,7 @@
             </div>
             <div class="navMenu">
                 <ul>
-                  <li><a class="menu" href="#" onclick="sec2()">팀원소개</a></li>
-                  <li><a class="menu" href="">온라인 채용관</a></li>
-                  <li><a class="menu" href="">취업 컨텐츠</a></li>
-                  <li><a class="menu" href="">내 정보 관리</a></li>
+                  <li>로그인</li>
                 </ul>
             </div>
             <div class="changeBtn">고대비

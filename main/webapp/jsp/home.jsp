@@ -114,11 +114,17 @@
             </div>
             <% } else if (loginmobile != null && adid == null) { %>
             <div class="signin-signup">
+            <form action="logoutproc.jsp">
             	<p><%= mobile.getName()%> 님 환영합니다 </p>
-            </div> <% } else if (loginmobile == null && adid != null){ %>
+            	<button type="submit" value="logout" name="memberlogout" >로그아웃</button>
+            </form></div> <% } else if (loginmobile == null && adid != null){ %>
             	<div>
             		<p><%= admin.getId()%> 님 환영합니다 </p>
+            		<form action="logoutproc.jsp">
+            		<button type="submit" value="logout" name="memberlogout" >로그아웃</button>
+            		</form>
             	</div> <%} %>
+            	
         </div>
     </header>
     <script>

@@ -5,6 +5,16 @@
 <%@ page import="java.util.*" %>
 <% CompanyDAO Cdao = new CompanyDAO(); %>
 <% List<CompanyVO> Cdaolist = Cdao.getCompanyList(); %>
+<% String id = (String)session.getAttribute("adid"); %>
+<script>
+	function delsure() {
+	if(confirm("정말 삭제하시겠습니까?") == true) {
+		document.getElementById("delfrm").submit();
+	} else {
+		return event.preventDefault();
+	}
+	}
+</script>
     
 <% 
 
@@ -193,6 +203,14 @@
                         <div>
                             <p><%=tenlist.get(i).getEmplodate() %></p>
                         </div>
+                        <% if (id != null) { %>
+                        <div>
+                        	<form id="delfrm" method="post" action="delcomproc.jsp">
+                        		<button type="submit" onclick="delsure()"
+                        		name="delcomseq" value="<%=tenlist.get(i).getCompanyseq()%>">삭제하기</button>
+                        	</form>
+                        </div>
+                        <% } %>
                     </div> <!-- cardInfo -->
                 </a>
             </div> <!-- enterpriseCard -->

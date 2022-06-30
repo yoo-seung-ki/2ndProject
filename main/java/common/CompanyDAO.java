@@ -280,5 +280,33 @@ public class CompanyDAO {
 	   }
 	
 
+		// 채용 게시물 삭제
+		public boolean deleteCompany(int seq) {
+			boolean flag = false;
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			String sql = null;
+			try {
+				con = pool.getConnection();
+				sql = "delete from mjt where companyseq = ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, seq);
+				
+				// 관련된 레코드의 숫자가 반환되는데, delete로 1줄이 영향을 받는건 알겠지만, 트리거도 카운트가 되는지는 모르겠음
+				// 만약 트리거가 영향을 준다면 2일때 flag를 true로 바꿔줘야 함
+				if (pstmt.executeUpdate() == 1) {
+					flag = true;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			} finally {
+				pool.freeConnection(con, pstmt);
+			}
+			
+			return flag;
+		}
+	
+	
+	
 
 }

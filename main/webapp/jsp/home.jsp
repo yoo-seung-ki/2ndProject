@@ -1,9 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <jsp:useBean id="Cdao" class="common.CompanyDAO" />
+<jsp:useBean id="Ddao" class="common.DismemberDAO" />
 <%@ page import="common.CompanyVO" %>
+<%@ page import="common.DismemberVO" %>
 <%@ page import="java.util.*" %>
 <% List<CompanyVO> Cdaolist = Cdao.getCompanyList(); %>
-
+<% String loginmobile = (String)session.getAttribute("loginmobile"); %>
+<% DismemberVO mobile = Ddao.getUser(loginmobile); %>
+<%  %>
 <% 
 
 	// 페이징 넘버 작업
@@ -101,10 +105,15 @@
                 });
             });
             </script>
+            <% if (loginmobile == null) { %>
             <div class="signin-signup">
                 <button class="signin" onclick="location.href='../jsp/login.jsp';">로그인</button>
                 <button class="signup" onclick="location.href='../jsp/register.jsp';">회원가입</button>
             </div>
+            <% } else { %>
+            <div class="signin-signup">
+            	<p><%= mobile.getName()%> 님 환영합니다 </p>
+            </div> <% } %>
         </div>
     </header>
     <script>

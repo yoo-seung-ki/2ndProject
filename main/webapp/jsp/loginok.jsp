@@ -15,7 +15,7 @@
 			break;
 		case 3: {
 			msg = "로그인에 성공하였습니다.\\n" + name + "님 환영합니다!";
-			url = "main.jsp";
+			url = "home.jsp";
 			session.setAttribute("loginmobile", mobile);
 			break; }
 		}%>

@@ -164,8 +164,8 @@ public class DismemberDAO {
    }
    
    
-   // 매개변수로 받은 주민번호 뒷자리의 모든 정보를 반환(VO)
-      public DismemberVO getUser(String personid2) {
+   // 매개변수로 받은 전화번호의 모든 정보를 반환(VO)
+      public DismemberVO getUser(String mobile) {
          DismemberVO vo = new DismemberVO();
          Connection con = null;
          PreparedStatement pstmt = null;   
@@ -173,14 +173,15 @@ public class DismemberDAO {
          ResultSet rs = null;
          try {
             con = pool.getConnection();
-            sql = "select * from dismember where personid2 = ?";
+            sql = "select * from dismember where mobile = ?";
             pstmt = con.prepareStatement(sql);
-            pstmt.setString(1, personid2);
+            pstmt.setString(1, mobile);
             rs = pstmt.executeQuery();
             if(rs.next()) {
                vo.setMemberseq(rs.getInt("Memberseq"));
                vo.setName(rs.getString("Name"));
                vo.setPersonid1(rs.getString("Personid1"));
+               vo.setPersonid2(rs.getInt("Personid2"));
                vo.setArea(rs.getString("Area"));
                vo.setMobile(rs.getString("Mobile"));
                vo.setDiscase(rs.getString("Discase"));

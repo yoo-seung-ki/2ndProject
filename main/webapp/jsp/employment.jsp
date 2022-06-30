@@ -210,7 +210,7 @@
         <div class="enterpriseList">
         <% for(int i = 0; i < tenlist.size(); i++ ) { %>
             <div class="enterpriseCard">
-                <a target="blank" href="companyinfo.jsp?name=<%=tenlist.get(i).getCompanyseq()%>">
+                <a target="_blank" href="companyinfo.jsp?name=<%=tenlist.get(i).getCompanyseq()%>">
                     <img class="cardImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
                     <div class="cardInfo">
                         <div>
@@ -244,7 +244,7 @@
     
     <div class="searchWrap">
         <div class="input">
-        		<form method="get" target="blank" action="companysearchproc.jsp">
+        		<form method="get" target="_blank" action="companysearchproc.jsp">
 	            <input type="text" name="searchtext" 
 	            autocomplete="off" id="mic" placeholder="마이크 클릭 후 음성으로 기업명 입력">
 	            <button type="submit" class="search2">검색</button>

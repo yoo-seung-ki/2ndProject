@@ -97,7 +97,7 @@
                         <option value="other">기타(직접 입력)</option>
                 </select><br>
                 전화번호 <input type="text" class="insert-info" name="Pnum" maxlength="11" placeholder="연락처를 입력해주세요.">
-                <p class="warn">연락처 숫자만 입력해주세요. '-' 제외</p>
+                <p class="warn"> 연락처는 -없이 숫자만 입력해주세요.</p>
                 장애유형 <select class="insert-info" name="type">
                 	<option value="구분">구분</option>
                     <option value="지체장애">지체장애</option>

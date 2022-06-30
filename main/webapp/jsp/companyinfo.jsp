@@ -109,7 +109,7 @@
     <!-- 회사배너 -->
     <div class="companyWrap">
         <div class="companybanner">
-            <img src="../img/<%=companyinfo.getLogo() %>" class="uploadimage" width="150" alt="회사배너">
+            <img src="../img/<%=companyinfo.getLogo() %>" class="uploadimage" width="350" alt="회사배너">
         </div>
     </div>
   <!--회사 정보? -->

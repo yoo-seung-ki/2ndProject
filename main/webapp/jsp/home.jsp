@@ -10,7 +10,7 @@
 <% String loginmobile = (String)session.getAttribute("loginmobile"); %>
 <% String adid = (String)session.getAttribute("adid"); %>
 <% DismemberVO mobile = Ddao.getUser(loginmobile); %>
-<%  %>
+<% AdminVO admin = Adao.getAdmin(adid); %>
 <% 
 
 	// 페이징 넘버 작업
@@ -108,15 +108,18 @@
                 });
             });
             </script>
-            <% if (loginmobile == null) { %>
+            <% if (loginmobile == null && adid == null) { %>
             <div class="signin-signup">
                 <button class="signin" onclick="location.href='../jsp/login.jsp';">로그인</button>
                 <button class="signup" onclick="location.href='../jsp/register.jsp';">회원가입</button>
             </div>
-            <% } else { %>
+            <% } else if (loginmobile != null && adid == null) { %>
             <div class="signin-signup">
             	<p><%= mobile.getName()%> 님 환영합니다 </p>
-            </div> <% } %>
+            </div> <% } else if (loginmobile == null && adid != null){ %>
+            	<div>
+            		<p><%= admin.getId()%> 님 환영합니다 </p>
+            	</div> <%} %>
         </div>
     </header>
     <script>
@@ -193,26 +196,26 @@
             </div>
             <div class="enterpriseList">
                 <% for(int i = 0; i < 4; i++ ) { %>
-            <div class="enterpriseCard">
-                <a href="">
-                    <img class="cardImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
-                    <div class="cardInfo">
-                        <div>
-                            <p><%=tenlist.get(i).getCompanyname() %></p>
-                        </div>
-                        <div>
-                            <p><%=tenlist.get(i).getAddress().substring(0,7) %></p>
-                        </div>
-                        <div>
-                        	<p><%=tenlist.get(i).getRecrutype() %></p>
-                        </div>
-                        <div>
-                            <p><%=tenlist.get(i).getEmplodate() %></p>
-                        </div>
-                    </div> <!-- cardInfo -->
-                </a>
-            </div> <!-- enterpriseCard -->
-            <% } %>
+            	<div class="enterpriseCard">
+                	<a href="">
+	                    <img class="cardImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
+	                    <div class="cardInfo">
+	                        <div>
+	                            <p><%=tenlist.get(i).getCompanyname() %></p>
+	                        </div>
+	                        <div>
+	                            <p><%=tenlist.get(i).getAddress().substring(0,7) %></p>
+	                        </div>
+	                        <div>
+	                        	<p><%=tenlist.get(i).getRecrutype() %></p>
+	                        </div>
+	                        <div>
+	                            <p><%=tenlist.get(i).getEmplodate() %></p>
+	                        </div>
+	                    </div> <!-- cardInfo -->
+                	</a>
+            	</div> <!-- enterpriseCard -->
+            	<%} %>
                </div>
   
             <div>

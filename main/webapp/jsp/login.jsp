@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% String loginmobile = (String)session.getAttribute("loginmobile"); %>
+<% String adpw = (String)session.getAttribute("adpw"); %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,16 +93,16 @@
           </div>
           <div class="signup-link">회원이 아니신가요? <a href="./register.jsp">회원가입</a></div>
         </form>
-        <form action="#" class="login" name="managelogin">
+        <form action="#" class="login" method="post" name="adlogin">
           <div class="field">
-            <input type="text" placeholder="아이디를 입력해주세요." name="manageid" required>
+            <input type="text" placeholder="아이디를 입력해주세요." name="adid" required>
           </div>
           <div class="field">
-            <input type="password" placeholder="패스워드를 입력해주세요." name="managepw" required>
+            <input type="password" placeholder="패스워드를 입력해주세요." name="adpw" required>
           </div>
           <div class="field btn">
             <div class="btn-layer"></div>
-            <input type="submit" value="로그인" onclick="manageloginChk()">
+            <input type="submit" value="로그인" onclick="adloginChk()">
           </div>
         </form>
       </div>

@@ -82,7 +82,7 @@ public class AdminDAO {
 
 	   // 회원정보 수정전 비밀번호 확인
 	   // 세션에 저장된 전화번호와 입력받은 비밀번호를 매개변수로 DB데이터와 대조
-	   public boolean ChkPW(String pw, String Mobile) {
+	   public boolean ChkPW(String Pw, String Mobile) {
 	      boolean flag = false;
 	      Connection con = null;
 	      PreparedStatement pstmt = null;   
@@ -91,15 +91,15 @@ public class AdminDAO {
 	      
 	      try {
 	         con = pool.getConnection();
-	         sql = "select Mobile from admin where pw= ?";
+	         sql = "select pw from admin where pw= ?";
 	         pstmt = con.prepareStatement(sql);
-	         pstmt.setString(1, pw);
+	         pstmt.setString(1, Pw);
 	         rs = pstmt.executeQuery();
 	         
 	         // 나온 결과가 있는가?
 	         if(rs.next()) {
 	            // 결과가 입력받은 전화번호와 같은가?
-	            if(rs.getString("Mobile").equals(Mobile)) {
+	            if(rs.getString("Pw").equals(Pw)) {
 	               flag = true;
 	            }
 	         }
@@ -117,7 +117,7 @@ public class AdminDAO {
 	   // 로그인
 	   // 다른 방법으로는 비밀번호를 입력하고 로그인에 시도할 때 입력받은 비밀번호를 암호화시키고 
 	   // 암호화된 비밀번호와 DB에 있는 암호화된 비밀번호를 대조하는 방식
-	   public int dismemlogin(String id, String pw) {
+	   public int adlogin(String id, String pw) {
 	      Connection con = null;            // 데이터베이스와의 연결
 	      PreparedStatement pstmt = null;      // 사전에 컴파일 된 SQL문을 실행
 	      String sql = null;
@@ -133,7 +133,7 @@ public class AdminDAO {
 	      try {
 	         con = pool.getConnection();
 	         // 입력받은 전화번호가 데이터베이스에 존재하는지 확인
-	         sql = "select name from dismember where mobile = ?";
+	         sql = "select name from admin where mobile = ?";
 	         pstmt = con.prepareStatement(sql);
 	         pstmt.setString(1, id);
 	         rs = pstmt.executeQuery();
@@ -163,7 +163,7 @@ public class AdminDAO {
 	   
 	   
 	   // 매개변수로 받은 비밀번호의 모든 정보를 반환(VO)
-	      public AdminVO getUser(String pw) {
+	      public AdminVO getAdmin(String pw) {
 	         AdminVO vo = new AdminVO();
 	         Connection con = null;
 	         PreparedStatement pstmt = null;   

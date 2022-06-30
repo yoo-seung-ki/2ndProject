@@ -204,7 +204,7 @@
     
     <div class="searchWrap">
         <div class="input">
-        		<form method="get" action="companysearchproc.jsp">
+        		<form method="get" target="blank" action="companysearchproc.jsp">
 	            <input type="text" name="searchtext" 
 	            autocomplete="off" id="mic" placeholder="마이크 클릭 후 음성으로 기업명 입력">
 	            <button type="submit" class="search2">검색</button>

@@ -1,21 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="Ddao" class="common.DismemberDAO" />
+<jsp:useBean id="Adao" class="common.AdminDAO" />
 <%@ page import="common.CompanyDAO" %>
 <%@ page import="common.CompanyVO" %>
+<%@ page import="common.DismemberVO" %>
+<%@ page import="common.AdminVO" %>
 <%@ page import="java.util.*" %>
 <% CompanyDAO Cdao = new CompanyDAO(); %>
 <% List<CompanyVO> Cdaolist = Cdao.getCompanyList(); %>
-<% String id = (String)session.getAttribute("adid"); %>
-<script>
-	function delsure() {
-	if(confirm("정말 삭제하시겠습니까?") == true) {
-		document.getElementById("delfrm").submit();
-	} else {
-		return event.preventDefault();
-	}
-	}
-</script>
-    
+<% String loginmobile = (String)session.getAttribute("loginmobile"); %>
+<% String adid = (String)session.getAttribute("adid"); %>
+<% DismemberVO mobile = Ddao.getUser(loginmobile); %>
+<% AdminVO admin = Adao.getAdmin(adid); %>
+
 <% 
 
 	// 페이징 넘버 작업
@@ -53,6 +51,15 @@
 <head>
     <meta charset="UTF-8">
     <title>채용관</title>
+    <script>
+		function delsure() {
+		if(confirm("정말 삭제하시겠습니까?") == true) {
+			document.getElementById("delfrm").submit();
+		} else {
+			return event.preventDefault();
+		}
+		}
+	</script>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/employment.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
@@ -100,10 +107,25 @@
             });
         });
         </script>
+        <% if (loginmobile == null && adid == null) { %>
         <div class="signin-signup">
                 <button class="signin" onclick="location.href='./login.jsp';">로그인</button>
                 <button class="signup" onclick="location.href='./register.jsp';">회원가입</button>
         </div>
+        <% } else if (loginmobile != null && adid == null) { %>
+        <div class="signin-signup">
+            <form action="logoutproc.jsp">
+            	<p><%= mobile.getName()%> 님 환영합니다 </p>
+            	<button type="submit" value="logout" name="memberlogout" >로그아웃</button>
+            </form>
+        </div>
+        <% } else if (loginmobile == null && adid != null){ %>
+            	<div>
+            		<p><%= admin.getId()%> 님 환영합니다 </p>
+            		<form action="logoutproc.jsp">
+            		<button type="submit" value="logout" name="memberlogout" >로그아웃</button>
+            		</form>
+            	</div> <%} %>
     </div>
 </header>
 
@@ -188,7 +210,7 @@
         <div class="enterpriseList">
         <% for(int i = 0; i < tenlist.size(); i++ ) { %>
             <div class="enterpriseCard">
-                <a href="companyinfo.jsp?name=<%=tenlist.get(i).getCompanyseq()%>">
+                <a target="blank" href="companyinfo.jsp?name=<%=tenlist.get(i).getCompanyseq()%>">
                     <img class="cardImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
                     <div class="cardInfo">
                         <div>
@@ -203,7 +225,7 @@
                         <div>
                             <p><%=tenlist.get(i).getEmplodate() %></p>
                         </div>
-                        <% if (id != null) { %>
+                        <% if (adid != null) { %>
                         <div>
                         	<form id="delfrm" method="post" action="delcomproc.jsp">
                         		<button type="submit" onclick="delsure()"

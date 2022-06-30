@@ -1,9 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <jsp:useBean id="Cdao" class="common.CompanyDAO" />
+<jsp:useBean id="Ddao" class="common.DismemberDAO" />
+<jsp:useBean id="Adao" class="common.AdminDAO" />
 <%@ page import="common.CompanyVO" %>
+<%@ page import="common.DismemberVO" %>
+<%@ page import="common.AdminVO" %>
+<%@ page import="java.util.*" %>
 <% int companyseq= Integer.parseInt(request.getParameter("name"));%>
 <% CompanyVO companyinfo = Cdao.getCompany(companyseq); %>
+<% String loginmobile = (String)session.getAttribute("loginmobile"); %>
+<% String adid = (String)session.getAttribute("adid"); %>
+<% DismemberVO mobile = Ddao.getUser(loginmobile); %>
+<% AdminVO admin = Adao.getAdmin(adid); %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -33,10 +42,10 @@
             </ul>
         </div>
         <div class="changeBtn">고대비
-        <label class="switch">
-            <input type="checkbox" id="colormode">
-            <span class="slider round"></span>
-        </label>
+        	<label class="switch">
+            	<input type="checkbox" id="colormode">
+           		<span class="slider round"></span>
+        	</label>
         </div>
         <script>
  
@@ -65,12 +74,25 @@
                 });
             });
             </script>
-        </script>
-        <div class="signin-signup">
-                <button class="signin" onclick="location.href='./login.jsp';">로그인</button>
-                <button class="signup" onclick="location.href='./register.jsp';">회원가입</button>
+        <% if (loginmobile == null && adid == null) { %>
+       	<div class="signin-signup">
+       		<button class="signin" onclick="location.href='./login.jsp';">로그인</button>
+            <button class="signup" onclick="location.href='./register.jsp';">회원가입</button>
+       	</div>
+       	<% } else if (loginmobile != null && adid == null) { %>
+       	<div class="signin-signup">
+            <form action="logoutproc.jsp">
+            	<p><%= mobile.getName()%> 님 환영합니다 </p>
+            	<button type="submit" value="logout" name="memberlogout" >로그아웃</button>
+            </form>
         </div>
-    </div>
+        <% } else if (loginmobile == null && adid != null){ %>
+       	<div>
+       		<p><%= admin.getId()%> 님 환영합니다 </p>
+       		<form action="logoutproc.jsp">
+       		<button type="submit" value="logout" name="memberlogout" >로그아웃</button>
+       		</form>
+       	</div> <%} %>
 </header>
 
     <!--  메인배너  -->
@@ -87,7 +109,7 @@
     <!-- 회사배너 -->
     <div class="companyWrap">
         <div class="companybanner">
-            <img src="" class="uploadimage" width="150" alt="회사배너">
+            <img src="../img/<%=companyinfo.getLogo() %>" class="uploadimage" width="150" alt="회사배너">
         </div>
     </div>
   <!--회사 정보? -->

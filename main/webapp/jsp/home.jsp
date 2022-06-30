@@ -117,7 +117,9 @@
             <form action="logoutproc.jsp">
             	<p><%= mobile.getName()%> 님 환영합니다 </p>
             	<button type="submit" value="logout" name="memberlogout" >로그아웃</button>
-            </form></div> <% } else if (loginmobile == null && adid != null){ %>
+            </form>
+            </div> 
+            <% } else if (loginmobile == null && adid != null){ %>
             	<div>
             		<p><%= admin.getId()%> 님 환영합니다 </p>
             		<form action="logoutproc.jsp">

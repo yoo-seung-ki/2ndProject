@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="Ddao" class="common.DismemberDAO" />
+<jsp:useBean id="Adao" class="common.AdminDAO" />
 
+<%@ page import="common.DismemberVO" %>
+<%@ page import="common.AdminVO" %>
+<% String loginmobile = (String)session.getAttribute("loginmobile"); %>
+<% String adid = (String)session.getAttribute("adid"); %>
+<% DismemberVO mobile = Ddao.getUser(loginmobile); %>
+<% AdminVO admin = Adao.getAdmin(adid); %>
 
 <html lang="ko">
 <head>

@@ -1,0 +1,72 @@
+.inactive{
+    display: none;
+  }
+  
+  .modal-changeNum-background{
+    position: absolute;
+    top:0; 
+    left: 0; 
+    bottom: 0; 
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 998;
+  }
+  
+  
+  .modal-changeNum-container{
+    width: 350px;
+    height: 350px;
+    margin: 150px auto;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+  }
+  
+  .modal-changeNum-title{
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 16px;
+  }
+  
+  .modal-changeNum-input{
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .modal-changeNum-input input{
+    width: 250px;
+    height: 40px;
+  }
+  
+  .modal-changeNum-text{
+    text-align: center;
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  
+  .modal-changeNum-bnt{
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .modal-changeNum-send-bnt,
+  .modal-changeNum-close{
+    width: 80px;
+    height: 30px;
+  }
+  
+  .modal-changeNum-send-bnt{
+    background: black;
+    color: #fff;
+  }
+  
+.modal-changeNum-close{
+  border: 1px solid var(--dark-gray);
+}

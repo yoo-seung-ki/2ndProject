@@ -52,6 +52,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/modal.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </head>
 <body>
@@ -242,7 +243,7 @@
         <section class="section5" style="display:block">
             <h2 class="listTitle">내 정보 관리</h2>
             <div class="cardList">
-                <div class="myInfoCard">
+                <div class="myInfoCard myInfo">
                     <a href="">
                         <img src="../img/user.png" alt="내 정보 관리">
                         <h3>내 정보 관리</h3>
@@ -269,13 +270,35 @@
             </div>
         </section> <% } %>
     </main>
+    <!-- 비밀번호 변경 모달 -->
+<div class="modal-changeNum-background inactive">
+	<div class="modal-changeNum-container">
+	  <div>
+	    <form id="change-pw-form" name="settingFrm" method="post" action="resetPwProc.jsp">
+	      <p class="modal-changeNum-title">비밀번호 변경</p>
+	      <div class="modal-changeNum-input">
+	        <input id="change-pw" type="password" class="" placeholder="변경 할 비밀번호" name="pw"></input>
+	      </div>
+	      <div class="modal-changeNum-input">
+	        <input id = "change-pw-check" type="password" class="" placeholder="변경 할 비밀번호 확인"></input>
+	      </div>
+	      <div class="modal-changeNum-bnt">
+	        <button class="modal-changeNum-send-bnt" type="submit">보내기</button>
+	        <button class="modal-changeNum-close">취소</button>
+	      </div>
+	    </form>
+	  </div>
+	</div>
+</div>
 
     <footer>
         <div class="footerWrap">
             <div>copyright 2022. All RIGHT RESERVED.</div>
         </div>
     </footer>
+    
 
-    <script src="../js/mainScroll.js"></script>
+    <script defer src="../js/mainScroll.js"></script>
+    <script defer src="../js/modal.js"></script>
 </body>
 </html>

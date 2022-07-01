@@ -228,8 +228,7 @@
                         <% if (adid != null) { %>
                         <div>
                         	<form id="delfrm" method="post" action="delcomproc.jsp">
-                        		<button type="submit" onclick="delsure()"
-                        		name="delcomseq" value="<%=tenlist.get(i).getCompanyseq()%>">삭제하기</button>
+                        		<button  type="submit" onclick="delsure()" name="delcomseq" class="delete-button" value="<%=tenlist.get(i).getCompanyseq()%>">삭제하기</button>
                         	</form>
                         </div>
                         <% } %>

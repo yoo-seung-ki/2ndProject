@@ -508,3 +508,16 @@ footer .footerWrap{
 .logininfo {
     margin-right: 10px;
 }
+
+.delete-button {
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-family: 'Dongle';
+    font-size: var(--font-sizeM);
+    text-align: center;
+    box-shadow: 3px 3px 3px black;
+    transition-duration: 0.3s;
+    background-color: orange;
+    margin: 10px 0px 0px 187px;
+}

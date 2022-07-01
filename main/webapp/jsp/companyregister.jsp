@@ -13,6 +13,7 @@
 <% String adid = (String)session.getAttribute("adid"); %>
 <% DismemberVO mobile = Ddao.getUser(loginmobile); %>
 <% AdminVO admin = Adao.getAdmin(adid); %>
+<% String comlogin = (String)session.getAttribute("comlogin"); %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>

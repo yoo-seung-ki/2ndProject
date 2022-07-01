@@ -430,7 +430,12 @@ footer .footerWrap{
 
 /* excel form */
 .excelTable {
-    border: 1px solid #dddddd;
+    border: 1px solid #ddd;
+    box-shadow: #ddd 0px 15px 20px;
+
+}
+.tablecolor {
+    background-color: #fffde7;
 }
 
 table, th, td {

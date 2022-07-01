@@ -121,20 +121,20 @@
             <span class="value15">중퇴</span>
     </div>
 
-    
+    <div class="excelTable">
     <form>
-    <table id="table" class="excelTable" style="border:1px solid #dddddd">
+    <table id="table">
         <thead>
-            <th colspan="6">입사지원서</th>
+            <th colspan="6" >입사지원서</th>
         </thead>
         <tbody>
             <tr>
-                <td>성명</td>
+                <td class="tablecolor">성명</td>
                 <td colspan="2">
                     <input id='name2' placeholder="이름을 입력하시오." onkeyup='printName()'/>
                     <div style="display: none;" id='result2'></div>
                 </td>
-                <td>성별</td>
+                <td class="tablecolor">성별</td>
                 <td colspan="2">
                     <input class="radio" type='radio' name='gender' value='남자' onclick='getGender(event)'/>           
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -143,26 +143,26 @@
                 </td>
             </tr>
             <tr>
-                <td>연락처</td>
+                <td class="tablecolor">연락처</td>
                 <td colspan="2">
                     <input id='name3' placeholder="연락처를 입력하시오." onkeyup='printName()'/>
                     <div style="display: none;" id='result3'></div>
                 </td>
-                <td>생년월일</td>
+                <td class="tablecolor">생년월일</td>
                 <td colspan="2">
                     <input id='name4' placeholder="생년월일을 입력하시오." onkeyup='printName()'/>
                     <div style="display: none;" id='result4'></div>
                 </td>
             </tr>
             <tr>
-                <td>주소</td>
+                <td class="tablecolor">주소</td>
                 <td colspan="5">
                     <input id='name5' placeholder="주소를 입력하시오." onkeyup='printName()'/>
                     <div style="display: none;" id='result5'></div>                    
                 </td>
             </tr>
             <tr>
-                <td>병역</td>
+                <td class="tablecolor">병역</td>
                 <td colspan="5">
                     <input type='radio' name='militaly' value='필' onclick='militaly(event)'/>            
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -175,12 +175,12 @@
                 </td>
             </tr>
             <tr>
-                <td>장애유형</td>
-                <td colspan="2">지체장애(<input id='name6' onkeyup='printName()'/>
+                <td class="tablecolor">장애유형</td>
+                <td colspan="2" >지체장애(<input id='name6' onkeyup='printName()'/>
                     <div style="display: none;" id='result6'></div>)<br>
                     (*중복장애입력)
                 </td>
-                <td>보장구 유/무</td>
+                <td class="tablecolor">보장구 유/무</td>
                 <td colspan="2">
                     <input type='radio' name='getvalue1' value='유' onclick='getvalue1(event)'/>            
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -189,21 +189,21 @@
                 </td>
             </tr>
             <tr>
-                <td>장애정도</td>
+                <td class="tablecolor">장애정도</td>
                 <td colspan="2">
                     <input type='radio' name='getvalue2' value='심한' onclick='getvalue2(event)'/>            
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type='radio' name='getvalue2' value='심하지 않은' onclick='getvalue2(event)'/>
                     <div style="display: none;" id='radioresult4'></div>
                 </td>
-                <td>보장구 종류</td>
+                <td class="tablecolor">보장구 종류</td>
                 <td colspan="2">
                     <input id='name7' placeholder="보장구 종류를 입력하시오." onkeyup='printName()'/>
                     <div style="display: none;" id='result7'></div>  
                 </td>
             </tr>
             <tr>
-                <td rowspan="2">최종학력</td>
+                <td rowspan="2" class="tablecolor">최종학력</td>
                 <td colspan="3">
                     <input id='name8' placeholder="학교를 입력하시오." onkeyup='printName()'/>
                     <div style="display: none;" id='result8'></div>학교
@@ -229,7 +229,7 @@
             </tr>
 
             <tr>
-                <td rowspan="4">경력사항</td>
+                <td rowspan="4" class="tablecolor">경력사항</td>
                 <td >사업체명</td>
                 <td >근무기간</td>
                 <td >담당업무</td>
@@ -290,7 +290,7 @@
                 </td>
             </tr>
             <tr height="40">
-                <td rowspan="4">자 격 면 허 </td>
+                <td rowspan="4" class="tablecolor">자 격 면 허 </td>
                 <td>자격종목</td>
                 <td>급수</td>
                 <td>등록번호</td>
@@ -364,7 +364,7 @@
                 </td>
             </tr>
             <tr height="40">
-                <td rowspan="4">교 육 및 훈 련</td>
+                <td rowspan="4" class="tablecolor">교 육 및 훈 련</td>
                 <td>교육ㆍ훈련기관</td>
                 <td>교육ㆍ훈련일자</td>
                 <td colspan="3">교육ㆍ훈련내용</td>
@@ -414,6 +414,7 @@
         </tbody>
     </table>
 </form>
+</div>
     
 <button type="button" class="excelexport" onclick="fnExcelReport('table','title');">Excel로 저장</button>
 

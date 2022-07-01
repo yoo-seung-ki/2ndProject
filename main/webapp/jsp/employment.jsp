@@ -88,7 +88,7 @@
         </div>
         <script>
         $(document).ready(function() {
-        	$("p").css("color","#000");
+        	
             $("#colormode").change(function(){
             if($("#colormode").is(":checked")){
                 $("body").css("background-color","#000");
@@ -102,8 +102,7 @@
                 $(".title-text").css("color","#000");
                 $(".bannerTitle").css("color","#000");
                 $("p").css("color","#000");
-            }
-        
+            }        
             });
         });
         </script>
@@ -113,18 +112,18 @@
                 <button class="signup" onclick="location.href='./register.jsp';">회원가입</button>
         </div>
         <% } else if (loginmobile != null && adid == null) { %>
-        <div class="signin-signup">
-            <form action="logoutproc.jsp">
-            	<p><%= mobile.getName()%> 님 환영합니다 </p>
+        <div class="signin-signup logout">
+            <form class="logout-admin" action="logoutproc.jsp">
+            	<p class="logininfo"><%= mobile.getName()%> 님</p>
             	<button type="submit" value="logout" name="memberlogout" >로그아웃</button>
             </form>
         </div>
         <% } else if (loginmobile == null && adid != null){ %>
-            	<div>
-            		<p><%= admin.getId()%> 님 환영합니다 </p>
-            		<form action="logoutproc.jsp">
-            		<button type="submit" value="logout" name="memberlogout" >로그아웃</button>
-            		</form>
+            	<div class="signin-signup">
+	            		<p class="logininfo"><%= admin.getId()%> 님</p>
+	            		<form class="logout-admin" action="logoutproc.jsp">
+	            		<button type="submit" value="logout" name="memberlogout" >로그아웃</button>
+	            		</form>
             	</div> <%} %>
     </div>
 </header>

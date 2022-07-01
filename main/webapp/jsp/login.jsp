@@ -79,6 +79,7 @@
         <button id="comlogin">기업 로그인</button>
         <button id="mglogin">관리자 로그인</button>
       </div>
+      
       <form action="loginok.jsp" class="ulogin" method="post" name="dislogin">
         <div class="field">
           <input type="text" placeholder="이름을 입력해주세요." name="loginname" required >
@@ -91,6 +92,7 @@
         </div>
         <div class="signup-link">회원이 아니신가요? <a href="./register.jsp">회원가입</a></div>
       </form>
+      
       <form action="comloginok.jsp" class="clogin" method="post" name="comlogin">
         <div class="field">
           <input type="text" placeholder="기업명을 입력해주세요." name="comid" required >
@@ -103,6 +105,7 @@
         </div>
         <div class="signup-link">회원이 아니신가요? <a href="./register.jsp">회원가입</a></div>
       </form>
+      
       <form action="adminloginok.jsp" class="mlogin" method="post" name="adlogin">
         <div class="field">
           <input type="text" placeholder="아이디를 입력해주세요." name="adid" required >
@@ -114,6 +117,7 @@
           <input type="submit" value="로그인" class="loginbtn">
         </div>
       </form>
+      
   </div>
 </main>
 <footer>

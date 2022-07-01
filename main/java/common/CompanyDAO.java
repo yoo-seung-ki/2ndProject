@@ -75,6 +75,64 @@ public class CompanyDAO {
 	}
 	
 	
+	
+	// 매개변수로 comid를 받아서 해당 comid에 해당하는 기업의 모든 정보를 반환(VO)
+		public CompanyVO getCompanyfromid(String comid) {
+			CompanyVO vo = new CompanyVO();
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			String sql = null;
+			ResultSet rs = null;
+			try {
+				con = pool.getConnection();
+				sql = "select * from mjt where comid = ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, comid);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					vo.setCompanyseq(rs.getInt("Companyseq"));
+					vo.setCompanyname(rs.getString("Companyname"));
+					vo.setLogo(rs.getString("Logo"));
+					vo.setCeo(rs.getString("Ceo"));
+					vo.setAddress(rs.getString("Address"));
+					vo.setCreateyear(rs.getString("Createyear"));
+					vo.setWorktype(rs.getString("Worktype"));
+					vo.setEtc(rs.getString("Etc"));
+					vo.setHomepage(rs.getString("Homepage"));
+					vo.setCompanytype(rs.getString("CompanyType"));
+					vo.setCompanycontent(rs.getString("CompanyContent"));
+					vo.setCompanysize(rs.getString("Companysize"));
+					vo.setRecrutype(rs.getString("Recrutype"));
+					vo.setWorkcontent(rs.getString("Workcontent"));
+					vo.setGraduate(rs.getString("Graduate"));
+					vo.setEmploycase(rs.getString("Employcase"));
+					vo.setPaytype(rs.getString("Paytype"));
+					vo.setSeverance(rs.getString("Severance"));
+					vo.setWorktime(rs.getString("Worktime"));
+					vo.setRecrusize(rs.getInt("Recrusize"));
+					vo.setWorkarea(rs.getString("Workarea"));
+					vo.setCareer(rs.getString("Career"));
+					vo.setInsurance(rs.getString("Insurance"));
+					vo.setBonus(rs.getString("Bonus"));
+					vo.setAddwork(rs.getString("Addwork"));
+					vo.setMajor(rs.getString("Major"));
+					vo.setComputer(rs.getString("Computer"));
+					vo.setWelfare(rs.getString("Welfare"));
+					vo.setLicense(rs.getString("License"));
+					vo.setFacil(rs.getString("Facil"));
+					vo.setTreatment(rs.getString("Treatment"));
+					vo.setComid(rs.getString("Comid"));
+					vo.setCompw(rs.getString("Compw"));
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				pool.freeConnection(con, pstmt, rs);
+			}
+			return vo;
+		}
+	
+	
 	// 매개변수로 companyname을 받아서 해당 name에 해당하는 기업의 모든 정보를 반환(VO)
 		public CompanyVO getCompanyfromname(String name) {
 			CompanyVO vo = new CompanyVO();

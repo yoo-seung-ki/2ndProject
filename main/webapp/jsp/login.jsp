@@ -18,13 +18,18 @@
   <header>
         <div class="headerWrap">
             <div class="logo">
-                <a href="./home.jsp">
+                <a href="../html/main.html">
                     <img src="../img/logo.png" alt="">
                     <div class="main-title-text">예일장애인박람회</div>
                 </a>
             </div>
             <div class="navMenu">
-                
+                <ul>
+                  <li><a class="menu" href="">팀원소개</a></li>
+                  <li><a class="menu" href="">온라인 채용관</a></li>
+                  <li><a class="menu" href="">취업 컨텐츠</a></li>
+                  <li><a class="menu" href="">내 정보 관리</a></li>
+                </ul>
             </div>
             <div>고대비
             <label class="switch">
@@ -46,10 +51,15 @@
                     $("body").css("background-color","#fff");
                     $("body").css("color","#000");                    
                     $(".main-title-text").css("color","#000");
-                    $(".menu").css("color","#000");          
-                }            
-               });
-           });
+                    $(".menu").css("color","#000");
+
+              
+                    
+                    
+                }
+            
+                });
+            });
             </script>
 
         </div>

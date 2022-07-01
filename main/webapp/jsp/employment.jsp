@@ -89,24 +89,23 @@
         </div>
         <script>
         $(document).ready(function() {
-            $("p").css("color","#000");
-             $("#colormode").change(function(){
-             if($("#colormode").is(":checked")){
-                 $("body").css("background-color","#000");
-                 $("body").css("color","#fff");
-                 $(".title-text").css("color","#fff");
-                 $(".bannerTitle").css("color","#000");
-                 $("p").css("color","#fff");
-             }else{
-                 $("body").css("background-color","#fff");
-                 $("body").css("color","#000");
-                 $(".title-text").css("color","#000");
-                 $(".bannerTitle").css("color","#000");
-                 $("p").css("color","#000");
-             }
-         
-             });
-         });
+        	
+            $("#colormode").change(function(){
+            if($("#colormode").is(":checked")){
+                $("body").css("background-color","#000");
+                $("body").css("color","#fff");
+                $(".title-text").css("color","#fff");
+                $(".bannerTitle").css("color","#000");
+                $("p").css("color","#fff");
+            }else{
+                $("body").css("background-color","#fff");
+                $("body").css("color","#000");
+                $(".title-text").css("color","#000");
+                $(".bannerTitle").css("color","#000");
+                $("p").css("color","#000");
+            }        
+            });
+        });
         </script>
         <% if (loginmobile == null && adid == null) { %>
         <div class="signin-signup">

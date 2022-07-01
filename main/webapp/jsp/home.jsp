@@ -16,6 +16,7 @@
 
 
 <% 
+
 	// 페이징 넘버 작업
 	
 	// 한 페이지에 보여줄 게시글 개수
@@ -41,6 +42,7 @@
 
 	// 기업이 총 몇개인지
 	int Companycnt = list.size();
+
 %>
 
 <!DOCTYPE html>
@@ -50,7 +52,6 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../css/modal.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </head>
 <body>
@@ -103,6 +104,8 @@
                     $(".myInfoCard").css("background-color","#fff");
                     $(".myInfoCard").css("box-shadow","10px 10px 20px #e1e1e1");
                     $(".title-text").css("color","#000");
+                    
+                    
                 }
             
                 });
@@ -239,9 +242,9 @@
         <section class="section5" style="display:block">
             <h2 class="listTitle">내 정보 관리</h2>
             <div class="cardList">
-                <div class="myInfoCard ">
-                    <a href="#">
-                        <img src="../img/user.png" alt="내 정보 관리" class="myInfo">
+                <div class="myInfoCard">
+                    <a href="">
+                        <img src="../img/user.png" alt="내 정보 관리">
                         <h3>내 정보 관리</h3>
                     </a>
                 </div>
@@ -252,62 +255,27 @@
                     </a>
                 </div>
                 <div class="myInfoCard">
-                    <a href="#">
+                    <a href="">
                         <img src="../img/attention.png" alt="관심 기업 관리">
                         <h3>관심 기업 관리</h3>
                     </a>
                 </div>
                 <div class="myInfoCard">
-                    <a href="#">
+                    <a href="">
                         <img src="../img/enterprise.png" alt="기업지원 현황">
                         <h3>기업지원 현황</h3>
                     </a>
                 </div>
             </div>
         </section> <% } %>
-
-       
-         
-
     </main>
-
 
     <footer>
         <div class="footerWrap">
             <div>copyright 2022. All RIGHT RESERVED.</div>
         </div>
     </footer>
-	    <div class="modal-background inactive">
-        <div class="modal-container">
-            <div>
-              
-                <p class="modal-title">문의하기</p>
-                <div class="modal-input">
-                  <input type="text" class="modal-email" placeholder="이메일을 입력하세요"></input>
-                </div>
-                <div class="modal-text">
-                  <textarea name="" id="" rows="5" maxlength="1000" placeholder="문의 내용을 입력하세요"></textarea>
-                </div>
-                <div class="modal-screen">
-                  <p>스크린샷</p>
-                  <div class="fileUploadSize">
-                    <label class="fileUpload" for="imgFile">
-                      <i class="fa-solid fa-folder-open"></i>
-                      <input type="file" accept="image/*" id="imgFile">
-                      <span style="margin-left: 10px;">파일 추가</span>
-                    </label>
-                  </div>
-                </div>
-                <div class="modal-bnt">
-                  <button class="modal-send-bnt" type="submit">보내기</button>
-                  <button class="modal-close">취소</button>
-                </div>
-            
-            </div>
-        </div>
-    </div>
+
     <script src="../js/mainScroll.js"></script>
-    <script src="../js/modal.js"></script>
-    
 </body>
 </html>

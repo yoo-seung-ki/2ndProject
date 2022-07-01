@@ -102,12 +102,12 @@
         </div>
         <div class="signup-link">회원이 아니신가요? <a href="./register.jsp">회원가입</a></div>
       </form>
-      <form action="adminloginok.jsp" class="mlogin" method="post" name="dislogin">
+      <form action="adminloginok.jsp" class="mlogin" method="post" name="adlogin">
         <div class="field">
-          <input type="text" placeholder="아이디를 입력해주세요." name="loginname" required >
+          <input type="text" placeholder="아이디를 입력해주세요." name="adid" required >
         </div>
         <div class="field">
-          <input type="password" placeholder="패스워드를 입력해주세요." name="loginmobile" maxlength="11" required >
+          <input type="password" placeholder="패스워드를 입력해주세요." name="adpw" maxlength="11" required >
         </div>
         <div class="field">
           <input type="submit" value="로그인" class="loginbtn">

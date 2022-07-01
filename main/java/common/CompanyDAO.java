@@ -32,6 +32,7 @@ public class CompanyDAO {
 			pstmt.setInt(1, seq);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
+				vo.setCompanyseq(rs.getInt("Companyseq"));
 				vo.setCompanyname(rs.getString("Companyname"));
 				vo.setLogo(rs.getString("Logo"));
 				vo.setCeo(rs.getString("Ceo"));

@@ -5,7 +5,6 @@
 <% String name = request.getParameter("loginname"); %>
 <% String mobile = request.getParameter("loginmobile"); %>
 <% int num = Ddao.dismemlogin(name, mobile); %>
-<% System.out.println(name); %>
 <% String url = "login.jsp"; %>
 <% String msg = ""; %>
 <% switch(num) {

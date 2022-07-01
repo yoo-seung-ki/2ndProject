@@ -5,7 +5,6 @@
 <% String id = request.getParameter("adid"); %>
 <% String pw = request.getParameter("adpw"); %>
 <% int num = Adao.adlogin(id, pw); %>
-<% System.out.println(id); %>
 <% String url = "login.jsp"; %>
 <% String msg = ""; %>
 <% switch(num) {

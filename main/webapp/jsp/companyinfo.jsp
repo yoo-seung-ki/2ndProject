@@ -24,7 +24,15 @@
     <link rel="stylesheet" href="../css/companyinfo.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
-    
+    <script>
+    	function submitfunc() {
+    		if(confirm("정말 신청하시겠습니까?") == true) {
+    			document.getElementById("profrm").submit();
+    		} else {
+    			return event.preventDefault();
+    		}
+    	}
+    </script>
 </head>
 <body>
 <!-- 헤더  -->
@@ -122,14 +130,13 @@
     <script>
     $(function () {
     	$('#btn-upload').click(function (e) {
-    		e.preventDefault();$('#file').click();
+    		e.preventDefault();
+    		$('#file').click();
     		});
     	}); 
      function changeValue(obj){
 		alert(obj.value);
 	}
-   
-
 
   </script>
   </div>
@@ -253,6 +260,13 @@
         <td colspan="3"><%=F %></td>
     </tr>
 </table>
+
+	<div>
+		<form id="profrm" method="post" action="companyproposal.jsp?name=<%=companyinfo.getCompanyseq()%>">
+			<button type="button" onclick="submitfunc()">입사 지원하기</button>
+		</form>
+	</div>
+
 <div class="chart-container">
         <div style="width: 500px;">
                 <canvas id="canvas1" ></canvas>

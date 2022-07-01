@@ -56,7 +56,7 @@
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/modal.css">
     <link rel="stylesheet" href="../css/modal-attention.css">
-    <link rel="stylesheet" href="../css/modal-modal-apply.css">
+    <link rel="stylesheet" href="../css/modal-apply.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </head>
 <body>
@@ -268,14 +268,14 @@
                         <h3>입사지원서 관리</h3>
                     </a>
                 </div>
-                <div class="myInfoCard attention" onclick="modalpage2()">
-                    <a href="">
+                <div class="myInfoCard attention">
+                    <a href="" onclick="modalpage2()">
                         <img src="../img/attention.png" alt="관심 기업 관리">
                         <h3>관심 기업 관리</h3>
                     </a>
                 </div>
                 <div class="myInfoCard">
-                    <a href="">
+                    <a href="" onclick="modalpage3()">
                         <img src="../img/enterprise.png" alt="기업지원 현황">
                         <h3>기업지원 현황</h3>
                     </a>
@@ -363,7 +363,7 @@
                             <p ><%=tenlist.get(i).getCompanyname() %></p>
                         </div>
                         <div>
-                            <p><%=tenlist.get(i).getAddress().substring(0,4) %></p>
+                            <p><%=tenlist.get(i).getAddress().substring(0,7) %></p>
                         </div>
                         <div>
                             <p><%=tenlist.get(i).getRecrutype() %></p>
@@ -391,6 +391,49 @@
 	</div>
 </div>
 
+<!-- 기업지원 현황 -->
+<div class="modalBackground-attention inactive3">
+	<div class="modalContainer-attention">
+	  <div>
+	    <form>
+	      <p class="modalTitle-attention">기업지원 현황</p>
+  <div class="enterpriseList">
+        <% for(int i = 0; i < tenlist.size(); i++ ) { %>
+            <div class="enterpriseCard">
+                <a target="_blank" href="companyinfo.jsp?name=<%=tenlist.get(i).getCompanyseq()%>">
+                    <img class="cardImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
+                    <div class="cardInfo">
+                        <div>
+                            <p ><%=tenlist.get(i).getCompanyname() %></p>
+                        </div>
+                        <div>
+                            <p><%=tenlist.get(i).getAddress().substring(0,7) %></p>
+                        </div>
+                        <div>
+                            <p><%=tenlist.get(i).getRecrutype() %></p>
+                        </div>
+                        <div>
+                            <p><%=tenlist.get(i).getEmplodate() %></p>
+                        </div>
+                        <% if (adid != null) { %>
+                        <div class="modalBnt">
+                        	<button  type="" onclick="" name="" class="modalClose" value="">삭제하기</button>
+                        </div>
+                        <% } %>
+                    </div> <!-- cardInfo -->
+                </a>
+            </div> <!-- enterpriseCard -->
+            <% } %>
+            
+            
+        </div> <!-- enterpriseList -->
+	      <div class="modalBnt">
+	        <button class="modalClose" onclick="modalpage1close()">닫기</button>
+	      </div>
+	    </form>
+	  </div>
+	</div>
+</div>
 
 
     <footer>

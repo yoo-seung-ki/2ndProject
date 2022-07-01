@@ -15,11 +15,17 @@ function modalpage2() {
   event.preventDefault();
 }
 
+function modalpage3() {
+  document.querySelector('.inactive3').style.display = 'block'
+  event.preventDefault();
+}
+
 
 
 function modalpage1close() {
   document.querySelector('.inactive1').style.display = 'none'
   document.querySelector('.inactive2').style.display = 'none'
+  document.querySelector('.inactive3').style.display = 'none'
   event.preventDefault();
 }
 

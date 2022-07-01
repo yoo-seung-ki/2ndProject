@@ -3,37 +3,16 @@
 <jsp:useBean id="Cdao" class="common.CompanyDAO" />
 <jsp:useBean id="Cvo" class="common.CompanyVO" />
 <% 
-	Cvo.setLogo(request.getParameter("")); 
-	Cvo.setCompanyname(request.getParameter(""));
-	Cvo.setEmplodate(request.getParameter(""));
-	Cvo.setCeo(request.getParameter(""));
-	Cvo.setCreateyear(request.getParameter(""));
-	Cvo.setAddress(request.getParameter(""));
-	Cvo.setHomepage(request.getParameter(""));
-	Cvo.setCompanytype(request.getParameter(""));
-	Cvo.setCompanycontent(request.getParameter(""));
-	Cvo.setCompanysize(request.getParameter(""));
-	Cvo.setRecrutype(request.getParameter(""));
-	Cvo.setWorkcontent(request.getParameter(""));
-	Cvo.setGraduate(request.getParameter(""));
-	Cvo.setEmploycase(request.getParameter(""));
-	Cvo.setPaytype(request.getParameter(""));
-	Cvo.setSeverance(request.getParameter(""));
-	Cvo.setWorktime(request.getParameter(""));
-	Cvo.setEtc(request.getParameter(""));
-	Cvo.setRecrusize(Integer.parseInt(request.getParameter("")));
-	Cvo.setWorkarea(request.getParameter(""));
-	Cvo.setCareer(request.getParameter(""));
-	Cvo.setWorktype(request.getParameter(""));
-	Cvo.setInsurance(request.getParameter(""));
-	Cvo.setBonus(request.getParameter(""));
-	Cvo.setAddwork(request.getParameter(""));
-	Cvo.setMajor(request.getParameter(""));
-	Cvo.setComputer(request.getParameter(""));
-	Cvo.setWelfare(request.getParameter(""));
-	Cvo.setLicense(request.getParameter(""));
-	Cvo.setFacil(request.getParameter(""));
-	Cvo.setTreatment(request.getParameter(""));
-	Cvo.setComid(request.getParameter(""));
-	Cvo.setCompw(request.getParameter(""));
+	Cvo.setComid(request.getParameter("companyid"));
+	Cvo.setCompw(request.getParameter("companypassword"));
+	Cvo.setCompanyname(request.getParameter("companyname"));
+	Cvo.setCeo(request.getParameter("ceo"));
+	Cvo.setCreateyear(request.getParameter("companycreate"));
+	Cvo.setAddress(request.getParameter("address"));
+	Cvo.setHomepage(request.getParameter("homepage"));
+	Cvo.setCompanytype(request.getParameter("companytype"));
+	Cvo.setCompanycontent(request.getParameter("companycontent"));
+	Cvo.setCompanysize(request.getParameter("companysize"));
+	
 %>
+

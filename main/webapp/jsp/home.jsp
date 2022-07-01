@@ -245,7 +245,7 @@
                     </a>
                 </div>
                 <div class="myInfoCard">
-                    <a href="">
+                    <a href="./excelinput.jsp">
                         <img src="../img/info.png" alt="입사지원서 관리">
                         <h3>입사지원서 관리</h3>
                     </a>

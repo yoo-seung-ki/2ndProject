@@ -442,6 +442,7 @@ th,td{
 }
 th{
 	background-color: beige;
+    width:180px;
 }
 .interest,.golist{
     border: none;

@@ -16,33 +16,33 @@
 
 <% 
 
-	// 페이징 넘버 작업
-	
-	// 한 페이지에 보여줄 게시글 개수
-	int pageSize = 8;
-	// 현재 페이지
-	String pageNum = request.getParameter("pageNum");
-	// pageNum이 null이라는 뜻은 처음 이 사이트에 들어왔다는 뜻이며, 그러한 경우 1번 페이지를 보여준다.
-	if(pageNum == null) {
-		pageNum = "1";
-	}
-	
-	// 현재 페이지가 몇번째 페이지인지 계산
-	int currentPage = Integer.parseInt(pageNum);
-	
-	// 첫번째 글이 전체 게시글중 몇번째인지 계산
-	int startRow = (currentPage - 1) * pageSize + 1;
-	
-	// 모든 기업의 리스트를 가져옴 
-	List<CompanyVO> list = Cdao.getCompanyList();
-	
-	// 모든 기업의 리스트를 10개 단위로 잘라서 들고옴
-	List<CompanyVO> tenlist = Cdao.getCompanyListTen(startRow, pageSize);
+   // 페이징 넘버 작업
+   
+   // 한 페이지에 보여줄 게시글 개수
+   int pageSize = 8;
+   // 현재 페이지
+   String pageNum = request.getParameter("pageNum");
+   // pageNum이 null이라는 뜻은 처음 이 사이트에 들어왔다는 뜻이며, 그러한 경우 1번 페이지를 보여준다.
+   if(pageNum == null) {
+      pageNum = "1";
+   }
+   
+   // 현재 페이지가 몇번째 페이지인지 계산
+   int currentPage = Integer.parseInt(pageNum);
+   
+   // 첫번째 글이 전체 게시글중 몇번째인지 계산
+   int startRow = (currentPage - 1) * pageSize + 1;
+   
+   // 모든 기업의 리스트를 가져옴 
+   List<CompanyVO> list = Cdao.getCompanyList();
+   
+   // 모든 기업의 리스트를 10개 단위로 잘라서 들고옴
+   List<CompanyVO> tenlist = Cdao.getCompanyListTen(startRow, pageSize);
 
-	// 기업이 총 몇개인지
-	int Companycnt = list.size();
-	
-	
+   // 기업이 총 몇개인지
+   int Companycnt = list.size();
+   
+   
 
 
 %>
@@ -55,14 +55,14 @@
     <link rel="stylesheet" href="../css/employment.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
     <script>
-		function delsure() {
-		if(confirm("정말 삭제하시겠습니까?") == true) {
-			document.getElementById("delfrm").submit();
-		} else {
-			return event.preventDefault();
-		}
-		}
-	</script>
+      function delsure() {
+      if(confirm("정말 삭제하시겠습니까?") == true) {
+         document.getElementById("delfrm").submit();
+      } else {
+         return event.preventDefault();
+      }
+      }
+   </script>
 </head>
 <body>
 <!-- 헤더  -->
@@ -88,7 +88,7 @@
         </div>
         <script>
         $(document).ready(function() {
-        	
+           $("p").css("color","#000");
             $("#colormode").change(function(){
             if($("#colormode").is(":checked")){
                 $("body").css("background-color","#000");
@@ -102,7 +102,8 @@
                 $(".title-text").css("color","#000");
                 $(".bannerTitle").css("color","#000");
                 $("p").css("color","#000");
-            }        
+            }
+        
             });
         });
         </script>
@@ -114,17 +115,17 @@
         <% } else if (loginmobile != null && adid == null) { %>
         <div class="signin-signup">
             <form action="logoutproc.jsp">
-            	<p><%= mobile.getName()%> 님 환영합니다 </p>
-            	<button type="submit" value="logout" name="memberlogout" >로그아웃</button>
+               <p><%= mobile.getName()%> 님 환영합니다 </p>
+               <button type="submit" value="logout" name="memberlogout" >로그아웃</button>
             </form>
         </div>
         <% } else if (loginmobile == null && adid != null){ %>
-            	<div class="signin-signup logout">
-            		<p><%= admin.getId()%> 님 환영합니다 </p>
-            		<form action="logoutproc.jsp">
-            		<button type="submit" value="logout" name="memberlogout" >로그아웃</button>
-            		</form>
-            	</div> <%} %>
+               <div>
+                  <p><%= admin.getId()%> 님 환영합니다 </p>
+                  <form action="logoutproc.jsp">
+                  <button type="submit" value="logout" name="memberlogout" >로그아웃</button>
+                  </form>
+               </div> <%} %>
     </div>
 </header>
 
@@ -201,7 +202,7 @@
     </div>
 
 <!--  채용관 리스트  -->
-	
+   
     <section class="section3">
         <div class="text">
             <h2 class="listTitle">참여 기업 리스트</h2>
@@ -226,10 +227,10 @@
                         </div>
                         <% if (adid != null) { %>
                         <div>
-                        	<form id="delfrm" method="post" action="delcomproc.jsp">
-                        		<button type="submit" onclick="delsure()"
-                        		name="delcomseq" value="<%=tenlist.get(i).getCompanyseq()%>">삭제하기</button>
-                        	</form>
+                           <form id="delfrm" method="post" action="delcomproc.jsp">
+                              <button type="submit" onclick="delsure()"
+                              name="delcomseq" value="<%=tenlist.get(i).getCompanyseq()%>">삭제하기</button>
+                           </form>
                         </div>
                         <% } %>
                     </div> <!-- cardInfo -->
@@ -243,29 +244,29 @@
     
     <div class="searchWrap">
         <div class="input">
-        		<form method="get" target="_blank" action="companysearchproc.jsp">
-	            <input type="text" name="searchtext" 
-	            autocomplete="off" id="mic" placeholder="마이크 클릭 후 음성으로 기업명 입력">
-	            <button type="submit" class="search2">검색</button>
-	            </form>
-	            <button class="dictate"><i class="fas fa-microphone"></i>
-					<svg width="1.25rem" height="1.25rem" viewBox="0 0 100 100">
-						<g stroke="#fff" stroke-width="15">
-							<path d="M20,20 20,80">
-								<animate attributeName="d" values="M20,40 20,60;M20,20 20,80;M20,40 20,60" dur="1s"
-									repeatCount="indefinite" />
-							</path>
-							<path d="M50,10 50,90">
-								<animate attributeName="d" values="M50,10 50,90;M50,40 50,60;M50,10 50,90" dur="1s"
-									repeatCount="indefinite" />
-							</path>
-							<path d="M80,20 80,80">
-								<animate attributeName="d" values="M80,40 80,60;M80,20 80,80;M80,40 80,60" dur="1s"
-									repeatCount="indefinite" />
-							</path>
-						</g>
-					</svg>
-	            </button>
+              <form method="get" target="_blank" action="companysearchproc.jsp">
+               <input type="text" name="searchtext" 
+               autocomplete="off" id="mic" placeholder="마이크 클릭 후 음성으로 기업명 입력">
+               <button type="submit" class="search2">검색</button>
+               </form>
+               <button class="dictate"><i class="fas fa-microphone"></i>
+               <svg width="1.25rem" height="1.25rem" viewBox="0 0 100 100">
+                  <g stroke="#fff" stroke-width="15">
+                     <path d="M20,20 20,80">
+                        <animate attributeName="d" values="M20,40 20,60;M20,20 20,80;M20,40 20,60" dur="1s"
+                           repeatCount="indefinite" />
+                     </path>
+                     <path d="M50,10 50,90">
+                        <animate attributeName="d" values="M50,10 50,90;M50,40 50,60;M50,10 50,90" dur="1s"
+                           repeatCount="indefinite" />
+                     </path>
+                     <path d="M80,20 80,80">
+                        <animate attributeName="d" values="M80,40 80,60;M80,20 80,80;M80,40 80,60" dur="1s"
+                           repeatCount="indefinite" />
+                     </path>
+                  </g>
+               </svg>
+               </button>
         </div>
     </div> <!-- searchWrap -->
     
@@ -276,52 +277,52 @@
     
     
     <!-- 게시글 페이징 -->
-	    <div class="listNum" id="page_control">
-			<%
-    			// 전체 페이지 수 계산
-    			int pageCnt = Companycnt/pageSize + (Companycnt%pageSize == 0 ? 0 : 1);
-				// 한 페이지에 보여줄 게시글 개수
-				
-				// int Companycnt = list.size(); => 전체 기업의 수 => 20개
-				// int pageSize = 8;
-				// compantcnt 를 pageSize로 나눈 값이 0 이면 0이 반환되고
-				// 0이 아니면 1이 반환된다.
-		
-				// 삼항 연산자, (A ? B : C)의 형태로 표시된다.
-				// 첫번째 인덱스는 조건을 의미하고, 두번째 인덱스는s 조건이 참일 경우 리턴되는 값이며
-				// 세번째 인덱스는 조건이 거짓일때 리턴되는 값이다. 
-		
-    			// 한 페이지에 보여줄 페이지 번호 개수
-    			int pageBlock = 10;
-				
-    			// 시작하는 페이지 번호  ex) 1, 11, 21...
-    			int startPage = ((currentPage-1) / pageBlock) * pageBlock + 1;
-    			
-    			// 끝나는 페이지 번호
-    			int endPage = startPage + pageBlock-1;
-    			
-    			if(endPage > pageCnt) {
-    				endPage = pageCnt;
-    			
-    			
-    			// 10페이지 이전으로 가는 버튼
-    			// 시작페이지가 11이상이 아니면 이전 버튼을 만들 필요가 없다. 
-	    		if(startPage > pageBlock) { %>
-	    			<a href="employment.jsp?pageNum=<%=startPage - pageBlock%>">이전</a>
-	    		<%}
-    			// 몇번 페이지로 갈 것인지 번호를 a태그로 생성
-    			for(int i = startPage; i <= endPage; i++) { %>
-    				<a href="employment.jsp?pageNum=<%=i%>"><%=i %></a>
-    			<%}
-    			
-    			// 10페이지 건너뛰는 버튼
-    			// 남은 페이지가 10 이하라면 다음으로 가는 버튼을 만들 필요가 없다.
-    			if(endPage < pageCnt) { %>
-    				<a href="employment.jsp?pageNum=<%=startPage + pageBlock%>">다음</a>
-    			<%}
-    		}
- 			%>
-	    </div>
+       <div class="listNum" id="page_control">
+         <%
+             // 전체 페이지 수 계산
+             int pageCnt = Companycnt/pageSize + (Companycnt%pageSize == 0 ? 0 : 1);
+            // 한 페이지에 보여줄 게시글 개수
+            
+            // int Companycnt = list.size(); => 전체 기업의 수 => 20개
+            // int pageSize = 8;
+            // compantcnt 를 pageSize로 나눈 값이 0 이면 0이 반환되고
+            // 0이 아니면 1이 반환된다.
+      
+            // 삼항 연산자, (A ? B : C)의 형태로 표시된다.
+            // 첫번째 인덱스는 조건을 의미하고, 두번째 인덱스는s 조건이 참일 경우 리턴되는 값이며
+            // 세번째 인덱스는 조건이 거짓일때 리턴되는 값이다. 
+      
+             // 한 페이지에 보여줄 페이지 번호 개수
+             int pageBlock = 10;
+            
+             // 시작하는 페이지 번호  ex) 1, 11, 21...
+             int startPage = ((currentPage-1) / pageBlock) * pageBlock + 1;
+             
+             // 끝나는 페이지 번호
+             int endPage = startPage + pageBlock-1;
+             
+             if(endPage > pageCnt) {
+                endPage = pageCnt;
+             
+             
+             // 10페이지 이전으로 가는 버튼
+             // 시작페이지가 11이상이 아니면 이전 버튼을 만들 필요가 없다. 
+             if(startPage > pageBlock) { %>
+                <a href="employment.jsp?pageNum=<%=startPage - pageBlock%>">이전</a>
+             <%}
+             // 몇번 페이지로 갈 것인지 번호를 a태그로 생성
+             for(int i = startPage; i <= endPage; i++) { %>
+                <a href="employment.jsp?pageNum=<%=i%>"><%=i %></a>
+             <%}
+             
+             // 10페이지 건너뛰는 버튼
+             // 남은 페이지가 10 이하라면 다음으로 가는 버튼을 만들 필요가 없다.
+             if(endPage < pageCnt) { %>
+                <a href="employment.jsp?pageNum=<%=startPage + pageBlock%>">다음</a>
+             <%}
+          }
+          %>
+       </div>
     
 
     <footer>

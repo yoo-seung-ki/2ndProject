@@ -14,7 +14,6 @@
 	String searchtext = request.getParameter("searchtext");
 	CompanyDAO Cdao = new CompanyDAO();
 	List<CompanyVO> list = Cdao.getSearch(searchtext);
-	System.out.println(searchtext);
 	if (list.size() == 0) { %>
 		<script>
 		alert('검색결과가 없습니다.')

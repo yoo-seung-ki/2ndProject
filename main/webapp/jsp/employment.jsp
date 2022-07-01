@@ -51,6 +51,9 @@
 <head>
     <meta charset="UTF-8">
     <title>채용관</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="../css/employment.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
     <script>
 		function delsure() {
 		if(confirm("정말 삭제하시겠습니까?") == true) {
@@ -60,9 +63,6 @@
 		}
 		}
 	</script>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-    <link rel="stylesheet" href="../css/employment.css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </head>
 <body>
 <!-- 헤더  -->

@@ -12,7 +12,7 @@
 <% DismemberVO mobile = Ddao.getUser(loginmobile); %>
 <% AdminVO admin = Adao.getAdmin(adid); %>
 <%  %>
-<% String godea = setAttribute("godea"); %>
+
 
 
 <% 

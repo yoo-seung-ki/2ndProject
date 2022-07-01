@@ -80,7 +80,6 @@ header{
 
 .headerWrap .signin-signup{
     display: inherit;
-
 }
 
 .signin-signup button{
@@ -499,4 +498,13 @@ footer .footerWrap{
     width: 100%;
     height: 70px;
     line-height: 70px;
+}
+
+.logout-admin {
+    display: flex;
+    align-items: center;    
+}
+
+.logininfo {
+    margin-right: 10px;
 }

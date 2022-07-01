@@ -54,9 +54,25 @@
         <button style="display: none;" onclick="Buttontoggle()" value="off" id="toggle">돋보기</button>
                
          
-        <div class="signin-signup">
-            <button class="signin">로그인</button>
-            <button class="signup">회원가입</button>
+        <% if (loginmobile == null && adid == null) { %>
+            <div class="signin-signup">
+                    <button class="signin" onclick="location.href='./login.jsp';">로그인</button>
+                    <button class="signup" onclick="location.href='./register.jsp';">회원가입</button>
+            </div>
+            <% } else if (loginmobile != null && adid == null) { %>
+            <div class="signin-signup logout">
+                <form class="logout-admin" action="logoutproc.jsp">
+                    <p class="logininfo"><%= mobile.getName()%> 님</p>
+                    <button type="submit" value="logout" name="memberlogout" >로그아웃</button>
+                </form>
+            </div>
+            <% } else if (loginmobile == null && adid != null){ %>
+                    <div class="signin-signup">
+                            <p class="logininfo"><%= admin.getId()%> 님</p>
+                            <form class="logout-admin" action="logoutproc.jsp">
+                            <button type="submit" value="logout" name="memberlogout" >로그아웃</button>
+                            </form>
+                    </div> <%} %>
         </div>
     </div>
 </header>

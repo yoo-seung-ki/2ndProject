@@ -397,5 +397,11 @@ footer .footerWrap{
     color: black;
 }
 
+.logout-admin {
+    display: flex;
+    align-items: center;    
+}
 
-
+.logininfo {
+    margin-right: 10px;
+}

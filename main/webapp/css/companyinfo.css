@@ -497,3 +497,12 @@ th{
 #canvas2 {
     margin-left: 300px;
 }
+
+.logout-admin {
+    display: flex;
+    align-items: center;    
+}
+
+.logininfo {
+    margin-right: 10px;
+}

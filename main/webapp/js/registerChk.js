@@ -47,6 +47,7 @@ function regiChk(){
         regiFrm.degree.foucs();
         return;
     }
+    regiFrm.submit();
 }
 
 function btnable(checkbox){

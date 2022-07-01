@@ -7,7 +7,8 @@
 <% List<CompanyVO> Cdaolist = Cdao.getCompanyList(); %>
 <% String searchtext = request.getParameter("name");
 	List<CompanyVO> list = Cdao.getSearch(searchtext); %>
-    
+<% String name = request.getParameter("godea"); %>
+<%// String godea = request.getAttribute("godea"); %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -33,7 +34,7 @@
                 <li>온라인 채용관</a></li>
             </ul>
         </div>
-        <div class="changeBtn">고대비
+        <div class="changeBtn" name="godea">고대비
         <label class="switch">
             <input type="checkbox" id="colormode">
             <span class="slider round"></span>

@@ -5,7 +5,7 @@ public class DismemberVO {
 	private int Memberseq;
 	private String Name;
 	private String Personid1;
-	private int Personid2;
+	private String Personid2;
 	private String Area;
 	private String Mobile;
 	private String Discase;
@@ -35,11 +35,11 @@ public class DismemberVO {
 		Personid1 = personid1;
 	}
 	
-	public int getPersonid2() {
+	public String getPersonid2() {
 		return Personid2;
 	}
 
-	public void setPersonid2(int personid2) {
+	public void setPersonid2(String personid2) {
 		Personid2 = personid2;
 	}
 	

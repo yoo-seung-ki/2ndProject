@@ -257,7 +257,7 @@
             <h2 class="listTitle">내 정보 관리</h2>
             <div class="cardList">
                 <div class="myInfoCard myInfo">
-                    <a href="">
+                    <a href="" onclick="modalpage1()" >
                         <img src="../img/user.png" alt="내 정보 관리">
                         <h3>내 정보 관리</h3>
                     </a>
@@ -268,7 +268,7 @@
                         <h3>입사지원서 관리</h3>
                     </a>
                 </div>
-                <div class="myInfoCard attention">
+                <div class="myInfoCard attention" onclick="modalpage2()">
                     <a href="">
                         <img src="../img/attention.png" alt="관심 기업 관리">
                         <h3>관심 기업 관리</h3>
@@ -338,7 +338,7 @@
 	    </form>
 	    <div class="modalBnt">
 	        <button class="modalSendBnt" type="submit">보내기</button>
-	        <button class="modalClose">취소</button>
+	        <button class="modalClose" onclick="modalpage1close()">취소</button>
 	    </div>
 	  </div>
 	</div>
@@ -373,7 +373,7 @@
                         </div>
                         <% if (adid != null) { %>
                         <div class="modalBnt">
-                        	<button  type="" onclick="()" name="" class="modalClose" value="">삭제하기</button>
+                        	<button  type="" onclick="" name="" class="modalClose" value="">삭제하기</button>
                         </div>
                         <% } %>
                     </div> <!-- cardInfo -->
@@ -384,7 +384,7 @@
             
         </div> <!-- enterpriseList -->
 	      <div class="modalBnt">
-	        <button class="modalClose">닫기</button>
+	        <button class="modalClose" onclick="modalpage1close()">닫기</button>
 	      </div>
 	    </form>
 	  </div>
@@ -402,7 +402,7 @@
 
     <script src="../js/mainScroll.js"></script>
     <script src="../js/modal.js"></script>
-   // <script src="../js/modal-attention.js"></script>
+    <script src="../js/modal-attention.js"></script>
     <script src="../js/modal-apply.js"></script>
 
 

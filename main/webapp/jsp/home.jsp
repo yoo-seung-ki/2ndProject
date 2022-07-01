@@ -53,6 +53,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/modal-attention.css">
+    <link rel="stylesheet" href="../css/modal-modal-apply.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 </head>
 <body>
@@ -69,7 +71,9 @@
                     <li><a class="menu" href="">팀원소개</a></li>
                     <li><a class="menu" href="">온라인 채용관</a></li>
                     <li><a class="menu" href="">취업 컨텐츠</a></li>
-                    <li><a class="menu" href="">내 정보 관리</a></li>
+                    <% if (loginmobile != null && adid == null) { %>
+                    <li><a class="menu" style="display:block" href="">내 정보 관리</a></li>
+                    <%} %>
                 </ul>
             </div>
             <div class="changeBtn" name="godea">고대비
@@ -255,7 +259,7 @@
                         <h3>입사지원서 관리</h3>
                     </a>
                 </div>
-                <div class="myInfoCard">
+                <div class="myInfoCard attention">
                     <a href="">
                         <img src="../img/attention.png" alt="관심 기업 관리">
                         <h3>관심 기업 관리</h3>
@@ -270,8 +274,10 @@
             </div>
         </section> <% } %>
     </main>
-    <!-- 비밀번호 변경 모달 -->
-<div class="modalBackground inactive">
+    
+    
+<!-- 내 정보변경 모달 -->
+<div class="modalBackground inactive1">
 	<div class="modalContainer">
 	  <div>
 	    <form>
@@ -320,14 +326,63 @@
    	      <div class="modalInput">
               장애정도 <input type="text" disabled >
 	      </div>
-	      <div class="modalBnt">
+	    </form>
+	    <div class="modalBnt">
 	        <button class="modalSendBnt" type="submit">보내기</button>
 	        <button class="modalClose">취소</button>
+	    </div>
+	  </div>
+	</div>
+</div>
+
+
+
+
+<!-- 관심 기업 목록 모달 -->
+<div class="modalBackground-attention inactive2">
+	<div class="modalContainer-attention">
+	  <div>
+	    <form>
+	      <p class="modalTitle-attention">관심 기업 목록</p>
+  <div class="enterpriseList">
+        <% for(int i = 0; i < tenlist.size(); i++ ) { %>
+            <div class="enterpriseCard">
+                <a target="_blank" href="companyinfo.jsp?name=<%=tenlist.get(i).getCompanyseq()%>">
+                    <img class="cardImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
+                    <div class="cardInfo">
+                        <div>
+                            <p ><%=tenlist.get(i).getCompanyname() %></p>
+                        </div>
+                        <div>
+                            <p><%=tenlist.get(i).getAddress().substring(0,4) %></p>
+                        </div>
+                        <div>
+                            <p><%=tenlist.get(i).getRecrutype() %></p>
+                        </div>
+                        <div>
+                            <p><%=tenlist.get(i).getEmplodate() %></p>
+                        </div>
+                        <% if (adid != null) { %>
+                        <div class="modalBnt">
+                        	<button  type="" onclick="()" name="" class="modalClose" value="">삭제하기</button>
+                        </div>
+                        <% } %>
+                    </div> <!-- cardInfo -->
+                </a>
+            </div> <!-- enterpriseCard -->
+            <% } %>
+            
+            
+        </div> <!-- enterpriseList -->
+	      <div class="modalBnt">
+	        <button class="modalClose">닫기</button>
 	      </div>
 	    </form>
 	  </div>
 	</div>
 </div>
+
+
 
     <footer>
         <div class="footerWrap">
@@ -338,5 +393,9 @@
 
     <script src="../js/mainScroll.js"></script>
     <script src="../js/modal.js"></script>
+   // <script src="../js/modal-attention.js"></script>
+    <script src="../js/modal-apply.js"></script>
+
+
 </body>
 </html>

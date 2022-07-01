@@ -19,11 +19,11 @@
 
 
 
-.inactive1{
+.inactive2{
     display: none;
   }
   
-  .modalBackground{
+  .modalBackground-attention{
     position: fixed;
     top:0; 
     left: 0; 
@@ -34,9 +34,9 @@
   }
   
   
-  .modalContainer{
-	 width: 700px;
-	 height: 700px;
+  .modalContainer-attention{
+	 width: 1400px;
+	 height: 900px;
     margin: 150px auto;
     border-radius: 10px;
     background-color: #f8f8f8;
@@ -48,11 +48,11 @@
     z-index: 999;
   }
   
-  .modalContainer > div{
+  .modalContainer-attention > div{
   text-align: center;
   }
   
-  .modalTitle{
+  .modalTitle-attention{
     font-family: 'KotraBold';
     font-size: var(--font-sizeXL);
     text-align: center;
@@ -68,19 +68,14 @@
     margin-bottom: 20px;
   }
 
-  .modalInput input,
-  .modalInput select{
+  .modalInput input{
     width: 300px;
     border:none;
     border-bottom: 2px solid lightgray;
     font-size: var(--font-sizeM);
     font-family: 'KotraBold';
   }
-  
-  #other{
-  	margin-top: 25px;
-    margin-bottom: 20px;
-}
+
 
   .modalBnt button{
     margin-top: 20px;

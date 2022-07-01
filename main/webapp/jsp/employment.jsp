@@ -224,7 +224,7 @@
             <% } %>
             
             
-        </div> <!-- enterpriseCard -->
+        </div> <!-- enterpriseList -->
     </section> <!-- section3 -->
     
     <div class="searchWrap">

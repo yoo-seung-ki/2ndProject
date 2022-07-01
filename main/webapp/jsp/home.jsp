@@ -275,12 +275,50 @@
 	<div class="modalContainer">
 	  <div>
 	    <form>
-	      <p class="modalTitle">비밀번호 변경</p>
+	      <p class="modalTitle">내 정보 변경</p>
 	      <div class="modalInput">
-	        <input id="" type="password" class="" placeholder="변경 할 비밀번호" name="pw"></input>
+	          성 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명 <input type="text" disabled>
 	      </div>
 	      <div class="modalInput">
-	        <input type="password" class="" placeholder="변경 할 비밀번호 확인"></input>
+              거주지역 <select class="insert-info" name="address" onchange="showfield(this.options[this.selectedIndex].value)">
+                        <option selected="selected">구분</option>
+                        <option value="강서구">강서구</option>
+                        <option value="금정구">금정구</option>
+                        <option value="기장군">기장군</option>
+                        <option value="남구">남구</option>
+                        <option value="동구">동구</option>
+                        <option value="동래구">동래구</option>
+                        <option value="부산진구">부산진구</option>
+                        <option value="북구">북구</option>
+                        <option value="사상구">사상구</option>
+                        <option value="사하구">사하구</option>
+                        <option value="서구">서구</option>
+                        <option value="수영구">수영구</option>
+                        <option value="연제구">연제구</option>
+                        <option value="영도구">영도구</option>
+                        <option value="중구">중구</option>
+                        <option value="해운대구">해운대구</option>
+                        <option value="경남 김해시">경남 김해시</option>
+                        <option value="경남 양산시">경남 양산시</option>
+                        <option value="경남 창원시">경남 창원시</option>
+                        <option value="Other">기타(직접 입력)</option>
+                	</select>
+                	<div id="other"></div>
+                	<script type="text/javascript">
+                	function showfield(name){
+                		  if(name=='Other')document.getElementById('div1').innerHTML='직접입력 <input type="text" name="other" />';
+                		  else document.getElementById('div1').innerHTML='';
+                		}
+                	</script>
+	      </div>
+   	      <div class="modalInput">
+              전화번호 <input type="text" maxlength="11">
+	      </div>
+   	      <div class="modalInput">
+              장애유형 <input type="text" disabled >
+	      </div>
+   	      <div class="modalInput">
+              장애정도 <input type="text" disabled >
 	      </div>
 	      <div class="modalBnt">
 	        <button class="modalSendBnt" type="submit">보내기</button>

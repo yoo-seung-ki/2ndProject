@@ -372,6 +372,7 @@ footer .footerWrap{
     -o-transition: all ease 1s;
     box-shadow: 10px 10px 20px #e1e1e1;
     border-radius: 30px;
+    font-family: "KotraBold";
 }
 .myInfoCard:hover{
     background: #FFF6E8;
@@ -404,4 +405,9 @@ footer .footerWrap{
 
 .logininfo {
     margin-right: 10px;
+    font-family: 'Dongle';
+    font-family: 'Dongle';
+    font-weight: 1000;
+    font-size: var(--font-sizeM);
+}
 }

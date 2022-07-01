@@ -1,3 +1,24 @@
+/* 공통 */
+@import url('https://webfontworld.github.io/yangheeryu/Dongle.css');
+@import url('https://webfontworld.github.io/kotra/KotraBold.css');
+@import url('https://webfontworld.github.io/Cafe24Ssurround/Cafe24Ssurround.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap');
+
+
+:root{
+    --font-sizeS: 1em;
+    --font-sizeM : 1.5em;
+    --font-sizeL: 2em;
+    --font-sizeXL: 2.5em;
+    --font-sizeXXL: 3em;
+
+    --color-white: #fff;
+    --color-black: #313131;
+    --color-lightgray: #dcdcdc90;
+}
+
+
+
 .inactive{
     display: none;
   }
@@ -14,8 +35,8 @@
   
   
   .modalContainer{
-    width: 700px;
-    height: 700px;
+	 width: 700px;
+	 height: 700px;
     margin: 150px auto;
     border-radius: 10px;
     background-color: #f8f8f8;
@@ -27,40 +48,48 @@
     z-index: 999;
   }
   
+  .modalContainer > div{
+  text-align: center;
+  }
+  
   .modalTitle{
+    font-family: 'KotraBold';
+    font-size: var(--font-sizeXL);
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
-    padding: 16px;
+    text-align: center;
+    padding: 30px;
   }
   
   .modalInput{
-    text-align: center;
-    width: 100%;
-    margin-top: 30px;
+    font-family: 'KotraBold';
+    font-size: var(--font-sizeM);
+    margin-top: 25px;
+    margin-bottom: 20px;
   }
 
-  .modalInput input{
-    width: 250px;
-    height: 40px;
-  }
-
-  
-  .modalBnt{
-    text-align: center;
-    margin-top: 40px;
+  .modalInput input,
+  .modalInput select{
+    width: 300px;
+    border:none;
+    border-bottom: 2px solid lightgray;
+    font-size: var(--font-sizeM);
+    font-family: 'KotraBold';
   }
   
-  .modalSendBnt,
-  .modalClose{
-    width: 80px;
-    height: 30px;
-  }
-  
-  .modalSendBnt{
-    background: black;
-    color: #fff;
-  }
-  
-.modalClose{
-  border: 1px solid var(--dark-gray);
+  #other{
+  	margin-top: 25px;
+    margin-bottom: 20px;
 }
+
+  .modalBnt button{
+    margin-top: 20px;
+    width: 20%;
+    background-color:#ff6544;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    color:#fff;
+    font-size:20px;
+    font-family: 'KotraBold';
+  }

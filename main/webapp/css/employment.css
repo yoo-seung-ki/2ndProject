@@ -507,6 +507,9 @@ footer .footerWrap{
 
 .logininfo {
     margin-right: 10px;
+    font-family: 'Dongle';
+    font-weight: 1000;
+    font-size: var(--font-sizeM);
 }
 
 .delete-button {

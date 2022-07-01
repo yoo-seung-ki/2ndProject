@@ -271,20 +271,20 @@
         </section> <% } %>
     </main>
     <!-- 비밀번호 변경 모달 -->
-<div class="modal-changeNum-background inactive">
-	<div class="modal-changeNum-container">
+<div class="modalBackground inactive">
+	<div class="modalContainer">
 	  <div>
-	    <form id="change-pw-form" name="settingFrm" method="post" action="resetPwProc.jsp">
-	      <p class="modal-changeNum-title">비밀번호 변경</p>
-	      <div class="modal-changeNum-input">
-	        <input id="change-pw" type="password" class="" placeholder="변경 할 비밀번호" name="pw"></input>
+	    <form>
+	      <p class="modalTitle">비밀번호 변경</p>
+	      <div class="modalInput">
+	        <input id="" type="password" class="" placeholder="변경 할 비밀번호" name="pw"></input>
 	      </div>
-	      <div class="modal-changeNum-input">
-	        <input id = "change-pw-check" type="password" class="" placeholder="변경 할 비밀번호 확인"></input>
+	      <div class="modalInput">
+	        <input type="password" class="" placeholder="변경 할 비밀번호 확인"></input>
 	      </div>
-	      <div class="modal-changeNum-bnt">
-	        <button class="modal-changeNum-send-bnt" type="submit">보내기</button>
-	        <button class="modal-changeNum-close">취소</button>
+	      <div class="modalBnt">
+	        <button class="modalSendBnt" type="submit">보내기</button>
+	        <button class="modalClose">취소</button>
 	      </div>
 	    </form>
 	  </div>
@@ -298,7 +298,7 @@
     </footer>
     
 
-    <script defer src="../js/mainScroll.js"></script>
-    <script defer src="../js/modal.js"></script>
+    <script src="../js/mainScroll.js"></script>
+    <script src="../js/modal.js"></script>
 </body>
 </html>

@@ -1,12 +1,11 @@
-// 비밀번호 변경 모달
-const modal_changeNum = document.querySelector(".modal-changeNum-background");
-const modalopen_changeNum = document.querySelector(".changeNum");
-const modalclose_changeNum = document.querySelector(".modal-changeNum-close");
+const modal = document.querySelector(".modalBackground");
+const modalopen = document.querySelector(".myInfo");
+const modalclose = document.querySelector(".modalClose");
 
-function modalPage_changeNum(event){
+function modalPage(event){
   event.preventDefault();
-  modal_changeNum.classList.toggle("inactive");
+  modal.classList.toggle("inactive");
 };
 
-modalopen_changeNum.addEventListener("click", modalPage_changeNum);
-modalclose_changeNum.addEventListener("click", modalPage_changeNum);
+modalopen.addEventListener("click", modalPage);
+modalclose.addEventListener("click", modalPage);

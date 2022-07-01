@@ -35,7 +35,7 @@ public class DismemberDAO {
          pstmt.setInt(1, vo.getMemberseq());
          pstmt.setString(2, vo.getName());
          pstmt.setString(3, vo.getPersonid1());
-         pstmt.setInt(4, vo.getPersonid2());
+         pstmt.setString(4, vo.getPersonid2());
          pstmt.setString(5, vo.getArea());
          pstmt.setString(6, vo.getMobile());
          pstmt.setString(7, vo.getDiscase());
@@ -181,7 +181,7 @@ public class DismemberDAO {
                vo.setMemberseq(rs.getInt("Memberseq"));
                vo.setName(rs.getString("Name"));
                vo.setPersonid1(rs.getString("Personid1"));
-               vo.setPersonid2(rs.getInt("Personid2"));
+               vo.setPersonid2(rs.getString("Personid2"));
                vo.setArea(rs.getString("Area"));
                vo.setMobile(rs.getString("Mobile"));
                vo.setDiscase(rs.getString("Discase"));

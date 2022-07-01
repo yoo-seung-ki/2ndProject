@@ -13,6 +13,7 @@
 <% String adid = (String)session.getAttribute("adid"); %>
 <% DismemberVO mobile = Ddao.getUser(loginmobile); %>
 <% AdminVO admin = Adao.getAdmin(adid); %>
+<% String godea = (String)session.getAttribute("godea"); %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -49,12 +50,14 @@
                 <li>온라인 채용관</li>
             </ul>
         </div>
-        <div class="changeBtn">고대비
-        	<label class="switch">
-            	<input type="checkbox" id="colormode">
-           		<span class="slider round"></span>
-        	</label>
-        </div>
+	        <form name="godea">
+		        <div class="changeBtn">고대비
+		        	<label class="switch">
+		            	<input type="checkbox" id="colormode">
+		           		<span class="slider round"></span>
+		        	</label>
+		        </div>
+	        </form>
         <script>
  
             $(document).ready(function() {

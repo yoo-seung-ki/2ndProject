@@ -11,6 +11,10 @@
 <% String adid = (String)session.getAttribute("adid"); %>
 <% DismemberVO mobile = Ddao.getUser(loginmobile); %>
 <% AdminVO admin = Adao.getAdmin(adid); %>
+<%  %>
+<% String godea = setAttribute("godea"); %>
+
+
 <% 
 
 	// 페이징 넘버 작업
@@ -67,7 +71,7 @@
                     <li><a class="menu" href="">내 정보 관리</a></li>
                 </ul>
             </div>
-            <div class="changeBtn">고대비
+            <div class="changeBtn" name="godea">고대비
             <label class="switch">
                 <input type="checkbox" id="colormode">
                 <span class="slider round"></span>

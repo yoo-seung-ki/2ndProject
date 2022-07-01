@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,7 +64,7 @@
     <main>
         <div id="user-register-page">
             <p class="user-regi">참여자 정보 입력</p>
-             <form class="logform2" name="regiFrm">
+             <form class="logform2" name="regiFrm" action="registerproc.jsp" method="post">
                 <div class="info-insert">
                 성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명 <input type="text" class="insert-info" name="reginame" placeholder="성명을 입력해주세요."><br>
                 주민번호 <input type="number" placeholder="주민번호 앞자리" maxlength="6" class="ssn" name="ssnf" oninput="numberMaxLength(this);" > - <input type="number" placeholder="주민번호 뒷자리" maxlength="7" class="ssn" name="ssnb" oninput="numberMaxLength(this);"/><br>
@@ -130,8 +132,8 @@
                 
                 </div>
                 <div class="regi-btn">
-                 <button id="submit" name="regibtn" onclick="regiChk()" disabled>회원가입</button>
-                 
+                 <button type="button" id="submit" name="regibtn" onclick="regiChk()" disabled>회원가입</button>
+                
                 </div>
              </form>
         </div> <!--user-register-page-->

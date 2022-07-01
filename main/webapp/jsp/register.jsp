@@ -38,11 +38,13 @@
                     $("body").css("color","#fff");
                     $(".title-text").css("color","#fff");
                     $(".menu").css("color","#fff");
+                    $("#user-register-page").css("box-shadow","none");
                 }else{
                     $("body").css("background-color","#fff");
                     $("body").css("color","#000");                    
                     $(".title-text").css("color","#000");
                     $(".menu").css("color","#000");
+                    $("#user-register-page").css("box-shadow","5px 15px 20px #ddd");
                     
                     
                 }

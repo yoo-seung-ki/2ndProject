@@ -212,7 +212,8 @@ font-size:var(--font-sizeL);
 #user-register-page{
 margin: 0 auto;
 background-color:#fff;
-border: 1px solid orange;
+border: none;
+box-shadow: 5px 15px 20px #ddd;
 width: 600px;
 height: 700px;
 border-radius: 2em;

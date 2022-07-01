@@ -85,11 +85,13 @@
             </ul>
         </div>
         <div class="changeBtn">고대비
-        <label class="switch">
-            <input type="checkbox" id="colormode">
-            <span class="slider round"></span>
-        </label>
-        </div>
+            <label class="switch">
+                <input type="checkbox" id="colormode" value="off" id="toggle" onclick="Buttontoggle()">
+                <span class="slider round"></span>
+            </label>
+         </div>
+
+        <button style="display: none;" onclick="Buttontoggle()" value="off" id="toggle">돋보기</button>
        
         <% if (loginmobile == null && adid == null) { %>
         <div class="signin-signup">

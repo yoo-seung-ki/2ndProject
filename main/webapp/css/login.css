@@ -280,7 +280,7 @@ html,body{
 }
 #userlogin, #comlogin, #mglogin{
   width: 200px;
-  border: 1px solid lightgray;;
+  border:none;
   height:70px;
   font-size: 20px;
   font-family: 'KotraBold';
@@ -292,6 +292,7 @@ html,body{
   width: 80%;
   margin-top: 20px;
   margin-left: 77px;
+  border:none;
 }
 
 .field input{
@@ -300,7 +301,7 @@ html,body{
   outline: none;
   padding-left: 15px;
   border-radius: 5px;
-  border: 1px solid lightgrey;
+  border:none;
   border-bottom-width: 2px;
   font-size: 17px;
   transition: all 0.3s ease;
@@ -325,4 +326,6 @@ html,body{
 .clogin,.mlogin{
   display:none;
 }
-
+.signup-link a:visited{
+	color:#fb6544;
+}

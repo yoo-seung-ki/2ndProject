@@ -75,6 +75,64 @@ public class CompanyDAO {
 	}
 	
 	
+	
+	// 매개변수로 comid를 받아서 해당 comid에 해당하는 기업의 모든 정보를 반환(VO)
+		public CompanyVO getCompanyfromid(String comid) {
+			CompanyVO vo = new CompanyVO();
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			String sql = null;
+			ResultSet rs = null;
+			try {
+				con = pool.getConnection();
+				sql = "select * from mjt where comid = ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, comid);
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					vo.setCompanyseq(rs.getInt("Companyseq"));
+					vo.setCompanyname(rs.getString("Companyname"));
+					vo.setLogo(rs.getString("Logo"));
+					vo.setCeo(rs.getString("Ceo"));
+					vo.setAddress(rs.getString("Address"));
+					vo.setCreateyear(rs.getString("Createyear"));
+					vo.setWorktype(rs.getString("Worktype"));
+					vo.setEtc(rs.getString("Etc"));
+					vo.setHomepage(rs.getString("Homepage"));
+					vo.setCompanytype(rs.getString("CompanyType"));
+					vo.setCompanycontent(rs.getString("CompanyContent"));
+					vo.setCompanysize(rs.getString("Companysize"));
+					vo.setRecrutype(rs.getString("Recrutype"));
+					vo.setWorkcontent(rs.getString("Workcontent"));
+					vo.setGraduate(rs.getString("Graduate"));
+					vo.setEmploycase(rs.getString("Employcase"));
+					vo.setPaytype(rs.getString("Paytype"));
+					vo.setSeverance(rs.getString("Severance"));
+					vo.setWorktime(rs.getString("Worktime"));
+					vo.setRecrusize(rs.getInt("Recrusize"));
+					vo.setWorkarea(rs.getString("Workarea"));
+					vo.setCareer(rs.getString("Career"));
+					vo.setInsurance(rs.getString("Insurance"));
+					vo.setBonus(rs.getString("Bonus"));
+					vo.setAddwork(rs.getString("Addwork"));
+					vo.setMajor(rs.getString("Major"));
+					vo.setComputer(rs.getString("Computer"));
+					vo.setWelfare(rs.getString("Welfare"));
+					vo.setLicense(rs.getString("License"));
+					vo.setFacil(rs.getString("Facil"));
+					vo.setTreatment(rs.getString("Treatment"));
+					vo.setComid(rs.getString("Comid"));
+					vo.setCompw(rs.getString("Compw"));
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				pool.freeConnection(con, pstmt, rs);
+			}
+			return vo;
+		}
+	
+	
 	// 매개변수로 companyname을 받아서 해당 name에 해당하는 기업의 모든 정보를 반환(VO)
 		public CompanyVO getCompanyfromname(String name) {
 			CompanyVO vo = new CompanyVO();
@@ -383,8 +441,51 @@ public class CompanyDAO {
 		      }
 		      return flag;
 		   }
-	
-	
-	
-
+		   
+		   
+		   // 기업 로그인 메소드
+		   public int comlogin(String comid, String compw) {
+			   
+			   Connection con = null;
+			   PreparedStatement pstmt = null;
+			   ResultSet rs = null;
+			   String sql = null;
+			   	// 1 : 이름이 존재하지 않음
+			    // 2 : 전화번호가 일치하지 않음
+			    // 3 : 로그인 성공
+			   int flag = 0;
+			   try {
+				   con = pool.getConnection();
+				   // 입력받은 아이디가 데이터베이스에 존재하는지 확인
+				   sql = "select comid, compw from mjt where comid = ?";
+				   pstmt = con.prepareStatement(sql);
+				   pstmt.setString(1, comid);
+				   rs = pstmt.executeQuery();
+				   // rs.next()는 다음 행을 하나씩 내려간다는것을 뜻하는 메소드인데 
+				   // 다음 행이 아예 없다는것은 쿼리문을 돌려서 나온 레코드 결과값이 0이라는 뜻이고
+				   // 그 뜻은 아이디가 없다는 뜻이다. 이때 아이디가 없으면 1을 반환.
+				   if(!rs.next()) {
+					   flag = 1;
+					   return flag;
+				   } 
+				   // sql문을 돌려 나온 패스워드가 입력받은 패스워드와 일치하는지 확인
+			       // 일치하지 않으면 2를 반환
+				   else if(!(rs.getString("compw").equals(compw))) {
+					   flag = 2;
+					   return flag;
+				   } else {
+					// 아무것도 걸리지 않으면 3을 반환
+					   flag = 3;
+				   }
+			   } catch(Exception e) {
+				   e.printStackTrace();
+			   } finally {
+				   pool.freeConnection(con,pstmt,rs);
+			   }
+			   return flag;
+		   }
+		   
+		   
+		   
+		   
 }

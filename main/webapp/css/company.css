@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 공통 */
 @import url('https://webfontworld.github.io/yangheeryu/Dongle.css');
 @import url('https://webfontworld.github.io/kotra/KotraBold.css');
@@ -22,16 +23,6 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
-}
-
-/* main */
-main {
-    /* 중앙 정렬 */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
 }
 
 /* header */
@@ -79,8 +70,7 @@ header{
     margin: 0 auto;
 }
 
-.headerWrap .navMenu ul,
-.headerWrap .changeBtn{
+.headerWrap .navMenu ul{
     display: flex;
     justify-content: space-between;
     font-family: 'KotraBold';
@@ -199,7 +189,7 @@ input:checked + .slider:before {
     text-align: center;
     width: 900px;
     height: 250px;
-    margin: 100px auto 0 auto;
+    margin: 150px auto 0 auto;
 
 }
 
@@ -427,172 +417,97 @@ footer .footerWrap{
     height: 70px;
     line-height: 70px;
 }
-
-/* excel form */
-.excelTable {
-    border: 1px solid #ddd;
-    box-shadow: #ddd 0px 15px 20px;
-
-}
-.tablecolor {
-    background-color: #fffde7;
-}
-
-table, th, td {
-    border:1px solid #cccccc;
-    border-collapse: collapse; /*각테두리 사이에 빈공간을 없애주는 옵션*/
-
-}
-th {
-    font-size: var(--font-sizeXXL);
-}
-th, td { 
-    padding: 10px 20px;
-}    
-
-input {
-    height: 25px;
-}
-
-
-#name1, #name3, #name4{
-    width: 383px;
-}
-
-#name5 {
-    width: 1025px;
-}
-
-#name7 {
-    width: 384px;
-}
-#name8, #name9 {
-    width: 560px;
-}
-
-#name13, #name17, #name21 {
-    width: 384px;
-}
-
-#name39, #name42, #name45 {
-    width: 598px;
-}
-
-.value1 {
-    position: relative;
-    top: 118px;
-    left: 536px;
-}
-.value2 {
-    position: relative;
-    top: 118px;
-    left: 574px;
-}
-
-.value3 {
-    position: relative;
-    top: 259px;
-    right: 177px;
-}
-
-.value4 {
-    position: relative;
-    top: 259px;
-    right: 122px;
-}
-
-.value5 {
-    position: relative;
-    top: 259px;
-    right: 87px;
-}
-
-.value6 {
-    position: relative;
-    top: 259px;
-    right: 51px;
-}
-
-.value7 {
-    position: relative;
-    top: 319px;
-    left: 260px;
-}
-
-.value8 {
-    position: relative;
-    top: 319px;
-    left: 316px;
-}
-
-.value9 {
-    position: relative;
-    top: 377px;
-    right: 424px;
-}
-.value10 {
-    position: relative;
-    top: 377px;
-    right: 383px;
-}
-
-.value11 {
-    position: relative;
-    top: 448px;
-    left: 86px;
-}
-
-.value12 {
-    position: relative;
-    top: 448px;
-    left: 127px;
-}
-
-.value13 {
-    position: relative;
-    top: 448px;
-    left: 160px;
-}
-.value14 {
-    position: relative;
-    top: 448px;
-    left: 198px;
-}
-.value15 {
-    position: relative;
-    top: 448px;
-    left: 237px;
-}
-
-
-
-.excelexport {
-    padding: 10px;
-    width: 200px;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    font-family: 'Dongle';    
-    font-size: var(--font-sizeL);
-    text-align: center;
-    box-shadow: 3px 3px 3px black;
-    transition-duration: 0.3s;
-    background-color: orange;
-    margin: 50px;
-}
-.excelexport:hover {
-    background-color: rgba(255, 166, 0, 0.432);    
-}
-
-tr td {
-    z-index: -10;
-}
-
-
-.logout-admin {
+main {
+    /* 중앙 정렬 */
+    width: 100%;
     display: flex;
-    align-items: center;    
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+.company-info{
+    margin-top:50px;
+    margin-bottom: 50px;
+
+    font-size: 1.5em;
+}
+table{
+    border-top: 2px solid #ff7f00;
+    border-bottom: 2px solid #ff7f00;
+    
+
+}
+th,td{
+    padding: 10px;
+}
+th{
+	background-color: beige;
+    width: 180px;
+}
+.regist,.back{
+    border: none;
+    border-radius: 50px;;
+    color:#fff;
+    background-color: coral;
+    width: 300px;
+    height:50px;
+    font-size:var(--font-sizeS);
+    margin-top: 30px;
+    cursor: pointer;
+}
+#file{
+	display:none;
+}
+#btn-upload{
+	border: none;
+    border-radius: 50px;;
+    color:#fff;
+    background-color: coral;
+    width: 200px;
+    height:50px;
+    font-size:var(--font-sizeS);
+    cursor: pointer;
+    margin-bottom: 25px;
+    
 }
 
-.logininfo {
-    margin-right: 10px;
+.headerWrap .navMenu ul,
+.headerWrap .changeBtn{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'KotraBold';
+    font-weight: 800;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+.chart-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;     
+}
+
+#canvas2 {
+    margin-left: 300px;
+}
+input[type="text"]{
+    width: 300px;
+    height: 40px;;
+    border:none;
+    border-bottom: 1px solid lightgray;
+    font-size: 20px;
+}
+input[type="number"]{
+    width: 300px;
+    height: 40px;;
+    border:none;
+    border-bottom: 1px solid lightgray;
 }

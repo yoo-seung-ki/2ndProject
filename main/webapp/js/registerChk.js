@@ -30,13 +30,13 @@ function regiChk(){
         return;
     }
 
-    if(regiFrm.Pnum.value=""){
+    if(regiFrm.Pnum.value==""){
         alert("전화번호를 입력해주세요.");
         regiFrm.Pnum.focus();
         return;
     }
 
-    if(regiFrm.type.value="구분"){
+    if(regiFrm.type.value == "구분"){
         alert("장애유형을 선택해주세요.");
         regiFrm.type.focus();
         return;
@@ -51,17 +51,17 @@ function regiChk(){
 }
 
 function btnable(checkbox){
-	const btn_elem=document.getElementById('submit');
+	const btn_elem=document.getElementById('smbtn');
 	
 	btn_elem.disabled = checkbox.checked ? false : true;
 	
 	if(btn_elem.disabled){
-		$('#submit').css("background-color","#b2b2b2");	
-        $('#submit').css("cursor","Default");	
+		$('#smbtn').css("background-color","#b2b2b2");	
+        $('#smbtn').css("cursor","Default");	
 	}else{
-		$('#submit').css("background-color","coral");
-		$('#submit').css("color","#fff");
-		$('#submit').css("cursor","pointer");
+		$('#smbtn').css("background-color","coral");
+		$('#smbtn').css("color","#fff");
+		$('#smbtn').css("cursor","pointer");
 			
 
 	}

@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +8,7 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
  <link rel="stylesheet" href="../css/register.css">
  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
- <script defer src="../js/registerChk.js">
-
- </script>
+ <script defer src="../js/registerChk.js"></script>
 </head>
 <body>
     <header>
@@ -132,7 +128,7 @@
                 
                 </div>
                 <div class="regi-btn">
-                 <button type="button" id="submit" name="regibtn" onclick="regiChk()" disabled>회원가입</button>
+                 <button type="button" id="smbtn" name="regibtn" onclick="regiChk()" disabled>회원가입</button>
                 
                 </div>
              </form>

@@ -29,17 +29,16 @@ public class DismemberDAO {
       String sql = null;
       try {
          con = pool.getConnection();
-         sql = "insert into dismember(memberseq, name, personid1, personid2, area, mobile, discase, disgrade)"
-               + "values((SELECT IFNULL(MAX(mNum), 0)+1 FROM dismember D), ?, ?, ?, ?, ?, ?, ?, ?)";
+         sql = "insert into dismember(name, personid1, personid2, area, mobile, discase, disgrade)"
+               + "values(?, ?, ?, ?, ?, ?, ?)"; // memberseq는 auto increment이기 때문에 따로 value값을 설정안해줘도 된다.
          pstmt = con.prepareStatement(sql);
-         pstmt.setInt(1, vo.getMemberseq());
-         pstmt.setString(2, vo.getName());
-         pstmt.setString(3, vo.getPersonid1());
-         pstmt.setString(4, vo.getPersonid2());
-         pstmt.setString(5, vo.getArea());
-         pstmt.setString(6, vo.getMobile());
-         pstmt.setString(7, vo.getDiscase());
-         pstmt.setString(8, vo.getDisgrade());
+         pstmt.setString(1, vo.getName());
+         pstmt.setString(2, vo.getPersonid1());
+         pstmt.setString(3, vo.getPersonid2());
+         pstmt.setString(4, vo.getArea());
+         pstmt.setString(5, vo.getMobile());
+         pstmt.setString(6, vo.getDiscase());
+         pstmt.setString(7, vo.getDisgrade());
    
          // executeUpdate 의 반환값은 insert,update,delete인 경우, 관련된 레코드의 수를 반환
          // create, drop, alter인 경우에는 0을 반환

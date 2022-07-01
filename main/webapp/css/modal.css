@@ -2,8 +2,8 @@
     display: none;
   }
   
-  .modal-changeNum-background{
-    position: absolute;
+  .modalBackground{
+    position: fixed;
     top:0; 
     left: 0; 
     bottom: 0; 
@@ -13,9 +13,9 @@
   }
   
   
-  .modal-changeNum-container{
-    width: 350px;
-    height: 350px;
+  .modalContainer{
+    width: 700px;
+    height: 700px;
     margin: 150px auto;
     border-radius: 10px;
     background-color: #f8f8f8;
@@ -27,46 +27,40 @@
     z-index: 999;
   }
   
-  .modal-changeNum-title{
+  .modalTitle{
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
     padding: 16px;
   }
   
-  .modal-changeNum-input{
+  .modalInput{
     text-align: center;
     width: 100%;
     margin-top: 30px;
   }
 
-  .modal-changeNum-input input{
+  .modalInput input{
     width: 250px;
     height: 40px;
   }
-  
-  .modal-changeNum-text{
-    text-align: center;
-    margin-top: 30px;
-    width: 100%;
-  }
 
   
-  .modal-changeNum-bnt{
+  .modalBnt{
     text-align: center;
     margin-top: 40px;
   }
   
-  .modal-changeNum-send-bnt,
-  .modal-changeNum-close{
+  .modalSendBnt,
+  .modalClose{
     width: 80px;
     height: 30px;
   }
   
-  .modal-changeNum-send-bnt{
+  .modalSendBnt{
     background: black;
     color: #fff;
   }
   
-.modal-changeNum-close{
+.modalClose{
   border: 1px solid var(--dark-gray);
 }

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <% String loginmobile = (String)session.getAttribute("loginmobile"); %>
 <% String adid = (String)session.getAttribute("adid"); %>
+<% String comid = (String)session.getAttribute("comid"); %>
 
 <!DOCTYPE html>
 <html>
@@ -90,12 +91,12 @@
         </div>
         <div class="signup-link">회원이 아니신가요? <a href="./register.jsp">회원가입</a></div>
       </form>
-      <form action="loginok.jsp" class="clogin" method="post" name="dislogin">
+      <form action="comloginok.jsp" class="clogin" method="post" name="comlogin">
         <div class="field">
-          <input type="text" placeholder="기업명을 입력해주세요." name="cid" required >
+          <input type="text" placeholder="기업명을 입력해주세요." name="comid" required >
         </div>
         <div class="field">
-          <input type="password" placeholder="패스워드를 입력해주세요." name="cpw" maxlength="11" required >
+          <input type="password" placeholder="패스워드를 입력해주세요." name="compw" maxlength="11" required >
         </div>
         <div class="field">
           <input type="submit" value="로그인" class="loginbtn">

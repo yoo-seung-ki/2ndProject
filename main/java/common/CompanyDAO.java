@@ -63,6 +63,8 @@ public class CompanyDAO {
 				vo.setLicense(rs.getString("License"));
 				vo.setFacil(rs.getString("Facil"));
 				vo.setTreatment(rs.getString("Treatment"));
+				vo.setComid(rs.getString("Comid"));
+				vo.setCompw(rs.getString("Compw"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -118,6 +120,8 @@ public class CompanyDAO {
 					vo.setLicense(rs.getString("License"));
 					vo.setFacil(rs.getString("Facil"));
 					vo.setTreatment(rs.getString("Treatment"));
+					vo.setComid(rs.getString("Comid"));
+					vo.setCompw(rs.getString("Compw"));
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -173,6 +177,8 @@ public class CompanyDAO {
 				vo.setLicense(rs.getString("License"));
 				vo.setFacil(rs.getString("Facil"));
 				vo.setTreatment(rs.getString("Treatment"));
+				vo.setComid(rs.getString("Comid"));
+				vo.setCompw(rs.getString("Compw"));
 				list.add(vo);
 			}
 		} catch (Exception e) {
@@ -324,11 +330,11 @@ public class CompanyDAO {
 		         sql = "insert into mjt(companyname, emplodate, ceo, createyear, address, homepage, "
 		         		+ "companytype, companycontent, companysize, recrutype, workcontent, graduate, employcase,"
 		         		+ "paytype, severance, worktime, etc, recrusize, workarea, career, worktype, insurance, bonus,"
-		         		+ "addwork, major, computer, welfare, license, facil, treatment, logo)"
+		         		+ "addwork, major, computer, welfare, license, facil, treatment, logo, comid, compw)"
 		               + "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
 		               + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?"
 		               + ", ?, ?, ?, ?, ?, ?, ?, ?, ?, ?"
-		               + ", ?)";
+		               + ", ?, ?, ?)";
 		         pstmt = con.prepareStatement(sql);
 		         pstmt.setString(1, vo.getCompanyname());
 		         pstmt.setString(2, vo.getEmplodate());
@@ -361,6 +367,8 @@ public class CompanyDAO {
 		         pstmt.setString(29, vo.getFacil());
 		         pstmt.setString(30, vo.getTreatment());
 		         pstmt.setString(31, vo.getLogo());
+		         pstmt.setString(32, vo.getComid());
+		         pstmt.setString(33, vo.getCompw());
 		   
 		         // executeUpdate 의 반환값은 insert,update,delete인 경우, 관련된 레코드의 수를 반환
 		         // create, drop, alter인 경우에는 0을 반환

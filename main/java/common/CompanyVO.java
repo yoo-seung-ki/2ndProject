@@ -33,6 +33,8 @@ public class CompanyVO {
 	private String Facil;
 	private String Treatment;
 	private String Logo;
+	private String comid;
+	private String compw;
 	
 
 	public int getCompanyseq() {
@@ -289,6 +291,22 @@ public class CompanyVO {
 
 	public void setLogo(String logo) {
 		Logo = logo;
+	}
+
+	public String getComid() {
+		return comid;
+	}
+
+	public void setComid(String comid) {
+		this.comid = comid;
+	}
+
+	public String getCompw() {
+		return compw;
+	}
+
+	public void setCompw(String compw) {
+		this.compw = compw;
 	}
 
 }

@@ -1,0 +1,514 @@
+@charset "UTF-8";
+@charset "UTF-8";
+/* 공통 */
+@import url('https://webfontworld.github.io/yangheeryu/Dongle.css');
+@import url('https://webfontworld.github.io/kotra/KotraBold.css');
+@import url('https://webfontworld.github.io/Cafe24Ssurround/Cafe24Ssurround.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap');
+
+
+:root{
+    --font-sizeS: 1em;
+    --font-sizeM : 1.5em;
+    --font-sizeL: 2em;
+    --font-sizeXL: 2.5em;
+    --font-sizeXXL: 3em;
+
+    --color-white: #fff;
+    --color-black: #313131;
+    --color-lightgray: #dcdcdc90;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* header */
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+}
+
+.headerWrap{
+    display: flex;
+    align-items: center;
+    font-size: var(--font-sizeM);
+    justify-content: space-evenly;
+}
+.headerWrap img{
+    width: 100px;
+    height: 100px;
+}
+.headerWrap .logo{
+    width: 400px;
+    height: 100px;
+}
+
+.headerWrap .logo div {
+    font-size: var(--font-sizeXL);
+    font-family: 'Dongle';
+    color: var(--color-black);
+}
+
+.headerWrap .logo a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.headerWrap .navMenu{
+    width: 700px;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.headerWrap .navMenu li{
+    margin: 0 auto;
+}
+
+.headerWrap .navMenu ul{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'KotraBold';
+    font-weight: 800;
+}
+
+.headerWrap .signin-signup{
+    display: inherit;
+
+}
+
+.signin-signup button{
+    padding: 10px;
+    margin-right: 20px;
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: 'Dongle';
+    font-weight: 1000;
+    font-size: var(--font-sizeS);
+    text-align: center;
+    line-height: 20px;
+    box-shadow : 3px 3px 3px black;
+    transition-duration: 0.3s;
+}
+.signin-signup button:active{
+    position: relative;
+    top:2px;
+    box-shadow : 1px 1px 0 rgb(0,0,0,0.5);
+}
+
+
+.signin{
+    background: var(--color-black);
+    border: none;
+    color: var(--color-white);
+    cursor:pointer;
+}
+
+.signup{
+    background: var(--color-white);
+    border: 1px solid var(--color-lightgray);
+    cursor:pointer;
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    vertical-align:middle;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--color-black);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--color-black);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* banner */
+
+.container{
+    max-width:900px;
+    margin: 0 auto;
+}
+
+
+.bannerWrap{
+    text-align: center;
+    width: 900px;
+    height: 250px;
+    margin: 150px auto 0 auto;
+
+}
+
+.bannerWrap .banner{
+    height: 200px;
+    width: 900px;
+}
+
+.bannerWrap .banner img{
+    border-radius: 10px 10px 0 0;
+    width: 900px;
+    height: 200px;
+}
+.bannerWrap .bannerTitle{
+    width: 900px;
+    height: 50px;
+    margin: 0 auto ;
+    background: #fff3e0;
+    border-radius: 0 0 10px 10px;
+}
+.bannerWrap .banner h1{
+    width: 900px;
+    height: 50px;
+}
+
+/* filter */
+
+.filterWrap {
+    padding: 20px 0;
+    margin-top: 25px;
+}
+
+.filterWrap .filterList {
+    position: relative;
+    margin-left: -15px;
+    display: flex;
+}
+
+.filterWrap .filterList ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.filterWrap .filterList ul li{
+    width: 20%;
+    padding: 0 15px;
+}
+
+.filterWrap .filterList ul li select{
+    width: 100%;
+    height: 40px;
+    font-size: var(--font-sizeM);
+    border: 1px solid var(--color-lightgray);
+    border-radius: 1rem;
+    padding: 0 14px;
+    font-family: 'KotraBold';
+    letter-spacing: 2px;
+}
+.filterWrap .filterList ul li select option{
+    letter-spacing: 2px;
+}
+
+.filterWrap .filterList ul li select:focus{
+    box-shadow: 0 0 5px #ffccbc;
+    border: 1px solid #ffccbc;
+    border-radius: 1rem;
+}
+
+.filterWrap .filterList ul li select:focus-visible{
+    outline: 1px solid #ffccbc;
+    border-radius: 1rem;
+}
+
+.filterWrap .filterList .search1{
+    cursor: pointer;
+    padding: 10px;
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: var(--font-sizeM);
+    font-family: 'KotraBold';
+    text-align: center;
+    line-height: 20px;
+    background: #000000;
+    border: 1px solid #000000;
+    color: var(--color-white);
+}
+
+
+/* enterprise list*/
+
+.section3{
+    width: 100%;
+}
+
+.section3 .text{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.listTitle{
+    font-size: var(--font-sizeL);
+    padding-top: 50px;
+    font-family: 'KotraBold';
+}
+
+.enterpriseList{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 50px auto 0 auto;
+}
+.enterpriseCard{
+    width: 300px;
+    height: 500px;
+}
+
+.cardImg{
+    width: 250px;
+    height: 300px;
+    border: 1px solid black;
+    text-align: center;
+}
+.cardInfo div{
+    justify-content: space-between;
+    display: flex;
+}
+
+/* search input*/
+
+.searchWrap{
+    width: 100%;
+    height: 100px;
+}
+
+.searchWrap > div{
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.searchWrap > div > input {
+    width: 400px;
+    font-size: var(--font-sizeM);
+    margin-right: 30px;
+    border: 1px solid var(--color-lightgray);
+    border-radius: 1rem;
+    padding: 10px;
+    font-family: 'KotraBold';
+    letter-spacing: 2px;
+}
+
+.searchWrap > div > input:focus{
+    box-shadow: 0 0 5px #ffccbc;
+    border: 1px solid #ffccbc;
+    border-radius: 1rem;
+}
+
+.searchWrap > div > input:focus-visible{
+    outline: 1px solid #ffccbc;
+    border-radius: 1rem;
+}
+
+.searchWrap > div > button{
+    cursor: pointer;
+    padding: 10px;
+    width: 80px;
+    height: 55px;
+    border-radius: 10px;
+    font-size: var(--font-sizeM);
+    font-family: 'KotraBold';
+    text-align: center;
+    line-height: 20px;
+    background: #000000;
+    border: 1px solid #000000;
+    color: var(--color-white);
+}
+
+/* page number*/
+.list_number{
+    height: 100px;
+    text-align: center;
+}
+
+
+.list_n_menu A {
+    font-size: var(--font-sizeM);
+    padding: 10px 18px 12px 18px;
+    margin: 10px;
+    border: #999 1px solid;
+    color: #999;
+    text-decoration: none;
+}
+
+.list_n_menu A:hover {
+    box-shadow: 0 0 5px #ffccbc;
+    border: 1px solid #ffccbc;
+}
+
+.list_n_menu A:active {
+    background: #ffccbc;
+    color: var(--color-white);
+}
+
+
+
+
+/* footer */
+
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    border-top: 1px solid black;
+    background: #313131;
+    color: #fff;
+}
+
+footer .footerWrap{
+    text-align: center;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+}
+main {
+    /* 중앙 정렬 */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+.company-info{
+    margin-top:50px;
+    margin-bottom: 50px;
+
+    font-size: 1.5em;
+}
+table{
+    border-top: 2px solid #ff7f00;
+    border-bottom: 2px solid #ff7f00;
+    
+
+}
+th,td{
+    padding: 10px;
+}
+th{
+	background-color: beige;
+    width: 180px;
+}
+.regist,.back{
+    border: none;
+    border-radius: 50px;;
+    color:#fff;
+    background-color: coral;
+    width: 300px;
+    height:50px;
+    font-size:var(--font-sizeS);
+    margin-top: 30px;
+    cursor: pointer;
+}
+#file{
+	display:none;
+}
+#btn-upload{
+	border: none;
+    border-radius: 50px;;
+    color:#fff;
+    background-color: coral;
+    width: 200px;
+    height:50px;
+    font-size:var(--font-sizeS);
+    cursor: pointer;
+    margin-bottom: 25px;
+    
+}
+
+.headerWrap .navMenu ul,
+.headerWrap .changeBtn{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'KotraBold';
+    font-weight: 800;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+.chart-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;     
+}
+
+#canvas2 {
+    margin-left: 300px;
+}
+input[type="text"]{
+    width: 300px;
+    height: 40px;;
+    border:none;
+    border-bottom: 1px solid lightgray;
+    font-size: 20px;
+}
+input[type="number"]{
+    width: 300px;
+    height: 40px;;
+    border:none;
+    border-bottom: 1px solid lightgray;
+}

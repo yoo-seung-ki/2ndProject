@@ -15,21 +15,16 @@
     <script defer src="../js/link.js"></script>
 </head>
 <body>
-  <header>
+<header>
         <div class="headerWrap">
             <div class="logo">
-                <a href="../html/main.html">
+                <a href="./home.jsp">
                     <img src="../img/logo.png" alt="">
                     <div class="main-title-text">예일장애인박람회</div>
                 </a>
             </div>
             <div class="navMenu">
-                <ul>
-                  <li><a class="menu" href="">팀원소개</a></li>
-                  <li><a class="menu" href="">온라인 채용관</a></li>
-                  <li><a class="menu" href="">취업 컨텐츠</a></li>
-                  <li><a class="menu" href="">내 정보 관리</a></li>
-                </ul>
+               
             </div>
             <div>고대비
             <label class="switch">
@@ -47,11 +42,17 @@
                     $(".title").css("color","#000");
                     $(".signup-link").css("color","#000");
                     $(".menu").css("color","#fff");
+                    $('.wrapper').css("background-color","#000");
+                    $('.title').css("color","#fff");
+                    $('.signup-link').css("color","#fff");
                 }else{
                     $("body").css("background-color","#fff");
                     $("body").css("color","#000");                    
                     $(".main-title-text").css("color","#000");
                     $(".menu").css("color","#000");
+                    $('.wrapper').css("background-color","#fff");
+                    $('.title').css("color","#000");
+                    $('.signup-link').css("color","#000");
 
               
                     
@@ -101,12 +102,12 @@
         </div>
         <div class="signup-link">회원이 아니신가요? <a href="./register.jsp">회원가입</a></div>
       </form>
-      <form action="adminloginok.jsp" class="mlogin" method="post" name="dislogin">
+      <form action="adminloginok.jsp" class="mlogin" method="post" name="adlogin">
         <div class="field">
-          <input type="text" placeholder="아이디를 입력해주세요." name="loginname" required >
+          <input type="text" placeholder="아이디를 입력해주세요." name="adid" required >
         </div>
         <div class="field">
-          <input type="password" placeholder="패스워드를 입력해주세요." name="loginmobile" maxlength="11" required >
+          <input type="password" placeholder="패스워드를 입력해주세요." name="adpw" maxlength="11" required >
         </div>
         <div class="field">
           <input type="submit" value="로그인" class="loginbtn">

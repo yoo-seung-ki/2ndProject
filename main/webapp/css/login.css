@@ -230,6 +230,7 @@ html,body{
 .wrapper{
   overflow: hidden;
   width: 800px;
+  height: 500px;
   background: #fff;
   padding: 30px;
   border-radius: 5px;
@@ -320,11 +321,8 @@ html,body{
 }
 .signup-link a{
   font-family: 'KotraBold';
-  color: #FB6544;
 }
 .clogin,.mlogin{
   display:none;
 }
-.signup-link a:visited{
-	color: #FB6544;
-}
+

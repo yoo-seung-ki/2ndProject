@@ -239,7 +239,8 @@
                 <iframe width="800" height="500" src="https://www.youtube.com/embed/HdzoRAsgqsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
-        <section class="section5">
+        <% if (loginmobile != null && adid == null) { %>
+        <section class="section5" style="display:block">
             <h2 class="listTitle">내 정보 관리</h2>
             <div class="cardList">
                 <div class="myInfoCard">
@@ -267,7 +268,7 @@
                     </a>
                 </div>
             </div>
-        </section>
+        </section> <% } %>
     </main>
 
     <footer>

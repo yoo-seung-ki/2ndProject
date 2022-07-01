@@ -349,6 +349,10 @@ footer .footerWrap{
 
 /* section5 */
 
+.display{
+	display: none;
+}
+
 .section5{
     width: 100%;
     height: 835px;

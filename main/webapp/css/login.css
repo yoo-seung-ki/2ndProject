@@ -71,6 +71,13 @@ header{
     height: 100%;
     justify-content: space-around;
 }
+.headerWrap .navMenu ul,
+.headerWrap .changeBtn{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'KotraBold';
+    font-weight: 800;
+}
 
 .headerWrap .navMenu ul{
     display: flex;
@@ -319,6 +326,7 @@ html,body{
 }
 .signup-link{
   font-family: 'KotraBold';
+  margin-top: 20px;
 }
 .signup-link a{
   font-family: 'KotraBold';

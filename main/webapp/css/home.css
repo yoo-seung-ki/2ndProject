@@ -307,11 +307,12 @@ footer .footerWrap{
 }
 
 .cardInfo{
-	margin-top: 20px;
+    margin-top: 20px;
     font-family: 'KotraBold';
-    font-size: var(--font-sizes);
+    font-size: var(--font-sizeM);
     letter-spacing: 1px;
     color: var(--color-black);
+    width: 400px;
 }
 .cardInfo > div{
 	margin-bottom: 10px;

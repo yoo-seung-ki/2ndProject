@@ -27,7 +27,7 @@
             <div class="navMenu">
                
             </div>
-            <div>고대비
+            <div class="changeBtn" name="godea">고대비
             <label class="switch">
                 <input type="checkbox" id="colormode">
                 <span class="slider round"></span>

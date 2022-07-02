@@ -27,13 +27,7 @@
 	Cvo.setFacil(request.getParameter("facil"));
 	Cvo.setTreatment(request.getParameter("treatment"));
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<script>
+	alert("공고 등록에 성공하셨습니다.");
+	location.href="login.jsp";
+</script>

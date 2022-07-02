@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% String comid = (String)session.getAttribute("comid");%>
+<% if (comid == null) { %>
+		<script>
+			alert("로그인이 필요합니다.");
+			location.href="login.jsp";
+		</script>	
+	<%}%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,12 +91,6 @@
             </form>
         </div>
         
-       	<div>
-       		
-       		<form action="logoutproc.jsp">
-       			<button type="submit" value="logout" name="memberlogout" >로그아웃</button>
-       		</form>
-       	</div>
 </header>
 
     <!--  메인배너  -->
@@ -157,7 +160,7 @@
 	<div class="company-info" style="margin:0 auto; width:1200px;" >
     <img src="../img/good3.png" class="good" width="45" height="45">
     우대사항 및 복리후생
-	<table  width="1200" height="120">
+	<table style="width:1200px; height:120px;" >
     	<tr>
         	<th>전&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;공</th>
 	        <td colspan="3"> <input  type="text"  placeholder="전 공"></td>

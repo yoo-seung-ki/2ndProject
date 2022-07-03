@@ -140,6 +140,7 @@
         <% } else if (loginmobile == null && adid == null && comid != null) { %>
         <div class="signin-signup">
             <p class="logininfo"><%= idcom.getComid()%> 님</p>
+            <button style="width:200px; height:50px;" type="button" onclick="location.href='companyadvertise.jsp'">구인 공고 등록</button>
             <form class="logout-admin" action="logoutproc.jsp">
                 <button type="submit" value="logout" name="memberlogout">로그아웃</button>
             </form>

@@ -378,59 +378,86 @@ public class CompanyDAO {
 		   // 가입 성공여부에 따라 flag를 반환 (성공시 true 실패시 false  / default는 false)
 		   // 멤버번호를 max를 사용해서 추가한다?
 		   // 비밀번호 암호화?
-		   public boolean insertUser(CompanyVO vo) {
+		   public boolean insertCompany(CompanyVO vo) {
 		      boolean flag = false;
 		      Connection con = null;
 		      PreparedStatement pstmt = null;
 		      String sql = null;
 		      try {
 		         con = pool.getConnection();
-		         sql = "insert into mjt(companyname, emplodate, ceo, createyear, address, homepage, "
-		         		+ "companytype, companycontent, companysize, recrutype, workcontent, graduate, employcase,"
-		         		+ "paytype, severance, worktime, etc, recrusize, workarea, career, worktype, insurance, bonus,"
-		         		+ "addwork, major, computer, welfare, license, facil, treatment, logo, comid, compw)"
-		               + "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-		               + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?"
-		               + ", ?, ?, ?, ?, ?, ?, ?, ?, ?, ?"
-		               + ", ?, ?, ?)";
+		         sql = "insert into mjt(companyname, ceo, createyear, address, homepage, "
+		         		+ "companytype, companycontent, companysize,  comid, compw)"
+		               + "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		         pstmt = con.prepareStatement(sql);
 		         pstmt.setString(1, vo.getCompanyname());
-		         pstmt.setString(2, vo.getEmplodate());
-		         pstmt.setString(3, vo.getCeo());
-		         pstmt.setString(4, vo.getCreateyear());
-		         pstmt.setString(5, vo.getAddress());
-		         pstmt.setString(6, vo.getHomepage());
-		         pstmt.setString(7, vo.getCompanytype());
-		         pstmt.setString(8, vo.getCompanycontent());
-		         pstmt.setString(9, vo.getCompanysize());
-		         pstmt.setString(10, vo.getRecrutype());
-		         pstmt.setString(11, vo.getWorkcontent());
-		         pstmt.setString(12, vo.getGraduate());
-		         pstmt.setString(13, vo.getEmploycase());
-		         pstmt.setString(14, vo.getPaytype());
-		         pstmt.setString(15, vo.getSeverance());
-		         pstmt.setString(16, vo.getWorktime());
-		         pstmt.setString(17, vo.getEtc());
-		         pstmt.setInt(18, vo.getRecrusize());
-		         pstmt.setString(19, vo.getWorkarea());
-		         pstmt.setString(20, vo.getCareer());
-		         pstmt.setString(21, vo.getWorktype());
-		         pstmt.setString(22, vo.getInsurance());
-		         pstmt.setString(23, vo.getBonus());
-		         pstmt.setString(24, vo.getAddwork());
-		         pstmt.setString(25, vo.getMajor());
-		         pstmt.setString(26, vo.getComputer());
-		         pstmt.setString(27, vo.getWelfare());
-		         pstmt.setString(28, vo.getLicense());
-		         pstmt.setString(29, vo.getFacil());
-		         pstmt.setString(30, vo.getTreatment());
-		         pstmt.setString(31, vo.getLogo());
-		         pstmt.setString(32, vo.getComid());
-		         pstmt.setString(33, vo.getCompw());
+		         pstmt.setString(2, vo.getCeo());
+		         pstmt.setString(3, vo.getCreateyear());
+		         pstmt.setString(4, vo.getAddress());
+		         pstmt.setString(5, vo.getHomepage());
+		         pstmt.setString(6, vo.getCompanytype());
+		         pstmt.setString(7, vo.getCompanycontent());
+		         pstmt.setString(8, vo.getCompanysize());
+		         pstmt.setString(9, vo.getComid());
+		         pstmt.setString(10, vo.getCompw());
 		   
 		         // executeUpdate 의 반환값은 insert,update,delete인 경우, 관련된 레코드의 수를 반환
 		         // create, drop, alter인 경우에는 0을 반환
 		         // 회원가입에는 1명의 정보를 저장하기 때문에 성공적으로 가입이 되었다면 1을 반환할 것이다.
+		         if (pstmt.executeUpdate() == 1) {
+		            flag = true;            
+		         }
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      } finally {
+		         pool.freeConnection(con, pstmt);
+		      }
+		      return flag;
+		   }
+		   
+		   
+		   
+		   // 기업의 공고등록
+		   // 등록 성공여부에 따라 flag를 반환 (성공시 true 실패시 false  / default는 false)
+		   public boolean advercompany(CompanyVO vo) {
+		      boolean flag = false;
+		      Connection con = null;
+		      PreparedStatement pstmt = null;
+		      String sql = null;
+		      try {
+		         con = pool.getConnection();
+		         sql = "insert into mjt(recrutype, workcontent, graduate, employcase,"
+		         		+ "paytype, severance, worktime, etc, recrusize, workarea, career, worktype, "
+		         		+ "insurance, bonus, addwork, major, computer, welfare, license, facil, treatment, logo,)"
+		               + "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+		               + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?"
+		               + ", ?, ?)";
+		         pstmt = con.prepareStatement(sql);
+		         pstmt.setString(1, vo.getRecrutype());
+		         pstmt.setString(2, vo.getWorkcontent());
+		         pstmt.setString(3, vo.getGraduate());
+		         pstmt.setString(4, vo.getEmploycase());
+		         pstmt.setString(5, vo.getPaytype());
+		         pstmt.setString(6, vo.getSeverance());
+		         pstmt.setString(7, vo.getWorktime());
+		         pstmt.setString(8, vo.getEtc());
+		         pstmt.setInt(9, vo.getRecrusize());
+		         pstmt.setString(10, vo.getWorkarea());
+		         pstmt.setString(11, vo.getCareer());
+		         pstmt.setString(12, vo.getWorktype());
+		         pstmt.setString(13, vo.getInsurance());
+		         pstmt.setString(14, vo.getBonus());
+		         pstmt.setString(15, vo.getAddwork());
+		         pstmt.setString(16, vo.getMajor());
+		         pstmt.setString(17, vo.getComputer());
+		         pstmt.setString(18, vo.getWelfare());
+		         pstmt.setString(19, vo.getLicense());
+		         pstmt.setString(20, vo.getFacil());
+		         pstmt.setString(21, vo.getTreatment());
+		         pstmt.setString(22, vo.getLogo());
+		   
+		         // executeUpdate 의 반환값은 insert,update,delete인 경우, 관련된 레코드의 수를 반환
+		         // create, drop, alter인 경우에는 0을 반환
+		         // 공고등록에는 1명의 정보를 저장하기 때문에 성공적으로 등록이 되었다면 1을 반환할 것이다.
 		         if (pstmt.executeUpdate() == 1) {
 		            flag = true;            
 		         }

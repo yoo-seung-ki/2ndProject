@@ -26,6 +26,7 @@
 	Cvo.setLicense(request.getParameter("license"));
 	Cvo.setFacil(request.getParameter("facil"));
 	Cvo.setTreatment(request.getParameter("treatment"));
+	Cdao.advercompany(Cvo);
 %>
 <script>
 	alert("공고 등록에 성공하셨습니다.");

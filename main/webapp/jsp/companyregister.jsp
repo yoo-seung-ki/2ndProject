@@ -122,7 +122,7 @@
 		    </script>
 	  </div>
 	  
-	  <form id="profrm" action="companyregisterproc.jsp">
+	  <form id="profrm" action="comregisterproc.jsp">
 		<table style="width:1200px; height:120px;">
 			<tr>
 		        <th>아&nbsp;&nbsp;&nbsp;이&nbsp;&nbsp;&nbsp;디</th>

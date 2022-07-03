@@ -418,19 +418,18 @@ public class CompanyDAO {
 		   
 		   // 기업의 공고등록
 		   // 등록 성공여부에 따라 flag를 반환 (성공시 true 실패시 false  / default는 false)
-		   public boolean advercompany(CompanyVO vo) {
+		   public boolean advercompany(int comseq, CompanyVO vo) {
 		      boolean flag = false;
 		      Connection con = null;
 		      PreparedStatement pstmt = null;
 		      String sql = null;
 		      try {
 		         con = pool.getConnection();
-		         sql = "insert into mjt(recrutype, workcontent, graduate, employcase,"
-		         		+ "paytype, severance, worktime, etc, recrusize, workarea, career, worktype, "
-		         		+ "insurance, bonus, addwork, major, computer, welfare, license, facil, treatment, logo,)"
-		               + "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-		               + " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?"
-		               + ", ?, ?)";
+		         sql = "update mjt set recrutype = ? , workcontent = ?, graduate = ?, employcase = ?,"
+		         		+ "paytype = ?, severance = ?, worktime = ?, etc = ?, recrusize = ?, "
+		         		+ "workarea = ?, career = ?, worktype = ?, insurance = ?, bonus = ?, "
+		         		+ "addwork = ?, major = ?, computer = ?, welfare = ?, license = ?, "
+		         		+ "facil = ?, treatment = ?, logo = ? where companyseq = ?" ;
 		         pstmt = con.prepareStatement(sql);
 		         pstmt.setString(1, vo.getRecrutype());
 		         pstmt.setString(2, vo.getWorkcontent());
@@ -454,7 +453,7 @@ public class CompanyDAO {
 		         pstmt.setString(20, vo.getFacil());
 		         pstmt.setString(21, vo.getTreatment());
 		         pstmt.setString(22, vo.getLogo());
-		   
+		         pstmt.setInt(23, comseq);
 		         // executeUpdate 의 반환값은 insert,update,delete인 경우, 관련된 레코드의 수를 반환
 		         // create, drop, alter인 경우에는 0을 반환
 		         // 공고등록에는 1명의 정보를 저장하기 때문에 성공적으로 등록이 되었다면 1을 반환할 것이다.

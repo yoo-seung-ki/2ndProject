@@ -1,7 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <jsp:useBean id="Cdao" class="common.CompanyDAO" />
-<jsp:useBean id="Cvo" class="common.CompanyVO" />
+<%@ page import="common.CompanyVO" %>
+<% String comid = (String)session.getAttribute("comid"); %>
+<% CompanyVO A = Cdao.getCompanyfromid(comid); %>
+<% int B = A.getCompanyseq(); %><!-- B ==> comid로 받은 기업의 comseq -->
+<% CompanyVO Cvo = new CompanyVO(); %>
 <% 
 	Cvo.setLogo(request.getParameter("logo")); 
 	Cvo.setEmplodate(request.getParameter("emplodate"));
@@ -26,9 +30,9 @@
 	Cvo.setLicense(request.getParameter("license"));
 	Cvo.setFacil(request.getParameter("facil"));
 	Cvo.setTreatment(request.getParameter("treatment"));
-	Cdao.advercompany(Cvo);
+	Cdao.advercompany(B, Cvo);
 %>
 <script>
 	alert("공고 등록에 성공하셨습니다.");
-	location.href="login.jsp";
+	location.href="home.jsp";
 </script>

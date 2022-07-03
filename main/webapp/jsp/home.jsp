@@ -122,6 +122,7 @@
         <div class="signin-signup">
             <button class="signin" onclick="location.href='./login.jsp';">로그인</button>
             <button class="signup" onclick="location.href='./register.jsp';">회원가입</button>
+            <button style="width:200px;" onclick="location.href='companyregister.jsp'">기업 사용자 회원가입</button>
         </div>
         <% } else if (loginmobile != null && adid == null && comid == null) { %>
         <div class="signin-signup logout">

@@ -292,29 +292,27 @@ footer .footerWrap{
     margin-top: 30px;
     justify-content: space-evenly;
     display: flex;
-    width: 500%;
 }
 .enterpriseCard{
+    width: 300px;
     height: 500px;
-    width: 400px;
 }
 
 .cardImg{
     width: 250px;
     height: 250px;
-    border: 1px solid var(--color-lightgray);
+    border: 1px solid var(--light-gray);
     text-align: center;
     border-radius: 20px;
-    margin: 0 auto;
 }
 
 .cardInfo{
+    margin: 20px auto 0 auto;
     font-family: 'KotraBold';
     font-size: var(--font-sizeM);
     letter-spacing: 1px;
     color: var(--color-black);
     width: 400px;
-    margin: 0 auto;
 }
 .cardInfo > div{
 	margin-bottom: 10px;
@@ -431,7 +429,6 @@ footer .footerWrap{
     color: #fff;
     font-size: 30px;
     margin-left: 60px;
-    cursor: pointer;
 }
 
 .r-arrow{
@@ -443,5 +440,38 @@ footer .footerWrap{
     color: #fff;
     font-size: 30px;
     margin-right: 60px;
-    cursor: pointer;
+}
+
+.slideList{
+    margin-top: 30px;
+    justify-content: space-evenly;
+    display: flex;
+}
+.slideCard{
+    width: 300px;
+    height: 500px;
+}
+
+.slideImg{
+    width: 250px;
+    height: 250px;
+    border: 1px solid var(--light-gray);
+    text-align: center;
+    border-radius: 20px;
+}
+
+.slideInfo{
+    margin: 20px auto 0 auto;
+    font-family: 'KotraBold';
+    font-size: var(--font-sizeM);
+    letter-spacing: 1px;
+    color: var(--color-black);
+    width: 400px;
+}
+.slideInfo > div{
+    margin-bottom: 10px;
+}
+.slideCard{
+    width: 300px;
+    height: 500px;
 }

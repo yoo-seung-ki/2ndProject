@@ -406,7 +406,7 @@
     </div>
 </div>
 
-<!-- 기업지원 현황 -->
+<!-- 기업지원 현황 모달 -->
 <div class="modalBackground-attention inactive3">
     <div class="modalContainer-attention">
         <div>
@@ -416,12 +416,12 @@
                     <p class="modalTitle-attention">기업지원 현황</p>
                     <button class="r-arrow"><i class="fas fa-chevron-right"></i></button>
                 </div>
-                <div class="enterpriseList slide">
+                <div class="slideList slide">
                     <% for (int i = 0; i < tenlist.size(); i++) { %>
-                    <div class="enterpriseCard" style="width: 400px;">
+                    <div class="slideCard">
                         <a target="_blank" href="companyinfo.jsp?name=<%=tenlist.get(i).getCompanyseq()%>">
-                            <img class="cardImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
-                            <div class="cardInfo">
+                            <img class="slideImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
+                            <div class="slideInfo">
                                 <div>
                                     <p><%=tenlist.get(i).getCompanyname() %>
                                     </p>

@@ -5,10 +5,8 @@ $('.slide').each(function(index) {
     totalN = totalCount - 1;
     let meinSlider = $('.slide').bxSlider({
         controls: false,
-        startSlide: 0,
-        mode:'fade',
-        minSlides: 1,
-        maxSlides: 4,
+        minSlides: 3,
+        maxSlides: 3,
         moveSlides: 1,
         slideWidth: 1400,
         preloadImages: 'all',

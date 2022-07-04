@@ -307,8 +307,7 @@
                     성 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명 <input type="text" disabled>
                 </div>
                 <div class="modalInput">
-                    거주지역 <select class="insert-info" name="address"
-                                 onchange="showfield(this.options[this.selectedIndex].value)">
+                    거주지역 <select name="travel_arriveVia" id="travel_arriveVia" onchange="showfield(this.options[this.selectedIndex].value)">
                     <option selected="selected">구분</option>
                     <option value="강서구">강서구</option>
                     <option value="금정구">금정구</option>
@@ -331,13 +330,7 @@
                     <option value="경남 창원시">경남 창원시</option>
                     <option value="Other">기타(직접 입력)</option>
                 </select>
-                    <div id="other"></div>
-                    <script type="text/javascript">
-                        function showfield(name) {
-                            if (name == 'Other') document.getElementById('div1').innerHTML = '직접입력 <input type="text" name="other" />';
-                            else document.getElementById('div1').innerHTML = '';
-                        }
-                    </script>
+                    <div id="div1"></div>
                 </div>
                 <div class="modalInput">
                     전화번호 <input type="text" maxlength="11">
@@ -363,13 +356,17 @@
     <div class="modalContainer-attention">
         <div>
             <form>
-                <p class="modalTitle-attention">관심 기업 목록</p>
-                <div class="enterpriseList">
+                <div class="subTitle">
+                    <button class="l-arrow2"><i class="fas fa-chevron-left"></i></button>
+                    <p class="modalTitle-attention">기업지원 현황</p>
+                    <button class="r-arrow2"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="slideList slide2">
                     <% for (int i = 0; i < tenlist.size(); i++) { %>
-                    <div class="enterpriseCard">
+                    <div class="slideCard2">
                         <a target="_blank" href="companyinfo.jsp?name=<%=tenlist.get(i).getCompanyseq()%>">
-                            <img class="cardImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
-                            <div class="cardInfo">
+                            <img class="slideImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
+                            <div class="slideInfo">
                                 <div>
                                     <p><%=tenlist.get(i).getCompanyname() %>
                                     </p>
@@ -471,6 +468,7 @@
 <script src="../js/mainScroll.js"></script>
 <script src="../js/modal.js"></script>
 <script src="../js/slide.js"></script>
+<script src="../js/directInput.js.js"></script>
 
 
 </body>

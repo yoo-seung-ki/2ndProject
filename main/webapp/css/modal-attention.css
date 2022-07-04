@@ -35,8 +35,8 @@
   
   
   .modalContainer-attention{
-	 width: 1400px;
-    height: 750px;
+    width: 1400px;
+    height: 700px;
     margin: 150px auto;
     border-radius: 10px;
     background-color: #f8f8f8;
@@ -56,13 +56,10 @@
     font-family: 'KotraBold';
     font-size: var(--font-sizeXL);
     text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-    text-align: center;
     padding: 30px;
   }
   
   .modalInput{
-    font-family: 'KotraBold';
     font-size: var(--font-sizeM);
     margin-top: 25px;
     margin-bottom: 20px;
@@ -73,12 +70,10 @@
     border:none;
     border-bottom: 2px solid lightgray;
     font-size: var(--font-sizeM);
-    font-family: 'KotraBold';
   }
 
 
   .modalBnt button{
-    margin-top: 20px;
     width: 20%;
     background-color:#ff6544;
     border: none;
@@ -86,5 +81,4 @@
     height: 40px;
     color:#fff;
     font-size:20px;
-    font-family: 'KotraBold';
   }

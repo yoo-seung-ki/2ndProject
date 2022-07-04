@@ -56,8 +56,9 @@
     <link rel="stylesheet" href="../css/modal.css">
     <link rel="stylesheet" href="../css/modal-attention.css">
     <link rel="stylesheet" href="../css/modal-apply.css">
+    <link rel="stylesheet" href="../css/jquery.bxslider.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!-- 제이쿼리 cdn 연동 -->
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script><!-- bxslider cdn 연동 -->
+    <script src="../js/jquery.bxslider.js"></script><!-- bxslider cdn 연동 -->
 </head>
 <body>
 <header>
@@ -410,10 +411,14 @@
     <div class="modalContainer-attention">
         <div>
             <form>
-                <p class="modalTitle-attention">기업지원 현황</p>
-                <div class="enterpriseList ba-slide">
+                <div class="subTitle">
+                    <button class="l-arrow"><i class="fas fa-chevron-left"></i></button>
+                    <p class="modalTitle-attention">기업지원 현황</p>
+                    <button class="r-arrow"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="enterpriseList slide">
                     <% for (int i = 0; i < tenlist.size(); i++) { %>
-                    <div class="enterpriseCard">
+                    <div class="enterpriseCard" style="width: 400px;">
                         <a target="_blank" href="companyinfo.jsp?name=<%=tenlist.get(i).getCompanyseq()%>">
                             <img class="cardImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
                             <div class="cardInfo">
@@ -465,8 +470,6 @@
 
 <script src="../js/mainScroll.js"></script>
 <script src="../js/modal.js"></script>
-<script src="../js/modal-attention.js"></script>
-<script src="../js/modal-apply.js"></script>
 <script src="../js/slide.js"></script>
 
 

@@ -15,9 +15,11 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 public class CompanyDAO {
 
 	private DBConnMgr pool;
-	private static final String SAVEFOLDER = "C:/Users/admin/Documents/2ndproject/src/main/webapp/img";
+	private static final String SAVEFOLDER = "C:/Users/admin/Documents/2ndproject/src/main/webapp/img"; 
+	// final은 상수라는 의미인데 상수는 변화되지 않고 고정된 값으로 SAVEFOLDER를 대문자로 쓴것은 그것을 표현하기 위해서임 그렇게하기로 약속됨 밑에도 같음
 	private static final String ENCTYPE = "UTF-8";
 	private static int MAXSIZE = 10 * 1024 * 1024;
+	// 최대 10메가까지 파일사이즈를 허용한다는 의미
 
 	public CompanyDAO() {
 		try {
@@ -388,7 +390,8 @@ public class CompanyDAO {
 		   // 가입 성공여부에 따라 flag를 반환 (성공시 true 실패시 false  / default는 false)
 		   // 멤버번호를 max를 사용해서 추가한다?
 		   // 비밀번호 암호화?
-		   public boolean insertCompany(HttpServletRequest request) {
+		   public boolean insertCompany(HttpServletRequest request) {	
+			   // HttpServletRequest request는 서블릿을 만들어서 이렇게 수정시킴
 		      boolean flag = false;
 		      Connection con = null;
 		      PreparedStatement pstmt = null;

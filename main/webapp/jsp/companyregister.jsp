@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ page import = "com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
+<%@ page import = "com.oreilly.servlet.MultipartRequest" %>
+<%@ page import = "java.util.*, java.io.*" %>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -22,6 +24,9 @@
     		}
     	}
     </script>
+    
+
+    
 </head>
 <body>
 <!-- 헤더  -->
@@ -105,7 +110,7 @@
     </div>
   <!--회사 정보? -->
   	<div class="company-info">
-  		<form name = "imageFrm" method="post" enctype="multipart/form-data" action="companyinfo.jsp">
+  		<form method="post" encType = "multipart/form-data" action="../companyregi" id="profrm">
 			<div>
 			    <img src="../img/good1.png" class="good"  width="45" height="45">기업정보 
 			   		<input type="file" id="file" name="file"  accept="image/*" onchange="changeValue(this)"/>
@@ -124,14 +129,14 @@
 				
 				</script>
 			</div>
-	  	</form>
-	  <form id="profrm" action="comregisterproc.jsp">
+	  	
+	
 		<table style="width:1200px; height:120px;">
 			<tr>
 		        <th>아&nbsp;&nbsp;&nbsp;이&nbsp;&nbsp;&nbsp;디</th>
-		        <td colspan="3"> <input name="companyid" type="text"  placeholder="아 이 디"></td>
+		        <td colspan="3"> <input name="comid" type="text"  placeholder="아 이 디"></td>
 		        <th>비 밀 번 호</th>
-		        <td colspan="3"> <input name="companypassword" type="password"  placeholder="비 밀 번 호	"></td>
+		        <td colspan="3"> <input name="compw" type="password"  placeholder="비 밀 번 호	"></td>
 		    </tr>
 		    <tr>
 		        <th>기&nbsp;&nbsp;&nbsp;업&nbsp;&nbsp;&nbsp;명</th>

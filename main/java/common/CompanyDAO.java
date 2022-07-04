@@ -1,14 +1,23 @@
 package common;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+
 public class CompanyDAO {
 
 	private DBConnMgr pool;
+	private static final String SAVEFOLDER = "C:/Users/admin/Documents/2ndproject/src/main/webapp/img";
+	private static final String ENCTYPE = "UTF-8";
+	private static int MAXSIZE = 10 * 1024 * 1024;
 
 	public CompanyDAO() {
 		try {
@@ -379,27 +388,42 @@ public class CompanyDAO {
 		   // 가입 성공여부에 따라 flag를 반환 (성공시 true 실패시 false  / default는 false)
 		   // 멤버번호를 max를 사용해서 추가한다?
 		   // 비밀번호 암호화?
-		   public boolean insertCompany(CompanyVO vo) {
+		   public boolean insertCompany(HttpServletRequest request) {
 		      boolean flag = false;
 		      Connection con = null;
 		      PreparedStatement pstmt = null;
 		      String sql = null;
+		      MultipartRequest multi = null;
+		      String filename = null; 
+		    
+		      
 		      try {
 		         con = pool.getConnection();
+		         File file = new File(SAVEFOLDER);
+		         if (!file.exists())
+		        	 file.mkdirs();
+		         
+		         multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
+		         if(multi.getFilesystemName("file") != null) { // not null = 업로드된 파일이 있다는 의미
+		        	 filename = multi.getFilesystemName("file");
+		         }
+
 		         sql = "insert into mjt(companyname, ceo, createyear, address, homepage, "
-		         		+ "companytype, companycontent, companysize,  comid, compw)"
-		               + "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		         		+ "companytype, companycontent, companysize,  comid, compw, logo)"
+		               + "values(?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		         pstmt = con.prepareStatement(sql);
-		         pstmt.setString(1, vo.getCompanyname());
-		         pstmt.setString(2, vo.getCeo());
-		         pstmt.setString(3, vo.getCreateyear());
-		         pstmt.setString(4, vo.getAddress());
-		         pstmt.setString(5, vo.getHomepage());
-		         pstmt.setString(6, vo.getCompanytype());
-		         pstmt.setString(7, vo.getCompanycontent());
-		         pstmt.setString(8, vo.getCompanysize());
-		         pstmt.setString(9, vo.getComid());
-		         pstmt.setString(10, vo.getCompw());
+		         //request.getParameter("")이랑 똑같다
+		         pstmt.setString(1, multi.getParameter("companyname"));
+		         pstmt.setString(2, multi.getParameter("ceo"));
+		         pstmt.setString(3, multi.getParameter("createyear"));
+		         pstmt.setString(4, multi.getParameter("address"));
+		         pstmt.setString(5, multi.getParameter("homepage"));
+		         pstmt.setString(6, multi.getParameter("companytype"));
+		         pstmt.setString(7, multi.getParameter("companycontent"));
+		         pstmt.setString(8, multi.getParameter("companysize"));
+		         pstmt.setString(9, multi.getParameter("comid"));
+		         pstmt.setString(10, multi.getParameter("compw"));
+		         pstmt.setString(11, filename);
 		   
 		         // executeUpdate 의 반환값은 insert,update,delete인 경우, 관련된 레코드의 수를 반환
 		         // create, drop, alter인 경우에는 0을 반환
@@ -513,6 +537,5 @@ public class CompanyDAO {
 		   }
 		   
 		   
-		   
-		   
+
 }

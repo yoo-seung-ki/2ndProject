@@ -8,7 +8,6 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
  <link rel="stylesheet" href="../css/register.css">
  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
- <script defer src="../js/registerChk.js"></script>
 </head>
 <body>
     <header>
@@ -30,28 +29,6 @@
                 <span class="slider round"></span>
             </label>
             </div>
-            <script>
-            $(document).ready(function() {
-                $("#colormode").change(function(){
-                if($("#colormode").is(":checked")){
-                    $("body").css("background-color","#000");
-                    $("body").css("color","#fff");
-                    $(".title-text").css("color","#fff");
-                    $(".menu").css("color","#fff");
-                    $("#user-register-page").css("box-shadow","none");
-                }else{
-                    $("body").css("background-color","#fff");
-                    $("body").css("color","#000");                    
-                    $(".title-text").css("color","#000");
-                    $(".menu").css("color","#000");
-                    $("#user-register-page").css("box-shadow","5px 15px 20px #ddd");
-                    
-                    
-                }
-            
-                });
-            });
-            </script>
             <div class="signin-signup">
 				<button class="signin" onclick="location.href='./login.jsp';">로그인</button>
                 <button class="signup" onclick="location.href='./register.jsp';">회원가입</button>
@@ -73,7 +50,7 @@
                         }
                     }
                 </script>
-                거주지역 <select class="insert-info" name="address">
+                    거주지역 <select class="insert-info" name="address" id="travel_arriveVia" onchange="showfield(this.options[this.selectedIndex].value)">
                         <option value="구분">구분</option>
                         <option value="강서구">강서구</option>
                         <option value="금정구">금정구</option>
@@ -94,11 +71,12 @@
                         <option value="경남 김해시">경남 김해시</option>
                         <option value="경남 양산시">경남 양산시</option>
                         <option value="경남 창원시">경남 창원시</option>
-                        <option value="other">기타(직접 입력)</option>
-                </select><br>
+                        <option value="Other">기타(직접 입력)</option>
+                </select>
+                    <div id="div1"></div>
                 전화번호 <input type="text" class="insert-info" name="Pnum" maxlength="11" placeholder="연락처를 입력해주세요.">
                 <p class="warn"> 연락처는 -없이 숫자만 입력해주세요.</p>
-                장애유형 <select class="insert-info" name="type">
+                장애유형 <select class="insert-info" name="type" onchange="showfield2(this.options[this.selectedIndex].value)">
                 	<option value="구분">구분</option>
                     <option value="지체장애">지체장애</option>
                     <option value="뇌병변장애">뇌병변장애</option>
@@ -115,8 +93,9 @@
                     <option value="지적장애">지적장애</option>
                     <option value="자폐성장애">자폐성장애</option>
                     <option value="정신장애">정신장애</option>
-                    <option value="기타">기타</option>
-                </select><br>
+                    <option value="Other2">기타</option>
+                </select>
+                    <div id="div2"></div>
                 장애정도 <select class="insert-info" name="degree">
                     <option value="구분">구분</option>
                     <option value="심한 정도">심한 정도</option>
@@ -141,5 +120,35 @@
             <div>copyright 2022. All RIGHT RESERVED.</div>
         </div>
     </footer>
+    <script defer src="../js/registerChk.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#colormode").change(function(){
+                if($("#colormode").is(":checked")){
+                    $("body").css("background-color","#000");
+                    $("body").css("color","#fff");
+                    $(".title-text").css("color","#fff");
+                    $(".menu").css("color","#fff");
+                    $("#user-register-page").css("box-shadow","none");
+                }else{
+                    $("body").css("background-color","#fff");
+                    $("body").css("color","#000");
+                    $(".title-text").css("color","#000");
+                    $(".menu").css("color","#000");
+                    $("#user-register-page").css("box-shadow","5px 15px 20px #ddd");
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        function showfield(name){
+            if(name=='Other')document.getElementById('div1').innerHTML='직접입력 <input type="text" class="insert-info" name="other" />';
+            else document.getElementById('div1').innerHTML='';
+        }
+        function showfield2(name){
+            if(name=='Other2')document.getElementById('div2').innerHTML='직접입력 <input type="text" class="insert-info" name="other" />';
+            else document.getElementById('div2').innerHTML='';
+        }
+    </script>
 </body>
 </html>

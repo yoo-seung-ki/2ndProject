@@ -307,7 +307,7 @@
 	                    value="<%= mobile.getName() %>">
 	            </div>
                 <div class="modalInput">
-                    거주지역 <select name="travel_arriveVia" id="travel_arriveVia" onchange="showfield(this.options[this.selectedIndex].value)">
+                    거주지역 <select class="insert-info" name="address" id="travel_arriveVia" onchange="showfield(this.options[this.selectedIndex].value)">
                     <option selected="selected">구분</option>
                     <option value="강서구">강서구</option>
                     <option value="금정구">금정구</option>
@@ -363,7 +363,7 @@
             <form>
                 <p class="modalTitle-attention">관심 기업 목록</p>
                 <div class="enterpriseList">
-                
+
                     <% for (int i = 1; i < arr.length; i++) { %>
                     <% CompanyVO newarr = Cdao.getCompanyfromname(arr[i]);%>
                     <div class="enterpriseCard">

@@ -443,17 +443,19 @@ th,td{
 th{
 	background-color: beige;
     width: 180px;
+    font-family: 'KotraBold';
 }
 .regist,.back{
     border: none;
-    border-radius: 50px;;
-    color:#fff;
+    border-radius: 50px;
+    color: #fff;
     background-color: coral;
     width: 300px;
-    height:50px;
-    font-size:var(--font-sizeS);
-    margin-top: 30px;
+    height: 50px;
+    font-size: var(--font-sizeM);
+    margin: 30px 0;
     cursor: pointer;
+    font-family: 'KotraBold';
 }
 #file{
 	display:none;
@@ -468,7 +470,7 @@ th{
     font-size:var(--font-sizeS);
     cursor: pointer;
     margin-bottom: 25px;
-    
+    font-family: 'KotraBold';
 }
 
 .headerWrap .navMenu ul,
@@ -498,7 +500,8 @@ th{
 #canvas2 {
     margin-left: 300px;
 }
-input[type="text"]{
+input[type="text"],
+input[type="password"]{
     width: 300px;
     height: 40px;;
     border:none;

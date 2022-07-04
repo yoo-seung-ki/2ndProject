@@ -203,7 +203,7 @@ height:500px;
 color:#000;
 }
 .user-regi{
-padding-top:50px;
+padding: 20px 0;
 text-align: center;
 color: #000;
 font-weight: bold;
@@ -272,7 +272,6 @@ margin-left:70px;
 font-size:0.8em;
 }
 .info-insert{
-margin-top:55px;
 font-size: 1.3em;
 }
 
@@ -300,9 +299,8 @@ font-size: 1.3em;
 	width:6px;
 	height:10px;
 	border:solid #fff;
-	border-width: 0 2px2px 0;
+	border-width: 0 2px 2px 0;
 }
-
 
  #smbtn{
 font-size: 2em;
@@ -312,7 +310,7 @@ width:250px;
 height: 70px;
 border: none;
 border-radius: 5px;
-margin-top:40px;
+margin-top: 10px;
 background-color:#b2b2b2;
 } 
 

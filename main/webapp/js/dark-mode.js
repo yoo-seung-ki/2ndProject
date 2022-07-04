@@ -53,16 +53,12 @@ function Buttontoggle()
 	
     var toggle = document.getElementById("colormode");
     var table = document.querySelectorAll("table");
-    var tablebackcolor = document.querySelectorAll(".tablecolor")
     
     
     if(toggle.value=="off"){
       toggle.value="on";
       for(var i=0; i<table.length; i++) {
         table[i].style.color = '#fff'
-      }
-      for(var j=0; j<tablebackcolor.length; j++) {
-        tablebackcolor[j].style.backgroundColor = '#000'
       }
         document.querySelector('header').style.backgroundColor = '#000';
         document.querySelector('.option').style.color = '#fff';
@@ -73,9 +69,6 @@ function Buttontoggle()
         document.querySelector('.signup-link').style.color = '#000';
         document.querySelector('.menu').style.color = '#fff';
         document.querySelector('.bannerTitle').style.color = '#000';
-      
-        
-         
         console.log("excelinput 다크모드 켜기")
     }
 
@@ -83,9 +76,6 @@ function Buttontoggle()
       toggle.value="off";
       for(var i=0; i<table.length; i++) {
         table[i].style.color = '#000'
-      }
-      for(var j=0; j<tablebackcolor.length; j++) {
-        tablebackcolor[j].style.backgroundColor = '##fffde7 !important'
       }
       document.querySelector('header').style.backgroundColor = '#fff';
       document.querySelector('.option').style.color = '#000';
@@ -96,11 +86,7 @@ function Buttontoggle()
       document.querySelector('.signup-link').style.color = '#fff';
       document.querySelector('.menu').style.color = '#000';
       document.querySelector('.bannerTitle').style.color = '#fff';
-      
-      
-        
-        
-        console.log("excelinput 다크모드 끄기")
+      console.log("excelinput 다크모드 끄기")
     }
   }
 

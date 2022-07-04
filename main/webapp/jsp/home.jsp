@@ -395,8 +395,6 @@
                     	<% } %> <!-- for문 종료 -->
                     	<% } %>
                     	<% } %>
-
-
                 </div> <!-- enterpriseList -->
                 <div class="modalBnt">
                     <button class="modalClose" onclick="modalpage1close()">닫기</button>
@@ -412,9 +410,7 @@
         <div>
             <form>
                 <div class="subTitle">
-                    <button class="l-arrow"><i class="fas fa-chevron-left"></i></button>
                     <p class="modalTitle-attention">기업지원 현황</p>
-                    <button class="r-arrow"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <div class="slideList slide">
                     <% for (int i = 0; i < tenlist.size(); i++) { %>
@@ -470,7 +466,12 @@
 
 <script src="../js/mainScroll.js"></script>
 <script src="../js/modal.js"></script>
-<script src="../js/slide.js"></script>
+<script type="text/javascript">
+    function showfield(name){
+        if(name=='Other')document.getElementById('div1').innerHTML='직접입력 <input type="text" name="other" />';
+        else document.getElementById('div1').innerHTML='';
+    }
+</script>
 
 
 </body>

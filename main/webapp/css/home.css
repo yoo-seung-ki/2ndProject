@@ -353,7 +353,9 @@ footer .footerWrap{
 .display{
 	display: none;
 }
-
+#div1{
+    margin-top: 20px;
+}
 .section5{
     width: 100%;
     height: 835px;
@@ -412,11 +414,10 @@ footer .footerWrap{
 }
 
 .subTitle{
-    width: 100%;
+    width: 400px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #e5e5e5;
     align-items: center;
 }
 
@@ -449,11 +450,7 @@ footer .footerWrap{
     justify-content: space-evenly;
     display: flex;
 }
-.slideCard,
-.slideCard2{
-    width: 300px;
-    height: 500px;
-}
+
 
 .slideImg{
     width: 250px;
@@ -473,8 +470,4 @@ footer .footerWrap{
 }
 .slideInfo > div{
     margin-bottom: 10px;
-}
-.slideCard{
-    width: 300px;
-    height: 500px;
 }

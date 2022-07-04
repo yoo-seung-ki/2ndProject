@@ -12,8 +12,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/login.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-    <script defer src="../js/loginchk.js"></script>
-    <script defer src="../js/link.js"></script>
+    <!-- 로그인체크 js -->
+    <script defer src="../js/loginchk.js"></script> 
+    <!-- 다크모드 js -->
+    <script defer src="../js/dark-mode.js"></script>
 </head>
 <body>
 <header>
@@ -27,13 +29,13 @@
             <div class="navMenu">
                
             </div>
-            <div class="changeBtn" name="godea">고대비
+            <div class="changeBtn" name="godea">고대비           
             <label class="switch">
-                <input type="checkbox" id="colormode">
+                <input type="checkbox" id="check" onclick="changeStatus()" />
                 <span class="slider round"></span>
             </label>
             </div>
-            <script>
+        <!--     <script>
             $(document).ready(function() {
                 $("#colormode").change(function(){
                 if($("#colormode").is(":checked")){
@@ -53,14 +55,12 @@
                     $(".menu").css("color","#000");
                     $('.wrapper').css("background-color","#fff");
                     $('.title').css("color","#000");
-                    $('.signup-link').css("color","#000");           
-                    
-                    
+                    $('.signup-link').css("color","#000");               
                 }
             
                 });
             });
-            </script>
+            </script> -->
 
         </div>
     </header>

@@ -92,42 +92,41 @@ function Buttontoggle()
     }
   }
 
+  //We're going to use "check" to get the ckeckbox element
+const check =document.getElementById("check");
+
+//If darkMode doesn’t exist in the LocalStorage, create it. False by default
+if (localStorage.getItem('darkMode')===null){
+    localStorage.setItem('darkMode', "false");
+}
+
+//checkStatus is only called one time in the program, when you reload the page
+//It gives the page it's default look, depening on waht darkMode is set to
+checkStatus()
+
+function checkStatus(){
+    if (localStorage.getItem('darkMode')==="true"){
+        check.checked = true;                                       //the checkbox is checked (if you load the page by default it isn’t)
+        document.getElementsByTagName("body")[0].style.color="#FFF";   //the thext in the p is set to white
+        document.body.style.backgroundColor = "#181A1B";            //the backgornd is set to a dark grey
+    }else{
+        check.checked = false;
+        document.getElementsByTagName("body")[0].style.color="black";  //same CSS changes but for light mode
+        document.body.style.backgroundColor = "#FFF";
+    }
+}
+
+function changeStatus(){                                            //This function gets called every time the checkbox is clicked
+    if (localStorage.getItem('darkMode')==="true"){                 //if darkMode was active and this function is called it means the user now wants light
+        localStorage.setItem('darkMode', "false");                  //so we set it to false, to indicate we are in light mode
+        document.getElementsByTagName("body")[0].style.color="black";  //same CSS changes as in checkStatus
+        document.body.style.backgroundColor = "#FFF";
+    } else{
+        localStorage.setItem('darkMode', "true");                   //same code but adapted for dark theme
+        document.getElementsByTagName("body")[0].style.color="#FFF";
+        document.body.style.backgroundColor = "#181A1B";
+    }
+}
 
 
-// 로컬스토리지 데이터 읽기(darkMode keyName 읽기)
-let darkMode = localStorage.getItem('darkMode');
-
-let checkboxShowGPSInfo = document.querySelector('#checkboxShowGPSInfo')
-const darkModeToggle = document.querySelector('#darkModeToggle');
-
-const enableDarkMode = () => {
-  // body 태그에 다크모드 클래스 추가
-  document.body.classList.add('dark-mode');
-
-  // 로컬스토리지에 다크모드 키-값 생성
-  localStorage.setItem('darkMode', 'enabled');  
-};
-
-const disableDarkMode = () => {
-  // body 태그에 다크모드 클래스 제거
-  document.body.classList.remove('dark-mode');
-  // 로컬스토리지에 다크모드 키의 값을 null로 업데이트
-  localStorage.setItem('darkMode', null);
-};
-
-if (darkMode === 'enabled') enableDarkMode();
-
-darkModeToggle.addEventListener('click', () => {
-  
-  // 클릭 시마다 초기화
-  darkMode = localStorage.getItem('darkMode');
-  // 만약 다크모드가 활성화 되어 있지 않다면
-  if (darkMode !== 'enabled') {
-    // 다크모드 활성화 함수 호출
-    enableDarkMode();
-  } else {
-    // 그렇지 않다면(활성화 되어 있다면) 비활성화 함수 호출
-    disableDarkMode();
-  }
-});
     

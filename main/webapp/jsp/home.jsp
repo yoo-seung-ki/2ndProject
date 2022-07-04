@@ -359,8 +359,10 @@
                 <p class="modalTitle-attention">관심 기업 목록</p>
                 <div class="enterpriseList">
                 <% if (loginmobile != null) { %>
+                <% if ( Ddao.listintercom(loginmobile) != null) { %>
                 	<% String intercomlist = Ddao.listintercom(loginmobile); %>
 					<% String[] arr = intercomlist.split(","); %>
+					
                     <% for (int i = 0; i < arr.length; i++) { %>
                     <% CompanyVO newarr = Cdao.getCompanyfromname(arr[i]);%>
                     <div class="enterpriseCard">
@@ -392,6 +394,7 @@
                         </a>
                     </div> <!-- enterpriseCard -->
                     	<% } %> <!-- for문 종료 -->
+                    	<% } %>
                     	<% } %>
 
 

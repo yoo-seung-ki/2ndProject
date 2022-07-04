@@ -25,6 +25,8 @@
     <script src="../js/sheetjs.js"></script>
     <!-- 돋보기 기능 -->
     <script src="../js/html-magnifier.js"></script>
+    <!-- 다크모드 -->
+    <script src="../js/dark-mode.js"></script>
     
   
 </head>
@@ -48,18 +50,18 @@
         
         <div class="changeBtn">고대비
             <label class="switch">
-                <input type="checkbox" id="colormode">
+                <input type="checkbox" id="colormode" value="off" onclick="excelinputdarkmode()">
                 <span class="slider round"></span>
             </label>
          </div>
          <div class="changeBtn">돋보기
             <label class="switch">
-                <input type="checkbox" id="colormode" value="off" id="toggle" onclick="Buttontoggle()">
+                <input type="checkbox" id="" value="off" id="toggle" onclick="magnifiertoggle()">
                 <span class="slider round"></span>
             </label>
          </div>
 
-        <button style="display: none;" onclick="Buttontoggle()" value="off" id="toggle">돋보기</button>
+        <button style="display: none;" onclick="magnifiertoggle()" value="off" id="toggle">돋보기</button>
                
          
         <% if (loginmobile == null && adid == null) { %>
@@ -82,7 +84,6 @@
                             </form>
                     </div> <%} %>
         </div>
-    </div>
 </header>
 
 <!--  메인배너  -->
@@ -125,7 +126,7 @@
     <form>
     <table id="table">
         <thead>
-            <th colspan="6" >입사지원서</th>
+            <th colspan="6">입사지원서</th>
         </thead>
         <tbody>
             <tr>
@@ -424,46 +425,7 @@
             <div>copyright 2022. All RIGHT RESERVED.</div>
         </div>
     </footer>
-    <script>
-        // 다크모드
-        $(document).ready(function() {
-            $("#colormode").change(function(){
-            if($("#colormode").is(":checked")){
-                $("header").css("background-color","#000");
-                $('.option').css("color","#fff");
-                $(".body").css("background-color","#000");
-                $(".body").css("color","#fff");
-                $(".title-text").css("color","#fff");
-                $(".title").css("color","#000");
-                $(".signup-link").css("color","#000");
-                $(".menu").css("color","#fff");
-                $(".bannerTitle").css("color","#000");
-                $('table').css("color","#fff");
-                $('magnifier').css("background-color","#000");
-                $('magnifier').css("color","#fff");
-                $('magnifier-content').css("background-color","#000");
-                $('magnifier-content').css("color","#fff");
-                $('magnifier-glass').css("background-color","#000");
-                $('magnifier-glass').css("color","#fff");
-            }                         
-            else{
-                $("header").css("background-color","#fff");
-                $('.option').css("color","#000");
-                $(".body").css("background-color","#fff");                
-                $(".body").css("color","#000");                    
-                $(".title-text").css("color","#000");
-                $(".menu").css("color","#000");
-                $(".bannerTitle").css("color","#000");
-                $('table').css("color","#000");
-                $('magnifier').css("background-color","#fff");
-                $('magnifier').css("color","#000");
-                $('magnifier-content').css("background-color","#fff");
-                $('magnifier-content').css("color","#000");
-                $('magnifier-glass').css("background-color","#fff");
-                $('magnifier-glass').css("color","#000");
-            }        
-        });
-    });
+    <script>      
             // 돋보기 모드
         const magnifier = new HTMLMagnifier({ width: 500, height: 500 });
         magnifier.show();

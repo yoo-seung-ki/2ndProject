@@ -437,7 +437,7 @@ function HTMLMagnifier(options) {
   }
 
 //   돋보기 버튼 토글
-  function Buttontoggle()
+  function magnifiertoggle()
   {
     var toggle = document.getElementById("toggle");
     if(toggle.value=="off"){

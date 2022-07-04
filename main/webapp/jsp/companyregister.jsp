@@ -12,12 +12,16 @@
     <link rel="stylesheet" href="../css/company.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+  	<script defer src="../js/registerChk.js"></script>
     <script>
     	function submitfunc() {
     		if(confirm("정말 신청하시겠습니까?") == true) {
+    			companyregiChk();
     			document.getElementById("profrm").submit();
+    			return;
+
     		} else {
-    			return event.preventDefault();
+    			return event.preventDefault();ㄴ
     		}
     	}
     </script>
@@ -28,8 +32,10 @@
     <div class="headerWrap">
         <div class="logo">
             <a href="../jsp/home.jsp">
-                <img src="../img/logo.png" alt="">
-                <div class="title-text">예일장애인박람회</div>
+                <img src="../img/logo.png" alt=""/>
+                <div class="title-text">
+                예일장애인박람회
+                </div>
             </a>
         </div> <!-- logo -->
         
@@ -122,47 +128,46 @@
 		    </script>
 	  </div>
 	  
-	  <form id="profrm" action="comregisterproc.jsp">
+	 <form id="profrm" action="comregisterproc.jsp" name="companyFrm">
 		<table style="width:1200px; height:120px;">
 			<tr>
 		        <th>아&nbsp;&nbsp;&nbsp;이&nbsp;&nbsp;&nbsp;디</th>
-		        <td colspan="3"> <input name="companyid" type="text"  placeholder="아 이 디"></td>
+		        <td colspan="3"> <input name="companyid" type="text"  placeholder="아 이 디"/></td>
 		        <th>비 밀 번 호</th>
-		        <td colspan="3"> <input name="companypassword" type="password"  placeholder="비 밀 번 호	"></td>
+		        <td colspan="3"> <input name="companypassword" type="password"  placeholder="비 밀 번 호 "/></td>
 		    </tr>
 		    <tr>
 		        <th>기&nbsp;&nbsp;&nbsp;업&nbsp;&nbsp;&nbsp;명</th>
-		        <td colspan="3"> <input name="companyname" type="text"  placeholder="기 업 명"></td>
+		        <td colspan="3"> <input name="companyname" type="text"  placeholder="기 업 명"/></td>
 		        <th>홈 페 이 지</th>
-		        <td colspan="3"> <input name="homepage" type="text"  placeholder="홈 페 이 지"></td>
+		        <td colspan="3"> <input name="homepage" type="text"  placeholder="홈 페 이 지"/></td>
 		    </tr>
 		    <tr>
 		        <th>대&nbsp;&nbsp;&nbsp;표&nbsp;&nbsp;&nbsp;자</th>
-		        <td colspan="3"> <input name="ceo" type="text"  placeholder="대 표 자"></td>
+		        <td colspan="3"> <input name="ceo" type="text"  placeholder="대 표 자"/></td>
 		        <th>업&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;종</th>
-		        <td colspan="3"> <input name="companytype" type="text"  placeholder="업 종"></td>
+		        <td colspan="3"> <input name="companytype" type="text"  placeholder="업 종"/></td>
 		    </tr>
 		    <tr>
 		        <th>설 립 시 기</th>
-		        <td colspan="3"> <input name="createyear" type="text"  placeholder="설 립 시 기"></td>
+		        <td colspan="3"> <input name="createyear" type="text"  placeholder="설 립 시 기"/></td>
 		        <th>사 업 내 용</th>
-		        <td colspan="3"> <input name="companycontent" type="text"  placeholder="사 업 내 용"></td>
+		        <td colspan="3"> <input name="companycontent" type="text"  placeholder="사 업 내 용"/></td>
 		    </tr>
 		    <tr>
 		        <th>주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</th>
-		        <td colspan="3"> <input name="address" type="text"  placeholder="주 소"></td>
+		        <td colspan="3"> <input name="address" type="text"  placeholder="주 소"/></td>
 		        <th>규&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;모</th>
-		        <td colspan="3"> <input name="companysize" type="text"  placeholder="규 모"></td>
+		        <td colspan="3"> <input name="companysize" type="text"  placeholder="규 모"/></td>
 		    </tr>
 		</table>
-		
-	</div><!-- companyinfo -->
-	
 		<div style="float:right">
 		    <button type="button" onclick="submitfunc()" class="regist">기업 회원가입</button>
 		    <button type="button" onclick="history.back()" class="back">취소</button>
 		</div>
-	</form>
+		</form>
+	</div>
+
 
 </main>
     <footer>
@@ -170,6 +175,5 @@
             <div>copyright 2022. All RIGHT RESERVED.</div>
         </div>
     </footer>
-<script src="../js/chart.js"></script>
 </body>
 </html>

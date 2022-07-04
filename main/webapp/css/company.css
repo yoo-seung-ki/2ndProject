@@ -511,3 +511,9 @@ input[type="number"]{
     border:none;
     border-bottom: 1px solid lightgray;
 }
+input[type="password"]{
+    width: 300px;
+    height: 40px;;
+    border:none;
+    border-bottom: 1px solid lightgray;
+}

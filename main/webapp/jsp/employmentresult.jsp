@@ -17,6 +17,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <link rel="stylesheet" href="../css/employment.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <script src="../js/dark-mode.js"></script>
 </head>
 <body>
 <!-- 헤더  -->
@@ -36,31 +37,13 @@
         </div>
         <div class="changeBtn" name="godea">고대비
         <label class="switch">
-            <input type="checkbox" id="colormode">
+             <input type="checkbox" id="colormode" value="off" id="toggle" onclick="Buttontoggle()">
             <span class="slider round"></span>
         </label>
         </div>
-        <script>
-        $(document).ready(function() {
-        	$("p").css("color","#000");
-            $("#colormode").change(function(){
-            if($("#colormode").is(":checked")){
-                $("body").css("background-color","#000");
-                $("body").css("color","#fff");
-                $(".title-text").css("color","#fff");
-                $(".bannerTitle").css("color","#000");
-                $("p").css("color","#fff");
-            }else{
-                $("body").css("background-color","#fff");
-                $("body").css("color","#000");
-                $(".title-text").css("color","#000");
-                $(".bannerTitle").css("color","#000");
-                $("p").css("color","#000");
-            }
-        
-            });
-        });
-        </script>
+
+		<button style="display: none;" onclick="Buttontoggle()" value="off" id="toggle">돋보기</button>
+
         <div class="signin-signup">
                 <button class="signin" onclick="location.href='./login.jsp';">로그인</button>
                 <button class="signup" onclick="location.href='./register.jsp';">회원가입</button>

@@ -303,7 +303,7 @@
             <form>
                 <p class="modalTitle">내 정보 변경</p>
                 <div class="modalInput">
-                    성 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명 <input type="text" readonly 
+                    성 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명 <input type="text" disabled
 	                    value="<%= mobile.getName() %>">
 	            </div>
                 <div class="modalInput">
@@ -336,10 +336,10 @@
                     전화번호 <input type="text" maxlength="11">
                 </div>
                 <div class="modalInput">
-                    장애유형 <input type="text" readonly value="<%=mobile.getDiscase() %>">
+                    장애유형 <input type="text" disabled value="<%=mobile.getDiscase() %>">
                 </div>
                 <div class="modalInput">
-                    장애정도 <input type="text" readonly value="<%=mobile.getDisgrade() %>">
+                    장애정도 <input type="text" disabled value="<%=mobile.getDisgrade() %>">
                 </div>
             </form>
             <div class="modal-Bnt">

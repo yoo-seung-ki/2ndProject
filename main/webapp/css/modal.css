@@ -82,8 +82,8 @@
     margin-bottom: 20px;
 }
 
-  .modalBnt button{
-    width: 20%;
+  .modal-Bnt button{
+    width: 140px;
     background-color:#ff6544;
     border: none;
     border-radius: 5px;
@@ -91,10 +91,15 @@
     color:#fff;
     font-size:20px;
     font-family: 'KotraBold';
+    margin-right: 20px;
   }
 
-.modalBnt{
+.modal-Bnt{
   margin: 0 auto;
   width: 280px;
   display: flex;
+}
+
+.modalSendBnt{
+  margin-right: 20px;
 }

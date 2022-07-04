@@ -96,5 +96,5 @@
 .modalBnt{
   margin: 0 auto;
   width: 280px;
-  display: inherit;
+  display: flex;
 }

@@ -341,7 +341,7 @@
                     장애정도 <input type="text" disabled>
                 </div>
             </form>
-            <div class="modalBnt">
+            <div class="modal-Bnt">
                 <button class="modalSendBnt" type="submit">보내기</button>
                 <button class="modalClose" onclick="modalpage1close()">취소</button>
             </div>

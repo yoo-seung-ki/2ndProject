@@ -303,8 +303,9 @@
             <form>
                 <p class="modalTitle">내 정보 변경</p>
                 <div class="modalInput">
-                    성 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명 <input type="text" disabled>
-                </div>
+                    성 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명 <input type="text" readonly 
+	                    value="<%= mobile.getName() %>">
+	            </div>
                 <div class="modalInput">
                     거주지역 <select name="travel_arriveVia" id="travel_arriveVia" onchange="showfield(this.options[this.selectedIndex].value)">
                     <option selected="selected">구분</option>
@@ -335,10 +336,10 @@
                     전화번호 <input type="text" maxlength="11">
                 </div>
                 <div class="modalInput">
-                    장애유형 <input type="text" disabled>
+                    장애유형 <input type="text" readonly value="<%=mobile.getDiscase() %>">
                 </div>
                 <div class="modalInput">
-                    장애정도 <input type="text" disabled>
+                    장애정도 <input type="text" readonly value="<%=mobile.getDisgrade() %>">
                 </div>
             </form>
             <div class="modalBnt">
@@ -351,18 +352,19 @@
 
 
 <!-- 관심 기업 목록 모달 -->
+<% if (loginmobile != null) { %>
+                <% if ( Ddao.listintercom(loginmobile) != null) { %>
+                	<% String intercomlist = Ddao.listintercom(loginmobile); %>
+					<% String[] arr = intercomlist.split(","); %>
+					
 <div class="modalBackground-attention inactive2">
     <div class="modalContainer-attention">
         <div>
             <form>
                 <p class="modalTitle-attention">관심 기업 목록</p>
                 <div class="enterpriseList">
-                <% if (loginmobile != null) { %>
-                <% if ( Ddao.listintercom(loginmobile) != null) { %>
-                	<% String intercomlist = Ddao.listintercom(loginmobile); %>
-					<% String[] arr = intercomlist.split(","); %>
-					
-                    <% for (int i = 0; i < arr.length; i++) { %>
+                
+                    <% for (int i = 1; i < arr.length; i++) { %>
                     <% CompanyVO newarr = Cdao.getCompanyfromname(arr[i]);%>
                     <div class="enterpriseCard">
                         <a target="_blank" href="companyinfo.jsp?name=<%=newarr.getCompanyseq()%>">
@@ -393,8 +395,7 @@
                         </a>
                     </div> <!-- enterpriseCard -->
                     	<% } %> <!-- for문 종료 -->
-                    	<% } %>
-                    	<% } %>
+                    	
                 </div> <!-- enterpriseList -->
                 <div class="modalBnt">
                     <button class="modalClose" onclick="modalpage1close()">닫기</button>
@@ -403,6 +404,8 @@
         </div>
     </div>
 </div>
+<% } %>
+                    	<% } %>
 
 <!-- 기업지원 현황 모달 -->
 <div class="modalBackground-attention inactive3">

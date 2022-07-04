@@ -203,7 +203,7 @@ public class DismemberDAO {
     	  String sql = null;
     	  try {
     		  con = pool.getConnection();
-    		  sql = "update dismember set interestcompany = concat(interestcompany, ',', ?) where memberseq = ?;";
+    		  sql = "update dismember set interestcompany = concat(interestcompany, ?, ',') where memberseq = ?;";
     		  pstmt = con.prepareStatement(sql);
     		  pstmt.setString(1, interestcompany);
     		  pstmt.setInt(2, dismemberseq);

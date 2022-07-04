@@ -15,6 +15,7 @@
 <% String comname = companyinfo.getCompanyname(); %>
 
 <% System.out.println(comname); %>
+<% System.out.println(vo.getMemberseq()); %>
 <% Ddao.intercom(vo.getMemberseq(), comname); %>
 
 

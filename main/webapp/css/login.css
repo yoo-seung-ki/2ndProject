@@ -142,43 +142,22 @@ header{
 /* Hide default HTML checkbox */
 .switch input {display:none;}
 
-/* The slider */
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
 
-input:checked + .slider {
-    background-color: var(--color-black);
-}
 
-input:focus + .slider {
-    box-shadow: 0 0 1px var(--color-black);
-}
-
-input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+.toggleBtn {
+    padding: 10px;
+    margin-right: 20px;
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: 'Dongle';
+    font-weight: 1000;
+    font-size: var(--font-sizeS);
+    text-align: center;
+    line-height: 20px;
+    box-shadow: 3px 3px 3px black;
+    transition-duration: 0.3s;
 }
 
 /* Rounded sliders */
@@ -336,4 +315,10 @@ html,body{
 }
 .signup-link a:visited{
 	color:#fb6544;
+}
+
+/* 다크모드 */
+.dark-mode {
+  background-color: #111;
+  color: #fff;
 }

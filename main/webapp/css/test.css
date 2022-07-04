@@ -1,0 +1,40 @@
+body {
+    position: relative;
+    max-width: 768px;
+    height: 100%;
+    margin: 32px auto;
+    background-color: #fff;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #111;
+  }
+  
+  .intro {
+    height: 30vh;
+  }
+  
+  h1 {
+    font-size: 64px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+  }
+  
+  .dark-mode-toggle {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+  }
+  
+  /* 다크모드 활성화 시 */
+  .dark-mode {
+    background-color: #ddd;
+    color: pink;
+  }
+  
+  .dark-mode .btn {
+    color: violet;
+  }

@@ -1,4 +1,6 @@
-// employment 다크모드
+'use strict';
+
+// employment, employmentresult 다크모드
 function Buttontoggle()
   {
 	
@@ -40,7 +42,7 @@ function Buttontoggle()
         document.querySelector('body').style.backgroundColor = '#fff';      
         document.querySelector('body').style.color = '#000';
         document.querySelector('.title-text').style.color = '#000';
-        document.querySelector('.bannerTitle').style.color = '#fff';
+        document.querySelector('.bannerTitle').style.color = '#000';
         document.querySelector('p').style.color = '#000';
         console.log("employment 다크모드 끄기")
     }
@@ -90,42 +92,42 @@ function Buttontoggle()
     }
   }
 
-  // 다크모드
-  $(document).ready(function() {
-    $("#colormode").change(function(){
-    if($("#colormode").is(":checked")){
-        $("header").css("background-color","#000");
-        $('.option').css("color","#fff");
-        $(".body").css("background-color","#000");
-        $(".body").css("color","#fff");
-        $(".title-text").css("color","#fff");
-        $(".title").css("color","#000");
-        $(".signup-link").css("color","#000");
-        $(".menu").css("color","#fff");
-        $(".bannerTitle").css("color","#000");
-        $('table').css("color","#fff");
-        $('magnifier').css("background-color","#000");
-        $('magnifier').css("color","#fff");
-        $('magnifier-content').css("background-color","#000");
-        $('magnifier-content').css("color","#fff");
-        $('magnifier-glass').css("background-color","#000");
-        $('magnifier-glass').css("color","#fff");
-    }                         
-    else{
-        $("header").css("background-color","#fff");
-        $('.option').css("color","#000");
-        $(".body").css("background-color","#fff");                
-        $(".body").css("color","#000");                    
-        $(".title-text").css("color","#000");
-        $(".menu").css("color","#000");
-        $(".bannerTitle").css("color","#000");
-        $('table').css("color","#000");
-        $('magnifier').css("background-color","#fff");
-        $('magnifier').css("color","#000");
-        $('magnifier-content').css("background-color","#fff");
-        $('magnifier-content').css("color","#000");
-        $('magnifier-glass').css("background-color","#fff");
-        $('magnifier-glass').css("color","#000");
-    }        
+
+
+// 로컬스토리지 데이터 읽기(darkMode keyName 읽기)
+let darkMode = localStorage.getItem('darkMode');
+
+let checkboxShowGPSInfo = document.querySelector('#checkboxShowGPSInfo')
+const darkModeToggle = document.querySelector('#darkModeToggle');
+
+const enableDarkMode = () => {
+  // body 태그에 다크모드 클래스 추가
+  document.body.classList.add('dark-mode');
+
+  // 로컬스토리지에 다크모드 키-값 생성
+  localStorage.setItem('darkMode', 'enabled');  
+};
+
+const disableDarkMode = () => {
+  // body 태그에 다크모드 클래스 제거
+  document.body.classList.remove('dark-mode');
+  // 로컬스토리지에 다크모드 키의 값을 null로 업데이트
+  localStorage.setItem('darkMode', null);
+};
+
+if (darkMode === 'enabled') enableDarkMode();
+
+darkModeToggle.addEventListener('click', () => {
+  
+  // 클릭 시마다 초기화
+  darkMode = localStorage.getItem('darkMode');
+  // 만약 다크모드가 활성화 되어 있지 않다면
+  if (darkMode !== 'enabled') {
+    // 다크모드 활성화 함수 호출
+    enableDarkMode();
+  } else {
+    // 그렇지 않다면(활성화 되어 있다면) 비활성화 함수 호출
+    disableDarkMode();
+  }
 });
-});
+    

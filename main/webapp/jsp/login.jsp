@@ -53,9 +53,7 @@
                     $(".menu").css("color","#000");
                     $('.wrapper').css("background-color","#fff");
                     $('.title').css("color","#000");
-                    $('.signup-link').css("color","#000");
-
-              
+                    $('.signup-link').css("color","#000");           
                     
                     
                 }

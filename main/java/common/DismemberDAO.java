@@ -193,5 +193,81 @@ public class DismemberDAO {
          }
          return vo;
       }
+      
+      
+      // 관심기업명을 해당 유저의 interestcompany에 추가하는 메소드
+      public boolean intercom(int dismemberseq, String interestcompany) {
+    	  boolean flag = false;
+    	  Connection con = null;
+    	  PreparedStatement pstmt = null;
+    	  String sql = null;
+    	  try {
+    		  con = pool.getConnection();
+    		  sql = "update dismember set interestcompany = concat(interestcompany, ',', ?) where memberseq = ?;";
+    		  pstmt = con.prepareStatement(sql);
+    		  pstmt.setString(1, interestcompany);
+    		  pstmt.setInt(2, dismemberseq);
+    		  if(pstmt.executeUpdate() == 1) {
+    			  flag = true;
+    		  }
+    		  	
+    	  } catch (Exception e) {
+    		  e.printStackTrace();
+    	  } finally {
+    		  pool.freeConnection(con, pstmt);
+    	  }
+    	  return flag;
+      }
+      
+      
+      
+      // 입사지원기업명을 해당 유저의 proposecompany에 추가하는 메소드
+      public boolean procom(int memberseq, String proposecompany) {
+    	  boolean flag = false;
+    	  Connection con = null;
+    	  PreparedStatement pstmt = null;
+    	  String sql = null;
+    	  try {
+    		  con = pool.getConnection();
+    		  sql = "insert into dismember(proposecompany) value(?) where memberseq = ? ";
+    		  pstmt = con.prepareStatement(sql);
+    		  pstmt.setString(1, proposecompany);
+    		  pstmt.setInt(2, memberseq);
+    		  if (pstmt.executeUpdate() == 1) {
+    			  flag = true;
+    		  }
+    		  
+    	  } catch (Exception e) {
+    		  e.printStackTrace();
+    	  } finally {
+    		  pool.freeConnection(con, pstmt);
+    	  }
+    	  return flag;
+      }
+      
+      // 매개변수로 전화번호를 받아서 해당 사용자의 interestcompany의 값들을 배열 형태로 반환
+      public String listintercom (String usermobile) {
+    	  String list = null;
+    	  Connection con = null;
+    	  PreparedStatement pstmt = null;
+    	  ResultSet rs = null;
+    	  String sql = null;
+    	  try {
+    		  con = pool.getConnection();
+    		  sql = "select interestcompany from dismember where mobile = ?";
+    		  pstmt = con.prepareStatement(sql);
+    		  pstmt.setString(1, usermobile);
+    		  rs = pstmt.executeQuery();
+    		  if(rs.next()) {
+    			  list = rs.getString("interestcompany");
+    			  }
+    	  } catch (Exception e) {
+    		  e.printStackTrace();
+    	  } finally {
+    		  pool.freeConnection(con, pstmt);
+    	  } 
+    	  return list;
+      }
+      
    
 }

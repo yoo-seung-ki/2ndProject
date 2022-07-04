@@ -10,6 +10,8 @@ public class DismemberVO {
 	private String Mobile;
 	private String Discase;
 	private String Disgrade;
+	private String interestcompany;
+	private String proposecompany;
 	
 	public int getMemberseq() {
 		return Memberseq;
@@ -73,6 +75,22 @@ public class DismemberVO {
 
 	public void setDisgrade(String disgrade) {
 		Disgrade = disgrade;
+	}
+
+	public String getInterestcompany() {
+		return interestcompany;
+	}
+
+	public void setInterestcompany(String interestcompany) {
+		this.interestcompany = interestcompany;
+	}
+
+	public String getProposecompany() {
+		return proposecompany;
+	}
+
+	public void setProposecompany(String proposecompany) {
+		this.proposecompany = proposecompany;
 	}
 
 }

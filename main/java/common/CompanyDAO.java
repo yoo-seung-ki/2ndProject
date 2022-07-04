@@ -155,6 +155,7 @@ public class CompanyDAO {
 					vo.setCreateyear(rs.getString("Createyear"));
 					vo.setWorktype(rs.getString("Worktype"));
 					vo.setEtc(rs.getString("Etc"));
+					vo.setEmplodate(rs.getString("emplodate"));
 					vo.setHomepage(rs.getString("Homepage"));
 					vo.setCompanytype(rs.getString("CompanyType"));
 					vo.setCompanycontent(rs.getString("CompanyContent"));

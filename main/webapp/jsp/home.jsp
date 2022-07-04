@@ -7,14 +7,14 @@
 <%@ page import="common.AdminVO" %>
 <%@ page import="java.util.*" %>
 <% List<CompanyVO> Cdaolist = Cdao.getCompanyList(); %>
-<% String loginmobile = (String) session.getAttribute("loginmobile"); %>
+<% String loginmobile = (String) session.getAttribute("loginmobile"); %> <!-- 세션에 연결된 일반사용자 전화번호 -->
 <% String adid = (String) session.getAttribute("adid"); %>
-<% DismemberVO mobile = Ddao.getUser(loginmobile); %>
+<% DismemberVO mobile = Ddao.getUser(loginmobile); %> <!-- 전화번호로 해당 사용자의 모든 정보를 반환하는 mobile 생성 -->
+
 <% AdminVO admin = Adao.getAdmin(adid); %>
+
 <% String comid = (String) session.getAttribute("comid"); %>
 <% CompanyVO idcom = Cdao.getCompanyfromid(comid); %>
-<% %>
-
 
 <%
 
@@ -356,42 +356,43 @@
     <div class="modalContainer-attention">
         <div>
             <form>
-                <div class="subTitle">
-                    <button class="l-arrow2"><i class="fas fa-chevron-left"></i></button>
-                    <p class="modalTitle-attention">기업지원 현황</p>
-                    <button class="r-arrow2"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="slideList slide2">
-                    <% for (int i = 0; i < tenlist.size(); i++) { %>
-                    <div class="slideCard2">
-                        <a target="_blank" href="companyinfo.jsp?name=<%=tenlist.get(i).getCompanyseq()%>">
-                            <img class="slideImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
-                            <div class="slideInfo">
+                <p class="modalTitle-attention">관심 기업 목록</p>
+                <div class="enterpriseList">
+                <% if (loginmobile != null) { %>
+                	<% String intercomlist = Ddao.listintercom(loginmobile); %>
+					<% String[] arr = intercomlist.split(","); %>
+                    <% for (int i = 0; i < arr.length; i++) { %>
+                    <% CompanyVO newarr = Cdao.getCompanyfromname(arr[i]);%>
+                    <div class="enterpriseCard">
+                        <a target="_blank" href="companyinfo.jsp?name=<%=newarr.getCompanyseq()%>">
+                            <img class="cardImg" src="../img/<%=newarr.getLogo() %>" alt="기업 이미지">
+                            <div class="cardInfo">
                                 <div>
-                                    <p><%=tenlist.get(i).getCompanyname() %>
+                                    <p><%=newarr.getCompanyname() %>
                                     </p>
                                 </div>
                                 <div>
-                                    <p><%=tenlist.get(i).getAddress().substring(0, 7) %>
+                                    <p><%=newarr.getAddress().substring(0, 7) %>
                                     </p>
                                 </div>
                                 <div>
-                                    <p><%=tenlist.get(i).getRecrutype() %>
+                                    <p><%=newarr.getRecrutype() %>
                                     </p>
                                 </div>
                                 <div>
-                                    <p><%=tenlist.get(i).getEmplodate() %>
+                                    <p><%=newarr.getEmplodate() %>
                                     </p>
                                 </div>
                                 <% if (adid != null) { %>
                                 <div class="modalBnt">
                                     <button type="" onclick="" name="" class="modalClose" value="">삭제하기</button>
                                 </div>
-                                <% } %>
+                                <% } %> <!-- 바로 위의 if문 종료 -->
                             </div> <!-- cardInfo -->
                         </a>
                     </div> <!-- enterpriseCard -->
-                    <% } %>
+                    	<% } %> <!-- for문 종료 -->
+                    	<% } %>
 
 
                 </div> <!-- enterpriseList -->

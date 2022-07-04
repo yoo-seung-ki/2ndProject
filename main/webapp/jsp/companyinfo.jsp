@@ -27,8 +27,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
     <script>
     	function submitfunc() {
-    		if(confirm("정말 신청하시겠습니까?") == true) {
+    		if(confirm("정말 해당 기업에 지원하시겠습니까?") == true) {
     			document.getElementById("profrm").submit();
+    		} else {
+    			return event.preventDefault();
+    		}
+    	}
+    	
+    	function intercom() {
+    		if(confirm("정말 관심기업 목록에 등록하시겠습니까?") == true) {
+    			document.getElementById("intercomfrm").submit();
     		} else {
     			return event.preventDefault();
     		}
@@ -281,8 +289,11 @@
         
 </div>
 <div style="float:right">
-    <button type="button" onclick="location.href='#'" class="interest">관심채용공고 담기</button>
-    <button tlye="button" onclick="history.back()" class="golist">목록</button>
+	<form id="intercomfrm" action="companyinfoproc.jsp">
+    	<button type="button" onclick="intercom()" class="interest">관심채용공고 담기</button>
+    	<input type="hidden" name="comseq" value="<%=companyinfo.getCompanyseq()%>"/>
+    	<button type="button" onclick="history.back()" class="golist">목록</button>
+    </form>
 </div>
 </div>
 </main>

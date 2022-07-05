@@ -178,6 +178,11 @@ public class DismemberDAO {
             rs = pstmt.executeQuery();
             if(rs.next()) {
                vo.setMemberseq(rs.getInt("Memberseq"));
+               // 위의 vo.setMemberseq(rs.getInt("Memberseq")); 는 
+               
+               // int memberSeq = rs.getInt("Memberseq"); 
+               // vo.setMemberseq(memberSeq); 와 같다. 메소드 2개를 따로 쓰냐 합치냐의 차이만 있을 뿐 
+               // 의미하는 것은 동일하다.
                vo.setName(rs.getString("Name"));
                vo.setPersonid1(rs.getString("Personid1"));
                vo.setPersonid2(rs.getString("Personid2"));

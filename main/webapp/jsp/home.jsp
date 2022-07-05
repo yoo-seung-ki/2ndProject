@@ -15,6 +15,10 @@
 
 <% String comid = (String) session.getAttribute("comid"); %>
 <% CompanyVO idcom = Cdao.getCompanyfromid(comid); %>
+
+
+
+
 <%
 
     // 페이징 넘버 작업
@@ -407,6 +411,10 @@
 <% } %>
 
 <!-- 기업지원 현황 모달 -->
+<% if (loginmobile != null) { %>
+<% if ( Ddao.listprocom(loginmobile) != null) { %>
+<% String procomlist = Ddao.listprocom(loginmobile); %>
+<% String[] brr = procomlist.split(","); %>
 <div class="modalBackground-attention inactive3">
     <div class="modalContainer-attention">
         <div>
@@ -415,25 +423,27 @@
                     <p class="modalTitle-attention">기업지원 현황</p>
                 </div>
                 <div class="slideList slide">
-                    <% for (int i = 0; i < tenlist.size(); i++) { %>
+                
+                <% for (int i = 1; i < brr.length; i++) { %>
+                    <% CompanyVO newbrr = Cdao.getCompanyfromname(brr[i]);%>
                     <div class="slideCard">
-                        <a target="_blank" href="companyinfo.jsp?name=<%=tenlist.get(i).getCompanyseq()%>">
-                            <img class="slideImg" src="../img/<%=tenlist.get(i).getLogo() %>" alt="기업 이미지">
+                        <a target="_blank" href="companyinfo.jsp?name=<%=newbrr.getCompanyseq()%>">
+                            <img class="slideImg" src="../img/<%=newbrr.getLogo() %>" alt="기업 이미지">
                             <div class="slideInfo">
                                 <div>
-                                    <p><%=tenlist.get(i).getCompanyname() %>
+                                    <p><%=newbrr.getCompanyname() %>
                                     </p>
                                 </div>
                                 <div>
-                                    <p><%=tenlist.get(i).getAddress().substring(0, 7) %>
+                                    <p><%=newbrr.getAddress().substring(0, 7) %>
                                     </p>
                                 </div>
                                 <div>
-                                    <p><%=tenlist.get(i).getRecrutype() %>
+                                    <p><%=newbrr.getRecrutype() %>
                                     </p>
                                 </div>
                                 <div>
-                                    <p><%=tenlist.get(i).getEmplodate() %>
+                                    <p><%=newbrr.getEmplodate() %>
                                     </p>
                                 </div>
 
@@ -441,23 +451,25 @@
                                 <div class="modalBnt">
                                     <button type="" onclick="" name="" class="modalClose" value="">삭제하기</button>
                                 </div>
-                                <% } %>
-                            </div> <!-- cardInfo -->
+                                <% } %> <!-- 바로 위의 if문 종료 -->
+                            </div> <!-- slideInfo -->
                         </a>
-                    </div> <!-- enterpriseCard -->
+                    </div> <!-- slideCard -->
                     <% } %>
 
-
-
-                </div> <!-- enterpriseList -->
+                </div> <!-- slideList slide -->
+                
+                
+                
                 <div class="modalBnt">
                     <button class="modalClose" onclick="modalpage1close()">닫기</button>
                 </div>
             </form>
         </div>
-    </div>
-</div>
-
+    </div> <!-- modalContainer-attention -->
+</div> <!-- modalBackground-attention inactive3 -->
+<% } %>
+<% } %>
 
 <footer>
     <div class="footerWrap">

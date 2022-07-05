@@ -245,7 +245,10 @@ public class DismemberDAO {
     	  return flag;
       }
       
-      // 매개변수로 전화번호를 받아서 해당 사용자의 interestcompany의 값들을 배열 형태로 반환
+      // 매개변수로 전화번호를 받아서 해당 사용자의 interestcompany의 값들을 String 형태로 반환
+      // 참고로 DB의 interestcompany는 단어 사이마다 , 만 찍혀있는 형식이라
+      // 실제 출력형태는 배열이 아니고 , 가 여러개 찍혀있는 String 형태일 뿐이니
+      // 이 각각의 값들을 사용하고 싶다면 , 를 기준으로 삼는 split 메소드를 이용하여 각각의 값을 분리해야 한다 
       public String listintercom (String usermobile) {
     	  String list = null;
     	  Connection con = null;
@@ -260,6 +263,34 @@ public class DismemberDAO {
     		  rs = pstmt.executeQuery();
     		  if(rs.next()) {
     			  list = rs.getString("interestcompany");
+    			  }
+    	  } catch (Exception e) {
+    		  e.printStackTrace();
+    	  } finally {
+    		  pool.freeConnection(con, pstmt);
+    	  } 
+    	  return list;
+      }
+      
+      
+   // 매개변수로 전화번호를 받아서 해당 사용자의 proposecompany의 값들을 String 형태로 반환
+   // 참고로 DB의 proposecompany는 단어 사이마다 , 만 찍혀있는 형식이라
+  // 실제 출력형태는 배열이 아니고 , 가 여러개 찍혀있는 String 형태일 뿐이니
+  // 이 각각의 값들을 사용하고 싶다면 , 를 기준으로 삼는 split 메소드를 이용하여 각각의 값을 분리해야 한다 
+      public String listprocom (String usermobile) {
+    	  String list = null;
+    	  Connection con = null;
+    	  PreparedStatement pstmt = null;
+    	  ResultSet rs = null;
+    	  String sql = null;
+    	  try {
+    		  con = pool.getConnection();
+    		  sql = "select proposecompany from dismember where mobile = ?";
+    		  pstmt = con.prepareStatement(sql);
+    		  pstmt.setString(1, usermobile);
+    		  rs = pstmt.executeQuery();
+    		  if(rs.next()) {
+    			  list = rs.getString("proposecompany");
     			  }
     	  } catch (Exception e) {
     		  e.printStackTrace();

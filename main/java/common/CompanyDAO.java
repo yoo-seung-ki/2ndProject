@@ -401,10 +401,13 @@ public class CompanyDAO {
 		      try {
 		         con = pool.getConnection();
 		         File file = new File(SAVEFOLDER);
-		         if (!file.exists())
-		        	 file.mkdirs();
+		         // 위에서 File file 에서 file은 form 태그 안의 input 태그 중 type="file"인 input의 name을 받아온다 
+		         // 받아와서 그 파일이 저장될 경로를 (SAVEFOLDER) 라는 명령어를 통해 설정한다.
+		         if (!file.exists()) // file이 존재하지 않는다면
+		        	 file.mkdirs(); // mkdirs() = 파일이 저장될 폴더를 만들어주는 메소드
 		         
 		         multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
+		         // DefaultFileRenamePolicy() ==> 파일이 동일한 이름으로 저장되지 않도록 방지해주는 메소드
 		         if(multi.getFilesystemName("file") != null) { // not null = 업로드된 파일이 있다는 의미
 		        	 filename = multi.getFilesystemName("file");
 		         }

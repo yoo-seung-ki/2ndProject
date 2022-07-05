@@ -137,7 +137,6 @@
   <div>
     <img src="../img/good1.png" class="good"  width="45" height="45">기업정보 
    		<input type="file" id="file" name="file"  accept="image/*" onchange="changeValue(this)"/>
-   		<button type="button" id="btn-upload" style="float:right;">이미지업로드</button>
 
     <script>
     $(function () {
@@ -231,10 +230,11 @@
     </tr>
     <tr>
         <th>기 타 조 건</th>
-        <% String H = companyinfo.getEtc(); %>
-        <% if(H == null) {H = "-";}	%>
-        <td colspan="7"><%=H %></td>
+        <td colspan="3"><% String H = companyinfo.getEtc(); %></td>
+        <th>구 인 기 간</th>
+        <td colspan="3"></td>
     </tr>
+    
 </table>
 </div>
 <div class="company-info">

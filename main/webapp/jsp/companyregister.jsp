@@ -163,6 +163,10 @@
 		        <th>규&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;모</th>
 		        <td colspan="3"> <input name="companysize" type="text"  placeholder="규 모"></td>
 		    </tr>
+        <tr>
+          <th>구 인 기 간</th>
+          <td colspan="3"> <input name="offerperiod" type="text"  placeholder="구 인 기 간"></td>
+      </tr>
 		</table>
 		
 	</div><!-- companyinfo -->

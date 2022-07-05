@@ -8,7 +8,7 @@
 <% String url = "login.jsp"; %>
 <% String msg = ""; %>
 <% switch(num) {
-		case 1: msg = "아이디가 없습니다.";
+		case 1: msg = "해당하는 이름이 없습니다.";
 			break;
 		case 2: msg = "전화번호가 일치하지 않습니다.";
 			break;

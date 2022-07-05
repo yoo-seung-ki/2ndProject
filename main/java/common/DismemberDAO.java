@@ -133,10 +133,10 @@ public class DismemberDAO {
       
       try {
          con = pool.getConnection();
-         // 입력받은 전화번호가 데이터베이스에 존재하는지 확인
-         sql = "select name,mobile from dismember where mobile = ?";
+         // 입력받은 이름이 데이터베이스에 존재하는지 확인
+         sql = "select name,mobile from dismember where name = ?";
          pstmt = con.prepareStatement(sql);
-         pstmt.setString(1, mobile);
+         pstmt.setString(1, name);
          rs = pstmt.executeQuery();
          // 이름이 없으니 1을 반환
          if(!rs.next()) {

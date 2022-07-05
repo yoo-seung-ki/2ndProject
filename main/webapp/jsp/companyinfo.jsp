@@ -137,7 +137,6 @@
   <div>
     <img src="../img/good1.png" class="good"  width="45" height="45">기업정보 
    		<input type="file" id="file" name="file"  accept="image/*" onchange="changeValue(this)"/>
-   		<button type="button" id="btn-upload" style="float:right;">이미지업로드</button>
 
     <script>
     $(function () {

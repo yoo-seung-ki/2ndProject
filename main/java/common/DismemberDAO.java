@@ -204,6 +204,8 @@ public class DismemberDAO {
     	  try {
     		  con = pool.getConnection();
     		  sql = "update dismember set interestcompany = concat(interestcompany, ?, ',') where memberseq = ?;";
+    		  // concat : 추가해서 더해주는것 --> 원래 있던 값을 싹 뺴버리고 새로 넣어주는 느낌
+    		  // 위에서는 interestcompany를 다시 넣어줘서 다시 그값을 집어넣고 새로운 값을 추가해서 넣음
     		  pstmt = con.prepareStatement(sql);
     		  pstmt.setString(1, interestcompany);
     		  pstmt.setInt(2, dismemberseq);

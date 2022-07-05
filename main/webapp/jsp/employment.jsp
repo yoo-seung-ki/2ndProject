@@ -202,9 +202,15 @@
                         <div>
                             <p ><%=tenlist.get(i).getCompanyname() %></p>
                         </div>
+                        <% if (tenlist.get(i).getAddress().length() < 7) { %>
+                        <div>
+                        <p><%=tenlist.get(i).getAddress() %></p>
+                    	</div>  
+                    	<% } else { %>
                         <div>
                             <p><%=tenlist.get(i).getAddress().substring(0,7) %></p>
-                        </div>
+                        </div> 
+                        <% } %>
                         <div>
                             <p><%=tenlist.get(i).getRecrutype() %></p>
                         </div>

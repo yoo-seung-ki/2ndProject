@@ -110,7 +110,7 @@
     </div>
   <!--회사 정보? -->
   	<div class="company-info">
-  		<form method="post" encType = "multipart/form-data" action="../companyregi" id="profrm">
+  		<form method="post" encType = "multipart/form-data" action="../ComRegi" id="profrm">
   		<!-- action="../companyregi"은 얘를 작성한 서블릿으로 보내준다는 의미 -->
 			<div>
 			    <img src="../img/good1.png" class="good"  width="45" height="45">기업정보 

@@ -388,8 +388,7 @@ public class CompanyDAO {
 		
 		   // 기업의 회원가입
 		   // 가입 성공여부에 따라 flag를 반환 (성공시 true 실패시 false  / default는 false)
-		   // 멤버번호를 max를 사용해서 추가한다?
-		   // 비밀번호 암호화?
+		   // 파일이 저장될 폴더, 파일의 최대크기, 파일의 Encording Type 설정 및 추가, 파일명 안겹치게만들기
 		   public boolean insertCompany(HttpServletRequest request) {	
 			   // HttpServletRequest request는 서블릿을 만들어서 이렇게 수정시킴
 		      boolean flag = false;
@@ -398,8 +397,7 @@ public class CompanyDAO {
 		      String sql = null;
 		      MultipartRequest multi = null;
 		      String filename = null; 
-		    
-		      
+		     
 		      try {
 		         con = pool.getConnection();
 		         File file = new File(SAVEFOLDER);
@@ -413,7 +411,7 @@ public class CompanyDAO {
 
 		         sql = "insert into mjt(companyname, ceo, createyear, address, homepage, "
 		         		+ "companytype, companycontent, companysize,  comid, compw, logo)"
-		               + "values(?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		               + "values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		         pstmt = con.prepareStatement(sql);
 		         //request.getParameter("")이랑 똑같다
 		         pstmt.setString(1, multi.getParameter("companyname"));

@@ -1,19 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% String comseq = request.getParameter("name");%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<%@ page import="common.CompanyDAO" %>
+<%@ page import="common.CompanyVO" %>
+<%@ page import="common.DismemberDAO" %>
+<%@ page import="common.DismemberVO" %>
+<% DismemberDAO Ddao = new DismemberDAO(); %>
+<% CompanyDAO Cdao = new CompanyDAO(); %>
+
+<% String loginmobile = (String)session.getAttribute("loginmobile"); %>
+<% DismemberVO vo = Ddao.getUser(loginmobile); %>
+
+<% int companyseq = Integer.parseInt(request.getParameter("name")); %>
+<% CompanyVO companyinfo = Cdao.getCompany(companyseq); %>
+<% String comname = companyinfo.getCompanyname(); %>
+
+<% Ddao.procom(vo.getMemberseq(), comname); %>
+
+
 <script>
-	alert("신청되었습니다.");
-	location.href="myinfo.jsp?name=<%=comseq%>";
-	// DB에 유저 개인별로 어떤 기업에 입사지원을 했고 관심기업으로 등록했는지 저장하는게 필요해보인다 
+	alert("입사지원 신청이 완료되었습니다.");
+	location.href="home.jsp";
 </script>
-</head>
-<body>
-	
-	
-</body>
-</html>

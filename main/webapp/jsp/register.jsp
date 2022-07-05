@@ -8,6 +8,7 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
  <link rel="stylesheet" href="../css/register.css">
  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+ <script defer src="../js/dark-mode-regi.js"></script>
 </head>
 <body>
     <header>
@@ -25,7 +26,7 @@
             </div>
             <div class="changeBtn">고대비
             <label class="switch">
-                <input type="checkbox" id="colormode">
+                <input type="checkbox" id="check" onclick="changeStatus()" />
                 <span class="slider round"></span>
             </label>
             </div>

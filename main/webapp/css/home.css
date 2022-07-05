@@ -299,6 +299,12 @@ footer .footerWrap{
     justify-content: space-evenly;
 }
 
+.imgList {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .enterpriseCard{
     width: 300px;
     height: 500px;

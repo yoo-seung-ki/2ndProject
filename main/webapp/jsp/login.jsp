@@ -101,7 +101,7 @@
         <div class="field">
           <input type="submit" value="로그인" class="loginbtn">
         </div>
-        <div class="signup-link">회원이 아니신가요? <a href="./register.jsp">회원가입</a></div>
+        <div class="signup-link">회원이 아니신가요? <a href="./companyregister.jsp">회원가입</a></div>
       </form>
       
       <form action="adminloginok.jsp" class="mlogin" method="post" name="adlogin">

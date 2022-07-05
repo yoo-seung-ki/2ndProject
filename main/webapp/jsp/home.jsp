@@ -224,7 +224,7 @@
         <div>
             <h2 class="listTitle">참여 기업 리스트</h2>
         </div>
-        <div class="enterpriseList">
+        <div class="imgList">
             <% for (int i = 0; i < 4; i++) { %>
             <div class="enterpriseCard">
                 <a href="">

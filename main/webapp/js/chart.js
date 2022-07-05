@@ -1,22 +1,22 @@
 // 첫번째 차트
 var ctx = document.getElementById('canvas1').getContext('2d');
 var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
     data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 50, 2, 20, 30, 45]
-        }]
+            type: 'bar',
+            label: '구직자수',
+            data: [0, 766, 3911, 2583, 2783, 3343, 2183]
+        }, {
+            type: 'line',
+            label: '취업자수',
+            data: [0, 593, 4001, 2274, 2101, 2506, 1549],
+        }],
+        labels: ['14세이하', '15~19세', '20대', '30대', '40대', '50대', '60~64세'],
+
     },   
-    // Configuration options go here
-    options: {},
     
+    options: {
+    },
 });
 
 // 두번째 차트
@@ -24,21 +24,18 @@ let ctx2 = document.getElementById('canvas2').getContext('2d');
 var chart2 = new Chart(ctx2, {
     type: 'pie',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['초졸', '중졸', '고졸', '대졸', '미분류'],
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: '학력별',
+            data: [596, 1392, 6285, 2736, 9],
             borderWidth: 1,
-            backgroundColor: ['#CB4335', '#1F618D', '#F1C40F', '#27AE60', '#884EA0', '#D35400'],
+            backgroundColor: ['#4a148c', '#3e2723', '#263238', '#f57f17', '#fff9c4'],
         }]
     },
     options: {
         maintainAspectRatio: false,
         plugins: {
-            legend: {
-                onHover: handleHover,
-                onLeave: handleLeave
-            }
+            legend: {}
         }
     }
 });

@@ -15,7 +15,6 @@
 
 <% String comid = (String) session.getAttribute("comid"); %>
 <% CompanyVO idcom = Cdao.getCompanyfromid(comid); %>
-
 <%
 
     // 페이징 넘버 작업
@@ -353,10 +352,10 @@
 
 <!-- 관심 기업 목록 모달 -->
 <% if (loginmobile != null) { %>
-                <% if ( Ddao.listintercom(loginmobile) != null) { %>
-                	<% String intercomlist = Ddao.listintercom(loginmobile); %>
-					<% String[] arr = intercomlist.split(","); %>
-					
+<% if ( Ddao.listintercom(loginmobile) != null) { %>
+<% String intercomlist = Ddao.listintercom(loginmobile); %>
+<% String[] arr = intercomlist.split(","); %>
+
 <div class="modalBackground-attention inactive2">
     <div class="modalContainer-attention">
         <div>
@@ -394,8 +393,8 @@
                             </div> <!-- cardInfo -->
                         </a>
                     </div> <!-- enterpriseCard -->
-                    	<% } %> <!-- for문 종료 -->
-                    	
+                    <% } %> <!-- for문 종료 -->
+
                 </div> <!-- enterpriseList -->
                 <div class="modalBnt">
                     <button class="modalClose" onclick="modalpage1close()">닫기</button>
@@ -405,7 +404,7 @@
     </div>
 </div>
 <% } %>
-                    	<% } %>
+<% } %>
 
 <!-- 기업지원 현황 모달 -->
 <div class="modalBackground-attention inactive3">

@@ -416,8 +416,11 @@
     </table>
 </form>
 </div>
-    
-<button type="button" class="excelexport" onclick="fnExcelReport('table','title');">Excel로 저장</button>
+<div>
+    <button type="button" class="excelexport" onclick="fnExcelReport('table','title');">Excel로 불러오기</button>
+    <button type="submit" class="DBsave">저장</button>
+</div>    
+
 
 </main> 
     <footer>

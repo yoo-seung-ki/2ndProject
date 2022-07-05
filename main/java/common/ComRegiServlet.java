@@ -36,7 +36,8 @@ public class ComRegiServlet extends HttpServlet {
 			writer.println("<script>alert('가입에 실패했습니다.'); location.href='./jsp/companyregister.jsp'</script>");
 			writer.close();
 		}
-			
+		
+		// id pw 중복시 가입 실패 db에도 들어가지 않음
 		//printerwriter: 서블릿에서 html코드를 작성하기 위해서 사용하는 클래스
 
 
